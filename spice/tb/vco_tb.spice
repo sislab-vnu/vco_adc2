@@ -4,7 +4,7 @@ Cell		: testting operation of vco
 * Cell name	: ring_osc_tb.spice
 ******************************************************
 
-.lib /home/tools/efabless/mpw-two-c/pdks/skywater-pdk/libraries/sky130_fd_pr/latest/models/sky130.lib.spice tt 
+.lib /home/dkit/efabless/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 .inc ../library/analog_lib.spice
 .inc ../library/digital_lib.spice
 
