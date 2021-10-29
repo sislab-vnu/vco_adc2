@@ -1,4 +1,4 @@
-Cell		: testting operation of vco
+* Cell		: testting operation of vco
 * Written for	: NGSPICE
 * Lib		:
 * Cell name	: ring_osc_tb.spice
@@ -10,55 +10,56 @@ Cell		: testting operation of vco
 
 .global gnd vdd
 .param mc_mm_switch=1
-.param test_mode = 0;
+*
+*_____________cross coupling inverter testbench__________________*
+
+Xr1 p[0] p[1] p[2] p[3] p[4] input enb vdd gnd v_ctr vco
+V1 vdd gnd DC=1.8
+V2 input gnd DC=0.8
+V3 enb gnd DC=0 PULSE( 0 1.8 0 20n 20n 200n 1 )
+
+.control
+set num_threads=8
+let test_mode = 2 
 * mode = 0: operation testing
 *			1:	frequency extract
 *			2: power consumption
 *			3: generate data for 
-*
-*_____________cross coupling inverter testbench__________________*
 
-Xr1 p1[0] p1[1] p1[2] p1[3] p1[4] p1[5] input_1 enb vdd gnd vco
-V1 vdd gnd DC=1.5
-V2 input_1 gnd DC=0.8
-V3 input_2 gnd DC=0.8
-V4 enb gnd DC=0 PULSE( 0 1.8 0 20n 20n 200n 1 )
-
-.control
-set num_threads=8
-
-if(test_mode == 0)
+if (test_mode = 0)
 	TRAN 0.1n 5u
+	plot "p[1]"
 end 
 
-if(test_mode == 1)
-	let prd=1
-	let Vin=unitvec(60)
-	let Vin[0]=0.1
-	let freq=unitvec(60)
-	let Vcrt=unitvec(60)
-	let ix=0
-	while Vin[ix] < 1.21
-		let Vcrt_v1[ix]=Vin[ix]/2
-		alter V2 DC=Vcrt_v1[ix]
-		alter V3 DC=Vin[ix]
-		TRAN 0.4n 5u
-		MEAS TRAN prd TRIG p[0] VAL=0.9 RISE=8 TARG p[0] VAL=0.9 RISE =9
-		MEAS TRAN Vcrt_v3[ix] AVG v(v_crt_v3) from=3u to=4u
-		let freq_v3[ix] = 1/prd
-		let ix = ix+1
-		Let Vin[ix] = Vin[ix-1]+0.02
-	end
-	print Vin Vcrt_v1 freq_v1 > ./result/vco_test.txt
+*if(test_mode == 1)
+*	let prd=1
+*	let Vin=unitvec(60)
+*	let Vin[0]=0.1
+*	let freq=unitvec(60)
+*	let Vcrt=unitvec(60)
+*	let ix=0
+*	while Vin[ix] < 1.21
+*		let Vcrt_v1[ix]=Vin[ix]/2
+*		alter V2 DC=Vcrt_v1[ix]
+*		alter V3 DC=Vin[ix]
+*		TRAN 0.4n 5u
+*		MEAS TRAN prd TRIG p[0] VAL=0.9 RISE=8 TARG p[0] VAL=0.9 RISE =9
+*		MEAS TRAN Vcrt_v3[ix] AVG v(v_crt_v3) from=3u to=4u
+*		let freq_v3[ix] = 1/prd
+*		let ix = ix+1
+*		Let Vin[ix] = Vin[ix-1]+0.02
+*	end
+*	print Vin Vcrt_v1 freq_v1 > ./result/vco_test.txt
+*end
+
+if (test_mode = 2)
+	TRAN 0.1n 5u
+	plot "input"
 end
 
-if(test_mode == 2)
-			
-end
-
-if(test_mode == 3)
+*if(test_mode == 3)
 
 
-end
+*end
 
 .endc

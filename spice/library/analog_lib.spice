@@ -6,15 +6,15 @@
 * Subcircuit    : inv_12
 *****************************************************************************
 .subckt inv_12 y a VDDPIN  VSSPIN VNBPIN
-XM1 a y VSSPIN VNBPIN sky130_fd_pr__nfet_01v8 w=4.5 l=1.8 nf=4
-XM2 a y VDDPIN VDDPIN sky130_fd_pr__pfet_01v8 w=4.5 l=1.8 nf=2
+XM1_P a y VDDPIN VDDPIN sky130_fd_pr__pfet_01v8 w=4.5 l=1.8 nf=8
+XM2_N a y VSSPIN VNBPIN sky130_fd_pr__nfet_01v8 w=4.5 l=1.8 nf=4
 .ends
 
 * Subcircuit    : inv_34
 *****************************************************************************
 .subckt inv_34 y a VDDPIN  VSSPIN VNBPIN
-XM1 a y VSSPIN VNBPIN sky130_fd_pr__nfet_01v8 w=4 l=1.8 nf=2
-XM2 a y VDDPIN VDDPIN sky130_fd_pr__pfet_01v8 w=4 l=1.8 nf=1
+XM1_P a y VDDPIN VDDPIN sky130_fd_pr__pfet_01v8 w=4 l=1.8 nf=2
+XM2_N a y VSSPIN VNBPIN sky130_fd_pr__nfet_01v8 w=4 l=1.8 nf=1
 .ends
 
 * Subcircuit    : cc_inv
@@ -37,7 +37,7 @@ Xc6 p[4] p_n[4] p[0] p_n[0] vdd input VSUBS cc_inv
 .ends
 
 .subckt vco p[0] p[1] p[2] p[3] p[4] input enb vdd vss v_ctr
-Xro_1 p[0] p[1] p[2] p[3] p[4] vdd vss v_ctr ring_osc
+Xro_1 p[0] p[1] p[2] p[3] p[4] v_ctr enb vdd vss ring_osc
 Xconb_1 vss VSUBS vdd vdd hi_logic lo_logic sky130_fd_sc_hd__conb_1
 Xeinvp_1 hi_logic enb vss VSUBS vdd vdd p[0] sky130_fd_sc_hd__einvp_1
 R0 v_ctr input sky130_fd_pr__res_generic_po w=2e+06u l=4.15e+06u
