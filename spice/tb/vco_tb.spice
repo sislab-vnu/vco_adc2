@@ -4,57 +4,61 @@
 * Cell name	: ring_osc_tb.spice
 ******************************************************
 
-.lib /home/dkit/efabless/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.lib /home/tools/efabless/mpw-two-c/pdks/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/sky130.lib.spice tt
 .inc ../library/analog_lib.spice
 .inc ../library/digital_lib.spice
-
+*.option savecurrents
 .global gnd vdd
 .param mc_mm_switch=1
 *
 *_____________cross coupling inverter testbench__________________*
 
 Xr1 p[0] p[1] p[2] p[3] p[4] input enb vdd gnd v_ctr vco
-V1 vdd gnd DC=1.8
-V2 input gnd DC=0.8
+V1 vdd gnd DC=1.6
+V2 input gnd DC=0.2
 V3 enb gnd DC=0 PULSE( 0 1.8 0 20n 20n 200n 1 )
-
+*ir1 vdd v_src 1
 .control
-set num_threads=8
-let test_mode = 2 
-* mode = 0: operation testing
+let test_mode = 1 
+* mode = 	0:	operation testing
 *			1:	frequency extract
-*			2: power consumption
-*			3: generate data for 
+*			2:	power consumption
+*			3:	generate data for 
 
 if (test_mode = 0)
 	TRAN 0.1n 5u
 	plot "p[1]"
 end 
 
-*if(test_mode == 1)
-*	let prd=1
-*	let Vin=unitvec(60)
-*	let Vin[0]=0.1
-*	let freq=unitvec(60)
-*	let Vcrt=unitvec(60)
-*	let ix=0
-*	while Vin[ix] < 1.21
-*		let Vcrt_v1[ix]=Vin[ix]/2
-*		alter V2 DC=Vcrt_v1[ix]
-*		alter V3 DC=Vin[ix]
-*		TRAN 0.4n 5u
-*		MEAS TRAN prd TRIG p[0] VAL=0.9 RISE=8 TARG p[0] VAL=0.9 RISE =9
-*		MEAS TRAN Vcrt_v3[ix] AVG v(v_crt_v3) from=3u to=4u
-*		let freq_v3[ix] = 1/prd
-*		let ix = ix+1
-*		Let Vin[ix] = Vin[ix-1]+0.02
-*	end
-*	print Vin Vcrt_v1 freq_v1 > ./result/vco_test.txt
-*end
+if(test_mode = 1)
+	let ele = 10
+	let Vin=unitvec(ele)
+	let Vin[0]=0.1
+	let freq=unitvec(ele)
+	let Vctr=unitvec(ele)
+	let ix=0
+	save p[0] v_ctr
+	while Vin[ix] < 1.21
+		alter V2 DC=Vin[ix]
+		TRAN 0.2n 10u
+		MEAS TRAN prd TRIG p[0] VAL=0.8 RISE=5 TARG p[0] VAL=0.8 RISE =10
+		MEAS TRAN ctr AVG v_ctr FROM=5u TO=8u
+		let freq[ix] = 5/prd
+		let Vctr[ix] = ctr
+		let ix = ix+1
+		Let Vin[ix] = Vin[ix-1]+0.2
+	end
+	plot freq vs Vin
+	print Vin Vctr freq > ./result/vco_extract_freq.txt
+end
 
 if (test_mode = 2)
+	save "vdd" @V1[i] "p[0]"
 	TRAN 0.1n 5u
-	plot "input"
+	MEAS TRAN I_vco AVG @V1[i] FROM=3u TO=4u
+	MEAS TRAN V_vco AVG vdd FROM=3u TO=4u
+	let Power=I_vco*V_vco
+	print Power
 end
 
 *if(test_mode == 3)
