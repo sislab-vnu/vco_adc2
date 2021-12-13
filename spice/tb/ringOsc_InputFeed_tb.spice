@@ -1,0 +1,103 @@
+.title test inputFeed resistor for ringOsc
+* Written for	: NGSPICE
+* Lib		:	testing
+* Cell name	: 
+* Author duck-manh-tran
+******************************************************
+
+.lib /home/dkits/efabless/mpw-3/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.inc ../library/analog_lib.spice
+.inc ../library/digital_lib.spice
+*.option savecurrents
+.global gnd vdd
+.param mc_mm_switch=1
+
+* Sky130A_ndiff
+.param Wr1=1.4 Lr1=2.25 Wr2=1.4 Lr2=2.25 Rfeed=200
+*.param Wr1=1 	 Lr1=2.38 Wr2=1   Lr2=2.38 Rfeed=300 
+*.param Wr1=0.8 Lr1=2.5  Wr2=0.8 Lr2=2.5  Rfeed=400 
+*.param Wr1=0.7 Lr1=2.71 Wr2=0.7 Lr2=2.71 Rfeed=500
+*.param Wr1=0.6 Lr1=2.75 Wr2=0.6 Lr2=2.75 Rfeed=600
+* Sky130A_pdiff
+*.param Wr1=1 	 Lr1=2.49 Wr2=1   Lr2=2.49 Rfeed=500
+*.param Wr1=0.9 Lr1=2.68 Wr2=0.9 Lr2=2.68 Rfeed=600
+*.param Wr1=0.8 Lr1=2.77 Wr2=0.8 Lr2=2.77 Rfeed=700
+*.param Wr1=0.7 Lr1=2.76 Wr2=0.7 Lr2=2.76 Rfeed=801
+*.param Wr1=0.6 Lr1=2.65 Wr2=0.6 Lr2=2.65 Rfeed=900
+*
+*_____________cross coupling inverter testbench__________________*
+* RING_OSC-1
+Xr1 p[0] p[1] p[2] p[3] p[4] Vctrl vdd gnd ring_osc
+
+* STARTUP OSCILLATION BLOCK
+Xconb_1 gnd gnd vdd vdd hi_logic lo_logic sky130_fd_sc_hd__conb_1
+Xeinvp_1 hi_logic enb gnd gnd vdd vdd p[0] sky130_fd_sc_hd__einvp_1
+
+* INPUT FEEDING RESISTOR BLOCK
+
+R1_0 Vctrl input sky130_fd_pr__res_generic_nd w=Wr1 l=Lr1
+*R1_1 Vctrl input sky130_fd_pr__res_generic_nd w=1.31 l=2.1
+R2_0 Vctrl gnd sky130_fd_pr__res_generic_nd w=Wr2 l=Lr2
+*R2_1 Vctrl gnd sky130_fd_pr__res_generic_nd w=1.31 l=2.1
+
+* REFERENCE VOLTAGES
+V1 vdd gnd DC=1.9
+V2 input gnd DC=0
+V3 enb gnd DC=0 PULSE( 0 1.8 0 20n 20n 200n 1 )
+
+* CONTROL TESTBENCH
+.control 
+set test_mode = 1
+* mode = 0:	operation testing
+*			1:	frequency extract
+*			2:	power consumption
+*			3:	generate data for 
+
+if ($test_mode = 0)
+	TRAN 1n 10u
+	plot "p[1]"
+	MEAS TRAN prd TRIG p[0] VAL=0.9 RISE=5 TARG p[0] VAL=0.9 RISE=6
+	let freq = 1/prd
+	echo "frequency: " 
+	print freq
+end 
+
+if ($test_mode = 1)
+	let Vsweep = 0.02
+	let NoPoints = 62
+	let Vin=unitvec(NoPoints)
+	let freq=unitvec(NoPoints)
+	let Vctrl_=unitvec(NoPoints)
+	let Power=unitvec(NoPoints)
+	let ix=0 
+	let Vin[0]=0.0
+	save "vdd" @V1[i] "p[0]" enb Vctrl
+	while Vin[ix] < 1.21
+		alter V2 DC=Vin[ix]
+		if (Vin[ix]>0.9)
+			TRAN 0.4n 10u
+		else
+			TRAN 0.2 5u
+		end
+		MEAS TRAN prd TRIG p[0] VAL=0.8 RISE=5 TARG p[0] VAL=0.8 RISE =10
+		MEAS TRAN I_vco AVG @V1[i] FROM=3u TO=4u
+		MEAS TRAN V_vco AVG vdd FROM=3u TO=4u
+		MEAS TRAN V_ctrl AVG Vctrl FROM=3u TO=4u
+		let freq[ix] = 5/prd
+		let Power[ix]=I_vco*V_vco
+		let Vctrl_[ix] = V_ctrl
+		let ix = ix+1
+		Let Vin[ix] = Vin[ix-1]+Vsweep
+	end
+	print Vin Vctrl_ freq Power >  ./result/ringOsc_extract_freq.txt
+end
+
+if ($test_mode = 2)
+	save "vdd" @V1[i] "p[0]"
+	TRAN 0.1n 5u
+	MEAS TRAN I_vco AVG @V1[i] FROM=3u TO=4u
+	MEAS TRAN V_vco AVG vdd FROM=3u TO=4u
+	let Power=I_vco*V_vco
+	print Power
+end
+.endc
