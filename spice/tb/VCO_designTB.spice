@@ -1,0 +1,114 @@
+* Cell		: testting operation of vco
+* Written for	: NGSPICE
+* Lib		:
+* Cell name	: ring_osc_tb.spice
+******************************************************
+
+.lib /home/dkit/efabless/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.inc ../library/analog_lib_for_design.spice
+.inc ../library/digital_lib.spice
+*.option savecurrents
+.global gnd vdd
+.param mc_mm_switch=0
+
+*****----------*****----------*****----------*****----------*****----------*****
+
+.subckt RESISTIVE_INPUT VIN Vctrl
+*RESISTOR INPUT-FEED
+R1 VIN Vctrl R=200
+R2 Vctrl gnd R=200
+.ends
+
+.subckt OSC_START ENB START
+* STARTUP OSCILLATION
+Xconb_1 gnd gnd vdd vdd hi_logic lo_logic sky130_fd_sc_hd__conb_1
+Xeinvp_1 hi_logic ENB gnd gnd vdd vdd START sky130_fd_sc_hd__einvp_1
+.ends
+*****----------*****----------*****----------*****----------*****----------*****|
+
+*_____________cross coupling inverter testbench__________________*
+* RING_OSC-1
+
+Xr1 p[0] p[1] p[2] p[3] p[4] p_n[0] p_n[1] p_n[2] p_n[3] p_n[4]
++ V_ctrl V_ctrl vdd vdd ring_osc_s1
++ Wp12="Wp12" Wn12="Wn12" L12="L12"
++ Wp34="Wp34" Wn34="Wn34" L34="L34"
+
+Xstart enb p[0] OSC_START 	$ to feed start signal for VCO
+Xres_in analog_in V_ctrl RESISTIVE_INPUT	 $RESISTOR INPUT-FEED
+
+* REFERENCE VOLTAGES
+V1 vdd gnd DC=1.8
+V_in analog_in gnd DC=0.65
+V3 enb gnd DC=0 PULSE( 0 1.8 0 20n 20n 200n 1 )
+
+* CONTROL TESTBENCH
+
+.param Wp12=10 Wn12=4 L12=4 Wp34=5.5 Wn34=2.2 L34=4
+.control 
+set test_mode = 1
+*set numdgt=3
+set num_threads=8
+* mode = 0:	operation testing
+*			1:	frequency extract
+*			2:	power consumption
+*			3:	generate data for 
+
+if ($test_mode = 0)
+	TRAN 1n 5u
+	plot "p[1]"
+	MEAS TRAN prd TRIG p[0] VAL=0.8 RISE=10 TARG p[0] VAL=0.8 RISE=20
+	let freq = 10/prd
+	echo "frequency: " 
+	print freq
+end 
+
+if ($test_mode = 1)
+   	let Vlow = 0
+	let Vlimit = 1.0001   	$ set upper bound for sweeping
+   	let Vsweep = 0.001   	$ set step size for sweeping
+   	let NoPoints=(Vlimit-Vlow)/Vsweep+2    $ set number of points for sweeping
+   	let freq =unitvec(NoPoints)
+   	let Vin  =unitvec(NoPoints)
+   	let Vosc =unitvec(NoPoints)
+   	let Iosc =unitvec(NoPoints)
+   	let Power=unitvec(NoPoints)
+	let Vctrl_vec=unitvec(NoPoints)
+   let Vin[0]=Vlow
+   let ix=0
+	save "vdd" @V1[i] "p[0]" Wp12 Wn12 Wp34 Wn34 L12 L34 enb V_ctrl VDD
+	while Vin[ix] < Vlimit
+		alter V_in DC=Vin[ix]
+		if (Vin[ix]>0.65)
+			TRAN 0.4n 10u
+		else
+			TRAN 0.2n 5u
+		end
+		MEAS TRAN prd TRIG p[0] VAL=0.8 RISE=10 TARG p[0] VAL=0.8 RISE =20
+		MEAS TRAN I_vco AVG @V1[i] FROM=2u TO=5u
+		MEAS TRAN V_vco AVG vdd FROM=2u TO=5u
+		MEAS TRAN vctrl AVG V_ctrl FROM=2u TO=5u
+		let freq[ix] = 10/prd
+		let Power[ix]=I_vco*V_vco
+		let Iosc[ix] = I_vco
+		let Vctrl_vec[ix] = vctrl
+		let ix = ix+1
+		Let Vin[ix] = Vin[ix-1]+Vsweep
+	end
+	let Kvco = (freq[0]-freq[NoPoints-2])/(Vlimit-Vlow)
+	let offset =  (freq[1]+freq[2])/2 
+*	print Kvco offset
+*	print Vin freq Power Iosc
+	print Vin freq Iosc > ./result/VCO_nonlinear_extraction.txt
+	print Vin vctrl Power > ./result/VCO_nonlinear_extraction.txt
+end
+
+if ($test_mode = 2)
+	save "vdd" @V1[i] "p[0]"
+	TRAN 0.1n 5u
+	MEAS TRAN I_vco AVG @V1[i] FROM=3u TO=4u
+	MEAS TRAN V_vco AVG vdd FROM=3u TO=4u
+	let Power=I_vco*V_vco
+	print Power
+end
+.endc
