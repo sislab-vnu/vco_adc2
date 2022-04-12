@@ -1,0 +1,133 @@
+.title testbench for design ADC
+* Written for	: NGSPICE
+* Lib			: testbench
+* Cell name		: ADC_testbench
+* Author 		: duck-manh-tran
+******************************************************
+.lib /home/dkit/efabless/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.inc ../library/analog_lib.spice
+.inc ../library/digital_lib.spice
+.global gnd vdd
+.param mc_mm_switch=0
+*.option INTERP $ ABSTOL=1n RELTOL=0.005 VNTOL=100u TRTOL=8 ITL5=0 
+*-----------------------------------------------------------------------------------*
+* SUB CIRCUITS
+
+.subckt ADC_DigitalLib_UDCnter_latchFB UP DOWN rstB VGND VNB VPB VPWR Dout_buf Q1 Q2
+X_inv_0  rstB VGND VNB VPB VPWR rstBi sky130_fd_sc_ms__inv_2
+X_buf_0  UP VGND VNB VPB VPWR up_buf sky130_fd_sc_ms__buf_4
+X_upFF_0 UP_buf Q2N rstBi VGND VNB VPB VPWR Q1 sky130_fd_sc_ms__dfrtp_1
+X_buf_1  Q1 VGND VNB VPB VPWR Q1_buf sky130_fd_sc_ms__buf_4
+X_buf_2  DOWN VGND VNB VPB VPWR dwn_buf sky130_fd_sc_ms__buf_4
+X_dwLATCH_0 Q1_buf dwn_buf rstBi VGND VNB VPB VPWR Q2 sky130_fd_sc_ms__dlrtp_1
+X_inv_1  Q2 VGND VNB VPB VPWR Q2N sky130_fd_sc_ms__inv_2
+X_buf_3  Q2 VGND VNB VPB VPWR Q2_buf sky130_fd_sc_ms__buf_4
+X_xor_0  Q1_buf Q2_buf VGND VNB VPB VPWR Dout sky130_fd_sc_ms__xor2_1
+X_buf_4  Dout VGND VNB VPB VPWR Dout_buf sky130_fd_sc_ms__buf_2
+.ends
+
+.subckt ADC_DigitalLib_QTZer CLK D VGND VNB VPB VPWR Q FBack
+X_buf_0  D VGND VNB VPB VPWR D_buf sky130_fd_sc_ms__buf_2
+X_FF_QTZ_0 Clk D_buf VGND VNB VPB VPWR Q sky130_fd_sc_hs__dfxtp_1
+X_DL_BLK_0 CLK VGND VNB VPB VPWR CLK_dly DL_BLK
+X_NAND2_0  CLK_dly Q VGND VNB VPB VPWR FBack_inv sky130_fd_sc_ms__nand2_1 
+X_inv_0 FBack_inv VGND VNB VPB VPWR FBack sky130_fd_sc_ms__inv_1
+.ends
+*-----------------------------------------------------------------------------------*
+* VCO
+X_vco_0 ENB Anlg_in GND GND VCA VCA Pha_VCO Vctrl ADC_AnalogLib_VCO
+*-----------------------------------------------------------------------------------*
+* UP-DOWN COUNTER
+X_UDcnt_0 Pha_VCO FBack ENB GND GND VCD VCD D1 ADC_DigitalLib_UDCnter_set
+X_UDcnt_1 Pha_DCO FBack ENB GND GND VCD VCD D2 ADC_DigitalLib_UDCnter_set
+X_qtz_0 sys_CLK D2 GND GND VCD VCD Dout FBack ADC_DigitalLib_QTZer
+*-----------------------------------------------------------------------------------*
+* DCO SET_B
+X_dco_0 D1 BS1 BS2 BS3 BS4 GND GND VCA VCA Pha_osc ADC_AnalogLib_DCO
+X_FreqDiv2_0 Pha_osc gnd gnd VCD VCD Pha_DCO FREQ_DIV2    $ FREQUENCY DIVIDER
+*------------------------------------------------------------------------------------*
+** debug zone 
+*Vsup  VDD gnd DC=1.8
+VsupA VCA gnd DC=1.8
+VsupD VCD gnd DC=1.8
+V_in  Anlg_in gnd DC=0 sin( 0.5 0.1 1K 20u 0 0 ) $ PWL(0.6 0.9 20u 0)
+V_enb enb gnd DC=0 PULSE( 0 1.8 0 20n 20n 200n 1 )
+VsClk sys_CLK gnd DC=0 PULSE( 0 1.8 0 0.1n 0.1n 20.73n 41.67n ) 
+Vbs_1 BS1 GND DC=0.3
+Vbs_2 BS2 GND DC=0.3
+Vbs_3 BS3 GND DC=0
+Vbs_4 BS4 GND DC=0
+*------------------------------------------------------------------------------------*
+.control 	$ CONTROL TESTBENCH
+set test_mode = 3
+set num_threads = 8
+set nobreak
+* mode = 0:	operation testing		1:	frequency extract*	2:	power consumption		3:	generate data for 
+if ($test_mode = 3)
+
+save sys_clk Anlg_in Pha_VCO Pha_DCO D1 D2 FBack Pha_osc Dout VCA VCD clk_div2
+* + @Vsup[i] @R_vco[i] @R_dco[i] @R_digi[i] Vcc_VCO Vcc_DCO Vcc_Digi  		$ save net information	
+
+TRAN 1n  5.05m
+*	MEAS TRAN I_adc AVG @Vsup[i]     FROM=1u TO=11.001u
+*	MEAS TRAN V_adc AVG VDD		      FROM=1u TO=11.001u
+*	MEAS TRAN I_vco AVG @Vcc_VCO[i]  FROM=1u TO=11.001u
+*	MEAS TRAN V_vco AVG Vcc_VCO      FROM=1u TO=11.001u
+*	MEAS TRAN I_dco AVG @Vcc_DCO[i]  FROM=1u TO=11.001u
+*	MEAS TRAN V_dco AVG Vcc_DCO      FROM=1u TO=11.001u
+*	MEAS TRAN I_dig AVG @Vcc_Digi[i] FROM=1u TO=11.001u
+*	MEAS TRAN V_dig AVG Vcc_Digi     FROM=1u TO=11.001u	
+*	print VDD @Vsup[i] >> ./result/power_report.txt
+*plot pha_vco+8.1 D1+6.1 fback+4.1 sys_clk+2.1 D2+0.1 pha_dco-1.9 Dout-3.9
+	print sys_clk Anlg_in Dout > raw_VCO_ADC_test.txt
+end
+
+if ($test_mode = 0)
+TRAN 1n 30u
+end
+
+
+
+if ($test_mode = 1)
+	let V_start = 0
+	let V_stop  = 1
+	let V_swep 	= 0.1
+	let NoPoints = (V_stop - V_start)/V_swep + 2
+	let Vin  = unitvec(NoPoints)
+	let freq = unitvec(NoPoints)
+	let Vctr = unitvec(NoPoints)
+	let Pwer = unitvec(NoPoints)
+	let ix = 0 
+	let Vin[0] = V_start
+	save VDD "p[0]" ENB @Vsup[i] Vctrl Pha_VCO 		$ save net information
+	while Vin[ix] < V_stop+0.001
+		alter V_in DC = Vin[ix]
+		if (Vin[ix]> (V_strart + V_stop)/2)
+			TRAN 0.4n 10u
+		else
+			TRAN 0.2 5u
+		end
+		MEAS TRAN prd TRIG Pha_VCO VAL=0.8 RISE=5 TARG Pha_VCO VAL=0.8 RISE =10
+		MEAS TRAN I_vco AVG @Vsup[i] FROM=1u TO=5u
+		MEAS TRAN V_vco AVG VDD		  FROM=1u TO=5u
+		MEAS TRAN V_ctr AVG Vctrl 	  FROM=1u TO=5u
+		let freq[ix] = 5/prd
+		let Pwer[ix]=I_vco*V_vco
+		let Vctr[ix] = V_ctr
+		let ix = ix+1
+		Let Vin[ix] = Vin[ix-1]+V_swep
+	end
+
+	print Vin Vctr freq Pwer
+end
+
+if ($test_mode = 2)
+	save "VDDPIN_1_8V" @V1[i] "p[0]"
+	TRAN 0.1n 5u
+	MEAS TRAN I_vco AVG @V1[i] FROM=3u TO=4u
+	MEAS TRAN V_vco AVG VDDPIN_1_8V FROM=3u TO=4u
+	let Power=I_vco*V_vco
+	print Power
+end
+.endc
+
