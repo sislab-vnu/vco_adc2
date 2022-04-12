@@ -1,0 +1,51 @@
+* this file contains all analog circuits written by SPICE
+* lib 	: analog_library
+* tech	: 130nm Skywater
+* author: Duc-Manh Tran
+* Subcircuit    : inv_12
+*****************************************************************************
+.subckt inv_s1 A VGND VNB VPB VPWR Y Wp=8 Wn=4 L=1.2
+X0 Y A VGND VNB sky130_fd_pr__nfet_01v8 w="Wn" l="L"
+X1 Y A VPWR VPB sky130_fd_pr__pfet_01v8 w="Wp" l="L"
+.ends
+
+* Subcircuit    : cc_inv_s1
+*******************************************************************************
+.subckt cc_inv_s1 inp inn VGND VNB VPB VPWR outp outn
++ Wp12=8 Wn12=4 L12=1.2 Wp34=8 Wn34=4 L34=1.2 
+xi1 inp VGND VNB VPB VPWR outp  inv_s1 Wp="Wp12" Wn="Wn12" L="L12" 	$ INV_12-1
+xi2 inn VGND VNB VPB VPWR outn  inv_s1 Wp="Wp12" Wn="Wn12" L="L12" 	$ INV_12-2
+xi3 outp VGND VNB VPB VPWR outn inv_s1 Wp="Wp34" Wn="Wn34" L="L34"	$ INV_34-1
+xi4 outn VGND VNB VPB VPWR outp inv_s1 Wp="Wp34" Wn="Wn34" L="L34"	$ INV_34-2
+.ends
+
+* Subcircuit    : ring_osc_s1
+********************************************************************************
+.subckt ring_osc_s1 p[0] p[1] p[2] p[3] p[4]
++ p_n[0] p_n[1] p_n[2] p_n[3] p_n[4] VGND VNB VPB VPWR
++ Wp12=4 Wn12=4 L12=1.2 Wp34=4 Wn34=4 L34=1.2 
+Xc1 p[4] p_n[4] VGND VNB VPB VPWR p[0] p_n[0] cc_inv_s1		$ CC_INV-1
++ Wp12="Wp12" Wn12="Wn12" L12="L12"
++ Wp34="Wp34" Wn34="Wn34" L34="L34"
+Xc2 p[0] p_n[0] VGND VNB VPB VPWR p[1] p_n[1] cc_inv_s1 	$ CC_INV-2
++ Wp12="Wp12" Wn12="Wn12" L12="L12"
++ Wp34="Wp34" Wn34="Wn34" L34="L34"
+Xc3 p[1] p_n[1] VGND VNB VPB VPWR p[2] p_n[2] cc_inv_s1		$ CC_INV-3
++ Wp12="Wp12" Wn12="Wn12" L12="L12"
++ Wp34="Wp34" Wn34="Wn34" L34="L34"
+Xc4 p[2] p_n[2] VGND VNB VPB VPWR p[3] p_n[3] cc_inv_s1	$ CC_INV-4
++ Wp12="Wp12" Wn12="Wn12" L12="L12"
++ Wp34="Wp34" Wn34="Wn34" L34="L34"
+Xc5 p[3] p_n[3] VGND VNB VPB VPWR p[4] p_n[4] cc_inv_s1	$ CC_INV-5
++ Wp12="Wp12" Wn12="Wn12" L12="L12"
++ Wp34="Wp34" Wn34="Wn34" L34="L34"
+.ends
+
+.subckt vco p[0] p[1] p[2] p[3] p[4] input enb VDDPIN VSSPIN v_ctr
+Xro_1 p[0] p[1] p[2] p[3] p[4] v_ctr enb VDDPIN VSSPIN ring_osc W=4 L=1.2
+Xconb_1 VSSPIN VSUBS VDDPIN VDDPIN hi_logic lo_logic sky130_fd_sc_hd__conb_1
+Xeinvp_1 hi_logic enb VSSPIN VSUBS VDDPIN VDDPIN p[0] sky130_fd_sc_hd__einvp_1
+R0 v_ctr input sky130_fd_pr__res_generic_po w=2e+06u l=4.15e+06u
+R1 v_ctr VSSPIN sky130_fd_pr__res_generic_po w=2e+06u l=4.15e+06u
+.ends
+
