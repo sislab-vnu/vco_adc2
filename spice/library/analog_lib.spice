@@ -1,46 +1,153 @@
 * this file contains all analog circuits written by SPICE
 * lib 	: analog_library
 * tech	: 130nm Skywater
-* author: Duc-Manh Tran
-
-* Subcircuit    : inv_12
+* author: Duc-Manh Tran 
+** 
 *****************************************************************************
-.subckt inv_12 y a VDDPIN  VSSPIN VPBPIN VNBPIN
-XM1_P a y VDDPIN VPBPIN sky130_fd_pr__pfet_01v8 w=6 l=3.6 nf=2
-XM2_N a y VSSPIN VNBPIN sky130_fd_pr__nfet_01v8 w=6 l=3.6 nf=2
+
+** Subcircuit    : inv_s1
+.subckt inv_s1 A VGND VNB VPB VPWR Y Wp=8 Wn=4 L=1.2
+X0 VPWR A Y VPB sky130_fd_pr__pfet_01v8 w="Wp" l="L"
+X1 VGND A Y VNB sky130_fd_pr__nfet_01v8_lvt w="Wn" l="L"
 .ends
 
-* Subcircuit    : inv_34
-*****************************************************************************
-.subckt inv_34 y a VDDPIN  VSSPIN  VPBPIN  VNBPIN
-XM1_P a y VDDPIN VPBPIN sky130_fd_pr__pfet_01v8 w=5 l=3.1 nf=1
-XM2_N a y VSSPIN VNBPIN sky130_fd_pr__nfet_01v8 w=5 l=3.1 nf=1
+** Subcircuit    : inv_s2
+.subckt inv_s2 A VGND VNB VPB VPWR Y Wp12=8 Wn12=4 L12=1.2
+X0_n Y A VGND VNB sky130_fd_pr__nfet_01v8 w="Wn12" l="L12"
+X1_p VPWR A Y VPB sky130_fd_pr__pfet_01v8 w="Wp12" l="L12"
+X2_n VGND A Y VNB sky130_fd_pr__nfet_01v8 w="Wn12" l="L12"
+X3_p Y A VPWR VPB sky130_fd_pr__pfet_01v8 w="Wp12" l="L12"
 .ends
 
-* Subcircuit    : cc_inv
-*******************************************************************************
-.subckt cc_inv inp inn outp outn vdd vss VSUBS
-xi1 inp outp vdd vss vdd VSUBS inv_12 
-xi2 inn outn vdd vss vdd VSUBS inv_12 
-xi3 outp outn vdd vss vdd VSUBS inv_34
-xi4 outn outp vdd vss vdd VSUBS inv_34
+* Subcircuit    : cc_inv_s1
+.subckt cc_inv_s1 inp inn VGND VNB VPB VPWR outp outn
++ Wp12=8 Wn12=4 L12=1.2 Wp34=8 Wn34=4 L34=1.2
+xi1 inp VGND VNB VPB VPWR outp  inv_s1 Wp="Wp12" Wn="Wn12" L="L12"    $ INV_12-1
+xi2 inn VGND VNB VPB VPWR outn  inv_s1 Wp="Wp12" Wn="Wn12" L="L12"    $ INV_12-2
+xi3 outp VGND VNB VPB VPWR outn inv_s1 Wp="Wp34" Wn="Wn34" L="L34"    $ INV_34-1
+xi4 outn VGND VNB VPB VPWR outp inv_s1 Wp="Wp34" Wn="Wn34" L="L34"    $ INV_34-2
 .ends
 
-* Subcircuit    : ring_osc
-********************************************************************************
-.subckt ring_osc p[0] p[1] p[2] p[3] p[4] input vdd VSUBS
-Xc2 p[0] p_n[0] p[1] p_n[1] vdd input VSUBS cc_inv 
-Xc3 p[1] p_n[1] p[2] p_n[2] vdd input VSUBS cc_inv 
-Xc4 p[2] p_n[2] p[3] p_n[3] vdd input VSUBS cc_inv
-Xc5 p[3] p_n[3] p[4] p_n[4] vdd input VSUBS cc_inv
-Xc6 p[4] p_n[4] p[0] p_n[0] vdd input VSUBS cc_inv
+* Subcircuit    : ring_osc_s1
+.subckt ring_osc_s1 VGND VNB VPB VPWR p[0] p[1] p[2] p[3] p[4] p_n[0] p_n[1] p_n[2] p_n[3] p_n[4]
++ Wp12=8 Wn12=4 L12=1.2 Wp34=8 Wn34=4 L34=1.2
+Xc1 p[4] p_n[4] VGND VNB VPB VPWR p[0] p_n[0] cc_inv_s1     $ CC_INV-1
++ Wp12="Wp12" Wn12="Wn12" L12="L12"
++ Wp34="Wp34" Wn34="Wn34" L34="L34"
+Xc2 p[0] p_n[0] VGND VNB VPB VPWR p[1] p_n[1] cc_inv_s1     $ CC_INV-2
++ Wp12="Wp12" Wn12="Wn12" L12="L12"
++ Wp34="Wp34" Wn34="Wn34" L34="L34"
+Xc3 p[1] p_n[1] VGND VNB VPB VPWR p[2] p_n[2] cc_inv_s1     $ CC_INV-3
++ Wp12="Wp12" Wn12="Wn12" L12="L12"
++ Wp34="Wp34" Wn34="Wn34" L34="L34"
+Xc4 p[2] p_n[2] VGND VNB VPB VPWR p[3] p_n[3] cc_inv_s1 $ CC_INV-4
++ Wp12="Wp12" Wn12="Wn12" L12="L12"
++ Wp34="Wp34" Wn34="Wn34" L34="L34"
+Xc5 p[3] p_n[3] VGND VNB VPB VPWR p[4] p_n[4] cc_inv_s1 $ CC_INV-5
++ Wp12="Wp12" Wn12="Wn12" L12="L12"
++ Wp34="Wp34" Wn34="Wn34" L34="L34"
 .ends
 
-.subckt vco p[0] p[1] p[2] p[3] p[4] input enb vdd vss v_ctr
-Xro_1 p[0] p[1] p[2] p[3] p[4] v_ctr enb vdd vss ring_osc
-Xconb_1 vss VSUBS vdd vdd hi_logic lo_logic sky130_fd_sc_hd__conb_1
-Xeinvp_1 hi_logic enb vss VSUBS vdd vdd p[0] sky130_fd_sc_hd__einvp_1
-R0 v_ctr input sky130_fd_pr__res_generic_po w=2e+06u l=4.15e+06u
-R1 v_ctr vss sky130_fd_pr__res_generic_po w=2e+06u l=4.15e+06u
+.subckt OSC_START ENB VGND VNB VPB VPWR START   $ STARTUP OSCILLATION
+Xconb_1 VGND VNB VPB VPWR hi_logic lo_logic sky130_fd_sc_hd__conb_1
+Xeinvp_1 hi_logic ENB VGND VNB VPB VPWR START sky130_fd_sc_hd__einvp_1
 .ends
 
+.subckt ADC_AnalogLib_VCO ENB Anlg_in VGND VNB VPB VPWR p[0] Vctrl
+X_ringOsc_0 Vctrl Vctrl VPB VPWR p[0] p[1] p[2] p[3] p[4] p_n[0] p_n[1] p_n[2] p_n[3] p_n[4] ring_osc_s1
++ Wp12=10 Wn12=4 L12=4 Wp34=5.5 Wn34=2.2 L34=4
+X_enb enb VGND VNB VPB VPWR p[2] OSC_START
+R1 Anlg_in Vctrl R=200
+R2 Vctrl gnd R=200
+.ends
+
+.subckt PWR_CHNEL_1 A1 A2 VPB VPWR Y2 W1=4 L1=1 W2=4 L2=1
+XM1_BIAS1_f1 Y1 A1 VPWR VPB sky130_fd_pr__pfet_01v8_hvt w="W1" l="L1"
+XM1_BIAS2_f1 Y2 A2 Y1 VPB sky130_fd_pr__pfet_01v8_hvt    w="W2" l="L2"
+.ends
+
+.subckt PWR_CHNEL_2 A1 A2 VPB VPWR Y2 W1=4 L1=1 W2=4 L2=1
+XM1_BIAS1_f1 Y1 A1 VPWR VPB sky130_fd_pr__pfet_01v8_hvt w="W1" l="L1"
+XM1_BIAS1_f2 VPWR A1 Y1 VPB sky130_fd_pr__pfet_01v8_hvt w="W1" l="L1"
+XM1_BIAS2_f1 Y2 A2 Y1 VPB sky130_fd_pr__pfet_01v8_hvt  w="W2" l="L2"
+XM1_BIAS2_f2 Y1 A2 Y2 VPB sky130_fd_pr__pfet_01v8_hvt  w="W2" l="L2
+.ends
+
+.subckt I_LOCK KEY ADD_PWR VGND VNB VPB VPWR I_SUP
++ Wp_lk=4 Lp_lk=1 Wn_lk=2 Ln_lk=1 Wp_op=4 Lp_op=1 Wn_op=2 Ln_op=1 Rl=100
+X_inv_1 KEY VGND VNB VPB VPWR KEY_INV sky130_fd_sc_hd__inv_2
+** Lock
+XMp_lk_f1 ADD_PWR KEY rLOAD VPB sky130_fd_pr__pfet_01v8     w="Wp_lk" l="Lp_lk"
+XMp_lk_f2 rLOAD KEY ADD_PWR VPB sky130_fd_pr__pfet_01v8     w="Wp_lk" l="Lp_lk"
+XMn_lk_f1 ADD_PWR KEY_INV rLOAD VNB sky130_fd_pr__nfet_01v8 w="Wn_lk" l="Ln_lk"
+XMn_lk_f2 rLOAD KEY_INV ADD_PWR VNB sky130_fd_pr__nfet_01v8 w="Wn_lk" l="Ln_lk"
+R_dsch rLOAD GND R={Rl}
+** Open
+XMp_op_f1 ADD_PWR KEY_INV I_SUP VPB sky130_fd_pr__pfet_01v8 w="Wp_op" l="Lp_op"
+XMp_op_f2 I_SUP KEY_INV ADD_PWR VPB sky130_fd_pr__pfet_01v8 w="Wp_op" l="Lp_op"
+XMn_op_f1 ADD_PWR KEY I_SUP VNB sky130_fd_pr__nfet_01v8     w="Wn_op" l="Ln_op"
+XMn_op_f2 I_SUP KEY ADD_PWR VNB sky130_fd_pr__nfet_01v8     w="Wn_op" l="Ln_op"
+.ends
+
+.subckt I_DAC KEY V_BIAS1 V_BIAS2 V_BIAS3 V_BIAS4 VGND VNB VPB VPWR I_SUP   $INTERNAL 1-BIT DAC SUB CIRCUIT
++ W_br1=4 L_br1=1 W_br2=4 L_br2=1
++ Wp_lk=4 Lp_lk=1 Wn_lk=2 Ln_lk=1 Rl=100
+X_BRAN_1 V_BIAS1 V_BIAS2 VPB VPWR I_SUP $ Branch_1 Transistors Power Supply (maintain)
++ PWR_CHNEL_1 W1="W_br1" L1="L_br1" W2="W_br1" L2="L_br1"
+X_BRAN_2 V_BIAS3 V_BIAS4 VPB VPWR ADD_PWR    $ Branch_2 Transistors Power Supply (addition)
++ PWR_CHNEL_2 W1="W_br2" L1="L_br2" W2="W_br2" L2="L_br2"
+X_LOCK KEY ADD_PWR VGND VNB VPB VPWR I_SUP I_LOCK       $ Digital Control Block
++ Wp_lk="Wp_lk" Lp_lk="Lp_lk" Wn_lk="Wn_lk" Ln_lk="Ln_lk"
++ Wp_op="Wp_lk" Lp_op="Lp_lk" Wn_op="Wn_lk" Ln_op="Ln_lk" Rl="Rl"
+.ends
+
+.subckt CapArr NDp[0] NDp[1] NDp[2] NDp[3] NDp[4] NDn[0] NDn[1] NDn[2] NDn[3] NDn[4] Cap="Cap"
+C1p NDp[0] gnd C=Cap       $ CAPACITOR ARRAY
+C2p NDp[1] gnd C=Cap
+C3p NDp[2] gnd C=Cap
+C4p NDp[3] gnd C=Cap
+C5p NDp[4] gnd C=Cap
+C1n NDn[0] gnd C=Cap
+C2n NDn[1] gnd C=Cap
+C3n NDn[2] gnd C=Cap
+C4n NDn[3] gnd C=Cap
+C5n NDn[4] gnd C=Cap
+.ends
+
+.subckt FREQ_DIV2 CLK VGND VNB VPB VPWR CLK_DIV2_buf   $ FREQUENCY DIVIDER
+X_buffer1 CLK VGND VNB VPB VPWR CLK_BUF sky130_fd_sc_ms__clkbuf_2
+X_STAGE1 CLK_BUF D1 VGND VNB VPB VPWR CLK_DIV2 Q1N sky130_fd_sc_ms__dfxbp_1
+X_dly1 Q1N VGND VNB VPB VPWR DL1 sky130_fd_sc_ms__dlygate4sd3_1
+X_dly2 DL1 VGND VNB VPB VPWR DL2 sky130_fd_sc_ms__dlygate4sd3_1
+X_dly3 DL2 VGND VNB VPB VPWR DL3 sky130_fd_sc_ms__dlygate4sd3_1
+X_dly4 DL3 VGND VNB VPB VPWR DL4 sky130_fd_sc_ms__dlygate4sd3_1
+X_dly5 DL4 VGND VNB VPB VPWR DL5 sky130_fd_sc_ms__dlygate4sd3_1
+X_dly6 DL5 VGND VNB VPB VPWR DL6 sky130_fd_sc_ms__dlygate4sd3_1
+X_dly7 DL6 VGND VNB VPB VPWR DL7 sky130_fd_sc_ms__dlygate4sd3_1
+X_dly8 DL7 VGND VNB VPB VPWR DL8 sky130_fd_sc_ms__dlygate4sd3_1
+X_dly9 DL8 VGND VNB VPB VPWR D1 sky130_fd_sc_ms__dlygate4sd3_1
+X_buffer2 CLK_DIV2 VGND VNB VPB VPWR CLK_DIV2_buf sky130_fd_sc_ms__clkbuf_1
+.ends
+
+
+.subckt FREQ_DIV4 CLK VGND VNB VPB VPWR CLK_DIV4 CLK_DIV2   $ FREQUENCY DIVIDER
+X_buffer1 CLK VGND VNB VPB VPWR CLK_BUF sky130_fd_sc_ms__clkbuf_1
+X_STAGE1 CLK_BUF D1 VGND VNB VPB VPWR CLK_DIV2 Q1N sky130_fd_sc_ms__dfxbp_1
+X_dly1 Q1N VGND VNB VPB VPWR DL1 sky130_fd_sc_ms__dlygate4sd3_1
+X_dly2 DL1 VGND VNB VPB VPWR DL2 sky130_fd_sc_ms__dlygate4sd3_1
+X_dly3 DL2 VGND VNB VPB VPWR D1 sky130_fd_sc_ms__dlygate4sd3_1
+
+X_buffer2 CLK_DIV2 VGND VNB VPB VPWR CLK_S2 sky130_fd_sc_ms__clkbuf_2
+X_STAGE2 CLK_S2 D2 VGND VNB VPB VPWR CLK_DIV4 Q2N sky130_fd_sc_ls__dfxbp_1
+X_dly4 Q2N VGND VNB VPB VPWR DL3 sky130_fd_sc_ms__dlygate4sd3_1
+X_dly5 DL3 VGND VNB VPB VPWR DL4 sky130_fd_sc_ms__dlygate4sd3_1
+X_dly6 DL4 VGND VNB VPB VPWR D2 sky130_fd_sc_ms__dlygate4sd3_1
+.ends
+
+.subckt ADC_AnalogLib_DCO D_ctrl BS1 BS2 BS3 BS4 VGND VNB VPB VPWR p[0]
+X_IDAC_0 D_ctrl BS1 BS2 BS3 BS3 VGND VNB VPB VPWR I_sup I_DAC    $ INTERNAL 1-BIT DAC
++ W_br1=1 L_br1=0.5 W_br2=2.4 L_br2=0.5
++ Wp_lk=4    Lp_lk=0.5 Wn_lk=2   Ln_lk=0.5 Rl=50000
+X_ringOsc_0 GND GND I_sup I_sup p[0] p[1] p[2] p[3] p[4] p_n[0] p_n[1] p_n[2] p_n[3] p_n[4] RING_OSC_S1
++ Wp12=5 Wn12=2 L12=2 Wp34=2.5 Wn34=1 L34=2
+.ends
