@@ -1,4 +1,4 @@
-v {xschem version=2.9.9 file_version=1.2 }
+v {xschem version=3.0.0 file_version=1.2 }
 G {}
 K {}
 V {}
@@ -74,8 +74,8 @@ end
 .endc
 "}
 C {devices/code.sym} 190 -130 0 0 {name=lib only_toplevel=false value="
-.lib /home/dkit/efabless/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
-.inc /home/dkit/efabless/pdks/sky130A/libs.ref/sky130_fd_sc_ms/spice/sky130_fd_sc_ms.spice"}
+.lib /home/dkits/efabless/mpw-5/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.inc /home/dkits/efabless/mpw-5/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice"}
 C {devices/lab_wire.sym} 260 -320 0 0 {name=l1 sig_type=std_logic lab=ENB}
 C {devices/lab_wire.sym} 420 -350 2 0 {name=l2 sig_type=std_logic lab=pha_vco}
 C {devices/code_shown.sym} 330 -160 0 0 {name=parameter only_toplevel=false value="
@@ -87,4 +87,4 @@ C {devices/code_shown.sym} 330 -160 0 0 {name=parameter only_toplevel=false valu
 .param Wp34=5
 .param Wn34=2
 "}
-C {/home/manhtd/working/git/mpw-three/xschem/lib/AnalogLib_VCO.sym} 350 -350 0 0 {name=Xvco_1 L12=\\"L12\\" Wp12=\\"Wp12\\" Wn12=\\"Wn12\\" L34=\\"L34\\" Wp34=\\"Wp34\\" Wn34=\\"Wn34\\"}
+C {../lib/AnalogLib_VCO.sym} 350 -350 0 0 {name=Xvco_1 L12=\\"L12\\" Wp12=\\"Wp12\\" Wn12=\\"Wn12\\" L34=\\"L34\\" Wp34=\\"Wp34\\" Wn34=\\"Wn34\\"}
