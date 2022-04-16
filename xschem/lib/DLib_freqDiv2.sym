@@ -1,0 +1,22 @@
+v {xschem version=2.9.9 file_version=1.2 }
+G {}
+K {type=subcircuit
+format="@name @@clk @VGND @VNB @VPB @VPWR @@clkDiv2 @symname"
+template="name=Xdiv2_1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD"
+extra=" VGND VNB VPB VPWR"
+highlight=true}
+V {}
+S {}
+E {}
+L 4 -60 -10 -40 -10 {}
+L 4 40 -10 60 -10 {}
+L 4 -40 20 40 20 {}
+L 4 -40 -40 -40 20 {}
+L 4 -40 -40 40 -40 {}
+L 4 40 -40 40 20 {}
+B 5 -62.5 -12.5 -57.5 -7.5 {name=clk dir=in }
+B 5 57.5 -12.5 62.5 -7.5 {name=clkDiv2 dir=out }
+T {@symname} -38.5 4 0 0 0.22 0.22 {}
+T {@name} -35 -37 0 0 0.2 0.2 {}
+T {clk} -40 -17 0 0 0.2 0.2 {}
+T {clkDiv2} 40 -17 0 1 0.2 0.2 {}
