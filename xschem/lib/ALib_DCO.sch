@@ -63,7 +63,7 @@ C {devices/code_shown.sym} 1020 -240 0 0 {name=RO_par only_toplevel=false value=
 .param Wp34=2.5
 .param Wn34=1"}
 C {ring_osc.sym} 380 -190 0 0 {name=Xro_1 L12=\\"L12\\" Wp12=\\"Wp12\\" Wn12=\\"Wn12\\" L34=\\"L34\\" Wp34=\\"Wp34\\" Wn34=\\"Wn34\\"}
-C {AnalogLib_IDAC.sym} 180 -140 0 0 {name=X_idac_1
+C {ALib_IDAC.sym} 180 -140 0 0 {name=X_idac_1
 W_br1=\\"W_br1\\" L_br1=\\"L_br1\\"
 W_br2=\\"W_br2\\" L_br2=\\"L_br2\\"
 Wp_lk=\\"Wp_lk\\" Lp_lk=\\"Lp_lk\\"
