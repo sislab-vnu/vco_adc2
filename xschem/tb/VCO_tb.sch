@@ -33,8 +33,8 @@ C {devices/lab_pin.sym} 50 -505 0 0 {name=l19 sig_type=std_logic lab=ENB}
 C {devices/code.sym} 50 -130 0 0 {name=control only_toplevel=false value="
 .control
 set nobreak
-set num_threads=8
-set test_mode = 1
+set num_threads=4
+set test_mode = 0
 * mode = 0: operation testing				1:  frequency extraction    2:  power consumption
 if ($test_mode = 0)
     TRAN 1n 5u
@@ -74,8 +74,13 @@ end
 .endc
 "}
 C {devices/code.sym} 190 -130 0 0 {name=lib only_toplevel=false value="
+** Library on VNU server
 .lib /home/dkits/efabless/mpw-5/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
-.inc /home/dkits/efabless/mpw-5/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice"}
+.inc /home/dkits/efabless/mpw-5/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
+** Library on Home PC
+*.lib /home/dkit/efabless/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+*.inc /home/dkit/efabless/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
+"}
 C {devices/lab_wire.sym} 260 -320 0 0 {name=l1 sig_type=std_logic lab=ENB}
 C {devices/lab_wire.sym} 420 -350 2 0 {name=l2 sig_type=std_logic lab=pha_vco}
 C {devices/code_shown.sym} 330 -160 0 0 {name=parameter only_toplevel=false value="
@@ -87,4 +92,4 @@ C {devices/code_shown.sym} 330 -160 0 0 {name=parameter only_toplevel=false valu
 .param Wp34=5
 .param Wn34=2
 "}
-C {../lib/AnalogLib_VCO.sym} 350 -350 0 0 {name=Xvco_1 L12=\\"L12\\" Wp12=\\"Wp12\\" Wn12=\\"Wn12\\" L34=\\"L34\\" Wp34=\\"Wp34\\" Wn34=\\"Wn34\\"}
+C {../lib/ALib_VCO.sym} 350 -350 0 0 {name=Xvco_1 L12=\\"L12\\" Wp12=\\"Wp12\\" Wn12=\\"Wn12\\" L34=\\"L34\\" Wp34=\\"Wp34\\" Wn34=\\"Wn34\\"}
