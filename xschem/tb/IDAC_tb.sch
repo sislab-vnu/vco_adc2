@@ -1,4 +1,4 @@
-v {xschem version=2.9.9 file_version=1.2 }
+v {xschem version=3.0.0 file_version=1.2 }
 G {}
 K {}
 V {}
@@ -82,8 +82,12 @@ C {devices/vsource.sym} 1040 -210 0 1 {name=V3 value="DC=1.8 $ PULSE( 0 1.8 0 0.
 C {devices/gnd.sym} 1040 -160 0 0 {name=l29 lab=GND}
 C {devices/lab_pin.sym} 1040 -270 2 0 {name=l30 sig_type=std_logic lab=D1}
 C {devices/code.sym} 80 -110 0 0 {name=lib only_toplevel=false value= "
-.lib /home/dkit/efabless/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
-.inc /home/dkit/efabless/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
+** Library on VNU server
+.lib /home/dkits/efabless/mpw-5/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.inc /home/dkits/efabless/mpw-5/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
+** Library on Home PC
+*.lib /home/dkit/efabless/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+*.inc /home/dkit/efabless/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
 "}
 C {devices/code.sym} 240 -110 0 0 {name=control only_toplevel=false value="
 .control
@@ -142,8 +146,8 @@ C {devices/code_shown.sym} 580 -90 0 0 {name=RO_par only_toplevel=false value=".
 .param L34=2 
 .param Wp34=2.5
 .param Wn34=1"}
-C {ring_osc.sym} 400 -310 0 0 {name=Xro_1 L12=\\"L12\\" Wp12=\\"Wp12\\" Wn12=\\"Wn12\\" L34=\\"L34\\" Wp34=\\"Wp34\\" Wn34=\\"Wn34\\"}
-C {AnalogLib_IDAC.sym} 200 -350 0 0 {name=X_idac_1
+C {../lib/ring_osc.sym} 400 -310 0 0 {name=Xro_1 L12=\\"L12\\" Wp12=\\"Wp12\\" Wn12=\\"Wn12\\" L34=\\"L34\\" Wp34=\\"Wp34\\" Wn34=\\"Wn34\\"}
+C {../lib/ALib_IDAC.sym} 200 -350 0 0 {name=X_idac_1
 W_br1=\\"W_br1\\" L_br1=\\"L_br1\\"
 W_br2=\\"W_br2\\" L_br2=\\"L_br2\\"
 Wp_lk=\\"Wp_lk\\" Lp_lk=\\"Lp_lk\\"
@@ -157,4 +161,4 @@ C {devices/gnd.sym} 1040 -360 0 0 {name=l22 lab=GND}
 C {devices/lab_pin.sym} 1040 -470 2 0 {name=l32 sig_type=std_logic lab=VCCD}
 C {devices/lab_pin.sym} 540 -300 2 0 {name=l33 sig_type=std_logic lab=pha_ro}
 C {devices/lab_pin.sym} 700 -310 0 0 {name=l34 sig_type=std_logic lab=pha_dco}
-C {DLib_freqDiv2.sym} 620 -250 0 0 {name=Xdiv2_1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
+C {../lib/DLib_freqDiv2.sym} 620 -250 0 0 {name=Xdiv2_1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
