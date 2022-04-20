@@ -48,20 +48,6 @@ C {devices/lab_pin.sym} 380 -340 0 0 {name=l21 sig_type=std_logic lab=Isup}
 C {sky130_stdcells/einvp_1.sym} 670 -270 0 0 {name=x1 VGND=VGND VNB=VNB VPB=VPB VPWR=VPWR prefix=sky130_fd_sc_hd__ }
 C {devices/lab_wire.sym} 620 -270 0 0 {name=l24 sig_type=std_logic lab=VCCD}
 C {devices/lab_wire.sym} 720 -270 2 0 {name=l26 sig_type=std_logic lab=pn[0]}
-C {devices/code_shown.sym} 840 -240 0 0 {name=IDAC_param only_toplevel=false value=".param W_br1=1
-.param L_br1=0.5
-.param W_br2=2.4
-.param L_br2=0.5
-.param Wp_lk=4
-.param Lp_lk=0.5
-.param Wn_lk=2
-.param Ln_lk=0.5"}
-C {devices/code_shown.sym} 1020 -240 0 0 {name=RO_par only_toplevel=false value=".param L12=2
-.param Wp12=5
-.param Wn12=2
-.param L34=2 
-.param Wp34=2.5
-.param Wn34=1"}
 C {ring_osc.sym} 380 -190 0 0 {name=Xro_1 L12=\\"L12\\" Wp12=\\"Wp12\\" Wn12=\\"Wn12\\" L34=\\"L34\\" Wp34=\\"Wp34\\" Wn34=\\"Wn34\\"}
 C {ALib_IDAC.sym} 180 -140 0 0 {name=X_idac_1
 W_br1=\\"W_br1\\" L_br1=\\"L_br1\\"

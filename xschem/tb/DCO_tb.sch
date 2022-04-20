@@ -40,6 +40,20 @@ C {devices/lab_pin.sym} 480 -220 2 0 {name=l28 sig_type=std_logic lab=ENB}
 C {devices/vsource.sym} 780 -140 0 1 {name=V3 value="DC=1.8 $ PULSE( 0 1.8 0 0.1n 0.1n 1u 4u )"}
 C {devices/gnd.sym} 780 -90 0 0 {name=l29 lab=GND}
 C {devices/lab_pin.sym} 780 -200 2 0 {name=l30 sig_type=std_logic lab=D1}
+C {devices/code_shown.sym} 840 -240 0 0 {name=IDAC_param only_toplevel=false value=".param W_br1=1
+.param L_br1=0.5
+.param W_br2=2.4
+.param L_br2=0.5
+.param Wp_lk=4
+.param Lp_lk=0.5
+.param Wn_lk=2
+.param Ln_lk=0.5"}
+C {devices/code_shown.sym} 1020 -240 0 0 {name=RO_par only_toplevel=false value=".param L12=2
+.param Wp12=5
+.param Wn12=2
+.param L34=2 
+.param Wp34=2.5
+.param Wn34=1"}
 C {devices/code.sym} 70 -150 0 0 {name=lib only_toplevel=false value="
 ** Library on VNU server
 .lib /home/dkits/efabless/mpw-5/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
@@ -104,4 +118,4 @@ C {devices/lab_wire.sym} 130 -420 0 0 {name=l4 sig_type=std_logic lab=Vbs_34}
 C {devices/lab_wire.sym} 270 -420 2 0 {name=l5 sig_type=std_logic lab=VCCA}
 C {devices/lab_wire.sym} 280 -380 2 0 {name=l6 sig_type=std_logic lab=VCCD}
 C {devices/lab_wire.sym} 60 -280 0 0 {name=l7 sig_type=std_logic lab=D1}
-C {../lib/ALib_DCO.sym} 210 -280 0 0 {name=Xdco_1}
+C {ALib_DCO.sym} 210 -280 0 0 {name=Xdco_1 L12=0.15 Wp12=2.4 Wn12=1.2 L34=0.15 Wp34=1.2 Wn34=0.65\}}
