@@ -1,6 +1,6 @@
 //spice_top name=top;
 choose finesim -np 6 -finesim_mode=promd $ADC_PROJECT_DIR/spice/top.sp;
-bus_format [%d];
+//bus_format [%d];
 use_verilog -module dlib_updowncounter.v;
 use_verilog -module dlib_quantizer.v;
 
@@ -9,4 +9,4 @@ use_verilog -module dlib_quantizer.v;
 //a2d loth=0.5 hith=0.8 node=top.p_dco;
 //a2d vdd=top.vccd vss=top.gnd;
 
-d2a rise_time=0.3n fall_time=0.3n delay=0 hiv=1.8 lov=0 node=top.D1;
+//d2a rise_time=0.3n fall_time=0.3n delay=0 hiv=1.8 lov=0 node=top.D1;

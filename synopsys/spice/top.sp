@@ -27,8 +27,8 @@ Vclk CLK GND DC=0 PULSE( 0 1.8 0 0.1n 0.1n 20.73n 41.67n )
 *V_D1 D1 GND DC=dco_d1 PULSE( 0 1.8 0 0.1n 0.1n 50n 100n )
 
 ** Library on VNU server
-.lib /home/manhtd/working/pdks/libs.tech/hspice/sky130.lib.spice tt
-.inc /home/manhtd/working/pdks/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
+.lib ../../../pdks/libs.tech/hspice/sky130.lib.spice tt
+.inc /home/dkits/efabless/mpw-5/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
 
 *.lib /home/dkits/efabless/mpw-5/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 *.inc /home/dkits/efabless/mpw-5/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice

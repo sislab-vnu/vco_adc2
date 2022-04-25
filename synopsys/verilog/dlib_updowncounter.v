@@ -1,5 +1,6 @@
-`include "/home/dkits/efabless/mpw-5/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/primitives.v"
-`include "/home/dkits/efabless/mpw-5/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v"
+// `default_nettype none
+// `include "/home/dkits/efabless/mpw-5/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v"
+// `include "/home/dkits/efabless/mpw-5/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/primitives.v"
 ‘define GND 0
 ‘define VDD 1.8
 
