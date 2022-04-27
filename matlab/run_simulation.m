@@ -1,12 +1,15 @@
+VCO_profile = readtable('./Workspace/VCO_extraction_1.txt',...
+                        'Delimiter',' ','ReadVariableNames',true,...
+                        'Format', '%f%f%f%f%f', 'HeaderLines', 0);
 % Input signal
-inputFreq = 11*10^3;     % frequency of input signal (Hz)
-inputAmp = 0.05;        % amplitude of input signal (V)
-
+inputFreq = 1*10^3;     % frequency of input signal (Hz)
+inputAmp = 0.45;        % amplitude of input signal (V)
+V_bs2=0.4;
 % VCO, DCO parameters
-V_bs2 = 0.4;
-K_vco = [11.14 5.7]*10^6;   % [sensitive  central_frequency]
-K_dco = [24 1.6]*10^6;  % [sensitive  central_frequency]
-freq_top=K_dco(1)*0.4+ K_dco(2)
+%K_vco = [6.32 5.819]*10^6;   % [sensitive  central_frequency]V_bs2 = 0.4;
+K_vco = [6.3468 5.3929]*10^6;   % [sensitive  central_frequency]
+K_dco = [20 2.18]*10^6;  % [sensitive  lowest_frequency]
+freq_top=K_dco(1)*0.4 + K_dco(2)
 freq_bot=K_dco(2)
 % System Parameters
 F_sample = 24*10^6;     % Over sampling frequency of ADC
@@ -14,7 +17,8 @@ nop = 1;                % number of phases (nop)
 OSR = 500;              % Over sampling rate
 
 % Simulation parameters
-transient_time = 4e-3;  % Transient time of simulation
+time = 1.2;
+transient_time = time*10e-3;  % Transient time of simulation
 div = 40;               % Time division
 %%
 run second_order_noise_shaping_behavioral_model.m;
@@ -22,8 +26,8 @@ run second_order_noise_shaping_behavioral_model.m;
 %% Plot result 
 count2 = sum (qtz(1:OSR));
 figure(1);
-plot_fft(qtz - mean(qtz), F_sample, 8192*8)
-xlim([0 24000]);
+plot_fft(qtz-mean(qtz), F_sample, 2048*128)
+%xlim([0 24000]);
 figure(2)
 plot(decimation(qtz, F_sample, OSR));
 output = decimation(qtz, F_sample, OSR);

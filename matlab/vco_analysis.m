@@ -1,12 +1,12 @@
-profile = "vcoProfile9{1, 1}";
-n_order = 1;        %% set order of function
-ub = 61; lb = 1;    %% set bounds of signal
-[K_profile, freq_cal, acc]=vcoAnalysis(n_order,...
-    eval(profile+".Vin"), eval(profile+".Freq"), ub, lb);
+profile = "VCO_profile";
+n_order = 3;        %% set order of function
+ub = 1001; lb = 1;    %% set bounds of signal
+[K_vco, freq_cal, acc]=vcoAnalysis(n_order,...
+    eval(profile+".Vin"), eval(profile+".freq"), ub, lb);
 %%
 figure (1);
 subplot ( 2, 2, 1);
-scatter(eval(profile+".Vin"), eval(profile+".Freq"));
+scatter(eval(profile+".Vin"), eval(profile+".freq"));
 hold on;
 plot (eval(profile+".Vin(lb:ub)"), freq_cal(lb:ub));
 subplot ( 2, 2, 2);
@@ -33,6 +33,8 @@ function [kvco, y, diff_freq] = vcoAnalysis(n_order, vol, freq, ub, lb)
             y = kvco(1)*x.^4 + kvco(2)*x.^3 + kvco(3)*x.^2 + kvco(4)*x + kvco(5);
         case 5
             y = kvco(1)*x.^5 + kvco(2)*x.^4 + kvco(3)*x.^3 + kvco(4)*x.^2 + kvco(5)*x + kvco(6);
+        case 6
+            y = kvco(1)*x.^6 + kvco(2)*x.^5 + kvco(3)*x.^4 + kvco(4)*x.^3 + kvco(5)*x.^2 + kvco(6)*x + kvco(7);
     end
 diff_freq =  y - freq;
 end
