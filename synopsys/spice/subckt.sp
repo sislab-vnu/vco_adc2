@@ -32,12 +32,14 @@ R1 Anlg_in Vctrl R=200 m=1
 *.iopin VCCD
 *.ipin ENB
 x1 VPWR ENB VGND VNB VPB VPWR pn[0] sky130_fd_sc_hd__einvp_1
-Xro_1 VGND VNB VPB Isup p_osc p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4] ring_osc L12="L12"
+Xro_1 VGND VNB VPB I_sup p_osc p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4] ring_osc L12="L12"
 + Wp12="Wp12" Wn12="Wn12" L34="L34" Wp34="Wp34" Wn34="Wn34"
+
 X_idac_1 Dctrl Vbs_12 Vbs_12 Vbs_34 Vbs_34 VGND VCCA Isup ALib_IDAC W_br1="W_br1" L_br1="L_br1"
 + W_br2="W_br2" L_br2="L_br2" Wp_lk="Wp_lk" Lp_lk="Lp_lk" Wn_lk="Wn_lk" Ln_lk="Wn_lk"
 x2 p_osc VGND VGND VCCD VCCD pha_ro sky130_fd_sc_hd__buf_2
 Xdiv2_1 pha_ro VGND VGND VCCD VCCD p_dco DLib_freqDiv2
+R_debug Isup I_sup R=1
 .ends
 
 * expanding   symbol:  ALib_IDAC.sym # of pins=7
