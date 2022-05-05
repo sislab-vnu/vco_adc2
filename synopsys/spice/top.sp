@@ -21,7 +21,7 @@ vbs_34 vbs_34 gnd dc=0
 vcca vcca gnd dc=1.8
 vccd vccd gnd dc=1.8
 v_dd vdd  gnd dc=1.8
-v_in anlg_in gnd dc=vin sin(0.5 0.015 1k 20u 0 0)
+v_in anlg_in gnd dc=vin sin(0.5 0.35 1k 20u 0 0)
 venb enb gnd dc=0 pulse( 0 1.8 0 0.1n 0.1n 20n 1 )
 vclk clk gnd dc=0 pulse( 0 1.8 0 0.1n 0.1n 20.73n 41.67n )
 * v_d1 d1 gnd dc=dco_d1 $ pulse( 0 1.8 0 0.1n 0.1n 50n 100n )
@@ -46,15 +46,15 @@ vclk clk gnd dc=0 pulse( 0 1.8 0 0.1n 0.1n 20.73n 41.67n )
 .option parhier=local
 .param mc_mm_switch=0
 .param vin=0
-.param dco_d1=0
+.param dco_d1=1.8
 
 ** vco's parametters
-.param vco_wp12=8
-.param vco_wn12=4
-.param vco_l12=3.8
-.param vco_wp34=4.4
-.param vco_wn34=2.2
-.param vco_l34=3.8
+.param vco_wp12=6
+.param vco_wn12=6
+.param vco_l12=3.5
+.param vco_wp34=3.2
+.param vco_wn34=3.2
+.param vco_l34=3.5
 
 ** dco's parametters
 .param dco_wp12=5
@@ -63,10 +63,10 @@ vclk clk gnd dc=0 pulse( 0 1.8 0 0.1n 0.1n 20.73n 41.67n )
 .param dco_wp34=2.5
 .param dco_wn34=1
 .param dco_l34=2
-.param dco_bs12=0.3
+.param dco_bs12=0.4
 
 ** idac's parameters
-.param w_br1=0.85
+.param w_br1=1.2
 .param l_br1=0.5
 .param w_br2=2.4
 .param l_br2=0.5
@@ -78,7 +78,7 @@ vclk clk gnd dc=0 pulse( 0 1.8 0 0.1n 0.1n 20.73n 41.67n )
 
 .print v(clk) v(dout) v(anlg_in)
 
-.tran 1n 2.05m start=0 $  sweep vin 0 1.0 0.1
+.tran 1n 3.05m start=0 $  sweep vin 0 1.0 0.1
 
 * .measure tran prd trig v(p_vco) val=0.8 rise=10 targ v(p_vco) val=0.8 rise=20
 * .measure tran freq_v param='10/prd'
@@ -88,8 +88,10 @@ vclk clk gnd dc=0 pulse( 0 1.8 0 0.1n 0.1n 20.73n 41.67n )
 ** options for finesim simulator
 *.option finesim_fsdb_version=5.6
 .option finesim_output=fsdb
-.option finesim_mode=spicehd
+.option finesim_mode=spicead:p
 .option finesim_mode="dlib*:promd":subckt
+.option runlvl=7
+.option accurate=1
 * option finesim_mode="alib_vco:spicehd":subckt
 
 ** options for hspice simulator
