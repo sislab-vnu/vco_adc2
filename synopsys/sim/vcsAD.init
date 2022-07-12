@@ -1,4 +1,4 @@
-//spice_top name=top;
+spice_top name=top;
 choose finesim -np 6 -finesim_mode=promd $ADC_PROJECT_DIR/spice/top.sp;
 //bus_format [%d];
 use_verilog -module dlib_updowncounter.v;

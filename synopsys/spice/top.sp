@@ -4,7 +4,6 @@ xvco_1 anlg_in enb gnd gnd vcca vcca p_vco alib_vco
 + l34="vco_l34" wp34="vco_wp34" wn34="vco_wn34"
 *x_buf_0 p_vco gnd gnd vdd vccd p_vco_buf sky130_fd_sc_hd__buf_1 
 
-
 x_udc_1 p_vco fback enb gnd gnd vccd vccd d1 dlib_updowncounter
 x_udc_2 p_dco fback enb gnd gnd vccd vccd d2 dlib_updowncounter
 x_qtz_1 clk d2 gnd gnd vccd vccd dout fback dlib_quantizer
@@ -21,7 +20,7 @@ vbs_34 vbs_34 gnd dc=0
 vcca vcca gnd dc=1.8
 vccd vccd gnd dc=1.8
 v_dd vdd  gnd dc=1.8
-v_in anlg_in gnd dc=vin sin(0.5 0.35 1k 20u 0 0)
+v_in anlg_in gnd dc=vin $ sin(0.5 0.4 1k 20u 0 0)
 venb enb gnd dc=0 pulse( 0 1.8 0 0.1n 0.1n 20n 1 )
 vclk clk gnd dc=0 pulse( 0 1.8 0 0.1n 0.1n 20.73n 41.67n )
 * v_d1 d1 gnd dc=dco_d1 $ pulse( 0 1.8 0 0.1n 0.1n 50n 100n )
@@ -45,8 +44,8 @@ vclk clk gnd dc=0 pulse( 0 1.8 0 0.1n 0.1n 20.73n 41.67n )
 .global gnd vdd
 .option parhier=local
 .param mc_mm_switch=0
-.param vin=0
-.param dco_d1=1.8
+.param vin=0.6
+*.param dco_d1=0
 
 ** vco's parametters
 .param vco_wp12=6
@@ -75,24 +74,29 @@ vclk clk gnd dc=0 pulse( 0 1.8 0 0.1n 0.1n 20.73n 41.67n )
 .probe tran v(p_vco) v(p_dco) v(xdco_1.p_osc) v(xdco_1.pha_ro) v(xdco_1.p_dco)
 + v(xdco_1.Isup) i(xdco_1.R_debug)
 + v(d1) v(d2) v(dout) v(clk) v(fback) v(p_vco_buf) v(anlg_in)
++ i(vcca) i(vccd) i(R_debug)
 
 .print v(clk) v(dout) v(anlg_in)
 
-.tran 1n 3.05m start=0 $  sweep vin 0 1.0 0.1
+.tran 1n 20u start=0   sweep vin 0 1.0 0.1
 
-* .measure tran prd trig v(p_vco) val=0.8 rise=10 targ v(p_vco) val=0.8 rise=20
-* .measure tran freq_v param='10/prd'
-*.measure tran prd1 trig v(p_dco) val=0.8 rise=10 targ v(p_dco) val=0.8 rise=40
-*.measure tran freq_d param='30/prd1'
-
+.measure tran prd trig v(p_vco) val=0.8 rise=10 targ v(p_vco) val=0.8 rise=20
+.measure tran freq_v param='10/prd'
+.measure tran prd1 trig v(p_dco) val=0.8 rise=10 targ v(p_dco) val=0.8 rise=40
+.measure tran freq_d param='30/prd1'
+.measure tran I_analog avg i(vcca) from=2u to=20u
+.measure tran I_digital avg i(vccd) from=2u to=20u
+.measure tran A_power param='I_analog*1.8' 
+.measure tran D_power param='I_digital*1.8' 
 ** options for finesim simulator
-*.option finesim_fsdb_version=5.6
-.option finesim_output=fsdb
-.option finesim_mode=spicead:p
-.option finesim_mode="dlib*:promd":subckt
-.option runlvl=7
-.option accurate=1
-* option finesim_mode="alib_vco:spicehd":subckt
+* .option finesim_fsdb_version=5.6
+* .option finesim_output=fsdb
+* .option finesim_mode=spicead:p
+* .option finesim_mode="dlib*:promd":subckt
+* .option runlvl=7
+* .option accurate=1
+* .option finesim_mode="alib_vco:spicehd":subckt
+.option finesim_mode=prohd
 
 ** options for hspice simulator
 *.option fsdb=1
