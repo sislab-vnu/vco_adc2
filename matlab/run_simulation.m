@@ -3,12 +3,12 @@
 %                         'Format', '%f%f%f%f%f', 'HeaderLines', 0);
 % Input signal
 inputFreq = 1*10^3;     % frequency of input signal (Hz)
-inputAmp = 0.45;        % amplitude of input signal (V)
+inputAmp = 0.4;        % amplitude of input signal (V)
 V_bs2=0.4;
 % VCO, DCO parameters
 %K_vco = [6.32 5.819]*10^6;   % [sensitive  central_frequency]V_bs2 = 0.4;
-K_vco = [6.1430 5.3471]*10^6;   % [sensitive  central_frequency]
-K_dco = [16 2.25]*10^6;  % [sensitive  lowest_frequency]
+K_vco = [6.875 5.25]*10^6;   % [sensitive  central_frequency]
+K_dco = [21.5 2]*10^6;  % [sensitive  lowest_frequency]
 freq_top=K_dco(1)*0.4 + K_dco(2)
 freq_bot=K_dco(2)
 % System Parameters

@@ -5,12 +5,12 @@ T = 41.67*10^-9;
 t_trans=20.05*10^-3;
 t=[20*10^-6:T:t_trans].';
 t_s=[20*10^-6:T*OSR:t_trans].';
-ADC_samples = readtable('./Workspace/data_Acous@120dB_1.txt', 'Delimiter',' ',...
+ADC_samples = readtable('./Workspace/data_1kHz@103dB_tt_050C.txt', 'Delimiter',' ',...
     'ReadVariableNames',true, 'Format', '%d%f%f%f', 'HeaderLines', 0);
 %ADC_samples.Properties.VariableNames = {'NaN' 'anlg_in' 'Dout'};
 ADC_samples.Dout = round(ADC_samples.Dout)/2;
-ADC_samples = [ADC_samples; ADC_samples([1201:end], :)];
-ADC_samples = [ADC_samples; ADC_samples([1201:end], :)];
+%ADC_samples = [ADC_samples; ADC_samples([1201:end], :)];
+%ADC_samples = [ADC_samples; ADC_samples([1201:end], :)];
 figure(1);
 % subplot (1,2,1);
 % index = length(ADC_samples.anlg_in);
@@ -26,7 +26,7 @@ xticks(0:0.1*10^-3:5.1*10^-3);
 xlim([0 11.1*10^-3]);
 grid on;
 figure(2);
-L_fft = 2048*128;
+L_fft = 2048*129;
 qtz = ADC_samples.Dout.';
 plot_fft(qtz-mean(qtz), F_sample, L_fft);
 x_const= [24000 24000];
