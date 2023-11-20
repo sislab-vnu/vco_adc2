@@ -10,8 +10,14 @@ fs = 24*10^6;
 % x2 = impulse(c2d(tf([1], [1 0 0]), 1), 10);
 % 
 % K = [x1 x2]\l;
-Kv1 = 0.3;  f0_1 = 0.2;
-Kv2 = 0.3;  f0_2 = 0.25;
+f_sample = 24;
+f_vco = [2.5 7]; f_dco = [2 11];   %configure for 1-bit 1-phase
+f_vco_norm = f_vco/f_sample;
+f_dco_norm = f_dco/f_sample;
+Vin_pp = 0.8;    % input voltage = 0.8 Vpp
+
+Kv1 = (f_vco_norm(2)-f_vco_norm(1))/Vin_pp  ;  f0_1 = f_vco_norm(1);
+Kv2 = (f_dco_norm(2)-f_dco_norm(1));  f0_2 = f_dco_norm(1);
 
 Ac = [0 0; Kv2 0];
 Bc = [Kv1 f0_1 -1; 0 f0_2 -1;];
@@ -36,7 +42,11 @@ ABCD = [Ad Bd; Cd Dd];
 
 [P1, f] = periodogram(v, blackmanharris(length(v), 'periodic'), length(v), fs);
 figure(1);
+
 plot (f, 10*log10(P1)-60);
+xlim([0 4e5]);
+figure(2)
+plot (v(1000:1100))
 % [P2, f] = periodogram(v-y, hanning(length(v), 'periodic'), length(v), 1);
 % grid on;
 % figure(2);
