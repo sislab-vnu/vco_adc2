@@ -1,4 +1,5 @@
-v {xschem version=3.0.0 file_version=1.2 }
+v {xschem version=3.4.4 file_version=1.2
+}
 G {}
 K {}
 V {}
@@ -33,8 +34,8 @@ C {devices/lab_pin.sym} 50 -505 0 0 {name=l19 sig_type=std_logic lab=ENB}
 C {devices/code.sym} 50 -130 0 0 {name=control only_toplevel=false value="
 .control
 set nobreak
-set num_threads=4
-set test_mode = 0
+set num_threads=8
+set test_mode = 1
 * mode = 0: operation testing				1:  frequency extraction    2:  power consumption
 if ($test_mode = 0)
     TRAN 1n 5u
@@ -72,24 +73,22 @@ if ($test_mode = 2)
     print Power
 end
 .endc
-"}
-C {devices/code.sym} 190 -130 0 0 {name=lib only_toplevel=false value="
-** Library on VNU server
-.lib /home/dkits/efabless/mpw-5/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
-.inc /home/dkits/efabless/mpw-5/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
-** Library on Home PC
-*.lib /home/dkit/efabless/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
-*.inc /home/dkit/efabless/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
-"}
+"
+place=end}
+C {devices/code.sym} 190 -130 0 0 {name=lib_def
+only_toplevel=false 
+value=tcleval(".include $::SKYWATER_STDCELLS/sky130_fd_sc_hd.spice
+.lib $::SKYWATER_MODELS/sky130.lib.spice tt")
+
+place=header}
 C {devices/lab_wire.sym} 260 -320 0 0 {name=l1 sig_type=std_logic lab=ENB}
 C {devices/lab_wire.sym} 420 -350 2 0 {name=l2 sig_type=std_logic lab=pha_vco}
 C {devices/code_shown.sym} 330 -160 0 0 {name=parameter only_toplevel=false value="
-.param mc_mm_switch=0
-.param L12=4
-.param Wp12=10
+.param L12=3.65
+.param Wp12=5
 .param Wn12=4
-.param L34=4
+.param L34=3.65
 .param Wp34=5
-.param Wn34=2
+.param Wn34=4
 "}
 C {../lib/ALib_VCO.sym} 350 -350 0 0 {name=Xvco_1 L12=\\"L12\\" Wp12=\\"Wp12\\" Wn12=\\"Wn12\\" L34=\\"L34\\" Wp34=\\"Wp34\\" Wn34=\\"Wn34\\"}

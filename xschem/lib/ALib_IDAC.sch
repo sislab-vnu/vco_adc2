@@ -1,4 +1,5 @@
-v {xschem version=2.9.9 file_version=1.2 }
+v {xschem version=3.4.4 file_version=1.2
+}
 G {}
 K {}
 V {}
@@ -56,25 +57,45 @@ N 130 -50 170 -50 { lab=#net3}
 N 230 -50 250 -50 { lab=GND}
 N 250 -50 250 -40 { lab=GND}
 N 50 -380 50 -360 { lab=Dctrl}
+N 260 -430 270 -430 {
+lab=VPWR}
+N 270 -460 270 -430 {
+lab=VPWR}
+N 260 -460 270 -460 {
+lab=VPWR}
+N 260 -330 270 -330 {
+lab=#net2}
+N 270 -360 270 -330 {
+lab=#net2}
+N 260 -360 270 -360 {
+lab=#net2}
+N 440 -140 450 -140 {
+lab=Isup}
+N 440 -140 440 -120 {
+lab=Isup}
+N 440 -120 440 -110 {
+lab=Isup}
+N 440 -110 450 -110 {
+lab=Isup}
+N 70 -200 80 -200 {
+lab=add_pwr}
+N 80 -230 80 -200 {
+lab=add_pwr}
+N 70 -230 80 -230 {
+lab=add_pwr}
+N 330 -200 340 -200 {
+lab=add_pwr}
+N 340 -230 340 -200 {
+lab=add_pwr}
+N 330 -230 340 -230 {
+lab=add_pwr}
+N 180 -140 190 -140 {}
+N 180 -140 180 -110 {}
+N 180 -110 190 -110 {}
 C {devices/ipin.sym} 200 -430 0 0 {name=p3 lab=Vbs3}
 C {devices/ipin.sym} 200 -330 0 0 {name=p4 lab=Vbs4}
-C {pfet3_01v8_hvt_2.sym} 240 -430 0 0 {name=XM2s_1
-L=\\"L_br2\\"
-W=\\"W_br2\\"
-}
-C {pfet3_01v8_hvt_2.sym} 240 -330 0 0 {name=XM2s_2
-L=\\"L_br2\\"
-W=\\"W_br2\\"
-}
 C {devices/ipin.sym} 460 -430 0 0 {name=p1 lab=Vbs1}
 C {devices/ipin.sym} 460 -330 0 0 {name=p2 lab=Vbs2}
-C {pfet3_01v8_hvt_2.sym} 310 -200 0 0 {name=XM2s_3
-L=\\"Lp_lk\\"
-W=\\"Wp_lk\\"}
-C {nfet3_01v8_2.sym} 470 -140 0 1 {name=XM2s_4
-L=\\"Ln_lk\\"
-W=\\"Wn_lk\\"
-}
 C {devices/res.sym} 200 -50 1 0 {name=R1
 value=50k
 footprint=1206
@@ -117,14 +138,91 @@ model=pfet_01v8_hvt
 spiceprefix=X
 }
 C {devices/lab_pin.sym} 240 -200 0 0 {name=l7 sig_type=std_logic lab=lock}
-C {pfet3_01v8_hvt_2.sym} 50 -200 0 0 {name=XM2s_5
-L=\\"Lp_lk\\"
-W=\\"Wp_lk\\"}
-C {nfet3_01v8_2.sym} 210 -140 0 1 {name=XM2s_6
-L=\\"Ln_lk\\"
-W=\\"Wn_lk\\"
-}
 C {devices/lab_pin.sym} 280 -140 2 0 {name=l2 sig_type=std_logic lab=lock}
 C {devices/lab_pin.sym} 500 -200 0 0 {name=l6 sig_type=std_logic lab=open}
 C {devices/lab_wire.sym} 260 -260 0 0 {name=l8 sig_type=std_logic lab=add_pwr}
 C {sky130_stdcells/buf_2.sym} 50 -420 3 0 {name=x2 VGND=GND VNB=GND VPB=VPWR VPWR=VPWR prefix=sky130_fd_sc_hd__ }
+C {sky130_fd_pr/pfet_01v8_hvt.sym} 240 -430 0 0 {name=M3
+L=L_br2
+W=\\"2*W_br2\\"
+nf=2
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8_hvt
+spiceprefix=X
+}
+C {sky130_fd_pr/pfet_01v8_hvt.sym} 240 -330 0 0 {name=M4
+L=L_br2
+W=\\"2*W_br2\\"
+nf=2
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8_hvt
+spiceprefix=X
+}
+C {sky130_fd_pr/pfet_01v8_hvt.sym} 310 -200 0 0 {name=M5
+L=Lp_lk
+W=\\"2*Wp_lk\\"
+nf=2
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8_hvt
+spiceprefix=X
+}
+C {sky130_fd_pr/nfet_01v8.sym} 470 -140 0 1 {name=M6
+L=Ln_lk
+W=\\"2*Wn_lk\\"
+nf=2 
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_01v8
+spiceprefix=X
+}
+C {sky130_fd_pr/pfet_01v8_hvt.sym} 50 -200 0 0 {name=M7
+L=Lp_lk
+W=\\"2*Wp_lk\\"
+nf=2
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8_hvt
+spiceprefix=X
+}
+C {sky130_fd_pr/nfet_01v8.sym} 210 -140 0 1 {name=M8
+L=Ln_lk
+W=\\"2*Wn_lk\\"
+nf=2 
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_01v8
+spiceprefix=X
+}

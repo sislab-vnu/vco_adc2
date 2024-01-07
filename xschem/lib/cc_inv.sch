@@ -1,4 +1,5 @@
-v {xschem version=2.9.9 file_version=1.2 }
+v {xschem version=3.4.4 file_version=1.2
+}
 G {}
 K {}
 V {}
@@ -16,7 +17,7 @@ N 220 -300 220 -220 { lab=outp}
 N 300 -220 300 -140 { lab=outn}
 N 340 -220 340 -140 { lab=outn}
 N 420 -300 420 -220 { lab=outp}
-N 260 -380 260 -250 { lab=#net1}
+N 260 -380 260 -250 { lab=VPWR}
 N 380 -380 380 -250 { lab=VPWR}
 N 260 -190 260 -70 { lab=VGND}
 N 380 -190 380 -70 { lab=VGND}
@@ -26,10 +27,6 @@ N 160 -110 160 -70 { lab=VGND}
 N 160 -270 160 -230 { lab=VGND}
 N 190 -30 250 -30 { lab=VGND}
 N 190 -410 250 -410 { lab=VPWR}
-C {inv_1.sym} 160 -300 0 0 {name=Xi_1 L=\\"L12\\" Wp=\\"Wp12\\" Np=1 Wn=\\"Wn12\\" Nn=1}
-C {inv_1.sym} 160 -140 0 0 {name=Xi_2 L=\\"L12\\" Wp=\\"Wp12\\" Np=1 Wn=\\"Wn12\\" Nn=1}
-C {inv_1.sym} 260 -220 0 0 {name=Xi_3 L=\\"L34\\" Wp=\\"Wp34\\" Np=1 Wn=\\"Wn34\\" Nn=1}
-C {inv_1.sym} 380 -220 0 0 {name=Xi_4 L=\\"L34\\" Wp=\\"Wp34\\" Np=1 Wn=\\"Wn34\\" Nn=1}
 C {devices/lab_pin.sym} 160 -360 0 0 {name=l2 sig_type=std_logic lab=VPWR}
 C {devices/lab_pin.sym} 380 -360 0 0 {name=l3 sig_type=std_logic lab=VPWR}
 C {devices/lab_pin.sym} 160 -190 0 0 {name=l4 sig_type=std_logic lab=VPWR}
@@ -50,3 +47,7 @@ C {devices/iopin.sym} 250 -410 0 0 {name=p6 lab=VPWR}
 C {devices/lab_wire.sym} 230 -410 0 0 {name=l12 sig_type=std_logic lab=VPWR}
 C {devices/lab_wire.sym} 230 -30 0 0 {name=l13 sig_type=std_logic lab=VGND}
 C {devices/lab_pin.sym} 260 -360 0 0 {name=l14 sig_type=std_logic lab=VPWR}
+C {main_inv.sym} 160 -300 0 0 {name=Xi_1 L=l12 Wp=wp12 Wn=wn12}
+C {aux_inv.sym} 260 -220 0 0 {name=Xi_3 L=l34 Wp=wp34 Wn=wn34}
+C {main_inv.sym} 160 -140 0 0 {name=Xi_2 L=l12 Wp=wp12 Wn=wn12}
+C {aux_inv.sym} 380 -220 0 0 {name=Xi_4 L=l34 Wp=wp34 Wn=wn34}

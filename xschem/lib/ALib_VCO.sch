@@ -1,4 +1,5 @@
-v {xschem version=3.0.0 file_version=1.2 }
+v {xschem version=3.4.4 file_version=1.2
+}
 G {}
 K {}
 V {}
@@ -39,7 +40,7 @@ C {devices/lab_wire.sym} 270 -270 2 0 {name=l8 sig_type=std_logic lab=p[2]}
 C {devices/lab_wire.sym} 270 -230 2 0 {name=l9 sig_type=std_logic lab=p[3]}
 C {devices/lab_wire.sym} 270 -190 2 0 {name=l10 sig_type=std_logic lab=p[4]}
 C {devices/lab_wire.sym} 170 -120 0 0 {name=l12 sig_type=std_logic lab=Vctrl}
-C {sky130_stdcells/einvp_1.sym} 325 -70 0 0 {name=x1 VGND=VGND VNB=VNB VPB=VPB VPWR=VPWR prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/einvp_1.sym} 325 -70 0 0 {name=x1 VGND=GND VNB=GND VPB=VDD VPWR=VDD prefix=sky130_fd_sc_hd__ }
 C {devices/lab_wire.sym} 375 -70 2 0 {name=l21 sig_type=std_logic lab=pn[0]}
 C {devices/lab_wire.sym} 255 -70 0 0 {name=l16 sig_type=std_logic lab=VDD}
 C {ring_osc.sym} 200 -270 0 0 {name=Xro_1 L12=\\"L12\\" Wp12=\\"Wp12\\" Wn12=\\"Wn12\\" L34=\\"L34\\" Wp34=\\"Wp34\\" Wn34=\\"Wn34\\"}
