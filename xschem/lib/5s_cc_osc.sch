@@ -57,16 +57,6 @@ N 980 -200 980 -120 {
 lab=p[4]}
 N 980 -60 980 20 {
 lab=pn[4]}
-C {cc_inv.sym} 150 -90 0 0 {name=Xi_1 L12=\\"L12\\" Wp12=\\"Wp12\\" Wn12=\\"Wn12\\"
- L34=\\"L34\\" Wp34=\\"Wp34\\" Wn34=\\"Wn34\\"}
-C {cc_inv.sym} 330 -90 0 0 {name=Xi_2 L12=\\"L12\\" Wp12=\\"Wp12\\" Wn12=\\"Wn12\\"
- L34=\\"L34\\" Wp34=\\"Wp34\\" Wn34=\\"Wn34\\"}
-C {cc_inv.sym} 510 -90 0 0 {name=Xi_3 L12=\\"L12\\" Wp12=\\"Wp12\\" Wn12=\\"Wn12\\"
- L34=\\"L34\\" Wp34=\\"Wp34\\" Wn34=\\"Wn34\\"}
-C {cc_inv.sym} 690 -90 0 0 {name=Xi_4 L12=\\"L12\\" Wp12=\\"Wp12\\" Wn12=\\"Wn12\\"
- L34=\\"L34\\" Wp34=\\"Wp34\\" Wn34=\\"Wn34\\"}
-C {cc_inv.sym} 870 -90 0 0 {name=Xi_5 L12=\\"L12\\" Wp12=\\"Wp12\\" Wn12=\\"Wn12\\"
- L34=\\"L34\\" Wp34=\\"Wp34\\" Wn34=\\"Wn34\\"}
 C {devices/iopin.sym} 510 -240 0 0 {name=p1 lab=VPWR}
 C {devices/iopin.sym} 510 60 0 0 {name=p2 lab=VGND}
 C {devices/opin.sym} 230 -20 0 0 {name=p4 lab=pn\\[0\\]}
@@ -79,3 +69,8 @@ C {devices/opin.sym} 70 -170 0 0 {name=p9 lab=p\\[4\\]}
 C {devices/opin.sym} 590 -20 0 0 {name=p10 lab=pn\\[2\\]}
 C {devices/opin.sym} 770 -20 0 0 {name=p11 lab=pn\\[3\\]}
 C {devices/opin.sym} 70 -10 0 0 {name=p12 lab=pn\\[4\\]}
+C {cc_inv.sym} 150 -90 0 0 {name=Xi_1 l_main=l_main l_aux=l_aux wp=wp wn=wn}
+C {cc_inv.sym} 330 -90 0 0 {name=Xi_2 l_main=l_main l_aux=l_aux wp=wp wn=wn}
+C {cc_inv.sym} 510 -90 0 0 {name=Xi_3 l_main=l_main l_aux=l_aux wp=wp wn=wn}
+C {cc_inv.sym} 690 -90 0 0 {name=Xi_4 l_main=l_main l_aux=l_aux wp=wp wn=wn}
+C {cc_inv.sym} 870 -90 0 0 {name=Xi_5 l_main=l_main l_aux=l_aux wp=wp wn=wn}

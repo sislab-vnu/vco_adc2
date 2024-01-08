@@ -1,4 +1,5 @@
-v {xschem version=3.0.0 file_version=1.2 }
+v {xschem version=3.4.4 file_version=1.2
+}
 G {}
 K {}
 V {}
@@ -43,10 +44,14 @@ N 840 -500 840 -440 { lab=Vbs_34}
 N 580 -390 630 -390 { lab=pha_ro}
 N 1040 -380 1040 -360 { lab=GND}
 N 1040 -500 1040 -440 { lab=VCCD}
-N 680 -260 700 -260 { lab=pha_dco}
-N 700 -320 700 -260 { lab=pha_dco}
+N 680 -260 700 -260 { lab=ro_div2}
+N 700 -320 700 -260 { lab=ro_div2}
 N 540 -260 560 -260 { lab=pha_ro}
 N 540 -320 540 -260 { lab=pha_ro}
+N 680 -140 700 -140 { lab=pha_dco}
+N 700 -200 700 -140 { lab=pha_dco}
+N 540 -140 560 -140 { lab=ro_div2}
+N 540 -200 540 -140 { lab=ro_div2}
 C {devices/lab_wire.sym} 110 -350 0 0 {name=l1 sig_type=std_logic lab=D1}
 C {devices/lab_pin.sym} 150 -440 0 0 {name=l2 sig_type=std_logic lab=Vbs_12}
 C {devices/lab_pin.sym} 220 -470 0 0 {name=l3 sig_type=std_logic lab=Vbs_34}
@@ -78,17 +83,9 @@ C {devices/lab_wire.sym} 240 -200 2 0 {name=l26 sig_type=std_logic lab=pn[0]}
 C {devices/vsource.sym} 740 -230 0 0 {name=V2 value="DC=1.8 PULSE( 0 1.8 0 0.1n 0.1n 40n 1 )"}
 C {devices/gnd.sym} 740 -180 0 0 {name=l27 lab=GND}
 C {devices/lab_pin.sym} 740 -290 2 0 {name=l28 sig_type=std_logic lab=ENB}
-C {devices/vsource.sym} 1040 -210 0 1 {name=V3 value="DC=1.8 $ PULSE( 0 1.8 0 0.1n 0.1n 1u 4u )"}
+C {devices/vsource.sym} 1040 -210 0 1 {name=V3 value="DC=1.8  PULSE( 0 1.8 0 0.1n 0.1n 1u 4u )"}
 C {devices/gnd.sym} 1040 -160 0 0 {name=l29 lab=GND}
 C {devices/lab_pin.sym} 1040 -270 2 0 {name=l30 sig_type=std_logic lab=D1}
-C {devices/code.sym} 80 -110 0 0 {name=lib only_toplevel=false value= "
-** Library on VNU server
-.lib /home/dkits/efabless/mpw-5/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
-.inc /home/dkits/efabless/mpw-5/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
-** Library on Home PC
-*.lib /home/dkit/efabless/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
-*.inc /home/dkit/efabless/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
-"}
 C {devices/code.sym} 240 -110 0 0 {name=control only_toplevel=false value="
 .control
 set nobreak
@@ -97,31 +94,13 @@ set test_mode = 0
 * mode = 0: operation testing    1:  frequency extraction    2:  power consumption
 if ($test_mode = 0)
     TRAN 1n 12u
-    plot pha_dco
-    MEAS TRAN prd TRIG pha_dco VAL=0.8 RISE=10 TARG pha_dco VAL=0.8 RISE=20
+    plot pha_ro+4 ro_div2+2 pha_dco 
+    MEAS TRAN prd TRIG pha_ro VAL=0.8 RISE=10 TARG pha_ro VAL=0.8 RISE=20
     let freq = 10/prd
     echo \\"frequency: \\"
     print freq
 end
-if ($test_mode = 1)
-    let Vlow = 0
-    let Vlimit = 1.01     $ set upper bound for sweeping
-    let Vsweep = 0.2      $ set step size for sweeping
-    let NoPoints=(Vlimit-Vlow)/Vsweep+2    $ set number of points for sweeping
-    let freq =unitvec(NoPoints)
-    let Vin  =unitvec(NoPoints)
-    let Vin[0]=Vlow
-    let ix=0
-    while Vin[ix] < Vlimit
-        alter Vground DC=Vin[ix]
-        TRAN 0.4n 12u
-        MEAS TRAN prd TRIG pha_dco VAL=0.8 RISE=10 TARG pha_dco VAL=0.8 RISE =20
-        let freq[ix] = 10/prd
-        let ix = ix+1
-        Let Vin[ix] = Vin[ix-1]+Vsweep
-    end
-   print Vin freq
-end
+
 if ($test_mode = 2)
     save vdd @Vsup[i] pha_dco
     TRAN 0.1n 5u
@@ -131,22 +110,17 @@ if ($test_mode = 2)
     print Power
 end
 .endc
-"}
-C {devices/code_shown.sym} 400 -90 0 0 {name=IDAC_param only_toplevel=false value=".param W_br1=1
+"
+place=end}
+C {devices/code_shown.sym} 770 -90 0 0 {name=IDAC_param only_toplevel=false value="
+.param W_br1=2
 .param L_br1=0.5
-.param W_br2=2.4
+.param W_br2=1.6
 .param L_br2=0.5
 .param Wp_lk=4
 .param Lp_lk=0.5
 .param Wn_lk=2
 .param Ln_lk=0.5"}
-C {devices/code_shown.sym} 580 -90 0 0 {name=RO_par only_toplevel=false value=".param L12=2
-.param Wp12=5
-.param Wn12=2
-.param L34=2 
-.param Wp34=2.5
-.param Wn34=1"}
-C {../lib/ring_osc.sym} 400 -310 0 0 {name=Xro_1 L12=\\"L12\\" Wp12=\\"Wp12\\" Wn12=\\"Wn12\\" L34=\\"L34\\" Wp34=\\"Wp34\\" Wn34=\\"Wn34\\"}
 C {../lib/ALib_IDAC.sym} 200 -350 0 0 {name=X_idac_1
 W_br1=\\"W_br1\\" L_br1=\\"L_br1\\"
 W_br2=\\"W_br2\\" L_br2=\\"L_br2\\"
@@ -160,5 +134,22 @@ C {devices/vsource.sym} 1040 -410 0 0 {name=Vsup1 value="DC=1.8"}
 C {devices/gnd.sym} 1040 -360 0 0 {name=l22 lab=GND}
 C {devices/lab_pin.sym} 1040 -470 2 0 {name=l32 sig_type=std_logic lab=VCCD}
 C {devices/lab_pin.sym} 540 -300 2 0 {name=l33 sig_type=std_logic lab=pha_ro}
-C {devices/lab_pin.sym} 700 -310 0 0 {name=l34 sig_type=std_logic lab=pha_dco}
+C {devices/lab_pin.sym} 700 -310 0 0 {name=l34 sig_type=std_logic lab=ro_div2}
 C {../lib/DLib_freqDiv2.sym} 620 -250 0 0 {name=Xdiv2_1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
+C {devices/code.sym} 110 -110 0 0 {name=lib_def
+only_toplevel=false 
+value=tcleval(".include $::SKYWATER_STDCELLS/sky130_fd_sc_hd.spice
+.lib $::SKYWATER_MODELS/sky130.lib.spice tt")
+
+place=header}
+C {devices/code_shown.sym} 950 -90 0 0 {name=RO_par only_toplevel=false value="
+.param l_main=1.2
+.param l_aux=1.2
+.param wp=3
+.param wn=2"
+
+place=end}
+C {5s_cc_osc.sym} 400 -310 0 0 {name=Xro_1 l_main=l_main l_aux=l_aux wp=wp wn=wn}
+C {devices/lab_pin.sym} 540 -180 2 0 {name=l35 sig_type=std_logic lab=ro_div2}
+C {devices/lab_pin.sym} 700 -190 0 0 {name=l36 sig_type=std_logic lab=pha_dco}
+C {../lib/DLib_freqDiv2.sym} 620 -130 0 0 {name=Xdiv1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}

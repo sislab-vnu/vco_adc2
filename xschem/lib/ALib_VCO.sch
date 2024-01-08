@@ -43,7 +43,6 @@ C {devices/lab_wire.sym} 170 -120 0 0 {name=l12 sig_type=std_logic lab=Vctrl}
 C {sky130_stdcells/einvp_1.sym} 325 -70 0 0 {name=x1 VGND=GND VNB=GND VPB=VDD VPWR=VDD prefix=sky130_fd_sc_hd__ }
 C {devices/lab_wire.sym} 375 -70 2 0 {name=l21 sig_type=std_logic lab=pn[0]}
 C {devices/lab_wire.sym} 255 -70 0 0 {name=l16 sig_type=std_logic lab=VDD}
-C {ring_osc.sym} 200 -270 0 0 {name=Xro_1 L12=\\"L12\\" Wp12=\\"Wp12\\" Wn12=\\"Wn12\\" L34=\\"L34\\" Wp34=\\"Wp34\\" Wn34=\\"Wn34\\"}
 C {devices/res.sym} 130 -70 0 0 {name=R2
 value=R=200
 footprint=1206
@@ -57,3 +56,4 @@ C {devices/gnd.sym} 130 -40 0 0 {name=l11 lab=GND}
 C {devices/iopin.sym} 200 -420 0 0 {name=p2 lab=VPWR}
 C {devices/opin.sym} 300 -350 0 0 {name=p3 lab=p[0]}
 C {devices/ipin.sym} 260 -30 0 0 {name=p4 lab=ENB}
+C {5s_cc_osc.sym} 200 -270 0 0 {name=Xro_1 l_main=l_main l_aux=l_aux wp=wp wn=wn}

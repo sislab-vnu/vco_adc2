@@ -1,4 +1,5 @@
-v {xschem version=2.9.9 file_version=1.2 }
+v {xschem version=3.4.4 file_version=1.2
+}
 G {}
 K {}
 V {}
@@ -42,30 +43,18 @@ N 510 -540 510 -500 { lab=Vbs_34}
 N 470 -540 470 -500 { lab=Vbs_12}
 N 770 -500 770 -460 { lab=ENB}
 N 50 -300 50 -260 { lab=Vbs_12}
-C {/home/manhtd/working/git/mpw-three/xschem/lib/ALib_VCO.sym} 110 -410 0 0 {name=Xvco_1 L12="L12" Wp12="Wp12" Wn12="Wn12" L34="L34" Wp34="Wp34" Wn34="Wn34"}
-C {/home/manhtd/working/git/mpw-three/xschem/lib/ALib_DCO.sym} 530 -420 0 0 {name=Xdco_1}
-C {/home/manhtd/working/git/mpw-three/xschem/lib/DLib_UpDownCounter.sym} 290 -400 0 0 {name=X_UDC_1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
-C {/home/manhtd/working/git/mpw-three/xschem/lib/DLib_UpDownCounter.sym} 770 -400 0 0 {name=X_UDC_2 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
-C {/home/manhtd/working/git/mpw-three/xschem/lib/DLib_Quantizer.sym} 960 -400 0 0 {name=X_Qtz_1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
 C {devices/lab_pin.sym} 390 -350 2 0 {name=l1 sig_type=std_logic lab=ENB}
 C {devices/lab_pin.sym} 870 -350 2 0 {name=l2 sig_type=std_logic lab=CLK}
 C {devices/vsource.sym} 130 -230 0 0 {name=Vbs_34 value="DC=0"}
-C {devices/code.sym} 10 -130 0 0 {name=lib only_toplevel=false value="
-** Library on VNU server
-*.lib /home/dkits/efabless/mpw-5/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
-*.inc /home/dkits/efabless/mpw-5/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
-** Library on Home PC
-.lib /home/dkit/efabless/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
-.inc /home/dkit/efabless/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
-"}
 C {devices/gnd.sym} 130 -200 0 0 {name=l3 lab=GND}
 C {devices/code.sym} 150 -130 0 0 {name=control only_toplevel=false value="
 .control
-   tran 0.2n 10u 
+   set num_threads=8
+   tran 0.5n 10u 
    plot p_vco/2+6 D1/2+5 p_dco/2+4 Xdco_1.p_osc/2+4 CLK/2+3 D2/2+2 Dout/2+1 FBack/2+0.05
 .endc
-"}
-C {devices/code.sym} 290 -130 0 0 {name=s3 only_toplevel=false value=""}
+"
+place=end}
 C {devices/vsource.sym} 210 -230 0 0 {name=VCCA value="DC=1.8"}
 C {devices/gnd.sym} 210 -200 0 0 {name=l4 lab=GND}
 C {devices/vsource.sym} 290 -230 0 0 {name=VCCD value="DC=1.8"}
@@ -98,12 +87,23 @@ C {devices/lab_wire.sym} 210 -270 0 1 {name=l26 sig_type=std_logic lab=VCCA}
 C {devices/lab_wire.sym} 290 -270 0 1 {name=l27 sig_type=std_logic lab=VCCD}
 C {devices/lab_wire.sym} 380 -270 0 1 {name=l28 sig_type=std_logic lab=Anlg_in}
 C {devices/lab_pin.sym} 540 -120 2 0 {name=l29 sig_type=std_logic lab=CLK}
-C {devices/code_shown.sym} 840 -230 0 0 {name=VCO_param only_toplevel=false value=".param mc_mm_switch=0
-.param L12=4
-.param Wp12=10
-.param Wn12=4
-.param L34=4
-.param Wp34=5
-.param Wn34=2"}
+C {devices/code_shown.sym} 840 -230 0 0 {name=VCO_param only_toplevel=false value="
+.param l_main=3.65
+.param l_aux=3.65
+.param wp=5
+.param wn=4"
+
+place=end}
 C {devices/lab_wire.sym} 190 -420 1 0 {name=l30 sig_type=std_logic lab=p_vco}
 C {devices/lab_wire.sym} 670 -420 1 0 {name=l31 sig_type=std_logic lab=p_dco}
+C {ALib_DCO.sym} 530 -420 0 0 {name=Xdco_1}
+C {ALib_VCO.sym} 110 -410 0 0 {name=Xvco_1 l_main=l_main l_aux=l_aux wp=wp wn=wn}
+C {DLib_UpDownCounter.sym} 290 -400 0 0 {name=X_UDC_1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
+C {DLib_Quantizer.sym} 960 -400 0 0 {name=X_Qtz_1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
+C {DLib_UpDownCounter.sym} 770 -400 0 0 {name=X_UDC_2 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
+C {devices/code.sym} 30 -130 0 0 {name=lib_def
+only_toplevel=false 
+value=tcleval(".include $::SKYWATER_STDCELLS/sky130_fd_sc_hd.spice
+.lib $::SKYWATER_MODELS/sky130.lib.spice tt")
+
+place=header}

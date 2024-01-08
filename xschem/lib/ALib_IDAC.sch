@@ -89,9 +89,12 @@ N 340 -230 340 -200 {
 lab=add_pwr}
 N 330 -230 340 -230 {
 lab=add_pwr}
-N 180 -140 190 -140 {}
-N 180 -140 180 -110 {}
-N 180 -110 190 -110 {}
+N 180 -140 190 -140 {
+lab=#net3}
+N 180 -140 180 -110 {
+lab=#net3}
+N 180 -110 190 -110 {
+lab=#net3}
 C {devices/ipin.sym} 200 -430 0 0 {name=p3 lab=Vbs3}
 C {devices/ipin.sym} 200 -330 0 0 {name=p4 lab=Vbs4}
 C {devices/ipin.sym} 460 -430 0 0 {name=p1 lab=Vbs1}
@@ -144,8 +147,8 @@ C {devices/lab_wire.sym} 260 -260 0 0 {name=l8 sig_type=std_logic lab=add_pwr}
 C {sky130_stdcells/buf_2.sym} 50 -420 3 0 {name=x2 VGND=GND VNB=GND VPB=VPWR VPWR=VPWR prefix=sky130_fd_sc_hd__ }
 C {sky130_fd_pr/pfet_01v8_hvt.sym} 240 -430 0 0 {name=M3
 L=L_br2
-W=\\"2*W_br2\\"
-nf=2
+W=\\"3*W_br2\\"
+nf=3
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
@@ -158,8 +161,8 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8_hvt.sym} 240 -330 0 0 {name=M4
 L=L_br2
-W=\\"2*W_br2\\"
-nf=2
+W=\\"3*W_br2\\"
+nf=3
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"

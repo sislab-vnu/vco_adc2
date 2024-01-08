@@ -84,11 +84,9 @@ place=header}
 C {devices/lab_wire.sym} 260 -320 0 0 {name=l1 sig_type=std_logic lab=ENB}
 C {devices/lab_wire.sym} 420 -350 2 0 {name=l2 sig_type=std_logic lab=pha_vco}
 C {devices/code_shown.sym} 330 -160 0 0 {name=parameter only_toplevel=false value="
-.param L12=3.65
-.param Wp12=5
-.param Wn12=4
-.param L34=3.65
-.param Wp34=5
-.param Wn34=4
+.param l_main=3.65
+.param l_aux=3.65
+.param wp=5
+.param wn=4
 "}
-C {../lib/ALib_VCO.sym} 350 -350 0 0 {name=Xvco_1 L12=\\"L12\\" Wp12=\\"Wp12\\" Wn12=\\"Wn12\\" L34=\\"L34\\" Wp34=\\"Wp34\\" Wn34=\\"Wn34\\"}
+C {ALib_VCO.sym} 350 -350 0 0 {name=Xvco_1 l_main=l_main l_aux=l_aux wp=wp wn=wn}

@@ -1,9 +1,10 @@
-v {xschem version=3.0.0 file_version=1.2 }
+v {xschem version=3.4.4 file_version=1.2
+}
 G {}
 K {type=subcircuit
 format="@name @pinlist @symname
-+ L=@L Wp=@Wp Np=@Nn Wn=@Wn Nn=@Nn"
-template="name=Xi_1 L=0.15 Wp=1.2 Np=1 Wn=0.65 Nn=1"}
++ l=@l Wp=@wp wn=@wn"
+template="name=Xi_1 l=0.15 wp=1.2 wn=0.6"}
 V {}
 S {}
 E {}

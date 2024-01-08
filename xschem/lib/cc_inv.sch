@@ -47,7 +47,7 @@ C {devices/iopin.sym} 250 -410 0 0 {name=p6 lab=VPWR}
 C {devices/lab_wire.sym} 230 -410 0 0 {name=l12 sig_type=std_logic lab=VPWR}
 C {devices/lab_wire.sym} 230 -30 0 0 {name=l13 sig_type=std_logic lab=VGND}
 C {devices/lab_pin.sym} 260 -360 0 0 {name=l14 sig_type=std_logic lab=VPWR}
-C {main_inv.sym} 160 -300 0 0 {name=Xi_1 L=l12 Wp=wp12 Wn=wn12}
-C {aux_inv.sym} 260 -220 0 0 {name=Xi_3 L=l34 Wp=wp34 Wn=wn34}
-C {main_inv.sym} 160 -140 0 0 {name=Xi_2 L=l12 Wp=wp12 Wn=wn12}
-C {aux_inv.sym} 380 -220 0 0 {name=Xi_4 L=l34 Wp=wp34 Wn=wn34}
+C {main_inv.sym} 160 -300 0 0 {name=Xi_1 l=l_main wp=wp wn=wn}
+C {main_inv.sym} 160 -140 0 0 {name=Xi_2 l=l_main wp=wp wn=wn}
+C {aux_inv.sym} 260 -220 0 0 {name=Xi_3 l=l_aux wp=wp wn=wn}
+C {aux_inv.sym} 380 -220 0 0 {name=Xi_4 l=l_aux wp=wp wn=wn}
