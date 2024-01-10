@@ -1,37 +1,46 @@
-** sch_path: /home/userdata/k61D/manhtd_61d/git/mpw-three/xschem/tb/VCO_ADC_tb.sch
+** sch_path: /home/userdata/k61D/manhtd_61d/git/mpw-three/xschem/tb/vco_adc2_130nm_tb.sch
 
 .include /home/dkits/openpdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
 .lib /home/dkits/openpdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 
-**.subckt VCO_ADC_tb
+**.subckt vco_adc2_130nm_tb
 Vbs_34 Vbs_34 GND DC=0
 VCCA VCCA GND DC=1.8
 VCCD VCCD GND DC=1.8
-Vin Anlg_in GND DC=0 SIN(0.5 "v_sin" "sig_freq" 0u 0 0)
+Vin Anlg_in GND DC=0 SIN(0.5 vsin sig_freq 20u 0 0)
 Venb ENB GND DC=0 PULSE( 0 1.8 0 20n 20n 200n 1 )
-Vclk CLK GND DC=0 PULSE( 0 1.8 0 0.1n 0.1n 20.73n 41.67n )
+Vclk CLK GND DC=0 PULSE( 0 1.8 0 1n 1n 19.835n 41.67n )
 Vbs_12 Vbs_12 GND DC=0.4
-Xdco_1 D1 ENB Vbs_12 Vbs_34 VCCD VCCA p_dco ALib_DCO
-Xvco_1 VCCA p_vco Anlg_in ENB ALib_VCO l_main=l_main l_aux=l_aux wp=wp wn=wn
+Xdco_1 D1 ENB Vbs_12 Vbs_34 p_dco ALib_DCO
+Xvco_1 p_vco Anlg_in ENB ALib_VCO l_main=l_main_v l_aux=l_aux_v wp=wp_v wn=wn_v
 X_UDC_1 p_vco FBack ENB GND GND VCCD VCCD D1 DLib_UpDownCounter
 X_Qtz_1 CLK D2 GND GND VCCD VCCD Dout FBack DLib_Quantizer
 X_UDC_2 p_dco FBack ENB GND GND VCCD VCCD D2 DLib_UpDownCounter
+**** begin user architecture code
+
+
+.param l_main_v=3.65
+.param l_aux_v=3.65
+.param wp_v=5
+.param wn_v=4
+.param vsin=0.4
+.param sig_freq=5k
+
+**** end user architecture code
 **.ends
 
-* expanding   symbol:  ALib_DCO.sym # of pins=7
+* expanding   symbol:  ALib_DCO.sym # of pins=5
 ** sym_path: /home/userdata/k61D/manhtd_61d/git/mpw-three/xschem/lib/ALib_DCO.sym
 ** sch_path: /home/userdata/k61D/manhtd_61d/git/mpw-three/xschem/lib/ALib_DCO.sch
-.subckt ALib_DCO Dctrl ENB Vbs_12 Vbs_34 VCCD VCCA pha_DCO
+.subckt ALib_DCO Dctrl ENB Vbs_12 Vbs_34 pha_DCO
 *.ipin Dctrl
 *.ipin Vbs_12
 *.ipin Vbs_34
-*.iopin VCCA
 *.opin pha_DCO
-*.iopin VCCD
 *.ipin ENB
-x1 VCCD ENB GND GND VDD VDD pn[0] sky130_fd_sc_hd__einvp_1
-X_idac_1 Dctrl Vbs_12 Vbs_12 Vbs_34 Vbs_34 VCCA Isup ALib_IDAC W_br1="W_br1" L_br1="L_br1"
-+ W_br2="W_br2" L_br2="L_br2" Wp_lk="Wp_lk" Lp_lk="Lp_lk" Wn_lk="Wn_lk" Ln_lk="Wn_lk"
+x1 VCCD ENB GND GND VCCD VCCD pn[0] sky130_fd_sc_hd__einvp_1
+X_idac_1 Dctrl Vbs_12 Vbs_12 Vbs_34 Vbs_34 Isup ALib_IDAC W_br1="W_br1" L_br1="L_br1" W_br2="W_br2"
++ L_br2="L_br2" Wp_lk="Wp_lk" Lp_lk="Lp_lk" Wn_lk="Wn_lk" Ln_lk="Wn_lk"
 x2 p_osc GND GND VCCD VCCD pha_ro sky130_fd_sc_hd__buf_2
 Xdiv2_1 pha_ro GND GND VCCD VCCD ro_div2 DLib_freqDiv2
 Xro_1 GND Isup p_osc p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4] 5s_cc_osc l_main=l_main
@@ -62,18 +71,17 @@ Xdiv1 ro_div2 GND GND VCCD VCCD pha_DCO DLib_freqDiv2
 .ends
 
 
-* expanding   symbol:  ALib_VCO.sym # of pins=4
+* expanding   symbol:  ALib_VCO.sym # of pins=3
 ** sym_path: /home/userdata/k61D/manhtd_61d/git/mpw-three/xschem/lib/ALib_VCO.sym
 ** sch_path: /home/userdata/k61D/manhtd_61d/git/mpw-three/xschem/lib/ALib_VCO.sch
-.subckt ALib_VCO VPWR p[0] Anlg_in ENB  l_main=0.15 l_aux=0.15 wp=1 wn=0.6
+.subckt ALib_VCO p[0] Anlg_in ENB  l_main=0.15 l_aux=0.15 wp=1 wn=0.6
 *.ipin Anlg_in
-*.iopin VPWR
 *.opin p[0]
 *.ipin ENB
-x1 VDD ENB GND GND VDD VDD pn[0] sky130_fd_sc_hd__einvp_1
+x1 VCCD ENB GND GND VCCD VCCD pn[0] sky130_fd_sc_hd__einvp_1
 R2 Vctrl GND R=200 m=1
 R1 Anlg_in Vctrl R=200 m=1
-Xro_1 Vctrl VPWR p[0] p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4] 5s_cc_osc l_main=l_main
+Xro_1 Vctrl VCCA p[0] p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4] 5s_cc_osc l_main=l_main
 + l_aux=l_aux wp=wp wn=wn
 .ends
 
@@ -119,28 +127,27 @@ Xdly_6 DL5 VGND VNB VPB VPWR CLK_dly sky130_fd_sc_hd__dlygate4sd3_1
 .ends
 
 
-* expanding   symbol:  ALib_IDAC.sym # of pins=7
+* expanding   symbol:  ALib_IDAC.sym # of pins=6
 ** sym_path: /home/userdata/k61D/manhtd_61d/git/mpw-three/xschem/lib/ALib_IDAC.sym
 ** sch_path: /home/userdata/k61D/manhtd_61d/git/mpw-three/xschem/lib/ALib_IDAC.sch
-.subckt ALib_IDAC Dctrl Vbs1 Vbs2 Vbs3 Vbs4 VPWR Isup  W_br1=4 L_br1=1 W_br2=4 L_br2=1 Wp_lk=4
-+ Lp_lk=1 Wn_lk=2 Ln_lk=1
+.subckt ALib_IDAC Dctrl Vbs1 Vbs2 Vbs3 Vbs4 Isup  W_br1=4 L_br1=1 W_br2=4 L_br2=1 Wp_lk=4 Lp_lk=1
++ Wn_lk=2 Ln_lk=1
 *.ipin Vbs3
 *.ipin Vbs4
 *.ipin Vbs1
 *.ipin Vbs2
-*.iopin VPWR
 *.opin Isup
 *.ipin Dctrl
 R1 GND net3 50k m=1
-x1 open GND GND VPWR VPWR lock sky130_fd_sc_hd__inv_2
-XM1 net1 Vbs1 VPWR VPWR sky130_fd_pr__pfet_01v8_hvt L="L_br1" W="W_br1" nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
+x1 open GND GND VCCD VCCD lock sky130_fd_sc_hd__inv_2
+XM1 net1 Vbs1 VCCA VCCA sky130_fd_pr__pfet_01v8_hvt L="L_br1" W="W_br1" nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
 XM2 Isup Vbs2 net1 net1 sky130_fd_pr__pfet_01v8_hvt L="L_br1" W="W_br1" nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
-x2 Dctrl GND GND VPWR VPWR open sky130_fd_sc_hd__buf_2
-XM3 net2 Vbs3 VPWR VPWR sky130_fd_pr__pfet_01v8_hvt L=L_br2 W="3*W_br2" nf=3 ad='int((nf+1)/2) * W/nf * 0.29'
+x2 Dctrl GND GND VCCD VCCD open sky130_fd_sc_hd__buf_2
+XM3 net2 Vbs3 VCCA VCCA sky130_fd_pr__pfet_01v8_hvt L=L_br2 W="3*W_br2" nf=3 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
 XM4 add_pwr Vbs4 net2 net2 sky130_fd_pr__pfet_01v8_hvt L=L_br2 W="3*W_br2" nf=3 ad='int((nf+1)/2) * W/nf * 0.29'
@@ -224,7 +231,7 @@ Xi_4 outn VPWR VGND outp aux_inv l=l_aux Wp=wp wn=wn
 *.iopin VGND
 *.ipin A
 *.opin Y
-XM1 Y A VPWR VDD sky130_fd_pr__pfet_01v8 L="l" W="2*wp" nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+XM1 Y A VPWR VCCA sky130_fd_pr__pfet_01v8 L="l" W="2*wp" nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=1 m=1
 XM2 Y A VGND GND sky130_fd_pr__nfet_01v8 L="l" W="2*wn" nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
@@ -241,7 +248,7 @@ XM2 Y A VGND GND sky130_fd_pr__nfet_01v8 L="l" W="2*wn" nf=2 ad='int((nf+1)/2) *
 *.iopin VGND
 *.ipin A
 *.opin Y
-XM1 Y A VPWR VDD sky130_fd_pr__pfet_01v8 L="l" W="wp" nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
+XM1 Y A VPWR VCCA sky130_fd_pr__pfet_01v8 L="l" W="wp" nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=1 m=1
 XM2 Y A VGND GND sky130_fd_pr__nfet_01v8 L="L" W="Wn" nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
@@ -249,55 +256,47 @@ XM2 Y A VGND GND sky130_fd_pr__nfet_01v8 L="L" W="Wn" nf=1 ad='int((nf+1)/2) * W
 + sa=0 sb=0 sd=0 mult=1 m=1
 .ends
 
+.GLOBAL GND
+.GLOBAL VCCD
+.GLOBAL VCCA
 **** begin user architecture code
 
 
-.param l_main=3.65
-.param l_aux=3.65
-.param wp=5
-.param wn=4
-
-.GLOBAL GND
-.option parhier=local
-.param mc_mm_switch=0
-.param v_sin=0.25
-.param sig_freq=5k
-*.param dco_d1=0
-
-
 ** control simulation lines
-.probe tran v(p_vco) v(p_dco) v(xdco_1.p_osc) v(xdco_1.pha_ro) v(xdco_1.p_dco)
-+ v(xdco_1.Isup) i(xdco_1.R_debug)
-+ v(d1) v(d2) v(dout) v(clk) v(fback) v(p_vco_buf) v(anlg_in)
-+ i(vcca) i(vccd) i(R_debug)
+.probe tran v(p_vco) v(p_dco) v(xdco_1.p_osc) v(xdco_1.pha_ro) v(xdco_1.p_dco)  v(xdco_1.Isup) v(d1)
++ v(d2) v(dout) v(clk) v(fback) v(anlg_in) i(vcca) i(vccd)
 
 .print v(clk) v(dout) v(anlg_in)
 
-.tran 1n 0.5m start=0 $  sweep vin 0 1.0 0.1
+.tran 1n 12m start=0 $  sweep vin 0 1.0 0.1
 
 .measure tran prd trig v(p_vco) val=0.8 rise=10 targ v(p_vco) val=0.8 rise=20
 .measure tran freq_v param='10/prd'
-.measure tran prd1 trig v(p_dco) val=0.8 rise=10 targ v(p_dco) val=0.8 rise=40
-.measure tran freq_d param='30/prd1'
+.measure tran prd1 trig v(p_dco) val=0.8 rise=10 targ v(p_dco) val=0.8 rise=30
+.measure tran freq_d param='20/prd1'
 .measure tran I_analog avg i(vcca) from=0.1m to=1.1m
 *.measure tran I_analog1 avg i(vcca1) from=0.1m to=1.1m
 .measure tran I_digital avg i(vccd) from=0.1m to=1.1m
-.measure tran A_power param='I_analog*1.8' 
-*.measure tran A_power1 param='I_analog1*1.8' 
-.measure tran D_power param='I_digital*1.8' 
+.measure tran A_power param='I_analog*1.8'
+*.measure tran A_power1 param='I_analog1*1.8'
+.measure tran D_power param='I_digital*1.8'
 ** options for finesim simulator
 .option finesim_fsdb_version=5.6
 .option finesim_output=fsdb
-.option finesim_mode=spicead:p
-.option finesim_mode="dlib*:promd":subckt
-.option runlvl=7
+.option finesim_mode=alib*:spicead:p:subckt
+.option finesim_mode=dlib*:promd:subckt
+.option finesim_print_period=2n
+*.option runlvl=7
 *.option accurate=1
-*.option finesim_mode="alib_vco:spicehd":subckt
-*.option finesim_mode=prohd
+*.option finesim_mode=alib_vco:spicehd:subckt
+.option finesim_mode=prohd
 
 ** options for hspice simulator
 *.option fsdb=1
 *.option opfile=1 split_dp=1
+
+**** end user architecture code
+
 
 **** end user architecture code
 .end
