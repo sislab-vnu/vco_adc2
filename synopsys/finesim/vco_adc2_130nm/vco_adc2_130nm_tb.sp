@@ -18,13 +18,12 @@ X_Qtz_1 CLK D2 GND GND VCCD VCCD Dout FBack DLib_Quantizer
 X_UDC_2 p_dco FBack ENB GND GND VCCD VCCD D2 DLib_UpDownCounter
 **** begin user architecture code
 
-
 .param l_main_v=3.65
 .param l_aux_v=3.65
 .param wp_v=5
 .param wn_v=4
-.param vsin=0.4
-.param sig_freq=5k
+.param vsin=0.05
+.param sig_freq=1k
 
 **** end user architecture code
 **.ends
@@ -263,6 +262,7 @@ XM2 Y A VGND GND sky130_fd_pr__nfet_01v8 L="L" W="Wn" nf=1 ad='int((nf+1)/2) * W
 
 
 ** control simulation lines
+* .temp 0 25 50 75 100
 .probe tran v(p_vco) v(p_dco) v(xdco_1.p_osc) v(xdco_1.pha_ro) v(xdco_1.p_dco)  v(xdco_1.Isup) v(d1)
 + v(d2) v(dout) v(clk) v(fback) v(anlg_in) i(vcca) i(vccd)
 
@@ -285,7 +285,7 @@ XM2 Y A VGND GND sky130_fd_pr__nfet_01v8 L="L" W="Wn" nf=1 ad='int((nf+1)/2) * W
 .option finesim_output=fsdb
 .option finesim_mode=alib*:spicead:p:subckt
 .option finesim_mode=dlib*:promd:subckt
-.option finesim_print_period=2n
+.option finesim_print_period=4n
 *.option runlvl=7
 *.option accurate=1
 *.option finesim_mode=alib_vco:spicehd:subckt
