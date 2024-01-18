@@ -2,13 +2,17 @@ import numpy as np
 import scipy
 import math
 import os
+import matplotlib.pyplot as plt
 
 # Behavioral model of multi-bit multi-phases 2nd delta-sigma vco-adc3
 def filt_data(filename_):
 	file_path = os.environ['VCO_ADC2_130'] + '/results/filtered/' + filename_
 	if(os.path.exists(file_path)):
-		return 0
+		print ("load data from filtered data file")
+		filt_data = np.loadtxt(file_path, dtype=float)
+		return [filt_data[:,1], filt_data[:,2]]
 	else:
+		print ("filter data from raw files")
 		cmd = 'bash ' + os.environ['VCO_ADC2_130'] + '/program/filt_data.sh ' + filename_
 		os.system(cmd)
 		raw_data = np.loadtxt('.analysis_cache', dtype=float)
@@ -72,8 +76,8 @@ class comb:
 def fft_cal (in_sig, F_samp, fft_window_length):
 	L = fft_window_length;
 	W_blackman = scipy.blackman(L);
-	fft_input = in_sig[20:L+20];
-	
+	fft_input = in_sig[int(1e4):L+int(1e4)];
+	fft_input = fft_input - np.mean(fft_input)
 	fft_input_window = fft_input * W_blackman ;
 	Y_adc = scipy.fft(fft_input_window);
 	P2_adc = np.array( abs(Y_adc/L) );

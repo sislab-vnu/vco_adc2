@@ -7,10 +7,10 @@
 Vbs_34 Vbs_34 GND DC=0
 VCCA VCCA GND DC=1.8
 VCCD VCCD GND DC=1.8
-Vin Anlg_in GND DC=0 SIN(0.5 vsin sig_freq 20u 0 0)
+Vin Anlg_in GND DC=0 SIN(0.4 vsin sig_freq 20u 0 0)
 Venb ENB GND DC=0 PULSE( 0 1.8 0 20n 20n 200n 1 )
 Vclk CLK GND DC=0 PULSE( 0 1.8 0 1n 1n 19.835n 41.67n )
-Vbs_12 Vbs_12 GND DC=0.4
+Vbs_12 Vbs_12 GND DC=0.3
 Xdco_1 D1 ENB Vbs_12 Vbs_34 p_dco ALib_DCO
 Xvco_1 p_vco Anlg_in ENB ALib_VCO l_main=l_main_v l_aux=l_aux_v wp=wp_v wn=wn_v
 X_UDC_1 p_vco FBack ENB GND GND VCCD VCCD D1 DLib_UpDownCounter
@@ -22,7 +22,7 @@ X_UDC_2 p_dco FBack ENB GND GND VCCD VCCD D2 DLib_UpDownCounter
 .param l_aux_v=3.65
 .param wp_v=5
 .param wn_v=4
-.param vsin=0.05
+.param vsin=0.2
 .param sig_freq=1k
 
 **** end user architecture code
@@ -47,9 +47,9 @@ Xro_1 GND Isup p_osc p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4] 5s_cc_osc
 **** begin user architecture code
 
 
-.param W_br1=2
+.param W_br1=1.8
 .param L_br1=0.5
-.param W_br2=1.6
+.param W_br2=1.8
 .param L_br2=0.5
 .param Wp_lk=4
 .param Lp_lk=0.5
@@ -60,8 +60,8 @@ Xro_1 GND Isup p_osc p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4] 5s_cc_osc
 **** begin user architecture code
 
 
-.param l_main=1.2
-.param l_aux=1.2
+.param l_main=1
+.param l_aux=1
 .param wp=3
 .param wn=2
 
@@ -283,8 +283,8 @@ XM2 Y A VGND GND sky130_fd_pr__nfet_01v8 L="L" W="Wn" nf=1 ad='int((nf+1)/2) * W
 ** options for finesim simulator
 .option finesim_fsdb_version=5.6
 .option finesim_output=fsdb
-.option finesim_mode=alib*:spicead:p:subckt
-.option finesim_mode=dlib*:promd:subckt
+.option finesim_mode="ALib*:spicead":subckt
+.option finesim_mode="DLib*:promd":subckt
 .option finesim_print_period=4n
 *.option runlvl=7
 *.option accurate=1
