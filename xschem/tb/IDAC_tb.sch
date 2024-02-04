@@ -27,7 +27,6 @@ N 300 -230 340 -230 { lab=pn[4]}
 N 300 -270 340 -270 { lab=pn[3]}
 N 940 -380 940 -360 { lab=GND}
 N 940 -500 940 -440 { lab=VCCA}
-N 280 -480 280 -400 { lab=VCCA}
 N 740 -380 740 -360 { lab=GND}
 N 740 -500 740 -440 { lab=Vbs_12}
 N 400 -180 400 -160 { lab=GND}
@@ -68,7 +67,6 @@ C {devices/lab_wire.sym} 330 -270 0 0 {name=l12 sig_type=std_logic lab=pn[3]}
 C {devices/vsource.sym} 940 -410 0 0 {name=Vsup value="DC=1.8"}
 C {devices/gnd.sym} 940 -360 0 0 {name=l14 lab=GND}
 C {devices/lab_pin.sym} 940 -470 2 0 {name=l15 sig_type=std_logic lab=VCCA}
-C {devices/lab_pin.sym} 280 -450 0 0 {name=l16 sig_type=std_logic lab=VCCA}
 C {devices/vsource.sym} 740 -410 0 0 {name=Vbs1 value="DC=0.4"}
 C {devices/gnd.sym} 840 -360 0 0 {name=l17 lab=GND}
 C {devices/lab_pin.sym} 740 -470 2 0 {name=l18 sig_type=std_logic lab=Vbs_12}
@@ -87,29 +85,16 @@ C {devices/vsource.sym} 1040 -210 0 1 {name=V3 value="DC=1.8  PULSE( 0 1.8 0 0.1
 C {devices/gnd.sym} 1040 -160 0 0 {name=l29 lab=GND}
 C {devices/lab_pin.sym} 1040 -270 2 0 {name=l30 sig_type=std_logic lab=D1}
 C {devices/code.sym} 240 -110 0 0 {name=control only_toplevel=false value="
-.control
-set nobreak
-set num_threads=8
-set test_mode = 0
-* mode = 0: operation testing    1:  frequency extraction    2:  power consumption
-if ($test_mode = 0)
-    TRAN 1n 12u
-    plot pha_ro+4 ro_div2+2 pha_dco 
-    MEAS TRAN prd TRIG pha_ro VAL=0.8 RISE=10 TARG pha_ro VAL=0.8 RISE=20
-    let freq = 10/prd
-    echo \\"frequency: \\"
-    print freq
-end
-
-if ($test_mode = 2)
-    save vdd @Vsup[i] pha_dco
-    TRAN 0.1n 5u
-    MEAS TRAN I_vco AVG @Vsup[i] FROM=3u TO=4u
-    MEAS TRAN V_vco AVG vdd FROM=3u TO=4u
-    let Power=I_vco*V_vco
-    print Power
-end
-.endc
+.save all
+.tran 1n 50u start=0 $  sweep vin 0 1.0 0.1
+.measure tran prd1 trig v(pha_dco) val=0.8 rise=10 targ v(pha_dco) val=0.8 rise=30
+.measure tran freq_d param='20/prd1'
+** options for finesim simulator
+.option finesim_fsdb_version=5.6
+.option finesim_output=fsdb
+.option finesim_mode=ALib*:spicead:p:subckt
+.option finesim_mode=DLib*:promd:subckt
+.option finesim_mode=promd
 "
 place=end}
 C {devices/code_shown.sym} 770 -90 0 0 {name=IDAC_param only_toplevel=false value="
@@ -153,3 +138,5 @@ C {5s_cc_osc.sym} 400 -310 0 0 {name=Xro_1 l_main=l_main l_aux=l_aux wp=wp wn=wn
 C {devices/lab_pin.sym} 540 -180 2 0 {name=l35 sig_type=std_logic lab=ro_div2}
 C {devices/lab_pin.sym} 700 -190 0 0 {name=l36 sig_type=std_logic lab=pha_dco}
 C {../lib/DLib_freqDiv2.sym} 620 -130 0 0 {name=Xdiv1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
+C {devices/vdd.sym} 940 -500 0 0 {name=l16 lab=VCCA}
+C {devices/vdd.sym} 1040 -500 0 0 {name=l37 lab=VCCD}

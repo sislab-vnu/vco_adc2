@@ -18,7 +18,7 @@ N 110 0 140 0 { lab=Y}
 C {sky130_fd_pr/pfet3_01v8.sym} 90 -50 0 0 {name=M1
 L=\\"l\\"
 W=\\"wp\\"
-body=VDD
+body=VCCA
 nf=1
 spiceprefix=X
 }

@@ -22,7 +22,7 @@ X_UDC_2 p_dco FBack ENB GND GND VCCD VCCD D2 DLib_UpDownCounter
 .param l_aux_v=3.65
 .param wp_v=5
 .param wn_v=4
-.param vsin=0.2
+.param vsin=0.00001
 .param sig_freq=1k
 
 **** end user architecture code

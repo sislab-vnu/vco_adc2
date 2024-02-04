@@ -1,4 +1,5 @@
-v {xschem version=2.9.9 file_version=1.2 }
+v {xschem version=3.4.4 file_version=1.2
+}
 G {}
 K {}
 V {}
@@ -28,7 +29,7 @@ N 110 -40 170 -40 { lab=Q2}
 N 430 -60 460 -60 { lab=Dout_buf}
 N 100 -450 120 -450 { lab=UP}
 N 100 -210 120 -210 { lab=DOWN}
-N 100 -310 120 -310 { lab=UP}
+N 100 -310 120 -310 { lab=setB}
 C {sky130_stdcells/inv_2.sym} 160 -310 0 0 {name=X_inv_0 VGND=VGND VNB=VNB VPB=VPB VPWR=VPWR prefix=sky130_fd_sc_hd__ }
 C {sky130_stdcells/dfstp_1.sym} 390 -430 0 0 {name=X_upFF VGND=VGND VNB=VNB VPB=VPB VPWR=VPWR prefix=sky130_fd_sc_hd__ }
 C {sky130_stdcells/dfstp_1.sym} 390 -190 0 0 {name=X_dwFF VGND=VGND VNB=VNB VPB=VPB VPWR=VPWR prefix=sky130_fd_sc_hd__ }
