@@ -8,8 +8,8 @@
 
 .param d_laux=1.8u d_lmain=1.8u d_wn=3u d_wp=3u 
 + v_wn=4u v_wp=5u v_laux=3.65u v_lmain=3.65u
-+ vb1=0.6 vb3=0 vd1=1.2 vsup=1.2 w_br1=3u w_br2=4u
-+ vin_amp=0.4 vin_freq=1k vin_os=0.4 vin_del=20u
++ vb1=0.7 vb3=0 vd1=1.2 vsup=1.2 w_br1=3u w_br2=2u
++ vin_amp=0.1 vin_freq=1k vin_os=0.7 vin_del=20u
 .temp 25
 .lib 'crn65gplus_2d5_lk_v1d0.l' TT
 .lib 'crn65gplus_2d5_lk_v1d0.l' TT_hvt
@@ -100,7 +100,7 @@ xi20 d_ctrl lock vccd! gnd! invd1
 m14 isup vbs1 vcca! vcca! pch l='l_br' w='(w_br1*1)' m=1 nf=1 sd=0.2u ad=4e-14
 + as=7e-14 pd=8e-07 ps=1.5e-06 nrd=0.25 nrs=0.25 sa=0.175u sb=0.175u sca=0 scb=0
 + scc=0
-m12 add_pwr vbs3 vcca! vcca! pch l='l_br' w='(w_br2*8)' m=1 nf=8 sd=0.2u ad=4e-14
+m12 add_pwr vbs3 vcca! vcca! pch l='l_br' w='(w_br2*3)' m=1 nf=3 sd=0.2u ad=4e-14
 + as=7e-14 pd=8e-07 ps=1.5e-06 nrd=0.25 nrs=0.25 sa=0.175u sb=0.175u sca=0 scb=0
 + scc=0
 m10 isup lock add_pwr vcca! pch l='l_lk' w='(w_lk*10)' m=1 nf=10 sd=0.2u ad=4e-14
