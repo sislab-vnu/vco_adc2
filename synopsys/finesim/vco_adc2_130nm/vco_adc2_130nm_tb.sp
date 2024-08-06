@@ -22,8 +22,8 @@ X_UDC_2 p_dco FBack ENB GND GND VCCD VCCD D2 DLib_UpDownCounter
 .param l_aux_v=3.65
 .param wp_v=5
 .param wn_v=4
-.param vsin=0.00001
-.param sig_freq=1k
+.param vsin=0.36
+.param sig_freq=10k
 
 **** end user architecture code
 **.ends
@@ -268,15 +268,15 @@ XM2 Y A VGND GND sky130_fd_pr__nfet_01v8 L="L" W="Wn" nf=1 ad='int((nf+1)/2) * W
 
 .print v(clk) v(dout) v(anlg_in)
 
-.tran 1n 12m start=0 $  sweep vin 0 1.0 0.1
+.tran 1n 120u start=0 $  sweep vin 0 1.0 0.1
 
 .measure tran prd trig v(p_vco) val=0.8 rise=10 targ v(p_vco) val=0.8 rise=20
 .measure tran freq_v param='10/prd'
 .measure tran prd1 trig v(p_dco) val=0.8 rise=10 targ v(p_dco) val=0.8 rise=30
 .measure tran freq_d param='20/prd1'
-.measure tran I_analog avg i(vcca) from=0.1m to=1.1m
+.measure tran I_analog avg i(vcca) from=0 to=120u
 *.measure tran I_analog1 avg i(vcca1) from=0.1m to=1.1m
-.measure tran I_digital avg i(vccd) from=0.1m to=1.1m
+.measure tran I_digital avg i(vccd) from=0 to=120u
 .measure tran A_power param='I_analog*1.8'
 *.measure tran A_power1 param='I_analog1*1.8'
 .measure tran D_power param='I_digital*1.8'

@@ -89,6 +89,13 @@ def fft_cal (in_sig, F_samp, fft_window_length):
 	P1_adc_db = 10*np.log(P1_adc) - max(10*np.log(P1_adc));
 	
 	f = F_samp * np.arange(0, L/2, 1, dtype=int) / L;
-	plt.semilogx(f, P1_adc_db); 
+	ver_line_y = [-145, 10]
+	ver_line_x = [F_samp/1e3, F_samp/1e3]
+	plt.xlabel('Frequency (Hz)')
+	plt.ylabel('PSD (dB)')
+	plt.semilogx(f, P1_adc_db);
+#	plt.hold(true)
+	plt.plot(ver_line_x, ver_line_y)
+#	plt.hold(false) 
 	plt.grid();
 

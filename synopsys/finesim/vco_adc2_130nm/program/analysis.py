@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import os
 
 def main():
-	volt = 0.00001	# V_amp
+	volt = 0.036	# V_amp
 	freq = 1	# kHz
 	file_name = str(volt) + 'V@' + str(freq) + 'kHz.txt'
 	data_out, anlg_in = filt_data (file_name)
