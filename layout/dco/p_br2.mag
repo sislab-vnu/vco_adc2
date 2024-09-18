@@ -1,6 +1,6 @@
 magic
 tech sky130A
-timestamp 1726544869
+timestamp 1726647805
 << nwell >>
 rect -130 -40 290 220
 << pmoshvt >>
@@ -85,29 +85,14 @@ rect -110 135 -70 150
 << nsubdiffcont >>
 rect -100 150 -80 170
 << poly >>
-rect 0 250 230 260
-rect 0 230 45 250
-rect 65 230 105 250
-rect 125 230 165 250
-rect 185 230 230 250
-rect 0 220 230 230
+rect 0 220 230 260
 rect 0 180 50 220
 rect 90 180 140 220
 rect 180 180 230 220
 rect 0 -40 50 0
 rect 90 -40 140 0
 rect 180 -40 230 0
-<< polycont >>
-rect 45 230 65 250
-rect 105 230 125 250
-rect 165 230 185 250
 << locali >>
-rect 25 250 205 260
-rect 25 230 45 250
-rect 65 230 105 250
-rect 125 230 165 250
-rect 185 230 205 250
-rect 25 220 205 230
 rect -110 170 -70 185
 rect -110 150 -100 170
 rect -80 150 -70 170
@@ -165,9 +150,6 @@ rect 230 10 240 30
 rect 260 10 270 30
 rect 230 0 270 10
 << viali >>
-rect 45 230 65 250
-rect 105 230 125 250
-rect 165 230 185 250
 rect -100 150 -80 170
 rect -30 150 -10 170
 rect -30 110 -10 130
@@ -178,12 +160,6 @@ rect 150 110 170 130
 rect 240 50 260 70
 rect 240 10 260 30
 << metal1 >>
-rect 0 250 230 260
-rect 0 230 45 250
-rect 65 230 105 250
-rect 125 230 165 250
-rect 185 230 230 250
-rect 0 220 230 230
 rect -110 170 -70 185
 rect -110 150 -100 170
 rect -80 150 -70 170
@@ -220,7 +196,11 @@ rect 260 10 270 30
 rect 230 0 270 10
 << labels >>
 rlabel metal1 -90 185 -90 185 1 B
+port 4 n
 rlabel metal1 -20 180 -20 180 1 S
+port 2 n
 rlabel metal1 250 0 250 0 5 D
-rlabel metal1 115 260 115 260 5 G
+port 3 s
+rlabel poly 120 260 120 260 1 G
+port 1 n
 << end >>

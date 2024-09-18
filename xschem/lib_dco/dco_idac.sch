@@ -17,14 +17,14 @@ N 280 -200 280 -130 { lab=lock}
 N 420 -100 420 -80 { lab=Isup}
 N 520 -300 520 -80 { lab=Isup}
 N 420 -80 560 -80 { lab=Isup}
-N 260 -480 520 -480 { lab=VCCA}
-N 260 -480 260 -460 { lab=VCCA}
-N 520 -480 520 -460 { lab=VCCA}
+N 260 -480 520 -480 { lab=Vbs3}
+N 260 -480 260 -460 { lab=Vbs3}
+N 520 -480 520 -460 { lab=Vbs3}
 N 50 -480 50 -460 { lab=open}
 N 50 -580 50 -560 { lab=lock}
-N 520 -430 530 -430 { lab=VCCA}
-N 530 -460 530 -430 { lab=VCCA}
-N 520 -460 530 -460 { lab=VCCA}
+N 520 -430 530 -430 { lab=Vbs3}
+N 530 -460 530 -430 { lab=Vbs3}
+N 520 -460 530 -460 { lab=Vbs3}
 N 520 -330 530 -330 { lab=#net1}
 N 530 -360 530 -330 { lab=#net1}
 N 520 -360 530 -360 { lab=#net1}
@@ -34,7 +34,7 @@ N 450 -240 450 -170 { lab=add_pwr}
 N 450 -110 450 -100 { lab=Isup}
 N 490 -140 500 -140 { lab=open}
 N 500 -210 500 -140 { lab=open}
-N 360 -520 360 -480 { lab=VCCA}
+N 360 -520 360 -480 { lab=Vbs3}
 N 70 -240 190 -240 { lab=add_pwr}
 N 70 -100 190 -100 { lab=input_R}
 N 20 -200 20 -130 { lab=open}
@@ -57,11 +57,11 @@ N 230 -50 250 -50 { lab=GND}
 N 250 -50 250 -40 { lab=GND}
 N 50 -380 50 -360 { lab=Dctrl}
 N 260 -430 270 -430 {
-lab=VCCA}
+lab=Vbs3}
 N 270 -460 270 -430 {
-lab=VCCA}
+lab=Vbs3}
 N 260 -460 270 -460 {
-lab=VCCA}
+lab=Vbs3}
 N 260 -330 270 -330 {
 lab=#net2}
 N 270 -360 270 -330 {
@@ -94,8 +94,10 @@ N 180 -140 180 -110 {
 lab=input_R}
 N 180 -110 190 -110 {
 lab=input_R}
-N 250 -40 250 -0 {}
-N 200 -30 250 -30 {}
+N 250 -40 250 -0 {
+lab=GND}
+N 200 -30 250 -30 {
+lab=GND}
 C {devices/ipin.sym} 200 -430 0 0 {name=p3 lab=Vbs3}
 C {devices/ipin.sym} 200 -330 0 0 {name=p4 lab=Vbs4}
 C {devices/ipin.sym} 460 -430 0 0 {name=p1 lab=Vbs1}
@@ -224,10 +226,10 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {devices/lab_pin.sym} 360 -510 0 0 {name=p5 sig_type=std_logic lab=VCCA}
 C {sky130_fd_pr/res_xhigh_po_0p35.sym} 200 -50 3 0 {name=R2
 L=8.562
 model=res_xhigh_po_0p35
 spiceprefix=X
 mult=1}
 C {devices/lab_wire.sym} 130 -100 0 0 {name=p7 sig_type=std_logic lab=input_R}
+C {devices/ipin.sym} 360 -520 0 0 {name=p8 lab=VCCA}
