@@ -1,0 +1,17 @@
+magic
+tech sky130A
+timestamp 1724170367
+<< poly >>
+rect 1060 -65 1425 -40
+rect 1465 -65 1830 -40
+<< locali >>
+rect 1425 -105 1465 0
+use nmos_vco  nmos_vco_0
+timestamp 1724146945
+transform 1 0 1060 0 1 -505
+box -60 -40 830 440
+use pmos_vco  pmos_vco_0
+timestamp 1724148249
+transform 1 0 1060 0 1 0
+box -60 -40 830 540
+<< end >>

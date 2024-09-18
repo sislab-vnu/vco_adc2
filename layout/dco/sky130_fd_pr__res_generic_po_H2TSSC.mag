@@ -1,0 +1,42 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1726214614
+<< poly >>
+rect -50 60414 50 60430
+rect -50 60380 -34 60414
+rect 34 60380 50 60414
+rect -50 60000 50 60380
+rect -50 -60380 50 -60000
+rect -50 -60414 -34 -60380
+rect 34 -60414 50 -60380
+rect -50 -60430 50 -60414
+<< polycont >>
+rect -34 60380 34 60414
+rect -34 -60414 34 -60380
+<< npolyres >>
+rect -50 -60000 50 60000
+<< locali >>
+rect -50 60380 -34 60414
+rect 34 60380 50 60414
+rect -50 -60414 -34 -60380
+rect 34 -60414 50 -60380
+<< viali >>
+rect -34 60380 34 60414
+rect -34 60017 34 60380
+rect -34 -60380 34 -60017
+rect -34 -60414 34 -60380
+<< metal1 >>
+rect -40 60414 40 60426
+rect -40 60017 -34 60414
+rect 34 60017 40 60414
+rect -40 60005 40 60017
+rect -40 -60017 40 -60005
+rect -40 -60414 -34 -60017
+rect 34 -60414 40 -60017
+rect -40 -60426 40 -60414
+<< properties >>
+string gencell sky130_fd_pr__res_generic_po
+string library sky130
+string parameters w 0.5 l 600 m 1 nx 1 wmin 0.330 lmin 1.650 rho 48.2 val 57.84k dummy 0 dw 0.0 term 0.0 sterm 0.0 caplen 0.4 snake 0 guard 0 glc 1 grc 1 gtc 1 gbc 1 roverlap 0 endcov 100 full_metal 1 hv_guard 0 n_guard 0 vias 1 viagb 0 viagt 0 viagl 0 viagr 0
+<< end >>

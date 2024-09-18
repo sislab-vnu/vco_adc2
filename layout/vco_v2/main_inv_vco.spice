@@ -1,0 +1,15 @@
+* NGSPICE file created from main_inv_vco.ext - technology: sky130A
+
+.subckt nmos_vco D G S VSUBS
+X0 D G S VSUBS sky130_fd_pr__nfet_01v8 ad=0.8 pd=4.4 as=1.6 ps=8.8 w=4 l=3.65 M=2
+.ends
+
+.subckt pmos_vco D G S VPWR
+X0 S G D VPWR sky130_fd_pr__pfet_01v8 ad=2 pd=10.8 as=1 ps=5.4 w=5 l=3.65 M=2
+.ends
+
+.subckt main_inv_vco D G S_P S_N VPWR
+Xnmos_vco_0 D G S_N VSUBS nmos_vco
+Xpmos_vco_0 D G S_P VPWR pmos_vco
+.ends
+

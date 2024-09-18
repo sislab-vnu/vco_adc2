@@ -1,0 +1,96 @@
+magic
+tech sky130A
+timestamp 1726027226
+<< locali >>
+rect 2980 1375 3090 1415
+rect 5980 1375 6090 1415
+rect 8880 1375 9605 1415
+rect 2980 150 3090 190
+rect 3095 -690 3145 170
+rect 5980 150 6090 190
+rect 5910 -725 6020 -685
+rect 8860 -695 8910 180
+rect 9555 -1910 9605 1375
+rect 5910 -1950 6020 -1910
+rect 8825 -1950 9605 -1910
+<< metal1 >>
+rect 20 1515 120 1565
+rect 1955 1515 3055 1565
+rect 4935 1515 6110 1565
+rect 8005 1515 9455 1565
+rect -300 1075 0 1125
+rect 2980 1075 3090 1125
+rect 5980 1075 6090 1125
+rect 9000 1075 9300 1125
+rect -300 -1610 -250 1075
+rect -150 440 0 490
+rect 2980 440 3090 490
+rect 5980 440 6090 490
+rect 9000 440 9150 490
+rect -150 -975 -100 440
+rect 2025 0 3050 50
+rect 3900 -540 3950 25
+rect 5035 0 6045 50
+rect 5930 -585 6955 -535
+rect 8050 -570 8100 50
+rect 9100 -975 9150 440
+rect -150 -1025 3000 -975
+rect 5910 -1025 6020 -975
+rect 9000 -1025 9150 -975
+rect 9250 -1610 9300 1075
+rect -300 -1660 3000 -1610
+rect 5910 -1660 6020 -1610
+rect 9000 -1660 9300 -1610
+rect 9405 -2050 9455 1515
+rect 5875 -2100 6925 -2050
+rect 8875 -2100 9455 -2050
+use mag_vco_cc_inv  mag_vco_cc_inv_0
+timestamp 1725793258
+transform 1 0 130 0 1 150
+box -130 -150 2870 1415
+use mag_vco_cc_inv  mag_vco_cc_inv_1
+timestamp 1725793258
+transform 1 0 3130 0 1 150
+box -130 -150 2870 1415
+use mag_vco_cc_inv  mag_vco_cc_inv_2
+timestamp 1725793258
+transform 1 0 6130 0 1 150
+box -130 -150 2870 1415
+use mag_vco_cc_inv  mag_vco_cc_inv_3
+timestamp 1725793258
+transform -1 0 5870 0 -1 -685
+box -130 -150 2870 1415
+use mag_vco_cc_inv  mag_vco_cc_inv_4
+timestamp 1725793258
+transform -1 0 8870 0 -1 -685
+box -130 -150 2870 1415
+<< labels >>
+rlabel locali 2990 1415 2990 1415 1 VPWR
+port 2 n
+rlabel locali 3095 -255 3095 -255 7 VGND
+port 1 w
+rlabel metal1 2940 -975 2940 -975 1 pn[4]
+port 12 n
+rlabel metal1 2945 -1610 2945 -1610 1 p[4]
+port 7 n
+rlabel metal1 5960 -975 5960 -975 1 pn[3]
+port 11 n
+rlabel metal1 9095 490 9095 490 1 pn[2]
+port 10 n
+rlabel metal1 9125 1125 9125 1125 1 p[2]
+port 5 n
+rlabel metal1 6035 1125 6035 1125 1 p[1]
+port 4 n
+rlabel metal1 6035 490 6035 490 1 pn[1]
+port 9 n
+rlabel metal1 3040 1125 3040 1125 1 p[0]
+port 3 n
+rlabel metal1 3035 490 3035 490 1 pn[0]
+port 8 n
+rlabel metal1 5965 -1610 5965 -1610 1 p[3]
+port 6 n
+rlabel metal1 30 1565 30 1565 1 VCCA
+port 13 n
+rlabel metal1 3950 -500 3950 -500 3 GND
+port 14 e
+<< end >>

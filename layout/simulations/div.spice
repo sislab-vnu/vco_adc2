@@ -1,0 +1,10 @@
+** sch_path: /home/userdata/k63D/toind_63d/git/vco_adc2/xschem/lib/DLib_freqDiv2.sch
+**.subckt DLib_freqDiv2 clkDiv2 clk
+*.opin clkDiv2
+*.ipin clk
+x1 clk D VGND VNB VPB VPWR clkDiv2 Q_N sky130_fd_sc_hd__dfxbp_2
+x2 clkinv Q_N_buf VGND VNB VPB VPWR D sky130_fd_sc_hd__dfxtp_1
+x3 clk VGND VNB VPB VPWR clkinv sky130_fd_sc_hd__inv_4
+x4 Q_N VGND VNB VPB VPWR Q_N_buf sky130_fd_sc_hd__buf_4
+**.ends
+.end

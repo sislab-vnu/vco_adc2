@@ -1,0 +1,51 @@
+* NGSPICE file created from ring_vco.ext - technology: sky130A
+
+.subckt nmos_vco D G S VSUBS
+X0 D G S VSUBS sky130_fd_pr__nfet_01v8 ad=0.8 pd=4.4 as=1.6 ps=8.8 w=4 l=3.65
+X1 S G D VSUBS sky130_fd_pr__nfet_01v8 ad=1.6 pd=8.8 as=0.8 ps=4.4 w=4 l=3.65
+.ends
+
+.subckt pmos_vco D G S VPWR
+X0 S G D VPWR sky130_fd_pr__pfet_01v8 ad=2 pd=10.8 as=1 ps=5.4 w=5 l=3.65
+X1 D G S VPWR sky130_fd_pr__pfet_01v8 ad=1 pd=5.4 as=2 ps=10.8 w=5 l=3.65
+.ends
+
+.subckt main_inv_vco D G S_P VPWR S_N VSUBS
+Xnmos_vco_0 D G S_N VSUBS nmos_vco
+Xpmos_vco_0 D G S_P VPWR pmos_vco
+.ends
+
+.subckt nmos_vco_aux D G S VSUBS
+X0 D G S VSUBS sky130_fd_pr__nfet_01v8 ad=1.6 pd=8.8 as=1.6 ps=8.8 w=4 l=3.65
+.ends
+
+.subckt pmos_vco_aux D G S VPWR
+X0 D G S VPWR sky130_fd_pr__pfet_01v8 ad=2 pd=10.8 as=2 ps=10.8 w=5 l=3.65
+.ends
+
+.subckt aux_inv_vco D G S_P S_N VPWR VSUBS
+Xnmos_vco_aux_0 D G S_N VSUBS nmos_vco_aux
+Xpmos_vco_aux_0 D G S_P VPWR pmos_vco_aux
+.ends
+
+.subckt cc_inv OUT_P OUT_N aux_inv_vco_1/VSUBS main_inv_vco_1/G main_inv_vco_0/G VGND
++ VPWR
+Xmain_inv_vco_0 OUT_P main_inv_vco_0/G VPWR VPWR VGND aux_inv_vco_1/VSUBS main_inv_vco
+Xmain_inv_vco_1 OUT_N main_inv_vco_1/G VPWR VPWR VGND aux_inv_vco_1/VSUBS main_inv_vco
+Xaux_inv_vco_0 OUT_N OUT_P VPWR VGND VPWR aux_inv_vco_1/VSUBS aux_inv_vco
+Xaux_inv_vco_1 OUT_P OUT_N VPWR VGND VPWR aux_inv_vco_1/VSUBS aux_inv_vco
+.ends
+
+.subckt ring_vco OUT_P_0 OUT_n_0 OUT_P_3 OUT_N_3
+Xcc_inv_0 cc_inv_0/OUT_P cc_inv_0/OUT_N VSUBS OUT_n_0 OUT_P_0 cc_inv_4/VGND cc_inv_4/VPWR
++ cc_inv
+Xcc_inv_1 cc_inv_1/OUT_P cc_inv_1/OUT_N VSUBS cc_inv_0/OUT_N cc_inv_0/OUT_P cc_inv_4/VGND
++ cc_inv_4/VPWR cc_inv
+Xcc_inv_2 OUT_P_3 OUT_N_3 VSUBS cc_inv_1/OUT_N cc_inv_1/OUT_P cc_inv_4/VGND cc_inv_4/VPWR
++ cc_inv
+Xcc_inv_3 OUT_P_0 OUT_n_0 VSUBS cc_inv_4/OUT_N cc_inv_4/OUT_P cc_inv_4/VGND cc_inv_4/VPWR
++ cc_inv
+Xcc_inv_4 cc_inv_4/OUT_P cc_inv_4/OUT_N VSUBS OUT_N_3 OUT_P_3 cc_inv_4/VGND cc_inv_4/VPWR
++ cc_inv
+.ends
+

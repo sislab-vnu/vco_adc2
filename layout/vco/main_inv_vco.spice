@@ -1,0 +1,9 @@
+* NGSPICE file created from main_inv_vco.ext - technology: sky130A
+
+.subckt main_inv_vco
+X0 a_1540_0# a_0_n1090# a_730_n1010# w_n120_n40# sky130_fd_pr__pfet_01v8 ad=2 pd=10.8 as=1 ps=5.4 w=5 l=3.65
+X1 a_730_n1010# a_0_n1090# a_n80_n1010# VSUBS sky130_fd_pr__nfet_01v8 ad=0.8 pd=4.4 as=1.6 ps=8.8 w=4 l=3.65
+X2 a_1540_n1010# a_0_n1090# a_730_n1010# VSUBS sky130_fd_pr__nfet_01v8 ad=1.6 pd=8.8 as=0.8 ps=4.4 w=4 l=3.65
+X3 a_730_n1010# a_0_n1090# a_n80_0# w_n120_n40# sky130_fd_pr__pfet_01v8 ad=1 pd=5.4 as=2 ps=10.8 w=5 l=3.65
+.ends
+

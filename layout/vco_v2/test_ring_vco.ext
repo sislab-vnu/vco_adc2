@@ -1,0 +1,444 @@
+timestamp 1725525215
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 4400000 2200000 950000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12800 125 125 47 47 29 5
+use test_cc_inv test_cc_inv_4 -1 0 17740 0 -1 -1370
+use test_cc_inv test_cc_inv_3 -1 0 11740 0 -1 -1370
+use test_cc_inv test_cc_inv_2 1 0 12260 0 1 300
+use test_cc_inv test_cc_inv_1 1 0 6260 0 1 300
+use test_cc_inv test_cc_inv_0 1 0 260 0 1 300
+port "P_3" 6 11930 -3220 11930 -3220 m1
+port "Pn_3" 11 11920 -1950 11920 -1950 m1
+port "Pn_2" 10 18190 980 18190 980 m1
+port "Pn_1" 9 12070 980 12070 980 m1
+port "Pn_0" 8 6070 980 6070 980 m1
+port "Pn_4" 12 5880 -1950 5880 -1950 m1
+port "P_2" 5 18250 2250 18250 2250 m1
+port "P_1" 4 12070 2250 12070 2250 m1
+port "P_0" 3 6080 2250 6080 2250 m1
+port "P_4" 7 5890 -3220 5890 -3220 m1
+port "VGND" 1 6190 -510 6190 -510 li
+port "VPWR" 2 5980 2830 5980 2830 li
+node "m1_11750_n4200#" 3 1010.53 11750 -4200 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 210000 4400 0 0 0 0 0 0 0 0 0 0
+node "P_3" 0 119.796 11930 -3220 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 22000 640 0 0 0 0 0 0 0 0 0 0
+node "Pn_3" 0 122.181 11920 -1950 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 22000 640 0 0 0 0 0 0 0 0 0 0
+node "m1_16100_n1140#" 2 621.632 16100 -1140 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 124000 2680 0 0 0 0 0 0 0 0 0 0
+node "m1_11860_n1170#" 3 979.682 11860 -1170 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 205000 4300 0 0 0 0 0 0 0 0 0 0
+node "m1_10070_0#" 3 969.615 10070 0 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 202000 4240 0 0 0 0 0 0 0 0 0 0
+node "m1_7800_n1080#" 1 569.855 7800 -1080 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 113000 2460 0 0 0 0 0 0 0 0 0 0
+node "m1_4050_0#" 3 990.399 4050 0 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 205000 4300 0 0 0 0 0 0 0 0 0 0
+node "Pn_2" 4 1173.79 18190 980 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 343000 7060 0 0 0 0 0 0 0 0 0 0
+node "Pn_1" 0 125.161 12070 980 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 22000 640 0 0 0 0 0 0 0 0 0 0
+node "Pn_0" 0 124.565 6070 980 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 22000 640 0 0 0 0 0 0 0 0 0 0
+node "Pn_4" 12 3772.83 5880 -1950 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 943000 19060 0 0 0 0 0 0 0 0 0 0
+node "P_2" 8 1820.89 18250 2250 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 657000 13340 0 0 0 0 0 0 0 0 0 0
+node "P_1" 0 119.796 12070 2250 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 22000 640 0 0 0 0 0 0 0 0 0 0
+node "P_0" 0 123.969 6080 2250 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 22000 640 0 0 0 0 0 0 0 0 0 0
+node "P_4" 16 5249.1 5890 -3220 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1257000 25340 0 0 0 0 0 0 0 0 0 0
+node "m1_16010_3030#" 14 4212.4 16010 3030 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1119000 22580 0 0 0 0 0 0 0 0 0 0
+node "m1_9870_3030#" 3 1128.07 9870 3030 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 235000 4900 0 0 0 0 0 0 0 0 0 0
+node "m1_3910_3030#" 3 1063.07 3910 3030 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 220000 4600 0 0 0 0 0 0 0 0 0 0
+node "li_11820_n3900#" 35 138.376 11820 -3900 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 17600 600 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_17720_n1390#" 224 867.937 17720 -1390 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 175000 3700 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_11820_n1450#" 35 138.376 11820 -1450 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 17600 600 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_11960_300#" 35 138.376 11960 300 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 17600 600 0 0 0 0 0 0 0 0 0 0 0 0
+node "VGND" 220 891.849 6190 -510 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 172000 3640 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_5960_300#" 35 130.427 5960 300 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 17600 600 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_17650_n3900#" 1299 4706.88 17650 -3900 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 897800 19280 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_11960_2750#" 35 138.376 11960 2750 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 17600 600 0 0 0 0 0 0 0 0 0 0 0 0
+node "VPWR" 35 138.376 5980 2830 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 17600 600 0 0 0 0 0 0 0 0 0 0 0 0
+substrate "VSUBS" 0 0 -1073741817 -1073741817 space 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+cap "li_17720_n1390#" "P_2" 3.14531
+cap "li_11820_n1450#" "m1_11860_n1170#" 6.29432
+cap "m1_4050_0#" "Pn_0" 7.42169
+cap "VPWR" "P_0" 1.67176
+cap "Pn_1" "m1_10070_0#" 6.89157
+cap "Pn_2" "P_2" 554.919
+cap "li_11960_300#" "m1_10070_0#" 4.5459
+cap "P_3" "Pn_3" 7.93443
+cap "m1_4050_0#" "li_5960_300#" 4.89558
+cap "li_17650_n3900#" "P_2" 29.4182
+cap "m1_16100_n1140#" "li_17720_n1390#" 1.06758
+cap "P_1" "li_11960_2750#" 1.67176
+cap "li_11820_n1450#" "Pn_3" 1.67176
+cap "li_17720_n1390#" "m1_16010_3030#" 1.55737
+cap "li_5960_300#" "VGND" 26.8421
+cap "P_3" "li_11820_n3900#" 1.67176
+cap "li_17650_n3900#" "m1_16010_3030#" 519.081
+cap "li_11820_n1450#" "m1_10070_0#" 0.131864
+cap "Pn_3" "m1_11860_n1170#" 9.54217
+cap "VPWR" "m1_3910_3030#" 5.24527
+cap "Pn_0" "li_5960_300#" 1.67176
+cap "li_11960_300#" "m1_11860_n1170#" 0.165129
+cap "P_4" "Pn_4" 771.313
+cap "m1_16010_3030#" "P_2" 1006.23
+cap "Pn_2" "li_17720_n1390#" 24.1571
+cap "m1_7800_n1080#" "VGND" 1.10171
+cap "m1_11750_n4200#" "P_3" 11.6627
+cap "m1_11750_n4200#" "li_11820_n3900#" 7.69306
+cap "P_0" "m1_3910_3030#" 7.95181
+cap "P_1" "m1_9870_3030#" 11.6627
+cap "m1_11860_n1170#" "m1_10070_0#" 9.03571
+cap "li_17720_n1390#" "li_17650_n3900#" 33.8581
+cap "Pn_0" "P_0" 7.93443
+cap "li_11960_2750#" "m1_9870_3030#" 7.69306
+cap "m1_4050_0#" "VGND" 14.3555
+cap "li_11960_300#" "Pn_1" 1.67176
+cap "Pn_2" "li_17650_n3900#" 4.31469
+cap "P_1" "Pn_1" 7.93443
+cap "test_cc_inv_3/OUT_P" "test_cc_inv_3/test_main_inv_1/VPWR" 12.0129
+cap "test_cc_inv_4/OUT_N" "test_cc_inv_4/OUT_P" 0.114096
+cap "test_cc_inv_4/OUT_N" "test_cc_inv_3/VCCA" 0.137091
+cap "test_cc_inv_4/test_main_inv_1/VPWR" "test_cc_inv_3/test_main_inv_0/Y" 0.115268
+cap "test_cc_inv_4/OUT_P" "test_cc_inv_4/test_main_inv_1/VPWR" 1.54933
+cap "test_cc_inv_3/VCCA" "test_cc_inv_4/test_main_inv_1/VPWR" 129.263
+cap "test_cc_inv_3/VCCA" "test_cc_inv_4/OUT_P" -4.69056
+cap "test_cc_inv_3/VCCA" "test_cc_inv_3/test_main_inv_0/Y" 0.171217
+cap "test_cc_inv_4/test_main_inv_1/A" "test_cc_inv_3/test_main_inv_0/Y" 0.889587
+cap "test_cc_inv_4/test_main_inv_1/A" "test_cc_inv_4/OUT_P" 9.34919
+cap "test_cc_inv_3/VCCA" "test_cc_inv_4/test_main_inv_1/A" 19.988
+cap "test_cc_inv_4/OUT_P" "test_cc_inv_4/test_main_inv_1/VCCA" 72.0964
+cap "test_cc_inv_4/OUT_P" "test_cc_inv_4/VPWR" 8.43285
+cap "test_cc_inv_4/OUT_P" "test_cc_inv_4/OUT_N" 4.55628
+cap "test_cc_inv_4/OUT_P" "test_cc_inv_4/test_main_inv_1/A" 1.68421
+cap "test_cc_inv_4/VPWR" "test_cc_inv_4/test_main_inv_1/VCCA" 132.445
+cap "test_cc_inv_4/VPWR" "test_cc_inv_4/OUT_N" 0.276643
+cap "test_cc_inv_4/test_main_inv_1/A" "test_cc_inv_4/VPWR" 0.433484
+cap "test_cc_inv_4/test_main_inv_1/VCCA" "test_cc_inv_4/OUT_N" 3.26215
+cap "test_cc_inv_4/test_main_inv_1/A" "test_cc_inv_4/test_main_inv_1/VCCA" 57.9655
+cap "test_cc_inv_4/VPWR" "test_cc_inv_4/test_main_inv_1/VCCA" 16.8858
+cap "test_cc_inv_4/test_main_inv_1/VCCA" "test_cc_inv_4/test_main_inv_1/A" 11.0803
+cap "test_cc_inv_4/test_main_inv_1/VCCA" "test_cc_inv_4/OUT_P" 21.2048
+cap "test_cc_inv_4/VCCA" "test_cc_inv_4/IN_P" 12.1556
+cap "test_cc_inv_4/IN_N" "test_cc_inv_4/IN_P" -8.88178e-16
+cap "test_cc_inv_4/test_main_inv_0/VPWR" "test_cc_inv_4/IN_P" 6.37678
+cap "test_cc_inv_4/VCCA" "test_cc_inv_4/test_main_inv_0/VPWR" 89.0301
+cap "test_cc_inv_4/test_main_inv_0/VPWR" "test_cc_inv_4/IN_P" 0.120927
+cap "test_cc_inv_4/VCCA" "test_cc_inv_4/test_main_inv_0/VPWR" 4.71223
+cap "test_cc_inv_3/test_main_inv_1/VGND" "test_cc_inv_3/OUT_N" 13.8153
+cap "test_cc_inv_3/test_main_inv_1/A" "test_cc_inv_3/test_main_inv_1/GND" 0.0421766
+cap "test_cc_inv_3/test_main_inv_1/VGND" "test_cc_inv_3/test_main_inv_1/A" 3.73507
+cap "test_cc_inv_3/test_main_inv_1/GND" "test_cc_inv_3/test_main_inv_1/A" 0.276491
+cap "test_cc_inv_3/test_aux_inv_1/Y" "test_cc_inv_3/test_main_inv_1/GND" 0.0210883
+cap "test_cc_inv_3/test_main_inv_1/Y" "test_cc_inv_3/test_main_inv_1/GND" 0.171049
+cap "test_cc_inv_3/GND" "test_cc_inv_4/OUT_P" 0.0937257
+cap "test_cc_inv_3/GND" "test_cc_inv_3/test_main_inv_0/Y" 0.149961
+cap "test_cc_inv_4/test_main_inv_1/A" "test_cc_inv_3/GND" 19.988
+cap "test_cc_inv_4/test_main_inv_1/VPWR" "test_cc_inv_3/VCCA" 1.98304
+cap "test_cc_inv_4/OUT_N" "test_cc_inv_3/GND" -2.51351
+cap "test_cc_inv_4/OUT_N" "test_cc_inv_4/test_main_inv_1/VGND" 0.209051
+cap "test_cc_inv_2/GND" "test_cc_inv_4/OUT_P" 0.248373
+cap "test_cc_inv_3/GND" "test_cc_inv_4/test_main_inv_1/VGND" 77.8424
+cap "test_cc_inv_4/test_main_inv_1/VGND" "test_cc_inv_3/VCCA" 0.926498
+cap "test_cc_inv_4/test_main_inv_1/VPWR" "test_cc_inv_4/OUT_P" 0.345446
+cap "test_cc_inv_4/OUT_N" "test_cc_inv_4/OUT_P" -3.17924
+cap "test_cc_inv_4/test_main_inv_1/A" "test_cc_inv_4/OUT_P" 19.179
+cap "test_cc_inv_4/test_main_inv_1/A" "test_cc_inv_3/test_main_inv_0/Y" 0.384317
+cap "test_cc_inv_4/OUT_P" "test_cc_inv_3/VCCA" 3.47589
+cap "test_cc_inv_4/OUT_P" "test_cc_inv_4/test_main_inv_1/VGND" 0.433484
+cap "test_cc_inv_3/VCCA" "test_cc_inv_3/test_main_inv_0/Y" 0.143402
+cap "test_cc_inv_4/VPWR" "test_cc_inv_4/test_main_inv_1/VCCA" 11.114
+cap "test_cc_inv_4/test_main_inv_1/VCCA" "test_cc_inv_4/OUT_N" 0.357722
+cap "test_cc_inv_4/OUT_N" "test_cc_inv_4/test_main_inv_1/GND" 23.8165
+cap "test_cc_inv_4/test_main_inv_1/VCCA" "test_cc_inv_4/VGND" 0.370599
+cap "test_cc_inv_4/test_main_inv_1/A" "test_cc_inv_2/GND" 0.281177
+cap "test_cc_inv_4/test_main_inv_1/A" "test_cc_inv_4/test_main_inv_1/VCCA" 7.66907
+cap "test_cc_inv_4/OUT_P" "test_cc_inv_4/OUT_N" 0.916203
+cap "test_cc_inv_4/OUT_N" "test_cc_inv_4/VGND" 8.59422
+cap "test_cc_inv_4/test_main_inv_1/A" "test_cc_inv_4/test_main_inv_1/GND" 14.697
+cap "test_cc_inv_4/VGND" "test_cc_inv_4/test_main_inv_1/GND" 17.9973
+cap "test_cc_inv_4/OUT_P" "test_cc_inv_4/test_main_inv_1/A" 12.077
+cap "test_cc_inv_4/test_main_inv_1/A" "test_cc_inv_4/VGND" 0.433484
+cap "test_cc_inv_4/test_main_inv_1/A" "test_cc_inv_4/test_main_inv_1/GND" 10.2427
+cap "test_cc_inv_4/OUT_N" "test_cc_inv_4/test_main_inv_1/GND" 0.171049
+cap "test_cc_inv_4/test_main_inv_1/GND" "test_cc_inv_4/test_main_inv_0/Y" 0.171049
+cap "test_cc_inv_4/IN_P" "test_cc_inv_4/VPWR" 1.06386
+cap "test_cc_inv_4/IN_P" "test_cc_inv_4/test_main_inv_0/Y" 0.0325538
+cap "test_cc_inv_4/IN_P" "test_cc_inv_4/VCCA" 0.0764983
+cap "test_cc_inv_4/test_main_inv_0/VGND" "test_cc_inv_4/IN_N" 7.68814
+cap "test_cc_inv_4/test_main_inv_0/VPWR" "test_cc_inv_4/VCCA" 0.142388
+cap "test_cc_inv_4/test_main_inv_0/VPWR" "test_cc_inv_4/GND" 1.08234
+cap "test_cc_inv_4/VCCA" "test_cc_inv_4/GND" 0.118641
+cap "test_cc_inv_4/GND" "test_cc_inv_4/IN_N" 49.6317
+cap "test_cc_inv_4/test_main_inv_0/Y" "test_cc_inv_4/IN_N" 0.200888
+cap "test_cc_inv_4/IN_P" "test_cc_inv_4/test_main_inv_0/VGND" 3.37973
+cap "test_cc_inv_4/IN_P" "test_cc_inv_4/test_main_inv_0/VPWR" 0.813982
+cap "test_cc_inv_4/IN_P" "test_cc_inv_4/VCCA" 5.12674
+cap "test_cc_inv_4/IN_P" "test_cc_inv_4/GND" 0.17192
+cap "test_cc_inv_4/IN_P" "test_cc_inv_4/IN_N" 10.6261
+cap "test_cc_inv_4/IN_P" "test_cc_inv_4/test_main_inv_0/Y" 0.257166
+cap "test_cc_inv_4/test_main_inv_0/VPWR" "test_cc_inv_4/test_main_inv_0/VGND" 8.99659
+cap "test_cc_inv_4/VCCA" "test_cc_inv_4/test_main_inv_0/VGND" 0.827631
+cap "test_cc_inv_4/GND" "test_cc_inv_4/test_main_inv_0/VPWR" 1.20203
+cap "test_cc_inv_4/test_main_inv_0/VPWR" "test_cc_inv_4/test_main_inv_0/A" 1.38323
+cap "test_cc_inv_4/test_main_inv_0/VPWR" "test_cc_inv_4/VCCA" 1.12674
+cap "test_cc_inv_4/test_main_inv_0/VPWR" "test_cc_inv_4/test_main_inv_0/VGND" 8.99659
+cap "test_cc_inv_4/IN_N" "test_cc_inv_4/test_main_inv_0/VPWR" 0.120927
+cap "test_cc_inv_3/test_main_inv_1/VGND" "test_cc_inv_3/test_main_inv_1/GND" 0.263587
+cap "test_cc_inv_3/VGND" "test_cc_inv_3/test_main_inv_1/GND" 0.669788
+cap "test_cc_inv_3/VGND" "test_cc_inv_3/test_main_inv_1/GND" 3.18678
+cap "test_cc_inv_4/test_main_inv_1/VGND" "test_cc_inv_3/GND" 0.712414
+cap "test_cc_inv_4/OUT_N" "test_cc_inv_3/GND" -2.6506
+cap "test_cc_inv_4/test_main_inv_1/VGND" "test_cc_inv_3/GND" 28.072
+cap "test_cc_inv_4/VGND" "test_cc_inv_4/test_main_inv_1/GND" 51.1488
+cap "test_cc_inv_2/test_main_inv_0/VGND" "test_cc_inv_4/test_main_inv_1/GND" -0.0598765
+cap "test_cc_inv_4/OUT_N" "test_cc_inv_4/test_main_inv_1/GND" 24.7811
+cap "test_cc_inv_4/test_main_inv_1/A" "test_cc_inv_4/test_main_inv_1/GND" 60.2853
+cap "test_cc_inv_4/test_main_inv_1/GND" "test_cc_inv_4/VGND" 17.5982
+cap "test_cc_inv_4/test_main_inv_1/A" "test_cc_inv_4/test_main_inv_1/GND" 21.3754
+cap "test_cc_inv_4/test_main_inv_1/GND" "test_cc_inv_4/VGND" 3.18678
+cap "test_cc_inv_4/GND" "test_cc_inv_4/VGND" 1.01691
+cap "test_cc_inv_2/test_main_inv_1/A" "test_cc_inv_4/GND" 0.773975
+cap "test_cc_inv_4/test_main_inv_0/VGND" "li_17650_n3900#" 0.0967375
+cap "test_cc_inv_4/IN_N" "test_cc_inv_4/test_main_inv_0/VGND" -2.73927
+cap "test_cc_inv_4/GND" "test_cc_inv_2/test_main_inv_1/A" 0.183655
+cap "test_cc_inv_4/IN_N" "test_cc_inv_4/GND" 50.069
+cap "test_cc_inv_4/test_main_inv_0/VGND" "P_2" 0.0179732
+cap "test_cc_inv_4/GND" "test_cc_inv_4/test_main_inv_0/VGND" 132.685
+cap "test_cc_inv_4/test_main_inv_0/VGND" "m1_16010_3030#" 0.00889926
+cap "li_17650_n3900#" "test_cc_inv_2/test_main_inv_1/VGND" 0.0967375
+cap "li_17650_n3900#" "test_cc_inv_4/IN_N" 2.22045e-16
+cap "li_17650_n3900#" "test_cc_inv_4/GND" 0.215932
+cap "test_cc_inv_0/GND" "test_cc_inv_0/IN_P" 0.27372
+cap "test_cc_inv_0/GND" "test_cc_inv_0/IN_N" 99.7007
+cap "test_cc_inv_0/test_main_inv_0/VGND" "test_cc_inv_0/IN_P" 2.68663
+cap "test_cc_inv_0/IN_P" "test_cc_inv_0/test_main_inv_0/Y" 0.257166
+cap "test_cc_inv_0/test_main_inv_0/VGND" "test_cc_inv_0/IN_N" 7.1201
+cap "test_cc_inv_0/IN_N" "test_cc_inv_0/test_main_inv_0/Y" 0.200888
+cap "test_cc_inv_0/IN_N" "test_cc_inv_0/IN_P" 10.6261
+cap "test_cc_inv_0/test_main_inv_0/Y" "test_cc_inv_0/IN_P" 0.0162769
+cap "test_cc_inv_1/GND" "test_cc_inv_0/test_main_inv_1/A" 58.8235
+cap "test_cc_inv_1/GND" "test_cc_inv_3/test_main_inv_1/VGND" 30.8732
+cap "test_cc_inv_1/test_main_inv_0/VCCA" "test_cc_inv_3/test_main_inv_1/VGND" 1.2971
+cap "test_cc_inv_3/GND" "test_cc_inv_3/test_main_inv_1/VGND" 253.442
+cap "test_cc_inv_1/IN_P" "test_cc_inv_1/IN_N" -2.52963
+cap "test_cc_inv_0/test_main_inv_1/A" "test_cc_inv_1/IN_P" 5.05263
+cap "test_cc_inv_1/test_main_inv_0/VCCA" "test_cc_inv_1/IN_N" 1.24345e-14
+cap "test_cc_inv_3/test_main_inv_1/VGND" "test_cc_inv_1/IN_P" 1.55401
+cap "test_cc_inv_3/test_main_inv_1/VGND" "test_cc_inv_1/IN_N" 9.52386
+cap "test_cc_inv_3/GND" "test_cc_inv_1/IN_N" 45.554
+cap "test_cc_inv_3/GND" "test_cc_inv_1/IN_P" -0.152701
+cap "test_cc_inv_0/test_main_inv_1/A" "test_cc_inv_3/test_main_inv_1/VGND" 0.433484
+cap "test_cc_inv_0/test_main_inv_1/A" "test_cc_inv_3/GND" 57.2826
+cap "test_cc_inv_0/test_main_inv_1/A" "test_cc_inv_1/test_main_inv_0/Y" 0.192159
+cap "test_cc_inv_1/test_main_inv_0/Y" "test_cc_inv_3/GND" 0.171049
+cap "test_cc_inv_3/VGND" "test_cc_inv_3/GND" 3.18678
+cap "test_cc_inv_3/GND" "test_cc_inv_1/VGND" 17.5982
+cap "test_cc_inv_2/IN_N" "test_cc_inv_3/GND" 0.171049
+cap "test_cc_inv_3/GND" "test_cc_inv_1/test_main_inv_1/A" 28.8561
+cap "test_cc_inv_3/GND" "test_cc_inv_2/test_main_inv_0/VGND" 0.693277
+cap "test_cc_inv_2/GND" "test_cc_inv_1/test_main_inv_1/A" 67.323
+cap "test_cc_inv_2/test_main_inv_0/VGND" "test_cc_inv_1/test_main_inv_1/A" 0.433484
+cap "test_cc_inv_2/test_main_inv_0/VCCA" "test_cc_inv_2/test_main_inv_0/VGND" 0.370599
+cap "test_cc_inv_2/IN_N" "test_cc_inv_2/IN_P" 0.716269
+cap "test_cc_inv_3/GND" "test_cc_inv_1/test_main_inv_1/A" 0.281177
+cap "test_cc_inv_2/GND" "test_cc_inv_2/test_main_inv_0/VGND" 68.4529
+cap "test_cc_inv_2/IN_P" "test_cc_inv_1/test_main_inv_1/A" 2.52632
+cap "test_cc_inv_2/IN_N" "test_cc_inv_2/GND" 48.5976
+cap "test_cc_inv_2/IN_N" "test_cc_inv_2/test_main_inv_0/VGND" 8.59422
+cap "test_cc_inv_1/test_main_inv_1/A" "test_cc_inv_2/GND" 19.988
+cap "test_cc_inv_2/test_main_inv_0/VGND" "test_cc_inv_4/GND" 0.583672
+cap "test_cc_inv_2/test_main_inv_0/VGND" "test_cc_inv_2/GND" 107.079
+cap "test_cc_inv_2/IN_N" "test_cc_inv_2/IN_P" -3.2459
+cap "test_cc_inv_1/test_main_inv_1/A" "test_cc_inv_2/IN_P" 2.52632
+cap "test_cc_inv_1/test_main_inv_1/A" "test_cc_inv_2/test_main_inv_0/Y" 0.192159
+cap "test_cc_inv_2/test_main_inv_0/VGND" "test_cc_inv_2/IN_P" 0.433484
+cap "test_cc_inv_2/test_main_inv_0/VGND" "test_cc_inv_2/test_main_inv_0/VCCA" 0.926498
+cap "test_cc_inv_2/IN_P" "test_cc_inv_4/GND" 0.248373
+cap "test_cc_inv_2/test_main_inv_0/VGND" "test_cc_inv_2/IN_N" 0.209051
+cap "test_cc_inv_2/IN_N" "test_cc_inv_2/GND" -2.51351
+cap "test_cc_inv_4/GND" "test_cc_inv_2/test_main_inv_0/Y" 0.149961
+cap "test_cc_inv_4/GND" "test_cc_inv_2/IN_P" 0.0937257
+cap "test_cc_inv_4/GND" "test_cc_inv_2/VGND" 0.712414
+cap "test_cc_inv_4/GND" "test_cc_inv_2/test_main_inv_1/Y" 0.171049
+cap "test_cc_inv_4/GND" "test_cc_inv_2/test_aux_inv_1/Y" 0.0210883
+cap "test_cc_inv_4/VGND" "test_cc_inv_4/GND" 3.18678
+cap "test_cc_inv_4/GND" "test_cc_inv_2/test_main_inv_1/A" 0.276491
+cap "test_cc_inv_4/VGND" "test_cc_inv_4/GND" 0.669788
+cap "test_cc_inv_2/OUT_N" "test_cc_inv_2/OUT_P" 0.962543
+cap "test_cc_inv_4/test_main_inv_0/VGND" "test_cc_inv_2/test_main_inv_1/VPWR" 10.8924
+cap "test_cc_inv_2/test_main_inv_1/VPWR" "test_cc_inv_2/test_main_inv_1/A" 0.0619113
+cap "test_cc_inv_2/OUT_N" "test_cc_inv_4/test_main_inv_0/VGND" 29.3784
+cap "test_cc_inv_2/OUT_N" "test_cc_inv_2/test_main_inv_1/A" 26.963
+cap "test_cc_inv_2/OUT_N" "test_cc_inv_2/OUT_P" 1.18928
+cap "test_cc_inv_4/test_main_inv_0/VGND" "m1_16010_3030#" 1.2042
+cap "m1_16010_3030#" "test_cc_inv_2/test_main_inv_1/A" 0.141155
+cap "test_cc_inv_4/test_main_inv_0/VGND" "test_cc_inv_4/GND" 0.230445
+cap "test_cc_inv_2/test_main_inv_1/A" "test_cc_inv_4/GND" 0.0421766
+cap "test_cc_inv_4/test_main_inv_0/VGND" "test_cc_inv_2/OUT_P" 4.26551
+cap "test_cc_inv_4/test_main_inv_0/VGND" "test_cc_inv_2/test_main_inv_1/A" 3.73507
+cap "test_cc_inv_2/OUT_P" "test_cc_inv_2/test_main_inv_1/A" 12.5026
+cap "test_cc_inv_2/test_main_inv_1/VGND" "test_cc_inv_2/test_main_inv_1/VPWR" 10.8924
+cap "test_cc_inv_2/OUT_N" "test_cc_inv_2/test_main_inv_1/VPWR" 0.0301257
+cap "test_cc_inv_2/test_main_inv_1/A" "test_cc_inv_2/test_main_inv_1/VPWR" 0.131044
+cap "test_cc_inv_0/VCCA" "test_cc_inv_0/IN_P" 12.5321
+cap "test_cc_inv_0/test_main_inv_0/VPWR" "test_cc_inv_0/IN_P" 6.27561
+cap "test_cc_inv_0/IN_P" "test_cc_inv_0/test_main_inv_0/Y" 0.0162769
+cap "test_cc_inv_1/GND" "test_cc_inv_0/test_main_inv_1/A" 1.13235
+cap "test_cc_inv_1/VCCA" "test_cc_inv_1/IN_P" 21.2048
+cap "test_cc_inv_0/test_main_inv_1/A" "test_cc_inv_1/VCCA" 3.35941
+cap "test_cc_inv_0/test_main_inv_1/A" "test_cc_inv_1/test_main_inv_0/VPWR" 0.433484
+cap "test_cc_inv_1/VCCA" "test_cc_inv_1/IN_P" 26.5353
+cap "test_cc_inv_1/IN_P" "test_cc_inv_1/IN_N" 1.51031
+cap "test_cc_inv_1/test_main_inv_0/VPWR" "test_cc_inv_1/IN_P" 9.07538
+cap "test_cc_inv_0/test_main_inv_1/A" "test_cc_inv_1/IN_P" 16.4981
+cap "test_cc_inv_1/VCCA" "test_cc_inv_1/test_main_inv_0/VPWR" 198.26
+cap "test_cc_inv_1/VCCA" "test_cc_inv_1/IN_N" 2.60073
+cap "test_cc_inv_1/test_main_inv_0/VPWR" "test_cc_inv_1/IN_N" 0.276643
+cap "test_cc_inv_1/test_main_inv_0/VGND" "test_cc_inv_1/IN_P" 2.22045e-16
+cap "test_cc_inv_0/test_main_inv_1/A" "test_cc_inv_1/VCCA" 38.5549
+cap "test_cc_inv_1/IN_N" "test_cc_inv_1/IN_P" 3.42666
+cap "test_cc_inv_1/test_main_inv_0/Y" "test_cc_inv_1/VCCA" 0.314619
+cap "test_cc_inv_1/test_main_inv_0/Y" "test_cc_inv_0/test_main_inv_1/A" 1.08175
+cap "test_cc_inv_1/VCCA" "test_cc_inv_1/IN_P" 3.2621
+cap "test_cc_inv_1/IN_P" "test_cc_inv_0/test_main_inv_1/A" 20.7387
+cap "test_cc_inv_1/test_main_inv_0/Y" "test_cc_inv_1/VPWR" 0.115268
+cap "test_cc_inv_1/IN_P" "test_cc_inv_1/VPWR" 1.25224
+cap "test_cc_inv_2/IN_P" "test_cc_inv_2/VCCA" 10.6024
+cap "test_cc_inv_2/VCCA" "test_cc_inv_1/test_main_inv_1/A" 1.32341
+cap "test_cc_inv_2/GND" "test_cc_inv_1/test_main_inv_1/A" 1.13235
+cap "test_cc_inv_2/test_main_inv_0/VPWR" "test_cc_inv_2/IN_N" 0.276643
+cap "test_cc_inv_2/test_main_inv_0/VPWR" "test_cc_inv_1/test_main_inv_1/A" 0.433484
+cap "test_cc_inv_2/IN_P" "test_cc_inv_2/IN_N" 4.75621
+cap "test_cc_inv_2/IN_P" "test_cc_inv_2/test_main_inv_0/VPWR" 8.43285
+cap "test_cc_inv_2/IN_P" "test_cc_inv_1/test_main_inv_1/A" 11.2349
+cap "test_cc_inv_2/VCCA" "test_cc_inv_2/IN_N" 2.46364
+cap "test_cc_inv_1/test_main_inv_1/A" "test_cc_inv_2/VCCA" 20.6029
+cap "test_cc_inv_2/test_main_inv_0/VPWR" "test_cc_inv_2/VCCA" 93.1037
+cap "test_cc_inv_2/IN_P" "test_cc_inv_2/VCCA" 36.0482
+cap "test_cc_inv_2/VCCA" "test_cc_inv_2/test_main_inv_0/VPWR" 105.156
+cap "test_cc_inv_2/IN_N" "test_cc_inv_2/IN_P" 0.180761
+cap "test_cc_inv_1/test_main_inv_1/A" "test_cc_inv_2/IN_P" 26.0019
+cap "test_cc_inv_1/test_main_inv_1/A" "test_cc_inv_2/test_main_inv_0/Y" 1.08175
+cap "test_cc_inv_2/test_main_inv_0/VPWR" "test_cc_inv_2/IN_P" 1.89477
+cap "test_cc_inv_2/VCCA" "test_cc_inv_2/IN_N" 0.137091
+cap "test_cc_inv_2/test_main_inv_0/VPWR" "test_cc_inv_2/test_main_inv_0/Y" 0.115268
+cap "test_cc_inv_2/VCCA" "test_cc_inv_1/test_main_inv_1/A" 19.988
+cap "test_cc_inv_2/VCCA" "test_cc_inv_2/test_main_inv_0/Y" 0.314619
+cap "test_cc_inv_2/VCCA" "test_cc_inv_2/IN_P" 2.49617
+cap "test_cc_inv_2/test_main_inv_1/VCCA" "test_cc_inv_2/test_main_inv_1/A" 6.11127
+cap "test_cc_inv_2/test_main_inv_1/VCCA" "test_cc_inv_2/OUT_P" 37.1084
+cap "test_cc_inv_2/OUT_P" "test_cc_inv_2/test_main_inv_1/A" 2.78222
+cap "test_cc_inv_2/OUT_N" "test_cc_inv_2/OUT_P" 3.79111
+cap "test_cc_inv_2/test_main_inv_1/VPWR" "test_cc_inv_2/test_main_inv_1/A" 0.128982
+cap "test_cc_inv_2/OUT_P" "test_cc_inv_2/test_main_inv_1/A" 23.2619
+cap "test_cc_inv_2/test_main_inv_1/VPWR" "test_cc_inv_2/OUT_P" 15.253
+cap "test_cc_inv_2/test_main_inv_1/VCCA" "test_cc_inv_2/test_main_inv_1/A" 7.48476
+cap "test_cc_inv_2/test_main_inv_1/VPWR" "test_cc_inv_2/test_main_inv_1/VCCA" 7.70982
+cap "test_cc_inv_2/OUT_P" "test_cc_inv_2/OUT_N" 4.03155
+cap "test_cc_inv_2/test_main_inv_1/VCCA" "test_cc_inv_2/OUT_P" 14.4058
+cap "test_cc_inv_2/test_main_inv_1/VPWR" "test_cc_inv_2/test_main_inv_1/VCCA" 1.35474
+cap "test_cc_inv_2/test_main_inv_1/VPWR" "test_cc_inv_2/test_main_inv_1/A" 0.556936
+cap "test_cc_inv_2/test_main_inv_1/VPWR" "test_cc_inv_2/OUT_P" 0.0301257
+cap "test_cc_inv_0/test_main_inv_1/A" "test_cc_inv_1/VCCA" 24.7674
+cap "test_cc_inv_1/IN_P" "test_cc_inv_1/VCCA" 21.2048
+cap "test_cc_inv_0/VPWR" "test_cc_inv_1/VCCA" 30.8732
+cap "test_cc_inv_0/test_main_inv_1/A" "test_cc_inv_1/VCCA" 30.0211
+cap "test_cc_inv_0/test_aux_inv_1/A" "test_cc_inv_1/VCCA" 1.15624
+cap "test_cc_inv_1/IN_P" "test_cc_inv_1/VCCA" 23.5904
+cap "test_cc_inv_1/VCCA" "test_cc_inv_1/test_main_inv_0/VPWR" 65.0055
+cap "test_cc_inv_1/VPWR" "test_cc_inv_2/VCCA" 16.8858
+cap "test_cc_inv_1/test_main_inv_1/A" "test_cc_inv_2/VCCA" 9.75686
+cap "test_cc_inv_2/IN_P" "test_cc_inv_2/VCCA" 10.6024
+cap "test_cc_inv_2/VCCA" "test_cc_inv_2/test_main_inv_0/VPWR" 50.4555
+cap "test_cc_inv_2/VCCA" "test_cc_inv_2/IN_P" 36.0482
+cap "test_cc_inv_2/VCCA" "test_cc_inv_1/test_main_inv_1/A" 45.0316
+cap "test_cc_inv_1/test_aux_inv_1/A" "test_cc_inv_2/VCCA" 1.15624
+cap "test_cc_inv_2/VCCA" "test_cc_inv_2/test_main_inv_0/VPWR" 26.0896
+cap "test_cc_inv_2/VCCA" "test_cc_inv_2/IN_P" -3.71084
+cap "test_cc_inv_2/OUT_P" "test_cc_inv_2/test_main_inv_1/VCCA" 37.1084
+cap "test_cc_inv_2/test_aux_inv_1/A" "test_cc_inv_2/test_main_inv_1/VCCA" 1.15624
+cap "test_cc_inv_2/test_main_inv_1/A" "test_cc_inv_2/test_main_inv_1/VCCA" 44.2811
+cap "test_cc_inv_2/VPWR" "test_cc_inv_2/test_main_inv_1/VCCA" 51.8543
+cap "test_cc_inv_2/test_main_inv_1/VPWR" "test_cc_inv_2/test_main_inv_1/VCCA" 8.65549
+cap "test_cc_inv_2/test_main_inv_1/VCCA" "test_cc_inv_2/OUT_P" 10.6024
+cap "test_cc_inv_2/test_main_inv_1/A" "test_cc_inv_2/test_main_inv_1/VCCA" 10.5074
+merge "test_cc_inv_0/OUT_N" "test_cc_inv_1/IN_N" -242.912 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -22000 -840 0 0 0 0 0 0 0 0 0 0
+merge "test_cc_inv_1/IN_N" "Pn_0"
+merge "test_cc_inv_2/VSUBS" "test_cc_inv_1/VSUBS" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "test_cc_inv_1/VSUBS" "test_cc_inv_0/VSUBS"
+merge "test_cc_inv_0/VSUBS" "test_cc_inv_4/VSUBS"
+merge "test_cc_inv_4/VSUBS" "test_cc_inv_3/VSUBS"
+merge "test_cc_inv_3/VSUBS" "VSUBS"
+merge "test_cc_inv_2/test_main_inv_1/GND" "test_cc_inv_1/test_main_inv_1/GND" -2400.28 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -83000 -4480 0 0 0 0 0 0 0 0 0 0
+merge "test_cc_inv_1/test_main_inv_1/GND" "test_cc_inv_0/test_main_inv_1/GND"
+merge "test_cc_inv_0/test_main_inv_1/GND" "test_cc_inv_4/GND"
+merge "test_cc_inv_4/GND" "test_cc_inv_4/test_main_inv_1/GND"
+merge "test_cc_inv_4/test_main_inv_1/GND" "m1_16100_n1140#"
+merge "m1_16100_n1140#" "test_cc_inv_2/GND"
+merge "test_cc_inv_2/GND" "test_cc_inv_3/GND"
+merge "test_cc_inv_3/GND" "m1_11860_n1170#"
+merge "m1_11860_n1170#" "test_cc_inv_1/GND"
+merge "test_cc_inv_1/GND" "m1_10070_0#"
+merge "m1_10070_0#" "test_cc_inv_3/test_main_inv_1/GND"
+merge "test_cc_inv_3/test_main_inv_1/GND" "m1_7800_n1080#"
+merge "m1_7800_n1080#" "test_cc_inv_0/GND"
+merge "test_cc_inv_0/GND" "m1_4050_0#"
+merge "test_cc_inv_1/OUT_N" "test_cc_inv_2/IN_N" -282.425 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -22000 -1040 0 0 0 0 0 0 0 0 0 0
+merge "test_cc_inv_2/IN_N" "Pn_1"
+merge "test_cc_inv_2/test_main_inv_1/VPWR" "test_cc_inv_2/VPWR" -2516.2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -307800 -7100 0 0 0 0 0 0 0 0 0 0 0 0
+merge "test_cc_inv_2/VPWR" "test_cc_inv_4/test_main_inv_0/VPWR"
+merge "test_cc_inv_4/test_main_inv_0/VPWR" "test_cc_inv_4/VPWR"
+merge "test_cc_inv_4/VPWR" "li_17650_n3900#"
+merge "li_17650_n3900#" "test_cc_inv_3/test_main_inv_0/VPWR"
+merge "test_cc_inv_3/test_main_inv_0/VPWR" "test_cc_inv_3/VPWR"
+merge "test_cc_inv_3/VPWR" "test_cc_inv_4/test_main_inv_1/VPWR"
+merge "test_cc_inv_4/test_main_inv_1/VPWR" "li_11820_n3900#"
+merge "li_11820_n3900#" "test_cc_inv_1/test_main_inv_1/VPWR"
+merge "test_cc_inv_1/test_main_inv_1/VPWR" "test_cc_inv_1/VPWR"
+merge "test_cc_inv_1/VPWR" "test_cc_inv_2/test_main_inv_0/VPWR"
+merge "test_cc_inv_2/test_main_inv_0/VPWR" "li_11960_2750#"
+merge "li_11960_2750#" "test_cc_inv_0/test_main_inv_1/VPWR"
+merge "test_cc_inv_0/test_main_inv_1/VPWR" "test_cc_inv_0/VPWR"
+merge "test_cc_inv_0/VPWR" "test_cc_inv_1/test_main_inv_0/VPWR"
+merge "test_cc_inv_1/test_main_inv_0/VPWR" "VPWR"
+merge "test_cc_inv_2/OUT_N" "test_cc_inv_4/IN_N" -251.02 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -400 0 0 0 0 0 0 0 0 0 0
+merge "test_cc_inv_4/IN_N" "Pn_2"
+merge "test_cc_inv_0/OUT_P" "test_cc_inv_1/IN_P" -342.556 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -22000 -840 0 0 0 0 0 0 0 0 0 0
+merge "test_cc_inv_1/IN_P" "P_0"
+merge "test_cc_inv_2/test_main_inv_1/VGND" "test_cc_inv_2/VGND" -1154.85 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -13000 -2020 0 0 0 0 0 0 0 0 0 0 0 0
+merge "test_cc_inv_2/VGND" "test_cc_inv_1/test_main_inv_1/VGND"
+merge "test_cc_inv_1/test_main_inv_1/VGND" "test_cc_inv_1/VGND"
+merge "test_cc_inv_1/VGND" "test_cc_inv_2/test_main_inv_0/VGND"
+merge "test_cc_inv_2/test_main_inv_0/VGND" "li_11960_300#"
+merge "li_11960_300#" "test_cc_inv_0/test_main_inv_1/VGND"
+merge "test_cc_inv_0/test_main_inv_1/VGND" "test_cc_inv_0/VGND"
+merge "test_cc_inv_0/VGND" "test_cc_inv_1/test_main_inv_0/VGND"
+merge "test_cc_inv_1/test_main_inv_0/VGND" "li_5960_300#"
+merge "li_5960_300#" "test_cc_inv_4/test_main_inv_0/VGND"
+merge "test_cc_inv_4/test_main_inv_0/VGND" "test_cc_inv_4/VGND"
+merge "test_cc_inv_4/VGND" "li_17720_n1390#"
+merge "li_17720_n1390#" "test_cc_inv_3/test_main_inv_0/VGND"
+merge "test_cc_inv_3/test_main_inv_0/VGND" "test_cc_inv_3/VGND"
+merge "test_cc_inv_3/VGND" "test_cc_inv_4/test_main_inv_1/VGND"
+merge "test_cc_inv_4/test_main_inv_1/VGND" "li_11820_n1450#"
+merge "li_11820_n1450#" "test_cc_inv_3/test_main_inv_1/VGND"
+merge "test_cc_inv_3/test_main_inv_1/VGND" "VGND"
+merge "test_cc_inv_3/IN_N" "test_cc_inv_4/OUT_N" -279.445 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -22000 -1040 0 0 0 0 0 0 0 0 0 0
+merge "test_cc_inv_4/OUT_N" "Pn_3"
+merge "test_cc_inv_0/IN_N" "test_cc_inv_3/OUT_N" -874.288 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -160100 -3702 0 0 0 0 0 0 0 0 0 0
+merge "test_cc_inv_3/OUT_N" "Pn_4"
+merge "test_cc_inv_2/OUT_P" "test_cc_inv_4/IN_P" -642.992 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -140000 -3200 0 0 0 0 0 0 0 0 0 0
+merge "test_cc_inv_4/IN_P" "P_2"
+merge "test_cc_inv_2/VCCA" "test_cc_inv_1/test_main_inv_1/VCCA" -2768.23 0 0 0 0 0 -4640 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -397000 -9240 0 0 0 0 0 0 0 0 0 0
+merge "test_cc_inv_1/test_main_inv_1/VCCA" "m1_9870_3030#"
+merge "m1_9870_3030#" "test_cc_inv_2/test_main_inv_1/VCCA"
+merge "test_cc_inv_2/test_main_inv_1/VCCA" "test_cc_inv_2/test_main_inv_0/VCCA"
+merge "test_cc_inv_2/test_main_inv_0/VCCA" "test_cc_inv_3/test_main_inv_0/VCCA"
+merge "test_cc_inv_3/test_main_inv_0/VCCA" "test_cc_inv_3/test_main_inv_1/VCCA"
+merge "test_cc_inv_3/test_main_inv_1/VCCA" "test_cc_inv_4/VCCA"
+merge "test_cc_inv_4/VCCA" "test_cc_inv_3/VCCA"
+merge "test_cc_inv_3/VCCA" "m1_16010_3030#"
+merge "m1_16010_3030#" "m1_11750_n4200#"
+merge "m1_11750_n4200#" "test_cc_inv_4/test_main_inv_1/VCCA"
+merge "test_cc_inv_1/OUT_P" "test_cc_inv_2/IN_P" -378.954 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -22000 -1040 0 0 0 0 0 0 0 0 0 0
+merge "test_cc_inv_2/IN_P" "P_1"
+merge "test_cc_inv_3/IN_P" "test_cc_inv_4/OUT_P" -378.954 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -22000 -1040 0 0 0 0 0 0 0 0 0 0
+merge "test_cc_inv_4/OUT_P" "P_3"
+merge "test_cc_inv_0/IN_P" "test_cc_inv_3/OUT_P" -736.3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -160100 -3702 0 0 0 0 0 0 0 0 0 0
+merge "test_cc_inv_3/OUT_P" "P_4"
+merge "test_cc_inv_1/VCCA" "test_cc_inv_0/test_main_inv_1/VCCA" -642.02 0 0 0 0 0 -2320 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -36000 -1120 0 0 0 0 0 0 0 0 0 0
+merge "test_cc_inv_0/test_main_inv_1/VCCA" "m1_3910_3030#"
+merge "m1_3910_3030#" "test_cc_inv_1/test_main_inv_0/VCCA"

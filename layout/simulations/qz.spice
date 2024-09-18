@@ -1,0 +1,18 @@
+** sch_path: /home/userdata/k63D/toind_63d/git/vco_adc2/xschem/lib/DLib_Quantizer.sch
+**.subckt DLib_Quantizer CLK D Dout FBack
+*.ipin CLK
+*.ipin D
+*.opin Dout
+*.opin FBack
+Xdly_1 CLK VGND VNB VPB VPWR DL1 sky130_fd_sc_hd__dlygate4sd3_1
+x2 CLK net1 VGND VNB VPB VPWR Dout sky130_fd_sc_hd__dfxtp_1
+x3 D VGND VNB VPB VPWR net1 sky130_fd_sc_hd__buf_2
+x4 CLK_dly Dout VGND VNB VPB VPWR FBack_inv sky130_fd_sc_hd__nand2_1
+x5 FBack_inv VGND VNB VPB VPWR FBack sky130_fd_sc_hd__inv_2
+Xdly_2 DL1 VGND VNB VPB VPWR DL2 sky130_fd_sc_hd__dlygate4sd3_1
+Xdly_3 DL2 VGND VNB VPB VPWR DL3 sky130_fd_sc_hd__dlygate4sd3_1
+Xdly_4 DL3 VGND VNB VPB VPWR DL4 sky130_fd_sc_hd__dlygate4sd3_1
+Xdly_5 DL4 VGND VNB VPB VPWR DL5 sky130_fd_sc_hd__dlygate4sd3_1
+Xdly_6 DL5 VGND VNB VPB VPWR CLK_dly sky130_fd_sc_hd__dlygate4sd3_1
+**.ends
+.end

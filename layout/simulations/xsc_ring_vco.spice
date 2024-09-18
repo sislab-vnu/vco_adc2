@@ -1,0 +1,71 @@
+** sch_path: /home/userdata/k63D/toind_63d/git/vco_adc2/xschem/lib/5s_cc_osc.sch
+*.iopin VPWR
+**.subckt 5s_cc_osc VPWR VGND pn[0] p[0] pn[1] p[1] p[2] p[3] p[4] pn[2] pn[3] pn[4]
+*.iopin VPWR
+*.iopin VGND
+*.opin pn[0]
+*.iopin p[0]
+*.opin pn[1]
+*.opin p[1]
+*.opin p[2]
+*.opin p[3]
+*.opin p[4]
+*.opin pn[2]
+*.opin pn[3]
+*.opin pn[4]
+Xi_1 p[4] pn[4] VPWR VGND p[0] pn[0] cc_inv
+Xi_2 p[0] pn[0] VPWR VGND p[1] pn[1] cc_inv
+Xi_3 p[1] pn[1] VPWR VGND p[2] pn[2] cc_inv
+Xi_4 p[2] pn[2] VPWR VGND p[3] pn[3] cc_inv
+Xi_5 p[3] pn[3] VPWR VGND p[4] pn[4] cc_inv
+**.ends
+
+* expanding   symbol:  cc_inv.sym # of pins=6
+** sym_path: /home/userdata/k63D/toind_63d/git/vco_adc2/xschem/lib/cc_inv.sym
+** sch_path: /home/userdata/k63D/toind_63d/git/vco_adc2/xschem/lib/cc_inv.sch
+.subckt cc_inv inp inn VPWR VGND outp outn
+*.iopin VGND
+*.opin outn
+*.ipin inp
+*.iopin VPWR
+Xi_1 inp VPWR VGND outp main_inv
+Xi_2 inn VPWR VGND outn main_inv
+Xi_3 outp VPWR VGND outn aux_inv
+Xi_4 outn VPWR VGND outp aux_inv
+.ends
+
+
+* expanding   symbol:  main_inv.sym # of pins=4
+** sym_path: /home/userdata/k63D/toind_63d/git/vco_adc2/xschem/lib/main_inv.sym
+** sch_path: /home/userdata/k63D/toind_63d/git/vco_adc2/xschem/lib/main_inv.sch
+.subckt main_inv A VPWR VGND Y
+*.iopin VPWR
+*.iopin VGND
+*.ipin A
+*.opin Y
+XM1 Y A VPWR VCCA sky130_fd_pr__pfet_01v8 L=3.65 W=10 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 Y A VGND GND sky130_fd_pr__nfet_01v8 L=3.65 W=8 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  aux_inv.sym # of pins=4
+** sym_path: /home/userdata/k63D/toind_63d/git/vco_adc2/xschem/lib/aux_inv.sym
+** sch_path: /home/userdata/k63D/toind_63d/git/vco_adc2/xschem/lib/aux_inv.sch
+.subckt aux_inv A VPWR VGND Y
+*.iopin VPWR
+*.iopin VGND
+*.ipin A
+*.opin Y
+XM1 Y A VPWR VCCA sky130_fd_pr__pfet_01v8 L=3.65 W=5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 Y A VGND GND sky130_fd_pr__nfet_01v8 L=3.65 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.end

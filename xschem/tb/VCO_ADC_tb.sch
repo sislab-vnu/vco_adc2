@@ -96,11 +96,11 @@ C {devices/code_shown.sym} 840 -230 0 0 {name=VCO_param only_toplevel=false valu
 place=end}
 C {devices/lab_wire.sym} 190 -420 1 0 {name=l30 sig_type=std_logic lab=p_vco}
 C {devices/lab_wire.sym} 670 -420 1 0 {name=l31 sig_type=std_logic lab=p_dco}
-C {ALib_DCO.sym} 530 -420 0 0 {name=Xdco_1}
-C {ALib_VCO.sym} 110 -410 0 0 {name=Xvco_1 l_main=l_main l_aux=l_aux wp=wp wn=wn}
-C {DLib_UpDownCounter.sym} 290 -400 0 0 {name=X_UDC_1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
-C {DLib_Quantizer.sym} 960 -400 0 0 {name=X_Qtz_1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
-C {DLib_UpDownCounter.sym} 770 -400 0 0 {name=X_UDC_2 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
+C {../lib/ALib_DCO.sym} 530 -420 0 0 {name=Xdco_1}
+C {../lib/ALib_VCO.sym} 110 -410 0 0 {name=Xvco_1 l_main=l_main l_aux=l_aux wp=wp wn=wn}
+C {../lib/DLib_UpDownCounter.sym} 290 -400 0 0 {name=X_UDC_1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
+C {../lib/DLib_Quantizer.sym} 960 -400 0 0 {name=X_Qtz_1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
+C {../lib/DLib_UpDownCounter.sym} 770 -400 0 0 {name=X_UDC_2 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
 C {devices/code.sym} 30 -130 0 0 {name=lib_def
 only_toplevel=false 
 value=tcleval(".include $::SKYWATER_STDCELLS/sky130_fd_sc_hd.spice

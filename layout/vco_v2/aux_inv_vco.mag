@@ -1,0 +1,35 @@
+magic
+tech sky130A
+timestamp 1725396630
+<< error_s >>
+rect 0 10 490 590
+rect 25 -460 65 -60
+rect 430 -460 470 -60
+<< nwell >>
+rect 0 10 490 590
+<< poly >>
+rect 65 -20 430 10
+<< locali >>
+rect 25 50 65 550
+rect 430 -60 470 50
+rect 25 -460 65 -60
+use nmos_vco_aux  nmos_vco_aux_0
+timestamp 1724744286
+transform 1 0 65 0 1 -460
+box -60 -40 425 440
+use pmos_vco_aux  pmos_vco_aux_0
+timestamp 1725396233
+transform 1 0 65 0 1 50
+box -65 -40 425 540
+<< labels >>
+rlabel locali 470 -5 470 -5 3 D
+port 1 e
+rlabel poly 65 -5 65 -5 7 G
+port 2 w
+rlabel locali 45 50 45 50 5 S_P
+port 3 s
+rlabel locali 45 -460 45 -460 5 S_N
+port 4 s
+rlabel nwell 15 575 15 575 1 VPWR
+port 5 n
+<< end >>

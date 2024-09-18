@@ -1,0 +1,62 @@
+* NGSPICE file created from test_mag_vco.ext - technology: sky130A
+
+.subckt sky130_fd_pr__res_generic_po_DKCPUZ a_n48_200# a_n48_n630#
+R0 a_n48_200# a_n48_n630# sky130_fd_pr__res_generic_po w=0.48 l=2
+.ends
+
+.subckt mag_vco_main_inv A VPWR VGND Y VCCA GND
+X0 VPWR A Y VCCA sky130_fd_pr__pfet_01v8 ad=2 pd=10.8 as=1 ps=5.4 w=5 l=3.65 M=2
+X1 Y A VGND GND sky130_fd_pr__nfet_01v8 ad=0.8 pd=4.4 as=1.6 ps=8.8 w=4 l=3.65 M=2
+.ends
+
+.subckt mag_vco_aux_inv A VPWR VGND Y VCCA GND
+X0 Y A VPWR VCCA sky130_fd_pr__pfet_01v8 ad=2 pd=10.8 as=2 ps=10.8 w=5 l=3.65
+X1 Y A VGND GND sky130_fd_pr__nfet_01v8 ad=1.6 pd=8.8 as=1.6 ps=8.8 w=4 l=3.65
+.ends
+
+.subckt mag_vco_cc_inv inp inn VPWR VGND outp outn VCCA GND
+Xmag_vco_main_inv_0 inp VPWR VGND outp VCCA GND mag_vco_main_inv
+Xmag_vco_main_inv_1 inn VPWR VGND outn VCCA GND mag_vco_main_inv
+Xmag_vco_aux_inv_0 outp VPWR VGND outn VCCA GND mag_vco_aux_inv
+Xmag_vco_aux_inv_1 outn VPWR VGND outp VCCA GND mag_vco_aux_inv
+.ends
+
+.subckt mag_vco_ring_vco VGND p[0] p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4]
++ mag_vco_cc_inv_4/VCCA VSUBS VPWR
+Xmag_vco_cc_inv_0 p[4] pn[4] VPWR VGND p[0] pn[0] mag_vco_cc_inv_4/VCCA VSUBS mag_vco_cc_inv
+Xmag_vco_cc_inv_1 p[0] pn[0] VPWR VGND p[1] pn[1] mag_vco_cc_inv_4/VCCA VSUBS mag_vco_cc_inv
+Xmag_vco_cc_inv_2 p[1] pn[1] VPWR VGND p[2] pn[2] mag_vco_cc_inv_4/VCCA VSUBS mag_vco_cc_inv
+Xmag_vco_cc_inv_3 p[3] pn[3] VPWR VGND p[4] pn[4] mag_vco_cc_inv_4/VCCA VSUBS mag_vco_cc_inv
+Xmag_vco_cc_inv_4 p[2] pn[2] VPWR VGND p[3] pn[3] mag_vco_cc_inv_4/VCCA VSUBS mag_vco_cc_inv
+.ends
+
+*.subckt sky130_fd_sc_hd__einvp_1 A TE VGND VNB VPB VPWR Z
+*X0 a_276_297# a_27_47# VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0.1825 pd=1.365 as=0.32075 ps=1.685 w=1 l=0.15
+*X1 Z A a_204_47# VNB sky130_fd_pr__nfet_01v8 ad=0.1755 pd=1.84 as=0.235625 ps=1.375 w=0.65 l=0.15
+*X2 VPWR TE a_27_47# VPB sky130_fd_pr__pfet_01v8_hvt ad=0.32075 pd=1.685 as=0.1092 ps=1.36 w=0.42 l=0.15
+*X3 Z A a_276_297# VPB sky130_fd_pr__pfet_01v8_hvt ad=0.27 pd=2.54 as=0.1825 ps=1.365 w=1 l=0.15
+*X4 a_204_47# TE VGND VNB sky130_fd_pr__nfet_01v8 ad=0.235625 pd=1.375 as=0.097 ps=0.975 w=0.65 l=0.15
+*X5 VGND TE a_27_47# VNB sky130_fd_pr__nfet_01v8 ad=0.097 pd=0.975 as=0.1092 ps=1.36 w=0.42 l=0.15
+*.ends
+
+.subckt sky130_fd_sc_hd__einvp_1 1 2 3 4 5 6 7
+X0 a_276_297# a_27_47# 6 5 sky130_fd_pr__pfet_01v8_hvt ad=0.1825 pd=1.365 as=0.32075 ps=1.685 w=1 l=0.15
+X1 7 1 a_204_47# 4 sky130_fd_pr__nfet_01v8 ad=0.1755 pd=1.84 as=0.235625 ps=1.375 w=0.65 l=0.15
+X2 6 2 a_27_47# 5 sky130_fd_pr__pfet_01v8_hvt ad=0.32075 pd=1.685 as=0.1092 ps=1.36 w=0.42 l=0.15
+X3 7 1 a_276_297# 5 sky130_fd_pr__pfet_01v8_hvt ad=0.27 pd=2.54 as=0.1825 ps=1.365 w=1 l=0.15
+X4 a_204_47# 2 3 4 sky130_fd_pr__nfet_01v8 ad=0.235625 pd=1.375 as=0.097 ps=0.975 w=0.65 l=0.15
+X5 3 2 a_27_47# 4 sky130_fd_pr__nfet_01v8 ad=0.097 pd=0.975 as=0.1092 ps=1.36 w=0.42 l=0.15
+.ends
+
+.subckt test_mag_vco VCCD ENB p[4] Anlg_in VCCA VPWR
+Xsky130_fd_pr__res_generic_po_DKCPUZ_0 Anlg_in mag_vco_ring_vco_0/VGND sky130_fd_pr__res_generic_po_DKCPUZ
+Xsky130_fd_pr__res_generic_po_DKCPUZ_1 mag_vco_ring_vco_0/VGND mag_vco_ring_vco_0/VSUBS
++ sky130_fd_pr__res_generic_po_DKCPUZ
+Xmag_vco_ring_vco_0 mag_vco_ring_vco_0/VGND mag_vco_ring_vco_0/p[0] mag_vco_ring_vco_0/p[1]
++ mag_vco_ring_vco_0/p[2] mag_vco_ring_vco_0/p[3] p[4] mag_vco_ring_vco_0/pn[0] mag_vco_ring_vco_0/pn[1]
++ mag_vco_ring_vco_0/pn[2] mag_vco_ring_vco_0/pn[3] mag_vco_ring_vco_0/pn[4] VCCA
++ mag_vco_ring_vco_0/VSUBS VPWR mag_vco_ring_vco
+Xsky130_fd_sc_hd__einvp_1_0 VCCD ENB mag_vco_ring_vco_0/VSUBS mag_vco_ring_vco_0/VSUBS
++ VCCD VCCD mag_vco_ring_vco_0/pn[4] sky130_fd_sc_hd__einvp_1
+.ends
+

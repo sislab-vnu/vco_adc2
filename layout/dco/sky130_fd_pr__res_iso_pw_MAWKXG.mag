@@ -1,0 +1,51 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1726214614
+<< pwell >>
+rect -265 2650 265 2808
+rect -265 -2808 265 -2650
+<< rpw >>
+rect -265 -2650 265 2650
+<< psubdiff >>
+rect -225 2650 -201 2756
+rect 201 2650 225 2756
+rect -225 -2756 -201 -2650
+rect 201 -2756 225 -2650
+<< psubdiffcont >>
+rect -201 2650 201 2756
+rect -201 -2756 201 -2650
+<< locali >>
+rect -217 2720 -201 2756
+rect 201 2720 217 2756
+rect -217 2667 -213 2720
+rect 213 2667 217 2720
+rect -217 2650 -201 2667
+rect 201 2650 217 2667
+rect -217 -2667 -201 -2650
+rect 201 -2667 217 -2650
+rect -217 -2720 -213 -2667
+rect 213 -2720 217 -2667
+rect -217 -2756 -201 -2720
+rect 201 -2756 217 -2720
+<< viali >>
+rect -213 2667 -201 2720
+rect -201 2667 201 2720
+rect 201 2667 213 2720
+rect -213 -2720 -201 -2667
+rect -201 -2720 201 -2667
+rect 201 -2720 213 -2667
+<< metal1 >>
+rect -225 2720 225 2726
+rect -225 2667 -213 2720
+rect 213 2667 225 2720
+rect -225 2661 225 2667
+rect -225 -2667 225 -2661
+rect -225 -2720 -213 -2667
+rect 213 -2720 225 -2667
+rect -225 -2726 225 -2720
+<< properties >>
+string gencell sky130_fd_pr__res_iso_pw
+string library sky130
+string parameters w 2.650 l 26.50 m 1 nx 1 wmin 2.650 lmin 26.50 rho 3050 val 33.677k dummy 0 dw 0.25 term 1.0 guard 0 endcov 100 full_metal 1 vias 1 viagb 0 viagt 0 viagl 0 viagr 0
+<< end >>

@@ -1,0 +1,6 @@
+* NGSPICE file created from nmos_vco.ext - technology: sky130A
+
+.subckt nmos_vco S D G
+X0 D G S VSUBS sky130_fd_pr__nfet_01v8 ad=0.8 pd=4.4 as=1.6 ps=8.8 w=4 l=3.65 M=2
+.ends
+

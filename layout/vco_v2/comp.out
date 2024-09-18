@@ -1,0 +1,43 @@
+
+Circuit 1 cell sky130_fd_pr__pfet_01v8 and Circuit 2 cell sky130_fd_pr__pfet_01v8 are black boxes.
+Equate elements:  no current cell.
+Device classes sky130_fd_pr__pfet_01v8 and sky130_fd_pr__pfet_01v8 are equivalent.
+
+Circuit 1 cell sky130_fd_pr__nfet_01v8 and Circuit 2 cell sky130_fd_pr__nfet_01v8 are black boxes.
+Equate elements:  no current cell.
+Device classes sky130_fd_pr__nfet_01v8 and sky130_fd_pr__nfet_01v8 are equivalent.
+Flattening unmatched subcell main_inv_vco in circuit cc_inv (0)(2 instances)
+Flattening unmatched subcell nmos_vco in circuit cc_inv (0)(2 instances)
+Flattening unmatched subcell pmos_vco in circuit cc_inv (0)(2 instances)
+Flattening unmatched subcell aux_inv_vco in circuit cc_inv (0)(2 instances)
+Flattening unmatched subcell nmos_vco_aux in circuit cc_inv (0)(2 instances)
+Flattening unmatched subcell pmos_vco_aux in circuit cc_inv (0)(2 instances)
+Flattening unmatched subcell main_inv in circuit cc_inv (1)(2 instances)
+Flattening unmatched subcell aux_inv in circuit cc_inv (1)(2 instances)
+
+Cell cc_inv (0) disconnected node: a_3730_70#
+Subcircuit summary:
+Circuit 1: cc_inv                          |Circuit 2: cc_inv                          
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__nfet_01v8 (6->4)             |sky130_fd_pr__nfet_01v8 (4)                
+sky130_fd_pr__pfet_01v8 (6->4)             |sky130_fd_pr__pfet_01v8 (4)                
+Number of devices: 8                       |Number of devices: 8                       
+Number of nets: 14                         |Number of nets: 14                         
+---------------------------------------------------------------------------------------
+NET mismatches: Class fragments follow (with fanout counts):
+Circuit 1: cc_inv                          |Circuit 2: cc_inv                          
+
+---------------------------------------------------------------------------------------
+Net: GND                                   |Net: VGND                                  
+  sky130_fd_pr__nfet_01v8/4 = 4            |  sky130_fd_pr__nfet_01v8/(1|3) = 4        
+                                           |                                           
+Net: VCCA                                  |Net: VPWR                                  
+  sky130_fd_pr__pfet_01v8/4 = 4            |  sky130_fd_pr__pfet_01v8/(1|3) = 4        
+---------------------------------------------------------------------------------------
+Netlists do not match.
+  Flattening non-matched subcircuits cc_inv cc_inv
+
+Equate elements:  no current cell.
+Device classes ring_vco.spice and xsc_ring_vco.spice are equivalent.
+
+Final result: Top level cell failed pin matching.

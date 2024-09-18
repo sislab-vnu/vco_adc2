@@ -1,0 +1,28 @@
+* NGSPICE file created from dco_ring_osc.ext - technology: sky130A
+
+.subckt dco_aux_inv VPWR VCCA A Y GND VGND
+X0 Y A VGND GND sky130_fd_pr__nfet_01v8 ad=0.8 pd=4.8 as=0.8 ps=4.8 w=2 l=1
+X1 Y A VPWR VCCA sky130_fd_pr__pfet_01v8 ad=1.2 pd=6.8 as=1.2 ps=6.8 w=3 l=1
+.ends
+
+.subckt dco_main_inv VPWR VCCA Y GND VGND A
+X0 Y A VGND GND sky130_fd_pr__nfet_01v8 ad=0.4 pd=2.4 as=0.8 ps=4.8 w=2 l=1 M=2
+X1 VPWR A Y VCCA sky130_fd_pr__pfet_01v8 ad=1.2 pd=6.8 as=0.6 ps=3.4 w=3 l=1 M=2
+.ends
+
+.subckt dco_cc_inv outp inp inn outn VCCA VGND VPWR GND
+Xdco_aux_inv_0 VPWR VCCA outp outn GND VGND dco_aux_inv
+Xdco_aux_inv_1 VPWR VCCA outn outp GND VGND dco_aux_inv
+Xdco_main_inv_0 VPWR VCCA outp GND VGND inp dco_main_inv
+Xdco_main_inv_1 VPWR VCCA outn GND VGND inn dco_main_inv
+.ends
+
+.subckt dco_ring_osc VCCA GND VGND VPWR p[0] p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2]
++ pn[3] pn[4]
+Xdco_cc_inv_0 p[0] p[4] pn[4] pn[0] VCCA VGND VPWR GND dco_cc_inv
+Xdco_cc_inv_1 p[1] p[0] pn[0] pn[1] VCCA VGND VPWR GND dco_cc_inv
+Xdco_cc_inv_2 p[2] p[1] pn[1] pn[2] VCCA VGND VPWR GND dco_cc_inv
+Xdco_cc_inv_3 p[4] p[3] pn[3] pn[4] VCCA VGND VPWR GND dco_cc_inv
+Xdco_cc_inv_4 p[3] p[2] pn[2] pn[3] VCCA VGND VPWR GND dco_cc_inv
+.ends
+

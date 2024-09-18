@@ -1,0 +1,37 @@
+* NGSPICE file created from cc_inv.ext - technology: sky130A
+
+.subckt nmos_vco D G S VSUBS
+X0 D G S VSUBS sky130_fd_pr__nfet_01v8 ad=0.8 pd=4.4 as=1.6 ps=8.8 w=4 l=3.65
+X1 S G D VSUBS sky130_fd_pr__nfet_01v8 ad=1.6 pd=8.8 as=0.8 ps=4.4 w=4 l=3.65
+.ends
+
+.subckt pmos_vco D G S VPWR
+X0 S G D VPWR sky130_fd_pr__pfet_01v8 ad=2 pd=10.8 as=1 ps=5.4 w=5 l=3.65
+X1 D G S VPWR sky130_fd_pr__pfet_01v8 ad=1 pd=5.4 as=2 ps=10.8 w=5 l=3.65
+.ends
+
+.subckt main_inv_vco D G S_P S_N VPWR VSUBS
+Xnmos_vco_0 D G S_N VSUBS nmos_vco
+Xpmos_vco_0 D G S_P VPWR pmos_vco
+.ends
+
+.subckt nmos_vco_aux D G S VSUBS
+X0 D G S VSUBS sky130_fd_pr__nfet_01v8 ad=1.6 pd=8.8 as=1.6 ps=8.8 w=4 l=3.65
+.ends
+
+.subckt pmos_vco_aux D G S VPWR
+X0 D G S VPWR sky130_fd_pr__pfet_01v8 ad=2 pd=10.8 as=2 ps=10.8 w=5 l=3.65
+.ends
+
+.subckt aux_inv_vco D G S_P S_N VPWR VSUBS
+Xnmos_vco_aux_0 D G S_N VSUBS nmos_vco_aux
+Xpmos_vco_aux_0 D G S_P VPWR pmos_vco_aux
+.ends
+
+.subckt cc_inv IN_P IN_N OUT_P OUT_N VPWR VGND
+Xmain_inv_vco_0 OUT_P IN_P VPWR VGND VPWR aux_inv_vco_1/VSUBS main_inv_vco
+Xmain_inv_vco_1 OUT_N IN_N VPWR VGND VPWR aux_inv_vco_1/VSUBS main_inv_vco
+Xaux_inv_vco_0 OUT_N OUT_P VPWR VGND VPWR aux_inv_vco_1/VSUBS aux_inv_vco
+Xaux_inv_vco_1 OUT_P OUT_N VPWR VGND VPWR aux_inv_vco_1/VSUBS aux_inv_vco
+.ends
+

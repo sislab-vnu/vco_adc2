@@ -1,0 +1,13 @@
+* NGSPICE file created from dco_idac.ext - technology: sky130A
+
+.subckt dco_idac
+X0 D_M1 G_M1 S_M1 B_M1 sky130_fd_pr__pfet_01v8_hvt ad=0.72 pd=4.4 as=0.72 ps=4.4 w=1.8 l=0.5
+X1 S1_M7 G_M7 D_M7 B_M7 sky130_fd_pr__pfet_01v8_hvt ad=1.6 pd=8.8 as=0.8 ps=4.4 w=4 l=0.5 M=2
+X2 D1_M4 G_M4 S1_M4 B_M4 sky130_fd_pr__pfet_01v8_hvt ad=0.36 pd=2.2 as=0.72 ps=4.4 w=1.8 l=0.5 M=3
+X3 S_M8 G_M8 D_M8 B_M8 sky130_fd_pr__nfet_01v8 ad=0.8 pd=4.8 as=0.4 ps=2.4 w=2 l=0.5 M=2
+X4 D_M6 G_M6 S1_M6 B_M8 sky130_fd_pr__nfet_01v8 ad=0.4 pd=2.4 as=0.8 ps=4.8 w=2 l=0.5 M=2
+X5 D1_M3 G_M3 S1_M3 B_M3 sky130_fd_pr__pfet_01v8_hvt ad=0.36 pd=2.2 as=0.72 ps=4.4 w=1.8 l=0.5 M=3
+X6 D_M2 G_M2 S_M2 B_M2 sky130_fd_pr__pfet_01v8_hvt ad=0.72 pd=4.4 as=0.72 ps=4.4 w=1.8 l=0.5
+X7 D_M5 G_M5 S2_M5 B_M5 sky130_fd_pr__pfet_01v8_hvt ad=0.8 pd=4.4 as=1.6 ps=8.8 w=4 l=0.5 M=2
+.ends
+

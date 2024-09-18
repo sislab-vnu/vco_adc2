@@ -1,0 +1,61 @@
+timestamp 1725081791
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 4400000 2200000 950000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12800 125 125 47 47 29 5
+use pmos_vco pmos_vco_0 1 0 2120 0 1 0
+use nmos_vco nmos_vco_0 1 0 2120 0 1 -1010
+port "S_N" 4 2890 -1200 2890 -1200 li
+port "D" 1 2890 -10 2890 -10 li
+port "S_P" 3 2880 1200 2880 1200 li
+port "G" 2 2890 -100 2890 -100 m1
+port "VPWR" 5 2890 1060 2890 1060 nw
+node "S_N" 330 993.798 2890 -1200 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 164800 4280 0 0 0 0 0 0 0 0 0 0 0 0
+node "D" 34 87.5914 2890 -10 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16800 580 0 0 0 0 0 0 0 0 0 0 0 0
+node "S_P" 330 974.11 2880 1200 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 164800 4280 0 0 0 0 0 0 0 0 0 0 0 0
+node "G" 1595 1752.77 2890 -100 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 73000 3120 0 0 62400 1480 127400 2220 0 0 0 0 0 0 0 0 0 0
+node "w_3660_n80#" 9183 417.6 3660 -80 nw 0 0 0 0 139200 2560 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "VPWR" 950 19.2 2890 1060 nw 0 0 0 0 6400 320 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+substrate "VSUBS" 0 0 -1073741817 -1073741817 space 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+cap "w_3660_n80#" "S_P" 21.1783
+cap "VPWR" "S_P" 3.09057
+cap "D" "S_N" 2.02381
+cap "G" "S_N" 14.6806
+cap "G" "D" 131.693
+cap "w_3660_n80#" "S_N" 1.19715
+cap "w_3660_n80#" "G" 1.26244
+cap "w_3660_n80#" "D" 0.242199
+cap "VPWR" "G" 0.243694
+cap "VPWR" "D" 0.194363
+cap "S_P" "D" 1.68874
+cap "G" "S_P" 12.0434
+cap "pmos_vco_0/VPWR" "nmos_vco_0/S" 2.19921
+cap "pmos_vco_0/VPWR" "pmos_vco_0/G" 0.778254
+cap "nmos_vco_0/S" "pmos_vco_0/D" -2.02381
+cap "pmos_vco_0/G" "pmos_vco_0/D" 122.458
+cap "pmos_vco_0/S" "nmos_vco_0/S" 8.57143
+cap "pmos_vco_0/S" "pmos_vco_0/G" -0.477399
+cap "pmos_vco_0/G" "nmos_vco_0/S" 0.925054
+cap "pmos_vco_0/VPWR" "pmos_vco_0/D" -0.714542
+cap "pmos_vco_0/S" "pmos_vco_0/D" -0.844371
+cap "pmos_vco_0/VPWR" "nmos_vco_0/S" 1.00207
+cap "pmos_vco_0/S" "pmos_vco_0/G" -0.103999
+cap "pmos_vco_0/VPWR" "pmos_vco_0/G" -1.42109e-14
+cap "nmos_vco_0/S" "pmos_vco_0/G" 0.736863
+cap "nmos_vco_0/S" "pmos_vco_0/S" 8.57143
+cap "pmos_vco_0/G" "pmos_vco_0/S" 0.299888
+cap "pmos_vco_0/S" "pmos_vco_0/D" -0.844371
+cap "pmos_vco_0/VPWR" "pmos_vco_0/S" -2.75332
+cap "pmos_vco_0/G" "pmos_vco_0/S" 0.362904
+cap "pmos_vco_0/VPWR" "pmos_vco_0/S" -21.5155
+merge "nmos_vco_0/VSUBS" "pmos_vco_0/VSUBS" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pmos_vco_0/VSUBS" "VSUBS"
+merge "nmos_vco_0/S" "S_N" -1039.13 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -164800 -4280 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pmos_vco_0/S" "S_P" -1008.85 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -164800 -4280 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pmos_vco_0/VPWR" "w_3660_n80#" -436.8 0 0 0 0 -145600 -2880 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "w_3660_n80#" "VPWR"
+merge "nmos_vco_0/D" "pmos_vco_0/D" -101.87 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -320 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pmos_vco_0/D" "D"
+merge "nmos_vco_0/G" "pmos_vco_0/G" -3155.12 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -296000 -6700 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pmos_vco_0/G" "G"

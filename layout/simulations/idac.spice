@@ -1,0 +1,38 @@
+** sch_path: /home/userdata/k63D/toind_63d/git/vco_adc2/xschem/lib/ALib_IDAC.sch
+**.subckt ALib_IDAC Vbs3 Vbs4 Vbs1 Vbs2 Isup Dctrl
+*.ipin Vbs3
+*.ipin Vbs4
+*.ipin Vbs1
+*.ipin Vbs2
+*.opin Isup
+*.ipin Dctrl
+R1 GND net3 50k m=1
+x1 open GND GND VCCD VCCD lock sky130_fd_sc_hd__inv_2
+XM1 net1 Vbs1 VCCA VCCA sky130_fd_pr__pfet_01v8_hvt L=0.5 W=1.8 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM2 Isup Vbs2 net1 net1 sky130_fd_pr__pfet_01v8_hvt L=0.5 W=1.8 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+x2 Dctrl GND GND VCCD VCCD open sky130_fd_sc_hd__buf_2
+XM3 net2 Vbs3 VCCA VCCA sky130_fd_pr__pfet_01v8_hvt L=0.5 W="3*1.8" nf=3 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM4 add_pwr Vbs4 net2 net2 sky130_fd_pr__pfet_01v8_hvt L=0.5 W="3*1.8" nf=3 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM5 Isup lock add_pwr add_pwr sky130_fd_pr__pfet_01v8_hvt L=0.5 W="2*4" nf=2 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM6 add_pwr open Isup Isup sky130_fd_pr__nfet_01v8 L=0.5 W="2*2" nf=2 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM7 net3 open add_pwr add_pwr sky130_fd_pr__pfet_01v8_hvt L=0.5 W="2*4" nf=2 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM8 add_pwr lock net3 net3 sky130_fd_pr__nfet_01v8 L=0.5 W="2*2" nf=2 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+**.ends
+.GLOBAL GND
+.end
