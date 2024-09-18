@@ -1,7 +1,7 @@
 # VCO based ADC 2nd 
 
 # How to Run LVS?
-In folder netgen, you can run in terminal:
+In the `netgen` folder, you can run LVS in the terminal using the following command:
 ```sh
 make target_name
 ```
@@ -11,5 +11,19 @@ example:
 make dco_idac
 ```
 
-Bug in LVS for IDAC
-When generating the netlist from Magic VLSI, an issue arises with improper wire arrangement. The wiring is incorrect in four blocks: Resistor, buffer,inverter, and 4 MOSFET.
+# Bug in LVS for IDAC
+When generating the netlist from Magic VLSI, an issue arises with improper wire arrangement. The wiring is incorrect in four blocks: Resistor, Buffer, Inverter, and 4 MOSFETs.
+
+Note:
+The original code has been modified. You can go to the folder layout/dco and regenerate the netlist for Magic VLSI using:
+
+```sh
+magic dco_idac.mag
+```
+
+In the tkcon Main window, you can run:
+```sh
+source ext.sh
+```
+
+After that, return to the netgen folder. When you run LVS again, you will see the error appear.
