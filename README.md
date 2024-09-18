@@ -10,6 +10,8 @@ example:
 ```sh
 make dco_idac
 ```
+netlist of circuit design: `xschem/lib/simulations/dco_idac.spice`
+netlist of layout design: `layout/dco/idac.spice`
 
 # Bug in LVS for IDAC
 When generating the netlist from Magic VLSI, an issue arises with improper wire arrangement. The wiring is incorrect in four blocks: Resistor, Buffer, Inverter, and 4 MOSFETs.
