@@ -11,6 +11,7 @@ example:
 make dco_idac
 ```
 netlist of circuit design: `xschem/lib/simulations/dco_idac.spice`
+
 netlist of layout design: `layout/dco/idac.spice`
 
 # Bug in LVS for IDAC
@@ -20,7 +21,7 @@ Note:
 The original code has been modified. You can go to the folder layout/dco and regenerate the netlist for Magic VLSI using:
 
 ```sh
-magic dco_idac.mag
+magic idac.mag
 ```
 
 In the tkcon Main window, you can run:
