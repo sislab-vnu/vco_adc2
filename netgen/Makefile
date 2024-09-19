@@ -100,15 +100,23 @@ dco_cc_inv: get_file
 	$(NETGEN) $(NETGEN_OPTS) "$(XSC_DCO_PATH)/dco_cc_inv.spice dco_cc_inv" "$(MAG_DCO_PATH)/dco_cc_inv.spice dco_cc_inv" $(SETUP_TCL)
 	make check_lvs
 
-dco_idac: get_file
-	$(NETGEN) $(NETGEN_OPTS) "$(XSC_DCO_PATH)/dco_idac.spice dco_idac" "$(MAG_DCO_PATH)/dco_idac.spice dco_idac" $(SETUP_TCL)
-	make check_lvs
-
 dco_ring_osc: get_file
 	$(NETGEN) $(NETGEN_OPTS) "$(XSC_DCO_PATH)/dco_ring_osc.spice dco_ring_osc" "$(MAG_DCO_PATH)/dco_ring_osc.spice dco_ring_osc" $(SETUP_TCL)
 	make check_lvs
 
-block_dco: dco_main_inv dco_aux_inv dco_cc_inv dco_ring_osc dco_idac 
+dco_idac: get_file
+	$(NETGEN) $(NETGEN_OPTS) "$(XSC_DCO_PATH)/dco_idac.spice dco_idac" "$(MAG_DCO_PATH)/dco_idac.spice dco_idac" $(SETUP_TCL)
+	make check_lvs
+
+dco_freq: get_file
+	$(NETGEN) $(NETGEN_OPTS) "$(XSC_DCO_PATH)/dco_freq.spice dco_freq" "$(MAG_DCO_PATH)/dco_freq.spice dco_freq" $(SETUP_TCL)
+	make check_lvs
+
+dco: get_file
+	$(NETGEN) $(NETGEN_OPTS) "$(XSC_DCO_PATH)/dco.spice dco" "$(MAG_DCO_PATH)/dco.spice dco" $(SETUP_TCL)
+	make check_lvs
+
+block_dco: dco_main_inv dco_aux_inv dco_cc_inv dco_ring_osc dco_idac dco_freq dco 
 	clear
 	@echo "All module dco check completed successfully"
 

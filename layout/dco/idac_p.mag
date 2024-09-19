@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1723776395
+timestamp 1726742472
 << nwell >>
 rect -100 0 0 440
 rect 1400 0 1500 440
@@ -299,11 +299,11 @@ timestamp 1723776395
 transform 0 1 772 -1 0 -2305
 box -35 -1272 35 1272
 use sky130_fd_sc_hd__buf_2  sky130_fd_sc_hd__buf_2_0 $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1701704242
+timestamp 1709947739
 transform 1 0 178 0 1 -2052
 box -38 -48 406 592
 use sky130_fd_sc_hd__inv_2  sky130_fd_sc_hd__inv_2_0 $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1701704242
+timestamp 1709947739
 transform 1 0 1058 0 1 -2052
 box -38 -48 314 592
 << end >>
