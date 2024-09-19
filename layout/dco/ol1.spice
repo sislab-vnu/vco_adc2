@@ -9,7 +9,7 @@ X0 D G S B sky130_fd_pr__pfet_01v8_hvt ad=0.8 pd=4.4 as=1.6 ps=8.8 w=4 l=0.5 M=2
 .ends
 
 .subckt ol1 add_pwr input_R g1 g2
-Xn_lk_0 g2 input_R add_pwr input_R n_lk
-Xp_lk_0 g1 add_pwr input_R add_pwr p_lk
+Xn_lk_0 g2 input_R add_pwr VSUBS n_lk
+Xp_lk_0 g1 add_pwr input_R p_lk_0/B p_lk
 .ends
 

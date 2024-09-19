@@ -1,15 +1,15 @@
 magic
 tech sky130A
-timestamp 1726656357
+timestamp 1726718835
 << locali >>
-rect 20 630 610 670
-rect 20 445 60 630
+rect 20 445 60 670
+rect 90 630 610 670
 rect 90 440 130 630
 rect 570 400 610 630
 rect 180 -105 220 40
 rect 660 -105 700 220
-rect 730 -105 770 220
-rect 180 -145 770 -105
+rect 180 -145 700 -105
+rect 730 -145 770 220
 << metal1 >>
 rect 130 480 270 530
 rect 520 125 660 165
@@ -24,10 +24,10 @@ box -130 -40 200 490
 << labels >>
 rlabel locali 480 -105 480 -105 1 input_R
 port 2 n
-rlabel locali 375 670 375 670 1 add_pwr
-port 1 n
 rlabel metal1 225 530 225 530 1 g1
 port 3 n
 rlabel metal1 565 125 565 125 5 g2
 port 4 s
+rlabel locali 375 670 375 670 1 add_pwr
+port 1 n
 << end >>

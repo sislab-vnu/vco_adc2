@@ -101,7 +101,7 @@ dco_cc_inv: get_file
 	make check_lvs
 
 dco_idac: get_file
-	$(NETGEN) $(NETGEN_OPTS) "$(XSC_DCO_PATH)/dco_idac.spice dco_idac" "$(MAG_DCO_PATH)/idac.spice idac" $(SETUP_TCL)
+	$(NETGEN) $(NETGEN_OPTS) "$(XSC_DCO_PATH)/dco_idac.spice dco_idac" "$(MAG_DCO_PATH)/dco_idac.spice dco_idac" $(SETUP_TCL)
 	make check_lvs
 
 dco_ring_osc: get_file
