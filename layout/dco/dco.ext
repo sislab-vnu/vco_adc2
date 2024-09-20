@@ -1,0 +1,745 @@
+timestamp 1726807257
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 4400000 2200000 950000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12800 125 125 47 47 29 5
+use sky130_fd_sc_hd__buf_2 sky130_fd_sc_hd__buf_2_0 1 0 6808 0 1 638
+use dco_ring_osc dco_ring_osc_0 1 0 1680 0 1 4000
+use sky130_fd_sc_hd__einvn_1 sky130_fd_sc_hd__einvn_1_0 1 0 -202 0 1 -1392
+use dco_idac dco_idac_0 1 0 2860 0 1 -60
+use dco_freq dco_freq_1 1 0 8320 0 1 -2290
+use dco_freq dco_freq_0 1 0 8320 0 1 50
+node "pha_DCO" 1 455.293 11080 -2500 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 11000 420 81000 1820 0 0 0 0 0 0 0 0
+node "m1_n330_n1034#" 0 55.6788 -330 -1034 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6000 320 0 0 0 0 0 0 0 0 0 0
+node "ro_div2" 8 3113.62 8140 -1960 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 571000 11820 86000 1920 0 0 0 0 0 0 0 0
+node "Vbs_34" 1 305.474 3750 380 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 75000 1700 0 0 0 0 0 0 0 0 0 0
+node "Vbs_12" 5 1702.95 2540 480 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 373000 7660 0 0 0 0 0 0 0 0 0 0
+node "li_198_n1178#" 13 111.639 198 -1178 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1156 136 7868 464 0 0 0 0 0 0 0 0 0 0
+node "li_n140_n1180#" 13 141.837 -140 -1180 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 13740 552 0 0 0 0 0 0 0 0 0 0
+node "li_240_n960#" 23 73.0004 240 -960 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6600 340 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_6846_854#" 13 107.147 6846 854 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1156 136 9792 416 0 0 0 0 0 0 0 0 0 0
+node "li_7028_974#" 77 920.954 7028 974 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2312 272 163826 4060 0 0 0 0 0 0 0 0 0 0
+node "Isup" 21 103.124 5980 1500 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6000 320 1600 160 0 0 0 0 0 0 0 0 0 0
+node "li_10230_1740#" 13 61.9304 10230 1740 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 1600 160 0 0 0 0 0 0 0 0 0 0
+node "li_9370_1740#" 13 55.4947 9370 1740 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 1600 160 0 0 0 0 0 0 0 0 0 0
+node "li_8790_1740#" 13 53.6241 8790 1740 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 1600 160 0 0 0 0 0 0 0 0 0 0
+node "li_8210_1740#" 13 53.1875 8210 1740 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 1600 160 0 0 0 0 0 0 0 0 0 0
+node "li_7350_1740#" 13 55.0581 7350 1740 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 1600 160 0 0 0 0 0 0 0 0 0 0
+node "li_6490_1740#" 13 55.4947 6490 1740 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 1600 160 0 0 0 0 0 0 0 0 0 0
+node "li_5910_1740#" 13 53.6241 5910 1740 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 1600 160 0 0 0 0 0 0 0 0 0 0
+node "li_5330_1740#" 13 57.8932 5330 1740 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 1600 160 0 0 0 0 0 0 0 0 0 0
+node "li_8940_5860#" 13 60.0599 8940 5860 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 1600 160 0 0 0 0 0 0 0 0 0 0
+node "li_8360_5860#" 13 55.4947 8360 5860 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 1600 160 0 0 0 0 0 0 0 0 0 0
+node "li_7500_5860#" 13 57.3653 7500 5860 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 1600 160 0 0 0 0 0 0 0 0 0 0
+node "li_6640_5860#" 13 55.4947 6640 5860 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 1600 160 0 0 0 0 0 0 0 0 0 0
+node "li_6060_5860#" 13 53.6241 6060 5860 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 1600 160 0 0 0 0 0 0 0 0 0 0
+node "li_5480_5860#" 13 55.4947 5480 5860 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 1600 160 0 0 0 0 0 0 0 0 0 0
+node "li_4620_5860#" 13 57.3653 4620 5860 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 1600 160 0 0 0 0 0 0 0 0 0 0
+node "li_3760_5860#" 13 55.4947 3760 5860 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 1600 160 0 0 0 0 0 0 0 0 0 0
+node "li_3180_5860#" 13 53.6241 3180 5860 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 1600 160 0 0 0 0 0 0 0 0 0 0
+node "li_2600_5860#" 13 60.0599 2600 5860 v0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 1600 160 0 0 0 0 0 0 0 0 0 0
+node "w_n410_n1130#" 1949 224.258 -410 -1130 nw 0 0 0 0 56320 992 0 0 6000 320 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6000 320 0 0 0 0 0 0 0 0 0 0 0 0
+node "w_7210_900#" 2560 209.833 7210 900 nw 0 0 0 0 41600 900 0 0 6000 320 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6000 320 6000 320 0 0 0 0 0 0 0 0 0 0
+substrate "a_n312_n1354#" 0 0 -312 -1354 ppd 0 0 0 0 0 0 0 0 0 0 12200 644 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12200 644 12200 644 0 0 0 0 0 0 0 0 0 0
+cap "li_8790_1740#" "li_8210_1740#" 4.77883
+cap "li_8790_1740#" "li_9370_1740#" 4.77883
+cap "li_6060_5860#" "li_6640_5860#" 4.77883
+cap "li_5480_5860#" "li_4620_5860#" 3.22582
+cap "li_7500_5860#" "li_6640_5860#" 3.22582
+cap "w_n410_n1130#" "li_n140_n1180#" 4.71995
+cap "pha_DCO" "ro_div2" 7.6985
+cap "li_6490_1740#" "li_7350_1740#" 3.22582
+cap "li_7500_5860#" "li_8360_5860#" 3.22582
+cap "li_3760_5860#" "li_4620_5860#" 3.22582
+cap "li_240_n960#" "li_198_n1178#" 2.42015
+cap "li_5480_5860#" "li_6060_5860#" 4.77883
+cap "Vbs_12" "li_6846_854#" 1.22623
+cap "li_9370_1740#" "li_10230_1740#" 3.22582
+cap "li_7028_974#" "li_7350_1740#" 2.04651
+cap "li_8210_1740#" "li_7028_974#" 2.04651
+cap "m1_n330_n1034#" "li_n140_n1180#" 2.82051
+cap "li_5910_1740#" "li_5330_1740#" 4.77883
+cap "li_8360_5860#" "li_8940_5860#" 4.77883
+cap "li_3760_5860#" "li_3180_5860#" 4.77883
+cap "w_n410_n1130#" "li_240_n960#" 1.8834
+cap "li_6846_854#" "li_7028_974#" 14.5193
+cap "li_2600_5860#" "li_3180_5860#" 4.77883
+cap "Vbs_34" "Vbs_12" 96.1985
+cap "w_n410_n1130#" "m1_n330_n1034#" 25.2286
+cap "li_n140_n1180#" "li_198_n1178#" 13.6595
+cap "li_8210_1740#" "li_7350_1740#" 3.22582
+cap "li_7028_974#" "w_7210_900#" 66.9818
+cap "li_5330_1740#" "Vbs_12" 1.91304
+cap "li_240_n960#" "m1_n330_n1034#" 0.146406
+cap "li_5910_1740#" "li_6490_1740#" 4.77883
+cap "dco_idac_0/S2_M6" "dco_freq_1/sky130_fd_sc_hd__buf_4_0/VPB" 0.0222002
+cap "dco_idac_0/S2_M6" "dco_freq_1/sky130_fd_sc_hd__buf_4_0/VNB" 0.493259
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VNB" "dco_idac_0/D_M5" 0.658197
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/D" "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/D" 0.00382643
+cap "dco_freq_0/Q_N" "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" 0.00671662
+cap "dco_freq_1/clk" "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/D" 0.0114424
+cap "dco_freq_0/Q_N" "dco_freq_1/clk" 0.00671662
+cap "dco_freq_0/Q_N" "dco_freq_1/sky130_fd_sc_hd__buf_4_0/A" 0.00736527
+cap "dco_freq_1/clk" "dco_freq_1/sky130_fd_sc_hd__buf_4_0/a_27_47#" 0.706692
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPWR" "dco_freq_1/clk" 0.538361
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/D" "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" 0.0173528
+cap "dco_freq_0/Q_N" "dco_freq_1/sky130_fd_sc_hd__buf_4_0/a_27_47#" 0.0294611
+cap "dco_freq_1/clk" "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" 0.0585007
+cap "dco_freq_1/clk" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/D" 0.0276638
+cap "dco_freq_0/Q_N" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPWR" 2.58525
+cap "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/a_634_159#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/D" 0.00174974
+cap "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/a_891_413#" "dco_freq_1/clk" 0.00422747
+cap "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/a_1589_47#" "dco_freq_1/clk" 0.066826
+cap "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/a_193_47#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/D" 0.00110036
+cap "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" "dco_freq_0/Q_N" 0.0120299
+cap "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/a_1059_315#" "dco_freq_0/Q_N" 0.000245509
+cap "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/a_891_413#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/D" 0.00174974
+cap "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/a_1589_47#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/D" 0.0174974
+cap "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/a_634_159#" "dco_freq_0/Q_N" 0.000736527
+cap "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" "dco_freq_1/clk" 0.0673645
+cap "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/a_1059_315#" "dco_freq_1/clk" 0.0690306
+cap "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/a_891_413#" "dco_freq_0/Q_N" 0.000736527
+cap "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/a_1589_47#" "dco_freq_0/Q_N" 0.00736527
+cap "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/a_634_159#" "dco_freq_1/clk" 0.0263258
+cap "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/D" 0.032656
+cap "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/a_1059_315#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/D" 0.0187765
+cap "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/a_193_47#" "dco_freq_1/clk" 0.0382914
+cap "dco_freq_1/clkDiv2" "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/Q_N" 5.39723
+cap "dco_freq_1/clkDiv2" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/Q" 142.328
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/VGND" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/VPWR" -3.66667
+cap "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/VPB" "ro_div2" 0.0582791
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/VGND" "dco_freq_1/clkDiv2" 145.881
+cap "ro_div2" "dco_freq_1/clkDiv2" -2.41758
+cap "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/a_1589_47#" "dco_freq_0/D" 0.0174974
+cap "dco_freq_0/Q_N" "dco_freq_1/clkDiv2" 0.427814
+cap "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/VPB" "dco_freq_1/clkDiv2" 7.71848
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/VPWR" "dco_freq_1/clkDiv2" 22.8812
+cap "ro_div2" "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/Q_N" 0.0644496
+cap "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/a_1589_47#" "ro_div2" 0.0487355
+cap "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/VPB" "dco_freq_0/D" 0.036153
+cap "dco_freq_0/D" "dco_freq_1/clkDiv2" 0.828659
+cap "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/a_1589_47#" "dco_freq_0/Q_N" 0.00736527
+cap "sky130_fd_sc_hd__einvn_1_0/VPB" "sky130_fd_sc_hd__einvn_1_0/A" 4.24437
+cap "sky130_fd_sc_hd__einvn_1_0/A" "sky130_fd_sc_hd__einvn_1_0/TE_B" -1.58103
+cap "m1_n330_n1034#" "sky130_fd_sc_hd__einvn_1_0/a_27_47#" 5.54253
+cap "sky130_fd_sc_hd__einvn_1_0/VPWR" "sky130_fd_sc_hd__einvn_1_0/VGND" -16.2197
+cap "sky130_fd_sc_hd__einvn_1_0/Z" "sky130_fd_sc_hd__einvn_1_0/VNB" 0.933776
+cap "sky130_fd_sc_hd__einvn_1_0/VNB" "sky130_fd_sc_hd__einvn_1_0/a_286_47#" 0.640611
+cap "sky130_fd_sc_hd__einvn_1_0/VPB" "m1_n330_n1034#" 2.33846
+cap "sky130_fd_sc_hd__einvn_1_0/A" "sky130_fd_sc_hd__einvn_1_0/VPWR" 9.33081
+cap "sky130_fd_sc_hd__einvn_1_0/A" "sky130_fd_sc_hd__einvn_1_0/VGND" 12.8269
+cap "m1_n330_n1034#" "sky130_fd_sc_hd__einvn_1_0/TE_B" 1.71998
+cap "sky130_fd_sc_hd__einvn_1_0/Z" "sky130_fd_sc_hd__einvn_1_0/VPB" 5.49235
+cap "sky130_fd_sc_hd__einvn_1_0/Z" "sky130_fd_sc_hd__einvn_1_0/TE_B" 0.86451
+cap "sky130_fd_sc_hd__einvn_1_0/VNB" "sky130_fd_sc_hd__einvn_1_0/a_27_47#" 30.5588
+cap "sky130_fd_sc_hd__einvn_1_0/VGND" "dco_idac_0/Dctrl" 0.859342
+cap "sky130_fd_sc_hd__einvn_1_0/a_27_47#" "sky130_fd_sc_hd__einvn_1_0/TE_B" 29.188
+cap "sky130_fd_sc_hd__einvn_1_0/VPB" "sky130_fd_sc_hd__einvn_1_0/a_27_47#" 24.4673
+cap "m1_n330_n1034#" "sky130_fd_sc_hd__einvn_1_0/VPWR" 1.05731
+cap "sky130_fd_sc_hd__einvn_1_0/a_204_297#" "m1_n330_n1034#" 0.099796
+cap "sky130_fd_sc_hd__einvn_1_0/Z" "sky130_fd_sc_hd__einvn_1_0/VPWR" 8.81456
+cap "sky130_fd_sc_hd__einvn_1_0/VNB" "sky130_fd_sc_hd__einvn_1_0/TE_B" 1.49715
+cap "sky130_fd_sc_hd__einvn_1_0/Z" "sky130_fd_sc_hd__einvn_1_0/VGND" -0.0786889
+cap "sky130_fd_sc_hd__einvn_1_0/a_204_297#" "sky130_fd_sc_hd__einvn_1_0/Z" -7.10543e-15
+cap "sky130_fd_sc_hd__einvn_1_0/VPB" "sky130_fd_sc_hd__einvn_1_0/TE_B" 19.3558
+cap "sky130_fd_sc_hd__einvn_1_0/a_27_47#" "sky130_fd_sc_hd__einvn_1_0/VPWR" -0.854013
+cap "sky130_fd_sc_hd__einvn_1_0/Z" "sky130_fd_sc_hd__einvn_1_0/A" 14.0409
+cap "sky130_fd_sc_hd__einvn_1_0/a_27_47#" "sky130_fd_sc_hd__einvn_1_0/VGND" -1.03959
+cap "sky130_fd_sc_hd__einvn_1_0/VNB" "sky130_fd_sc_hd__einvn_1_0/VGND" 10.3484
+cap "sky130_fd_sc_hd__einvn_1_0/A" "sky130_fd_sc_hd__einvn_1_0/a_27_47#" 7.32086
+cap "sky130_fd_sc_hd__einvn_1_0/VPB" "sky130_fd_sc_hd__einvn_1_0/VPWR" 6.66121
+cap "sky130_fd_sc_hd__einvn_1_0/VPWR" "sky130_fd_sc_hd__einvn_1_0/TE_B" 15.313
+cap "sky130_fd_sc_hd__einvn_1_0/VPB" "sky130_fd_sc_hd__einvn_1_0/VGND" -2.16027
+cap "sky130_fd_sc_hd__einvn_1_0/TE_B" "sky130_fd_sc_hd__einvn_1_0/VGND" 19.607
+cap "sky130_fd_sc_hd__einvn_1_0/VNB" "sky130_fd_sc_hd__einvn_1_0/A" 0.0723984
+cap "sky130_fd_sc_hd__einvn_1_0/Z" "m1_n330_n1034#" 2.60265
+cap "sky130_fd_sc_hd__einvn_1_0/VGND" "dco_idac_0/Dctrl" 0.852713
+cap "dco_idac_0/Vbs1" "dco_idac_0/add_pwr" 0.0257955
+cap "dco_idac_0/Vbs3" "dco_idac_0/sky130_fd_sc_hd__inv_2_0/Y" 0.0209139
+cap "dco_idac_0/G_M6" "dco_idac_0/Vbs3" 0.0261424
+cap "dco_idac_0/G_M8" "dco_idac_0/Vbs3" 0.0313709
+cap "dco_idac_0/Vbs2" "dco_idac_0/add_pwr" 0.00690922
+cap "dco_idac_0/Isup" "sky130_fd_sc_hd__buf_2_0/VNB" 0.459294
+cap "dco_idac_0/Isup" "dco_freq_0/sky130_fd_sc_hd__buf_4_0/A" 2.3581
+cap "dco_idac_0/Isup" "dco_freq_1/sky130_fd_sc_hd__buf_4_0/VPB" 0.104658
+cap "dco_idac_0/Isup" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" 0.179457
+cap "sky130_fd_sc_hd__buf_2_0/VNB" "dco_freq_0/sky130_fd_sc_hd__buf_4_0/A" 8.20312
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/Y" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" -0.572108
+cap "sky130_fd_sc_hd__buf_2_0/VNB" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" 5.09259
+cap "dco_freq_1/clk" "dco_freq_0/sky130_fd_sc_hd__buf_4_0/A" 0.132188
+cap "dco_freq_1/clk" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" 4.17431
+cap "dco_freq_0/sky130_fd_sc_hd__buf_4_0/A" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" 3.72023
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/VGND" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" 3.50853
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" 0.495265
+cap "sky130_fd_sc_hd__buf_2_0/VNB" "dco_idac_0/Isup" 0.500894
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPWR" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" -0.39798
+cap "dco_idac_0/Isup" "dco_freq_0/sky130_fd_sc_hd__buf_4_0/A" 2.3581
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_561_413#" "dco_freq_1/clk" 0.000694124
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/VGND" 4.1277
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/D" "dco_freq_1/clk" 0.0449528
+cap "dco_freq_1/clk" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" 96.0374
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/Y" "dco_freq_0/sky130_fd_sc_hd__buf_4_0/A" 12.8586
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/Y" 0.00345926
+cap "dco_freq_1/clk" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" 1.14726
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/D" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" -0.0218699
+cap "dco_freq_1/clk" "dco_freq_0/clk" 7.28316
+cap "dco_freq_1/clk" "dco_freq_0/sky130_fd_sc_hd__buf_4_0/A" 11.8044
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/D" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPWR" 0.354842
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" -0.35218
+cap "dco_freq_1/clk" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPWR" 314.157
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" "dco_freq_1/clk" 0.130162
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_466_413#" "dco_freq_1/clk" 0.0715418
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" "dco_freq_0/sky130_fd_sc_hd__buf_4_0/A" 15.4753
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPWR" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" -8.68158
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/Y" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" 0.0240567
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" "dco_freq_1/clk" 0.921042
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_381_47#" "dco_freq_1/clk" 0.0611955
+cap "dco_freq_1/clk" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" 0.861193
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" -0.0488014
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPWR" "dco_freq_0/sky130_fd_sc_hd__buf_4_0/A" 25.5058
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/D" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/Y" 1.55823
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/Y" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/VGND" 0.0727651
+cap "dco_freq_1/clk" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/Y" 8.37764
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_381_47#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" -0.000571218
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/D" "dco_freq_1/clk" 0.282041
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/D" "dco_freq_1/clk" 92.7143
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/Y" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_381_47#" 0.0181834
+cap "dco_freq_1/clk" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/VGND" 25.6933
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/Y" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" -0.835956
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" "dco_freq_1/clk" 2.01182
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1059_315#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_891_413#" 0.852626
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_634_159#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" -1.42109e-14
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_466_413#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/VPB" 0.0778185
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VGND" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" 0.205566
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_634_159#" 0.04432
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/Q" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_1059_315#" 0.33968
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_891_413#" -1.42109e-14
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VGND" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_634_159#" 0.0564109
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_466_413#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" 0.621124
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/Q" 0.552035
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/D" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" 0.00130732
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VGND" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_891_413#" 0.108548
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/Q" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/Q_N" 5.68434e-14
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/VPB" 0.000776898
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/D" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/Q_N" 0.0894195
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/Q" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_634_159#" 0.156447
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_466_413#" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" 0.00566505
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_381_47#" 0.0100085
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/Q" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_891_413#" 0.277264
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/D" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" 0.00938337
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_193_47#" 0.117611
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_466_413#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/Q_N" 0.091923
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_1059_315#" "dco_freq_1/clk" 1.10777
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPWR" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/Q" 3.01802
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_891_413#" 0.430976
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_466_413#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" 0.203575
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" "dco_freq_1/clk" 2.53781
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_634_159#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_193_47#" 0.23734
+cap "dco_freq_1/clk" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/Q_N" 6.51631
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_891_413#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_634_159#" 0.0139044
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1059_315#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_466_413#" 0.18455
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/Q_N" 0.162852
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_634_159#" "dco_freq_1/clk" 0.47815
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_1059_315#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/VPB" 0.0180258
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VGND" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/D" 0.0730325
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/D" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_634_159#" 0.190259
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_891_413#" "dco_freq_1/clk" 0.787643
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPWR" "dco_freq_1/clk" 372.507
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/VPB" 0.171615
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VGND" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_466_413#" 0.0741647
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1059_315#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" 0.0393052
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" "dco_freq_1/clk" 1.98741
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/D" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/Q" 0.219298
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" -0.366503
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/Q" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_466_413#" 0.223951
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/Q" "dco_freq_1/clk" 3.03448
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_1059_315#" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" 0.00572563
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VGND" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" 0.152072
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/D" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_193_47#" 0.18034
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_634_159#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" 0.0516533
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_1059_315#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/Q_N" 0.13709
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" 0.0258762
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_1059_315#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1589_47#" 0.00720286
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/Q" "dco_freq_1/clk" 220
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_466_413#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_193_47#" 0.000475709
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/Q_N" 0.224773
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/D" "dco_freq_1/clk" 0.695608
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/Q" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" 0.399578
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_891_413#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_466_413#" 0.0671702
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1059_315#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_1059_315#" 0.853718
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" 0.367259
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_634_159#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/Q_N" 0.0639048
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_466_413#" "dco_freq_1/clk" 0.665115
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/D" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_466_413#" 0.0280347
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1059_315#" 0.0775788
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_891_413#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/Q_N" 0.115083
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPWR" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/Q_N" 53.6513
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_634_159#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" 0.213542
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" -0.596569
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/D" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/VPB" 0.0567099
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VGND" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_1059_315#" 0.106417
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_891_413#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" 0.438497
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/Q_N" 2.05466
+cap "dco_freq_0/clkDiv2" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/VPWR" 18.4476
+cap "dco_freq_0/clkDiv2" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/Q" 219.636
+cap "dco_freq_0/clkDiv2" "dco_freq_1/clkDiv2" -3.06552
+cap "dco_freq_0/clkDiv2" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/Q" 65.2414
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/Q_N" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/VGND" 0.108723
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/Q_N" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/VPWR" 8.65741
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/Q_N" "dco_freq_1/sky130_fd_sc_hd__dfxbp_2_0/VPB" 0.394232
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/Q_N" "dco_freq_1/clkDiv2" 0.144781
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/Q_N" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/Q" 0.173358
+cap "dco_freq_0/clkDiv2" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/Q_N" 2.61906
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/Q" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/VPWR" 0.83354
+cap "dco_idac_0/S2_M4" "dco_idac_0/Vbs3" 10.6938
+cap "dco_idac_0/Vbs1" "dco_idac_0/Vbs3" 33.0917
+cap "dco_idac_0/VCCA" "dco_idac_0/Vbs1" 94.2077
+cap "dco_idac_0/add_pwr" "dco_idac_0/Vbs1" 0.047842
+cap "dco_idac_0/D_M1" "dco_idac_0/Vbs1" 9.74697
+cap "dco_idac_0/S2_M4" "dco_idac_0/Vbs1" 0.140341
+cap "dco_idac_0/VCCA" "dco_idac_0/Vbs3" 8.48155
+cap "dco_idac_0/D_M1" "dco_idac_0/Vbs1" 4.53968
+cap "dco_idac_0/Vbs3" "dco_idac_0/S2_M4" 92.5529
+cap "dco_ring_osc_0/dco_cc_inv_3/VPWR" "dco_idac_0/add_pwr" 0.70442
+cap "dco_ring_osc_0/dco_cc_inv_3/dco_main_inv_1/A" "dco_idac_0/Vbs3" 0.901408
+cap "dco_idac_0/add_pwr" "dco_idac_0/Vbs1" 2.72086
+cap "dco_ring_osc_0/dco_cc_inv_3/VPWR" "dco_idac_0/Vbs3" 2.86639
+cap "dco_idac_0/D_M1" "dco_idac_0/Vbs3" 20.2299
+cap "dco_idac_0/Vbs3" "dco_idac_0/Vbs1" 36.9394
+cap "dco_idac_0/S2_M4" "dco_idac_0/Vbs1" 1.07548
+cap "dco_idac_0/Vbs3" "dco_idac_0/VCCA" 7.18809
+cap "dco_idac_0/Vbs2" "dco_idac_0/add_pwr" 0.023921
+cap "dco_idac_0/Vbs2" "dco_idac_0/S_M2" 8.93085
+cap "dco_idac_0/Vbs2" "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_1/VPWR" 1.26409
+cap "dco_idac_0/Isup" "dco_freq_0/sky130_fd_sc_hd__buf_4_0/A" 2.11416
+cap "dco_freq_0/sky130_fd_sc_hd__buf_4_0/VPB" "dco_idac_0/Isup" 0.126858
+cap "dco_idac_0/Vbs2" "dco_ring_osc_0/dco_cc_inv_3/outp" 0.0189063
+cap "sky130_fd_sc_hd__buf_2_0/VNB" "dco_idac_0/Isup" 0.403057
+cap "dco_idac_0/Vbs4" "dco_idac_0/Vbs2" 0.127536
+cap "dco_idac_0/Vbs2" "sky130_fd_sc_hd__buf_2_0/VGND" 1.21451
+cap "dco_idac_0/S_M2" "dco_idac_0/Isup" 1.42109e-14
+cap "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_1/VPWR" "dco_idac_0/S_M2" 1.49991
+cap "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_1/VPWR" "dco_idac_0/Isup" 1.73032
+cap "dco_idac_0/Vbs2" "dco_ring_osc_0/dco_cc_inv_3/dco_aux_inv_1/A" 0.223776
+cap "sky130_fd_sc_hd__buf_2_0/VNB" "dco_idac_0/Isup" 0.731378
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/Y" -0.572108
+cap "sky130_fd_sc_hd__buf_2_0/A" "sky130_fd_sc_hd__buf_2_0/VGND" 0.220417
+cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "sky130_fd_sc_hd__buf_2_0/X" 0.00090444
+cap "sky130_fd_sc_hd__buf_2_0/A" "dco_idac_0/Vbs2" 0.000636773
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" "sky130_fd_sc_hd__buf_2_0/X" 32.718
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" "sky130_fd_sc_hd__buf_2_0/a_27_47#" 0.00193589
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" -0.39798
+cap "sky130_fd_sc_hd__buf_2_0/VNB" "dco_ring_osc_0/dco_cc_inv_4/VPWR" 4.76431
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" "sky130_fd_sc_hd__buf_2_0/a_27_47#" 0.00992555
+cap "sky130_fd_sc_hd__buf_2_0/X" "sky130_fd_sc_hd__buf_2_0/VGND" 1.88393
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" "sky130_fd_sc_hd__buf_2_0/VGND" 0.401616
+cap "dco_freq_0/sky130_fd_sc_hd__buf_4_0/A" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" 0.177068
+cap "dco_ring_osc_0/dco_cc_inv_4/VPWR" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" 0.235715
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" "sky130_fd_sc_hd__buf_2_0/VGND" 1.68486
+cap "sky130_fd_sc_hd__buf_2_0/VNB" "dco_freq_0/sky130_fd_sc_hd__buf_4_0/A" 0.00734992
+cap "dco_freq_0/sky130_fd_sc_hd__buf_4_0/A" "sky130_fd_sc_hd__buf_2_0/X" 0.0274589
+cap "sky130_fd_sc_hd__buf_2_0/VNB" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" 5.09259
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" "sky130_fd_sc_hd__buf_2_0/X" 0.00451527
+cap "dco_idac_0/Isup" "dco_freq_0/sky130_fd_sc_hd__buf_4_0/A" 2.11416
+cap "dco_idac_0/Vbs2" "sky130_fd_sc_hd__buf_2_0/VGND" 1.23743
+cap "sky130_fd_sc_hd__buf_2_0/VNB" "sky130_fd_sc_hd__buf_2_0/X" 5.64094
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/A" "dco_freq_0/sky130_fd_sc_hd__buf_4_0/A" 0.0145281
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" "sky130_fd_sc_hd__buf_2_0/X" 0.945923
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" "dco_freq_0/sky130_fd_sc_hd__buf_4_0/A" 0.188004
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" -7.13354
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" "sky130_fd_sc_hd__buf_2_0/X" 1.19062
+cap "dco_freq_0/sky130_fd_sc_hd__buf_4_0/a_27_47#" "sky130_fd_sc_hd__buf_2_0/X" 0.746554
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/D" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" 0.0234949
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/D" 0.0236557
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/D" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPWR" 0.069825
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPWR" "sky130_fd_sc_hd__buf_2_0/X" 0.086782
+cap "sky130_fd_sc_hd__buf_2_0/VNB" "dco_freq_0/sky130_fd_sc_hd__buf_4_0/A" 0.0137759
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" 7.18873
+cap "sky130_fd_sc_hd__buf_2_0/X" "dco_ring_osc_0/dco_cc_inv_4/outp" 0.00362996
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_561_413#" "sky130_fd_sc_hd__buf_2_0/X" 0.0219152
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" "sky130_fd_sc_hd__buf_2_0/X" 39.82
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/Y" 0.0279291
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VGND" 0.0103659
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/D" 0.228177
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/D" -0.0218699
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/A" 0.1123
+cap "dco_freq_0/sky130_fd_sc_hd__buf_4_0/a_27_47#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPWR" 0.00516727
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" "sky130_fd_sc_hd__buf_2_0/X" 0.338406
+cap "sky130_fd_sc_hd__buf_2_0/X" "sky130_fd_sc_hd__buf_2_0/VGND" 1.52375
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" "dco_freq_0/sky130_fd_sc_hd__buf_4_0/a_27_47#" 1.10501
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/Y" -0.835956
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/Y" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/A" 0.00191321
+cap "dco_freq_0/sky130_fd_sc_hd__buf_4_0/A" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/A" 0.015172
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/D" "sky130_fd_sc_hd__buf_2_0/X" 0.0469007
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/D" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/D" 0.00036453
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_381_47#" -0.000571218
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/D" "sky130_fd_sc_hd__buf_2_0/X" 0.0418194
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/Y" 5.09696
+cap "sky130_fd_sc_hd__buf_2_0/X" "dco_ring_osc_0/dco_cc_inv_4/dco_aux_inv_1/A" 1.11973
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" 0.707146
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" "sky130_fd_sc_hd__buf_2_0/VGND" 0.457114
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/Y" "sky130_fd_sc_hd__buf_2_0/X" 6.57198
+cap "dco_freq_0/sky130_fd_sc_hd__buf_4_0/A" "sky130_fd_sc_hd__buf_2_0/X" 0.0327029
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/D" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/Y" 0.509878
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/Y" "sky130_fd_sc_hd__buf_2_0/X" 0.0332868
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/D" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/A" 0.129901
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPWR" 0.0725322
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VGND" "sky130_fd_sc_hd__buf_2_0/X" 0.00760165
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" -0.0488014
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" "sky130_fd_sc_hd__buf_2_0/X" 81.187
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/A" "sky130_fd_sc_hd__buf_2_0/X" 7.33479
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_381_47#" "sky130_fd_sc_hd__buf_2_0/X" 0.0637869
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_466_413#" "sky130_fd_sc_hd__buf_2_0/X" 0.081113
+cap "dco_freq_0/sky130_fd_sc_hd__buf_4_0/a_27_47#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VGND" 0.00217887
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" 0.283224
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" -0.35218
+cap "dco_freq_0/sky130_fd_sc_hd__buf_4_0/a_27_47#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/A" 0.833081
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "sky130_fd_sc_hd__buf_2_0/X" 2.35809
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/Y" "dco_ring_osc_0/dco_cc_inv_4/outp" 0.00487437
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" -0.408939
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_193_47#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_634_159#" 0.220296
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_466_413#" 0.240258
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" 0.377295
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/A" 0.00143491
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_634_159#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_381_47#" 0.0654572
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_634_159#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" 0.213473
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VGND" 0.00878819
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/A" 0.252468
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/Q" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1059_315#" 0.00983705
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPWR" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_891_413#" 0.105733
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_466_413#" 0.272041
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" -0.644472
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/D" "dco_ring_osc_0/dco_cc_inv_4/VCCA" 0.17077
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1059_315#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_891_413#" 0.857555
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_634_159#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPWR" 0.0599113
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_466_413#" "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_0/A" 0.484127
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1059_315#" 0.00428177
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_891_413#" "dco_ring_osc_0/dco_cc_inv_4/VCCA" 0.197482
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" 0.498929
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_891_413#" "dco_ring_osc_0/dco_cc_inv_4/inp" 5.90908e-05
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VGND" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1589_47#" 0.0124606
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/A" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1589_47#" 0.13133
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/Q_N" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_891_413#" 1.11022e-16
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPWR" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_466_413#" 0.0751456
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1059_315#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_891_413#" 5.68434e-14
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_634_159#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/D" 0.190141
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_193_47#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" 0.0285442
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1059_315#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_466_413#" 0.18455
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/Q" "dco_ring_osc_0/dco_cc_inv_4/VCCA" 0.704
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_634_159#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/Q_N" -5.55112e-17
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPWR" 0.14934
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1059_315#" 0.0716729
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_193_47#" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/Q" -7.10543e-15
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_466_413#" "dco_ring_osc_0/dco_cc_inv_4/VCCA" 0.154086
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VGND" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1059_315#" 0.0154555
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1589_47#" 0.318356
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" -5.68434e-14
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/D" "dco_freq_0/clk" 0.0291623
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/A" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1059_315#" 0.676161
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_193_47#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_466_413#" 0.0285292
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/D" 0.0042253
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_193_47#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" 0.146178
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_193_47#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VGND" 0.0149121
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/Q_N" 1.11022e-16
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_193_47#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/A" 0.248909
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPWR" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1589_47#" 0.0597394
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1059_315#" 1.1057
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/D" "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_0/A" 0.400036
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/D" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" 1.42109e-14
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" "dco_ring_osc_0/dco_cc_inv_4/VCCA" 0.556226
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_634_159#" 0.214254
+cap "dco_ring_osc_0/dco_cc_inv_4/inp" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" 0.000136363
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_891_413#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_891_413#" 0.0212458
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_891_413#" 0.45347
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/D" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/A" 0.000717455
+cap "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_0/Y" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" 0.043794
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_193_47#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" 0.508837
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPWR" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1059_315#" 0.356987
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" 15.5929
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1059_315#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1589_47#" -1.42109e-14
+cap "dco_ring_osc_0/dco_cc_inv_4/inp" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" 0.00993697
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_634_159#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" 0.0350431
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" "dco_ring_osc_0/dco_cc_inv_4/VCCA" 0.776634
+cap "dco_ring_osc_0/dco_cc_inv_4/inp" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" 8.63635e-05
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1059_315#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_1059_315#" 0.952974
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_193_47#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPWR" 0.148387
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_634_159#" "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_0/A" 0.3991
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_891_413#" 0.425101
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_466_413#" 0.630674
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_1059_315#" "dco_ring_osc_0/dco_cc_inv_4/VCCA" 0.1933
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_1059_315#" "dco_ring_osc_0/dco_cc_inv_4/inp" 0.000231818
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" "dco_freq_0/clk" 0.808953
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VGND" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_891_413#" 0.00217887
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/A" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_891_413#" 0.200507
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_634_159#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" 0.00519358
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" 0.061864
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_193_47#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/D" 0.197812
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_634_159#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VGND" 0.0130732
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_634_159#" "dco_freq_1/sky130_fd_sc_hd__inv_4_0/A" 0.118247
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_466_413#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_466_413#" 0.0134158
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1059_315#" "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_634_159#" 0.0611369
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_193_47#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/Q_N" 1.11022e-16
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_466_413#" 0.0234377
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_27_47#" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/Q" 1.77636e-15
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/Q" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1589_47#" 0.0710286
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_634_159#" "dco_ring_osc_0/dco_cc_inv_4/VCCA" 0.0887428
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/VPB" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_891_413#" 0.344531
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" "dco_freq_0/clk" 0.863481
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_0/A" 0.499349
+cap "dco_freq_1/sky130_fd_sc_hd__inv_4_0/A" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_466_413#" 0.141827
+cap "dco_freq_0/clkDiv2" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/VPWR" 23.0725
+cap "dco_freq_0/clkDiv2" "dco_ring_osc_0/dco_cc_inv_4/VCCA" 0.0181946
+cap "dco_freq_0/clkDiv2" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/Q" 267.551
+cap "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/VPB" "dco_freq_0/clkDiv2" 7.84143
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/VGND" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/VPWR" -3.66667
+cap "dco_freq_0/clkDiv2" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1589_47#" 0.276067
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/VPWR" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1589_47#" 0.0325779
+cap "dco_freq_0/clkDiv2" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/VGND" 145.881
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/Q" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1589_47#" 0.0299102
+cap "dco_freq_1/sky130_fd_sc_hd__dfxtp_1_0/VGND" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/a_1589_47#" 0.0119246
+cap "dco_freq_0/clkDiv2" "dco_freq_0/sky130_fd_sc_hd__dfxbp_2_0/Q_N" 5.98248
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/Q" 5.808
+cap "dco_idac_0/VCCA" "dco_ring_osc_0/p[4]" 0.0164346
+cap "dco_idac_0/Vbs1" "dco_idac_0/Vbs3" 29.7647
+cap "dco_idac_0/Vbs1" "dco_idac_0/VCCA" 147.123
+cap "dco_idac_0/Vbs1" "dco_ring_osc_0/p[4]" 19.7508
+cap "dco_idac_0/Vbs1" "dco_idac_0/D_M1" 10.4453
+cap "dco_ring_osc_0/p[4]" "dco_idac_0/VCCA" 0.295822
+cap "dco_ring_osc_0/dco_cc_inv_3/dco_main_inv_1/A" "dco_ring_osc_0/dco_cc_inv_3/VPWR" 5.68434e-14
+cap "dco_idac_0/S2_M4" "dco_idac_0/Vbs1" 2.91934
+cap "dco_ring_osc_0/dco_cc_inv_3/dco_main_inv_1/A" "dco_idac_0/S2_M4" 0.0217315
+cap "dco_ring_osc_0/dco_cc_inv_3/VPWR" "dco_idac_0/add_pwr" 0.70442
+cap "dco_ring_osc_0/pn[4]" "dco_idac_0/Vbs1" 0.211391
+cap "dco_idac_0/S2_M4" "dco_ring_osc_0/dco_cc_inv_3/VPWR" 0.277665
+cap "dco_idac_0/D_M1" "dco_idac_0/Vbs1" 4.53968
+cap "dco_idac_0/Vbs1" "dco_idac_0/Vbs3" 29.7647
+cap "dco_ring_osc_0/p[4]" "dco_idac_0/Vbs1" 22
+cap "dco_ring_osc_0/dco_cc_inv_3/dco_main_inv_1/A" "dco_idac_0/Vbs1" 3.33758
+cap "dco_ring_osc_0/dco_cc_inv_3/dco_main_inv_1/A" "dco_idac_0/Vbs3" 0.901408
+cap "dco_ring_osc_0/dco_cc_inv_3/VPWR" "dco_idac_0/Vbs1" 2.86635
+cap "dco_ring_osc_0/dco_cc_inv_3/VPWR" "dco_idac_0/Vbs3" 2.41325
+cap "dco_idac_0/Vbs1" "dco_idac_0/add_pwr" 3.24737
+cap "dco_idac_0/Vbs2" "dco_ring_osc_0/p[4]" 1.88571
+cap "dco_ring_osc_0/pn[4]" "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_1/VPWR" -8.52651e-14
+cap "dco_idac_0/Vbs2" "sky130_fd_sc_hd__buf_2_0/A" 0.0657695
+cap "dco_idac_0/Vbs2" "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_1/VPWR" 19.6216
+cap "dco_idac_0/Vbs2" "sky130_fd_sc_hd__buf_2_0/VGND" 0.605676
+cap "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_1/VPWR" "dco_idac_0/S_M2" 2.9935
+cap "dco_ring_osc_0/p[4]" "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_1/VPWR" -8.52651e-14
+cap "dco_idac_0/Vbs2" "dco_ring_osc_0/pn[4]" 0.348207
+cap "dco_idac_0/Vbs2" "sky130_fd_sc_hd__buf_2_0/a_27_47#" 0.241183
+cap "dco_ring_osc_0/pn[4]" "dco_idac_0/S_M2" 0.0566738
+cap "dco_idac_0/Isup" "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_1/VPWR" 2.1434
+cap "dco_idac_0/Vbs2" "sky130_fd_sc_hd__buf_2_0/X" 0.0801073
+cap "dco_idac_0/Vbs2" "dco_idac_0/S_M2" 15.6053
+cap "sky130_fd_sc_hd__buf_2_0/VPWR" "sky130_fd_sc_hd__buf_2_0/VGND" -24.4097
+cap "sky130_fd_sc_hd__buf_2_0/VPWR" "sky130_fd_sc_hd__buf_2_0/VPB" 43.1731
+cap "sky130_fd_sc_hd__buf_2_0/A" "dco_idac_0/Vbs2" 0.260046
+cap "dco_ring_osc_0/dco_cc_inv_4/VPWR" "sky130_fd_sc_hd__buf_2_0/A" 3.89064
+cap "sky130_fd_sc_hd__buf_2_0/VNB" "sky130_fd_sc_hd__buf_2_0/a_27_47#" 3.30939
+cap "dco_ring_osc_0/dco_cc_inv_4/VPWR" "sky130_fd_sc_hd__buf_2_0/X" 53.8502
+cap "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_1/A" "sky130_fd_sc_hd__buf_2_0/X" 0.413915
+cap "sky130_fd_sc_hd__buf_2_0/VNB" "sky130_fd_sc_hd__buf_2_0/VGND" 31.9319
+cap "dco_ring_osc_0/p[3]" "sky130_fd_sc_hd__buf_2_0/a_27_47#" 2.11044
+cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" 0.0483973
+cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" 0.233382
+cap "dco_ring_osc_0/p[3]" "sky130_fd_sc_hd__buf_2_0/VGND" 0.109923
+cap "dco_ring_osc_0/p[3]" "sky130_fd_sc_hd__buf_2_0/VPB" 2.18545
+cap "sky130_fd_sc_hd__buf_2_0/VGND" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" 0.0602007
+cap "sky130_fd_sc_hd__buf_2_0/VGND" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" 0.999377
+cap "sky130_fd_sc_hd__buf_2_0/A" "sky130_fd_sc_hd__buf_2_0/a_27_47#" 17.992
+cap "dco_ring_osc_0/dco_cc_inv_3/dco_main_inv_0/Y" "sky130_fd_sc_hd__buf_2_0/A" 0.0321317
+cap "sky130_fd_sc_hd__buf_2_0/A" "sky130_fd_sc_hd__buf_2_0/VGND" 16.9337
+cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "sky130_fd_sc_hd__buf_2_0/X" 35.8652
+cap "dco_ring_osc_0/p[3]" "sky130_fd_sc_hd__buf_2_0/VPWR" 0.608971
+cap "sky130_fd_sc_hd__buf_2_0/A" "sky130_fd_sc_hd__buf_2_0/VPB" 7.78693
+cap "sky130_fd_sc_hd__buf_2_0/X" "sky130_fd_sc_hd__buf_2_0/VGND" 38.7847
+cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "dco_idac_0/Vbs2" 0.112942
+cap "sky130_fd_sc_hd__buf_2_0/X" "sky130_fd_sc_hd__buf_2_0/VPB" 10.8497
+cap "dco_ring_osc_0/dco_cc_inv_4/VPWR" "sky130_fd_sc_hd__buf_2_0/a_27_47#" 0.904873
+cap "dco_ring_osc_0/dco_cc_inv_3/dco_main_inv_0/Y" "dco_ring_osc_0/dco_cc_inv_4/VPWR" -1.06581e-14
+cap "sky130_fd_sc_hd__buf_2_0/VGND" "dco_idac_0/Vbs2" 0.465792
+cap "sky130_fd_sc_hd__buf_2_0/A" "sky130_fd_sc_hd__buf_2_0/VPWR" 12.8364
+cap "dco_ring_osc_0/dco_cc_inv_4/VPWR" "sky130_fd_sc_hd__buf_2_0/VPB" 21.8863
+cap "sky130_fd_sc_hd__buf_2_0/VPWR" "sky130_fd_sc_hd__buf_2_0/X" 66.8028
+cap "dco_ring_osc_0/dco_cc_inv_4/VPWR" "sky130_fd_sc_hd__buf_2_0/VPWR" 73.1287
+cap "sky130_fd_sc_hd__buf_2_0/VNB" "sky130_fd_sc_hd__buf_2_0/A" 0.541214
+cap "sky130_fd_sc_hd__buf_2_0/VNB" "sky130_fd_sc_hd__buf_2_0/X" 6.90867
+cap "dco_ring_osc_0/dco_cc_inv_3/dco_main_inv_0/Y" "sky130_fd_sc_hd__buf_2_0/a_27_47#" 0.0961902
+cap "dco_ring_osc_0/p[3]" "sky130_fd_sc_hd__buf_2_0/A" 1.42304
+cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "sky130_fd_sc_hd__buf_2_0/VGND" -3.34608
+cap "dco_ring_osc_0/p[3]" "sky130_fd_sc_hd__buf_2_0/X" 0.159816
+cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "sky130_fd_sc_hd__buf_2_0/VPB" 4.44077
+cap "dco_ring_osc_0/dco_cc_inv_4/VPWR" "sky130_fd_sc_hd__buf_2_0/VNB" 4.51101
+cap "sky130_fd_sc_hd__buf_2_0/X" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" 30.9361
+cap "sky130_fd_sc_hd__buf_2_0/VGND" "sky130_fd_sc_hd__buf_2_0/VPB" -3.33629
+cap "dco_ring_osc_0/p[3]" "dco_ring_osc_0/dco_cc_inv_4/VPWR" 1.42109e-13
+cap "dco_ring_osc_0/dco_cc_inv_4/VPWR" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" 1.1233
+cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "sky130_fd_sc_hd__buf_2_0/VPWR" -2.15364
+cap "sky130_fd_sc_hd__buf_2_0/A" "sky130_fd_sc_hd__buf_2_0/X" 3.60655
+cap "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_1/A" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" 0.513295
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/Y" "dco_ring_osc_0/pn[3]" 0.0520228
+cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "sky130_fd_sc_hd__buf_2_0/X" 0.0800937
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_ring_osc_0/pn[3]" -5.68434e-14
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" -2.45648
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" "sky130_fd_sc_hd__buf_2_0/X" 19.1296
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" 61.2897
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" "dco_ring_osc_0/p[3]" 0.14502
+cap "sky130_fd_sc_hd__buf_2_0/X" "dco_ring_osc_0/dco_cc_inv_4/inn" 0.0827981
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "sky130_fd_sc_hd__buf_2_0/X" 21.0086
+cap "sky130_fd_sc_hd__buf_2_0/X" "sky130_fd_sc_hd__buf_2_0/VGND" 0.605941
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" "dco_ring_osc_0/dco_cc_inv_4/inn" 0.202325
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" "dco_ring_osc_0/pn[3]" 0.135909
+cap "sky130_fd_sc_hd__buf_2_0/A" "sky130_fd_sc_hd__buf_2_0/X" 0.0264307
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" 7.8648
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/Y" 4.41642
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" "dco_ring_osc_0/p[3]" 0.575794
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_ring_osc_0/dco_cc_inv_4/inn" 2.84217e-14
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/Y" "dco_ring_osc_0/p[3]" 0.0586072
+cap "sky130_fd_sc_hd__buf_2_0/X" "dco_ring_osc_0/pn[3]" 1.12117
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_ring_osc_0/p[3]" -5.68434e-14
+cap "sky130_fd_sc_hd__buf_2_0/X" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" 9.56522
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" "dco_ring_osc_0/pn[3]" 0.395348
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" 86.3369
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_0/Y" -1.06581e-14
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_ring_osc_0/dco_cc_inv_4/inp" 2.84217e-13
+cap "dco_ring_osc_0/dco_cc_inv_4/inp" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_634_159#" 0.399786
+cap "dco_ring_osc_0/dco_cc_inv_4/inp" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/D" 0.400036
+cap "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" "dco_ring_osc_0/dco_cc_inv_4/inp" 0.819935
+cap "dco_ring_osc_0/dco_cc_inv_4/inp" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPWR" 0.269741
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_466_413#" "dco_ring_osc_0/dco_cc_inv_4/inp" 0.533455
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/Q" 0.704
+cap "dco_ring_osc_0/dco_cc_inv_4/inp" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_193_47#" 0.519592
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_freq_0/sky130_fd_sc_hd__inv_4_0/VPB" 1.22593
+cap "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_381_47#" "dco_ring_osc_0/dco_cc_inv_4/inp" 0.0335838
+cap "dco_ring_osc_0/dco_cc_inv_4/inp" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/a_27_47#" 0.0375635
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/VPWR" 1.05038
+cap "dco_ring_osc_0/dco_cc_inv_4/inp" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/VPWR" 0.00827082
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_freq_0/sky130_fd_sc_hd__dfxtp_1_0/Q" 5.808
+cap "dco_ring_osc_0/p[4]" "dco_idac_0/VCCA" 0.0281803
+cap "dco_ring_osc_0/p[4]" "dco_idac_0/VCCA" 0.0603864
+cap "dco_idac_0/Vbs1" "dco_ring_osc_0/p[4]" 19.7508
+cap "dco_ring_osc_0/dco_cc_inv_3/VPWR" "dco_ring_osc_0/pn[4]" 2.84217e-14
+cap "dco_idac_0/Vbs1" "dco_ring_osc_0/p[4]" 22
+cap "dco_ring_osc_0/dco_cc_inv_3/VPWR" "dco_ring_osc_0/p[4]" -1.42109e-14
+cap "dco_ring_osc_0/dco_cc_inv_3/VPWR" "dco_ring_osc_0/dco_cc_inv_3/dco_main_inv_1/A" 1.42109e-13
+cap "dco_ring_osc_0/dco_cc_inv_3/VPWR" "dco_ring_osc_0/VGND" 1.77636e-15
+cap "dco_ring_osc_0/p[4]" "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_1/VPWR" -5.68434e-14
+cap "dco_ring_osc_0/p[4]" "dco_idac_0/Vbs2" 1.88571
+cap "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_1/VPWR" "dco_ring_osc_0/pn[3]" 3.55271e-15
+cap "dco_ring_osc_0/pn[4]" "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_1/VPWR" 3.97904e-13
+cap "dco_ring_osc_0/VGND" "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_1/VPWR" 1.77636e-15
+cap "dco_ring_osc_0/dco_cc_inv_4/VPWR" "dco_ring_osc_0/pn[3]" 5.68434e-14
+cap "dco_ring_osc_0/dco_cc_inv_4/VPWR" "dco_ring_osc_0/p[3]" -1.7053e-13
+cap "dco_ring_osc_0/p[3]" "sky130_fd_sc_hd__buf_2_0/A" 0.0371599
+cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "dco_ring_osc_0/p[3]" 0.0426951
+cap "dco_ring_osc_0/dco_cc_inv_4/VPWR" "dco_ring_osc_0/dco_cc_inv_3/dco_main_inv_0/Y" -5.68434e-14
+cap "dco_ring_osc_0/dco_cc_inv_4/VPWR" "dco_ring_osc_0/dco_cc_inv_4/VGND" -7.10543e-15
+cap "sky130_fd_sc_hd__buf_2_0/VPB" "dco_ring_osc_0/p[3]" 0.081713
+cap "dco_ring_osc_0/dco_cc_inv_4/VPWR" "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_1/A" 2.13163e-13
+cap "sky130_fd_sc_hd__buf_2_0/VPWR" "dco_ring_osc_0/p[3]" 0.0483427
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_ring_osc_0/pn[3]" 5.68434e-14
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_ring_osc_0/pn[2]" 1.42109e-14
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_ring_osc_0/dco_cc_inv_4/VGND" 3.55271e-15
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_ring_osc_0/p[3]" -8.52651e-13
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_ring_osc_0/dco_cc_inv_4/GND" 1.77636e-15
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_0/Y" -5.68434e-14
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_ring_osc_0/dco_cc_inv_4/inp" 5.68434e-14
+cap "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_ring_osc_0/pn[2]" -7.10543e-15
+cap "dco_ring_osc_0/dco_cc_inv_0/VGND" "dco_ring_osc_0/VCCA" -4.44089e-16
+cap "dco_ring_osc_0/VCCA" "dco_ring_osc_0/dco_cc_inv_0/inn" 1.77636e-15
+cap "dco_ring_osc_0/VGND" "dco_ring_osc_0/VCCA" -5.32907e-15
+cap "dco_ring_osc_0/pn[4]" "dco_ring_osc_0/VCCA" 8.88178e-16
+cap "dco_ring_osc_0/VCCA" "dco_ring_osc_0/VGND" -3.55271e-15
+cap "dco_ring_osc_0/VCCA" "dco_ring_osc_0/pn[0]" 1.77636e-15
+cap "dco_ring_osc_0/VCCA" "dco_ring_osc_0/pn[0]" 8.88178e-16
+cap "dco_ring_osc_0/VCCA" "dco_ring_osc_0/VGND" 3.55271e-15
+cap "dco_ring_osc_0/dco_cc_inv_2/VCCA" "dco_ring_osc_0/dco_cc_inv_2/VGND" 7.10543e-15
+cap "dco_ring_osc_0/dco_cc_inv_2/VCCA" "dco_ring_osc_0/pn[1]" 1.77636e-15
+cap "dco_ring_osc_0/VPWR" "dco_ring_osc_0/dco_cc_inv_4/VGND" 1.77636e-15
+cap "dco_ring_osc_0/pn[1]" "dco_ring_osc_0/VPWR" 8.88178e-16
+cap "dco_ring_osc_0/dco_cc_inv_4/GND" "dco_ring_osc_0/VPWR" -4.44089e-16
+cap "dco_ring_osc_0/dco_cc_inv_4/VGND" "dco_ring_osc_0/VPWR" 5.32907e-15
+cap "dco_ring_osc_0/pn[2]" "dco_ring_osc_0/VPWR" 9.76996e-15
+cap "dco_ring_osc_0/VCCA" "dco_ring_osc_0/dco_cc_inv_0/dco_main_inv_0/Y" 3.55271e-14
+cap "dco_ring_osc_0/VCCA" "dco_ring_osc_0/dco_cc_inv_0/inn" -1.38778e-17
+cap "dco_ring_osc_0/VCCA" "dco_ring_osc_0/dco_cc_inv_0/inp" 6.82121e-13
+cap "dco_ring_osc_0/VCCA" "dco_ring_osc_0/dco_cc_inv_0/inn" 5.55112e-17
+cap "dco_ring_osc_0/VCCA" "dco_ring_osc_0/p[0]" 4.54747e-13
+cap "dco_ring_osc_0/dco_cc_inv_0/inp" "dco_ring_osc_0/VCCA" 2.84217e-14
+cap "dco_ring_osc_0/VCCA" "dco_ring_osc_0/pn[0]" -1.02318e-12
+cap "dco_ring_osc_0/dco_cc_inv_0/dco_main_inv_1/A" "dco_ring_osc_0/VCCA" -6.82121e-13
+cap "dco_ring_osc_0/VCCA" "dco_ring_osc_0/p[0]" 4.54747e-13
+cap "dco_ring_osc_0/VCCA" "dco_ring_osc_0/dco_cc_inv_1/dco_main_inv_0/Y" 8.52651e-14
+cap "dco_ring_osc_0/pn[0]" "dco_ring_osc_0/VCCA" 3.55271e-14
+cap "dco_ring_osc_0/pn[1]" "dco_ring_osc_0/VCCA" -5.68434e-13
+cap "dco_ring_osc_0/VCCA" "dco_ring_osc_0/p[1]" 7.95808e-13
+cap "dco_ring_osc_0/VCCA" "dco_ring_osc_0/p[0]" 8.52651e-14
+cap "dco_ring_osc_0/dco_cc_inv_2/VCCA" "dco_ring_osc_0/p[1]" -1.13687e-13
+cap "dco_ring_osc_0/dco_cc_inv_2/VCCA" "dco_ring_osc_0/dco_cc_inv_1/dco_main_inv_1/A" -6.82121e-13
+cap "dco_ring_osc_0/dco_cc_inv_2/VCCA" "dco_ring_osc_0/pn[1]" 2.84217e-14
+cap "dco_ring_osc_0/dco_cc_inv_2/VCCA" "dco_ring_osc_0/dco_cc_inv_2/dco_main_inv_0/Y" 9.9476e-14
+cap "dco_ring_osc_0/VPWR" "dco_ring_osc_0/p[2]" -1.13687e-12
+cap "dco_ring_osc_0/VPWR" "dco_ring_osc_0/pn[2]" -5.68434e-13
+cap "dco_ring_osc_0/VPWR" "dco_ring_osc_0/p[1]" 3.69482e-13
+cap "dco_ring_osc_0/VPWR" "dco_ring_osc_0/pn[2]" -3.55271e-14
+cap "dco_ring_osc_0/VPWR" "dco_ring_osc_0/p[2]" -5.11591e-13
+cap "dco_ring_osc_0/VPWR" "dco_ring_osc_0/dco_cc_inv_2/dco_main_inv_1/A" -5.68434e-13
+merge "dco_ring_osc_0/VSUBS" "sky130_fd_sc_hd__buf_2_0/VNB" -108.081 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "sky130_fd_sc_hd__buf_2_0/VNB" "dco_freq_0/VNB"
+merge "dco_freq_0/VNB" "dco_freq_1/VNB"
+merge "dco_freq_1/VNB" "dco_idac_0/B_M6"
+merge "dco_idac_0/B_M6" "sky130_fd_sc_hd__einvn_1_0/VNB"
+merge "sky130_fd_sc_hd__einvn_1_0/VNB" "a_n312_n1354#"
+merge "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_0/VPWR" "dco_ring_osc_0/dco_cc_inv_4/VCCA" -2035.51 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12800 -1280 -14400 -1440 0 0 0 0 0 0 0 0 0 0
+merge "dco_ring_osc_0/dco_cc_inv_4/VCCA" "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_1/VCCA"
+merge "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_1/VCCA" "li_10230_1740#"
+merge "li_10230_1740#" "dco_ring_osc_0/dco_cc_inv_4/VPWR"
+merge "dco_ring_osc_0/dco_cc_inv_4/VPWR" "li_9370_1740#"
+merge "li_9370_1740#" "li_8790_1740#"
+merge "li_8790_1740#" "li_8210_1740#"
+merge "li_8210_1740#" "dco_ring_osc_0/dco_cc_inv_3/VCCA"
+merge "dco_ring_osc_0/dco_cc_inv_3/VCCA" "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_1/VPWR"
+merge "dco_ring_osc_0/dco_cc_inv_4/dco_main_inv_1/VPWR" "li_7350_1740#"
+merge "li_7350_1740#" "dco_ring_osc_0/dco_cc_inv_3/VPWR"
+merge "dco_ring_osc_0/dco_cc_inv_3/VPWR" "Isup"
+merge "Isup" "li_6490_1740#"
+merge "li_6490_1740#" "li_5910_1740#"
+merge "li_5910_1740#" "dco_ring_osc_0/dco_cc_inv_3/dco_main_inv_1/VCCA"
+merge "dco_ring_osc_0/dco_cc_inv_3/dco_main_inv_1/VCCA" "dco_ring_osc_0/dco_cc_inv_3/dco_main_inv_1/VPWR"
+merge "dco_ring_osc_0/dco_cc_inv_3/dco_main_inv_1/VPWR" "li_5330_1740#"
+merge "dco_ring_osc_0/dco_cc_inv_2/dco_main_inv_1/VCCA" "dco_ring_osc_0/VPWR" -2141.18 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16000 -1600 -16000 -1600 0 0 0 0 0 0 0 0 0 0
+merge "dco_ring_osc_0/VPWR" "dco_ring_osc_0/dco_cc_inv_2/VCCA"
+merge "dco_ring_osc_0/dco_cc_inv_2/VCCA" "dco_ring_osc_0/dco_cc_inv_2/VPWR"
+merge "dco_ring_osc_0/dco_cc_inv_2/VPWR" "li_8940_5860#"
+merge "li_8940_5860#" "li_8360_5860#"
+merge "li_8360_5860#" "dco_ring_osc_0/dco_cc_inv_2/dco_main_inv_0/VPWR"
+merge "dco_ring_osc_0/dco_cc_inv_2/dco_main_inv_0/VPWR" "li_7500_5860#"
+merge "li_7500_5860#" "dco_ring_osc_0/dco_cc_inv_1/VPWR"
+merge "dco_ring_osc_0/dco_cc_inv_1/VPWR" "li_6640_5860#"
+merge "li_6640_5860#" "li_6060_5860#"
+merge "li_6060_5860#" "li_5480_5860#"
+merge "li_5480_5860#" "dco_ring_osc_0/dco_cc_inv_1/dco_main_inv_0/VPWR"
+merge "dco_ring_osc_0/dco_cc_inv_1/dco_main_inv_0/VPWR" "li_4620_5860#"
+merge "li_4620_5860#" "dco_ring_osc_0/VCCA"
+merge "dco_ring_osc_0/VCCA" "dco_ring_osc_0/dco_cc_inv_0/VPWR"
+merge "dco_ring_osc_0/dco_cc_inv_0/VPWR" "li_3760_5860#"
+merge "li_3760_5860#" "li_3180_5860#"
+merge "li_3180_5860#" "li_2600_5860#"
+merge "dco_freq_1/sky130_fd_sc_hd__inv_4_0/A" "dco_freq_0/clkDiv2" -1399.18 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7000 -540 0 0 0 0 0 0 0 0 0 0
+merge "dco_freq_0/clkDiv2" "dco_freq_1/clk"
+merge "dco_freq_1/clk" "ro_div2"
+merge "sky130_fd_sc_hd__buf_2_0/X" "dco_freq_0/clk" -520.329 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2312 -272 -3000 -260 0 0 0 0 0 0 0 0 0 0
+merge "dco_freq_0/clk" "li_7028_974#"
+merge "sky130_fd_sc_hd__einvn_1_0/TE_B" "li_n140_n1180#" -101.875 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1600 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "sky130_fd_sc_hd__buf_2_0/A" "li_6846_854#" -77.8225 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1156 -136 0 0 0 0 0 0 0 0 0 0 0 0
+merge "sky130_fd_sc_hd__einvn_1_0/A" "li_198_n1178#" -62.4857 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1156 -136 0 0 0 0 0 0 0 0 0 0 0 0
+merge "sky130_fd_sc_hd__einvn_1_0/Z" "li_240_n960#" -34.4129 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -60 -122 0 0 0 0 0 0 0 0 0 0 0 0
+merge "sky130_fd_sc_hd__einvn_1_0/VPB" "w_n410_n1130#" -23.3166 0 0 0 0 -1920 -652 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "sky130_fd_sc_hd__buf_2_0/VPB" "w_7210_900#" -34.5008 0 0 0 0 -1280 -648 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dco_freq_1/clkDiv2" "pha_DCO" -161.108 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8000 -360 0 0 0 0 0 0 0 0 0 0
+merge "dco_idac_0/Vbs4" "dco_idac_0/Vbs3" -279.869 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -400 0 0 0 0 0 0 0 0 0 0
+merge "dco_idac_0/Vbs3" "Vbs_34"
+merge "dco_idac_0/Vbs2" "dco_idac_0/Vbs1" -482.834 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -400 0 0 0 0 0 0 0 0 0 0
+merge "dco_idac_0/Vbs1" "Vbs_12"
