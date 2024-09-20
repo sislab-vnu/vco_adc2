@@ -78,7 +78,7 @@ lab=GND}
 N 200 -30 250 -30 {
 lab=GND}
 N 400 -140 450 -140 {
-lab=#net3}
+lab=GND}
 N 70 -200 80 -200 {
 lab=add_pwr}
 N 80 -230 80 -200 {
@@ -88,13 +88,12 @@ lab=add_pwr}
 N 190 -110 190 -100 {
 lab=input_R}
 N 150 -140 190 -140 {
-lab=#net4}
+lab=GND}
 C {devices/ipin.sym} 200 -430 0 0 {name=p3 lab=Vbs3}
 C {devices/ipin.sym} 200 -330 0 0 {name=p4 lab=Vbs4}
 C {devices/ipin.sym} 460 -430 0 0 {name=p1 lab=Vbs1}
 C {devices/ipin.sym} 460 -330 0 0 {name=p2 lab=Vbs2}
 C {devices/lab_pin.sym} 20 -140 2 0 {name=l1 sig_type=std_logic lab=open}
-C {devices/gnd.sym} 250 0 0 0 {name=l3 lab=GND}
 C {devices/opin.sym} 560 -80 0 0 {name=p6 lab=Isup}
 C {sky130_stdcells/inv_2.sym} 50 -520 3 0 {name=x1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD prefix=sky130_fd_sc_hd__ }
 C {devices/ipin.sym} 50 -360 3 0 {name=p0 lab=Dctrl}
@@ -224,5 +223,6 @@ spiceprefix=X
 mult=1}
 C {devices/lab_wire.sym} 130 -100 0 0 {name=p7 sig_type=std_logic lab=input_R}
 C {devices/ipin.sym} 360 -520 0 0 {name=p8 lab=VCCA}
-C {devices/gnd.sym} 150 -140 0 0 {name=l9 lab=GND}
-C {devices/gnd.sym} 400 -140 0 0 {name=l10 lab=GND}
+C {devices/lab_pin.sym} 250 0 2 0 {name=l3 sig_type=std_logic lab=GND}
+C {devices/lab_pin.sym} 400 -140 0 0 {name=l9 sig_type=std_logic lab=GND}
+C {devices/lab_pin.sym} 150 -140 0 0 {name=l10 sig_type=std_logic lab=GND}
