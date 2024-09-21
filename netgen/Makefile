@@ -12,6 +12,9 @@ SPICE3_PATH = ../layout/vco_v3
 SPICE_XSC_DCO = ../xschem/lib_dco/simulations
 SPICE_MAG_DCO = ../layout/dco
 
+SPICE_XSC_COUNT = ../xschem/lib_count/simulations
+SPICE_MAG_COUNT = ../layout/count
+
 CURRENT_PATH = $(shell pwd)
 
 XSC_VCO_PATH = $(CURRENT_PATH)/xsc_vco/
@@ -20,6 +23,8 @@ MAG_VCO_PATH = $(CURRENT_PATH)/mag_vco/
 XSC_DCO_PATH = $(CURRENT_PATH)/xsc_dco/
 MAG_DCO_PATH = $(CURRENT_PATH)/mag_dco/
 
+XSC_COUNT_PATH = $(CURRENT_PATH)/xsc_count/
+MAG_COUNT_PATH = $(CURRENT_PATH)/mag_count/
 
 file_spice_1 ?= $(word 1, $(ARGS))
 module1 ?= $(word 2, $(ARGS))
@@ -43,6 +48,10 @@ get_file:
 	@mkdir -p $(MAG_DCO_PATH)
 	cp $(SPICE_XSC_DCO)/*.spice $(XSC_DCO_PATH)
 	cp $(SPICE_MAG_DCO)/*.spice $(MAG_DCO_PATH)
+	@mkdir -p $(XSC_COUNT_PATH)
+	@mkdir -p $(MAG_COUNT_PATH)
+	cp $(SPICE_XSC_COUNT)/*.spice $(XSC_COUNT_PATH)
+	cp $(SPICE_MAG_COUNT)/*.spice $(MAG_COUNT_PATH)
 #	echo $(CURRENT_PATH)
 #	mv aux_inv.spice xsc_vco_aux_inv.spice
 #	mv main_inv.spice xsc_vco_main_inv.spice
@@ -120,7 +129,11 @@ block_dco: dco_main_inv dco_aux_inv dco_cc_inv dco_ring_osc dco_idac dco_freq dc
 	clear
 	@echo "All module dco check completed successfully"
 
-.PHONY: get_file check_lvs vco_main_inv vco_aux_inv vco_cc_inv vco_ring_osc vco dco_main_inv dco_aux_inv dco_cc_inv dco_ring_osc block_dco
+count: get_file
+	$(NETGEN) $(NETGEN_OPTS) "$(XSC_COUNT_PATH)/count.spice count" "$(MAG_COUNT_PATH)/count.spice count" $(SETUP_TCL)
+	make check_lvs
+
+.PHONY: get_file check_lvs vco_main_inv vco_aux_inv vco_cc_inv vco_ring_osc vco dco_main_inv dco_aux_inv dco_cc_inv dco_ring_osc block_dco count
 
 clean:
 	rm -f $(file_log) *.out

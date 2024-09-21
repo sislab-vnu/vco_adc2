@@ -1,0 +1,33 @@
+* NGSPICE file created from count.ext - technology: sky130A
+.subckt count
+Xsky130_fd_sc_hd__dfstp_1_0 sky130_fd_sc_hd__buf_2_0/X sky130_fd_sc_hd__inv_2_1/Y
++ sky130_fd_sc_hd__inv_2_0/Y sky130_fd_sc_hd__dfstp_1_0/VGND sky130_fd_sc_hd__inv_2_1/VNB
++ sky130_fd_sc_hd__buf_2_3/VPB sky130_fd_sc_hd__dfstp_1_0/VPWR sky130_fd_sc_hd__buf_2_3/A
++ sky130_fd_sc_hd__dfstp_1
+Xsky130_fd_sc_hd__dfstp_1_1 sky130_fd_sc_hd__buf_2_1/X sky130_fd_sc_hd__buf_2_3/X
++ sky130_fd_sc_hd__inv_2_0/Y sky130_fd_sc_hd__dfstp_1_1/VGND sky130_fd_sc_hd__inv_2_1/VNB
++ sky130_fd_sc_hd__inv_2_1/VPB sky130_fd_sc_hd__dfstp_1_1/VPWR sky130_fd_sc_hd__inv_2_1/A
++ sky130_fd_sc_hd__dfstp_1
+Xsky130_fd_sc_hd__buf_2_0 sky130_fd_sc_hd__buf_2_0/A sky130_fd_sc_hd__buf_2_0/VGND
++ sky130_fd_sc_hd__inv_2_1/VNB sky130_fd_sc_hd__buf_2_3/VPB sky130_fd_sc_hd__buf_2_0/VPWR
++ sky130_fd_sc_hd__buf_2_0/X sky130_fd_sc_hd__buf_2
+Xsky130_fd_sc_hd__inv_2_0 sky130_fd_sc_hd__inv_2_0/A sky130_fd_sc_hd__inv_2_0/VGND
++ sky130_fd_sc_hd__inv_2_1/VNB sky130_fd_sc_hd__inv_2_0/VPB sky130_fd_sc_hd__inv_2_0/VPWR
++ sky130_fd_sc_hd__inv_2_0/Y sky130_fd_sc_hd__inv_2
+Xsky130_fd_sc_hd__buf_2_1 sky130_fd_sc_hd__buf_2_1/A sky130_fd_sc_hd__buf_2_1/VGND
++ sky130_fd_sc_hd__inv_2_1/VNB sky130_fd_sc_hd__inv_2_1/VPB sky130_fd_sc_hd__buf_2_1/VPWR
++ sky130_fd_sc_hd__buf_2_1/X sky130_fd_sc_hd__buf_2
+Xsky130_fd_sc_hd__inv_2_1 sky130_fd_sc_hd__inv_2_1/A sky130_fd_sc_hd__inv_2_1/VGND
++ sky130_fd_sc_hd__inv_2_1/VNB sky130_fd_sc_hd__inv_2_1/VPB sky130_fd_sc_hd__inv_2_1/VPWR
++ sky130_fd_sc_hd__inv_2_1/Y sky130_fd_sc_hd__inv_2
+Xsky130_fd_sc_hd__buf_2_2 sky130_fd_sc_hd__buf_2_2/A sky130_fd_sc_hd__buf_2_2/VGND
++ sky130_fd_sc_hd__inv_2_1/VNB sky130_fd_sc_hd__buf_2_2/VPB sky130_fd_sc_hd__buf_2_2/VPWR
++ sky130_fd_sc_hd__buf_2_2/X sky130_fd_sc_hd__buf_2
+Xsky130_fd_sc_hd__buf_2_3 sky130_fd_sc_hd__buf_2_3/A sky130_fd_sc_hd__buf_2_3/VGND
++ sky130_fd_sc_hd__inv_2_1/VNB sky130_fd_sc_hd__buf_2_3/VPB sky130_fd_sc_hd__buf_2_3/VPWR
++ sky130_fd_sc_hd__buf_2_3/X sky130_fd_sc_hd__buf_2
+Xsky130_fd_sc_hd__xor2_1_0 sky130_fd_sc_hd__inv_2_1/A sky130_fd_sc_hd__buf_2_3/A sky130_fd_sc_hd__xor2_1_0/VGND
++ sky130_fd_sc_hd__inv_2_1/VNB sky130_fd_sc_hd__buf_2_2/VPB sky130_fd_sc_hd__xor2_1_0/VPWR
++ sky130_fd_sc_hd__buf_2_2/A sky130_fd_sc_hd__xor2_1
+.ends
+
