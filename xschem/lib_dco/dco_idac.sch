@@ -89,6 +89,10 @@ N 190 -110 190 -100 {
 lab=input_R}
 N 150 -140 190 -140 {
 lab=GND}
+N 290 -610 400 -610 {
+lab=GND}
+N 290 -560 400 -560 {
+lab=VCCD}
 C {devices/ipin.sym} 200 -430 0 0 {name=p3 lab=Vbs3}
 C {devices/ipin.sym} 200 -330 0 0 {name=p4 lab=Vbs4}
 C {devices/ipin.sym} 460 -430 0 0 {name=p1 lab=Vbs1}
@@ -100,8 +104,8 @@ C {devices/ipin.sym} 50 -360 3 0 {name=p0 lab=Dctrl}
 C {devices/lab_pin.sym} 50 -470 2 0 {name=l4 sig_type=std_logic lab=open}
 C {devices/lab_pin.sym} 50 -570 2 0 {name=l5 sig_type=std_logic lab=lock}
 C {sky130_fd_pr/pfet_01v8_hvt.sym} 500 -430 0 0 {name=M1
-L=\\"L_br1\\"
-W=\\"W_br1\\"
+L=0.5
+W=1.8
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -114,8 +118,8 @@ model=pfet_01v8_hvt
 spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8_hvt.sym} 500 -330 0 0 {name=M2
-L=\\"L_br1\\"
-W=\\"W_br1\\"
+L=0.5
+W=1.8
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -133,8 +137,8 @@ C {devices/lab_pin.sym} 500 -200 0 0 {name=l6 sig_type=std_logic lab=open}
 C {devices/lab_wire.sym} 260 -260 0 0 {name=l8 sig_type=std_logic lab=add_pwr}
 C {sky130_stdcells/buf_2.sym} 50 -420 3 0 {name=x2 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD prefix=sky130_fd_sc_hd__ }
 C {sky130_fd_pr/pfet_01v8_hvt.sym} 240 -430 0 0 {name=M3
-L=L_br2
-W=\\"3*W_br2\\"
+L=0.5
+W=5.4
 nf=3
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -147,8 +151,8 @@ model=pfet_01v8_hvt
 spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8_hvt.sym} 240 -330 0 0 {name=M4
-L=L_br2
-W=\\"3*W_br2\\"
+L=0.5
+W=5.4
 nf=3
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -161,8 +165,8 @@ model=pfet_01v8_hvt
 spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8_hvt.sym} 310 -200 0 0 {name=M5
-L=Lp_lk
-W=\\"2*Wp_lk\\"
+L=0.5
+W=8
 nf=2
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -175,8 +179,8 @@ model=pfet_01v8_hvt
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 470 -140 0 1 {name=M6
-L=Ln_lk
-W=\\"2*Wn_lk\\"
+L=0.5
+W=4
 nf=2 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -189,8 +193,8 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8_hvt.sym} 50 -200 0 0 {name=M7
-L=Lp_lk
-W=\\"2*Wp_lk\\"
+L=0.5
+W=8
 nf=2
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -203,8 +207,8 @@ model=pfet_01v8_hvt
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 210 -140 0 1 {name=M8
-L=Ln_lk
-W=\\"2*Wn_lk\\"
+L=0.5
+W=4
 nf=2 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -226,3 +230,7 @@ C {devices/ipin.sym} 360 -520 0 0 {name=p8 lab=VCCA}
 C {devices/lab_pin.sym} 250 0 2 0 {name=l3 sig_type=std_logic lab=GND}
 C {devices/lab_pin.sym} 400 -140 0 0 {name=l9 sig_type=std_logic lab=GND}
 C {devices/lab_pin.sym} 150 -140 0 0 {name=l10 sig_type=std_logic lab=GND}
+C {devices/ipin.sym} 290 -610 0 0 {name=p5 lab=GND}
+C {devices/lab_pin.sym} 400 -610 2 0 {name=l11 sig_type=std_logic lab=GND}
+C {devices/ipin.sym} 290 -560 0 0 {name=p9 lab=VCCD}
+C {devices/lab_pin.sym} 400 -560 2 0 {name=l12 sig_type=std_logic lab=VCCD}
