@@ -78,194 +78,42 @@ sky130_fd_sc_hd__dfstp_1 (2)               |sky130_fd_sc_hd__dfstp_1 (2)
 sky130_fd_sc_hd__xor2_1 (1)                |sky130_fd_sc_hd__xor2_1 (1)                
 sky130_fd_sc_hd__buf_2 (4)                 |sky130_fd_sc_hd__buf_2 (4)                 
 Number of devices: 9                       |Number of devices: 9                       
-Number of nets: 16 **Mismatch**            |Number of nets: 35 **Mismatch**            
+Number of nets: 14 **Mismatch**            |Number of nets: 16 **Mismatch**            
 ---------------------------------------------------------------------------------------
 NET mismatches: Class fragments follow (with fanout counts):
 Circuit 1: count                           |Circuit 2: count                           
 
 ---------------------------------------------------------------------------------------
-Net: VGND                                  |Net: sky130_fd_sc_hd__buf_2_2/VGND         
-  sky130_fd_sc_hd__inv_2/2 = 2             |  sky130_fd_sc_hd__buf_2/2 = 1             
-  sky130_fd_sc_hd__dfstp_1/4 = 2           |                                           
-  sky130_fd_sc_hd__xor2_1/3 = 1            |                                           
-  sky130_fd_sc_hd__buf_2/2 = 4             |                                           
+Net: VCCD                                  |Net: VCCD                                  
+  sky130_fd_sc_hd__dfstp_1/6 = 2           |  sky130_fd_sc_hd__dfstp_1/6 = 2           
+  sky130_fd_sc_hd__dfstp_1/7 = 2           |  sky130_fd_sc_hd__dfstp_1/7 = 2           
+  sky130_fd_sc_hd__buf_2/4 = 4             |  sky130_fd_sc_hd__buf_2/4 = 4             
+  sky130_fd_sc_hd__buf_2/5 = 4             |  sky130_fd_sc_hd__buf_2/5 = 4             
+  sky130_fd_sc_hd__inv_2/5 = 2             |  sky130_fd_sc_hd__inv_2/5 = 2             
+  sky130_fd_sc_hd__inv_2/4 = 2             |  sky130_fd_sc_hd__inv_2/4 = 1             
+  sky130_fd_sc_hd__xor2_1/5 = 1            |  sky130_fd_sc_hd__xor2_1/5 = 1            
+  sky130_fd_sc_hd__xor2_1/6 = 1            |  sky130_fd_sc_hd__xor2_1/6 = 1            
                                            |                                           
-Net: VPB                                   |Net: sky130_fd_sc_hd__buf_2_3/VGND         
-  sky130_fd_sc_hd__inv_2/4 = 2             |  sky130_fd_sc_hd__buf_2/2 = 1             
-  sky130_fd_sc_hd__dfstp_1/6 = 2           |                                           
-  sky130_fd_sc_hd__xor2_1/5 = 1            |                                           
-  sky130_fd_sc_hd__buf_2/4 = 4             |                                           
+Net: DWN_buf                               |Net: sky130_fd_sc_hd__dfstp_1_1/CLK        
+  sky130_fd_sc_hd__dfstp_1/1 = 1           |  sky130_fd_sc_hd__dfstp_1/1 = 1           
+  sky130_fd_sc_hd__buf_2/6 = 1             |                                           
                                            |                                           
-Net: VPWR                                  |Net: sky130_fd_sc_hd__buf_2_2/VPWR         
-  sky130_fd_sc_hd__inv_2/5 = 2             |  sky130_fd_sc_hd__buf_2/5 = 1             
-  sky130_fd_sc_hd__dfstp_1/7 = 2           |                                           
-  sky130_fd_sc_hd__xor2_1/6 = 1            |                                           
-  sky130_fd_sc_hd__buf_2/5 = 4             |                                           
-                                           |                                           
-Net: Q1                                    |Net: sky130_fd_sc_hd__buf_2_3/VPWR         
-  sky130_fd_sc_hd__dfstp_1/8 = 1           |  sky130_fd_sc_hd__buf_2/5 = 1             
-  sky130_fd_sc_hd__xor2_1/1 = 1            |                                           
-  sky130_fd_sc_hd__buf_2/1 = 1             |                                           
-                                           |                                           
-Net: Q2                                    |Net: sky130_fd_sc_hd__inv_2_0/VPB          
-  sky130_fd_sc_hd__dfstp_1/8 = 1           |  sky130_fd_sc_hd__inv_2/4 = 1             
-  sky130_fd_sc_hd__xor2_1/2 = 1            |                                           
-  sky130_fd_sc_hd__inv_2/1 = 1             |                                           
-                                           |                                           
-(no matching net)                          |Net: sky130_fd_sc_hd__xor2_1_0/VGND        
-                                           |  sky130_fd_sc_hd__xor2_1/3 = 1            
-                                           |                                           
-(no matching net)                          |Net: sky130_fd_sc_hd__xor2_1_0/VPWR        
-                                           |  sky130_fd_sc_hd__xor2_1/6 = 1            
-                                           |                                           
-(no matching net)                          |Net: sky130_fd_sc_hd__buf_2_3/VPB          
-                                           |  sky130_fd_sc_hd__dfstp_1/6 = 1           
-                                           |  sky130_fd_sc_hd__buf_2/4 = 2             
-                                           |                                           
-(no matching net)                          |Net: sky130_fd_sc_hd__buf_2_3/A            
-                                           |  sky130_fd_sc_hd__dfstp_1/8 = 1           
-                                           |  sky130_fd_sc_hd__buf_2/1 = 1             
-                                           |  sky130_fd_sc_hd__xor2_1/2 = 1            
-                                           |                                           
-(no matching net)                          |Net: sky130_fd_sc_hd__inv_2_1/VPB          
-                                           |  sky130_fd_sc_hd__dfstp_1/6 = 1           
-                                           |  sky130_fd_sc_hd__buf_2/4 = 1             
+(no matching net)                          |Net: sky130_fd_sc_hd__inv_2_0/VPB          
                                            |  sky130_fd_sc_hd__inv_2/4 = 1             
                                            |                                           
-(no matching net)                          |Net: sky130_fd_sc_hd__inv_2_1/A            
-                                           |  sky130_fd_sc_hd__dfstp_1/8 = 1           
-                                           |  sky130_fd_sc_hd__inv_2/1 = 1             
-                                           |  sky130_fd_sc_hd__xor2_1/1 = 1            
-                                           |                                           
-(no matching net)                          |Net: sky130_fd_sc_hd__buf_2_2/VPB          
-                                           |  sky130_fd_sc_hd__buf_2/4 = 1             
-                                           |  sky130_fd_sc_hd__xor2_1/5 = 1            
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: Q1_buf                                |Net: sky130_fd_sc_hd__buf_2_3/X            
-  sky130_fd_sc_hd__dfstp_1/2 = 1           |  sky130_fd_sc_hd__dfstp_1/2 = 1           
-  sky130_fd_sc_hd__buf_2/6 = 1             |  sky130_fd_sc_hd__buf_2/6 = 1             
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: Q2N                                   |Net: sky130_fd_sc_hd__inv_2_1/Y            
-  sky130_fd_sc_hd__dfstp_1/2 = 1           |  sky130_fd_sc_hd__dfstp_1/2 = 1           
-  sky130_fd_sc_hd__inv_2/6 = 1             |  sky130_fd_sc_hd__inv_2/6 = 1             
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: DWN_buf                               |Net: sky130_fd_sc_hd__buf_2_1/X            
-  sky130_fd_sc_hd__dfstp_1/1 = 1           |  sky130_fd_sc_hd__dfstp_1/1 = 1           
-  sky130_fd_sc_hd__buf_2/6 = 1             |  sky130_fd_sc_hd__buf_2/6 = 1             
-                                           |                                           
-Net: UP_buf                                |Net: sky130_fd_sc_hd__buf_2_0/X            
-  sky130_fd_sc_hd__dfstp_1/1 = 1           |  sky130_fd_sc_hd__dfstp_1/1 = 1           
-  sky130_fd_sc_hd__buf_2/6 = 1             |  sky130_fd_sc_hd__buf_2/6 = 1             
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: setBi                                 |Net: sky130_fd_sc_hd__inv_2_0/Y            
-  sky130_fd_sc_hd__inv_2/6 = 1             |  sky130_fd_sc_hd__inv_2/6 = 1             
-  sky130_fd_sc_hd__dfstp_1/3 = 2           |  sky130_fd_sc_hd__dfstp_1/3 = 2           
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: VNB                                   |Net: sky130_fd_sc_hd__inv_2_1/VNB          
-  sky130_fd_sc_hd__inv_2/3 = 2             |  sky130_fd_sc_hd__inv_2/3 = 2             
-  sky130_fd_sc_hd__dfstp_1/5 = 2           |  sky130_fd_sc_hd__dfstp_1/5 = 2           
-  sky130_fd_sc_hd__xor2_1/4 = 1            |  sky130_fd_sc_hd__xor2_1/4 = 1            
-  sky130_fd_sc_hd__buf_2/3 = 4             |  sky130_fd_sc_hd__buf_2/3 = 4             
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-(no matching net)                          |Net: sky130_fd_sc_hd__inv_2_1/VPWR         
-                                           |  sky130_fd_sc_hd__inv_2/5 = 1             
-                                           |                                           
-(no matching net)                          |Net: sky130_fd_sc_hd__inv_2_0/VPWR         
-                                           |  sky130_fd_sc_hd__inv_2/5 = 1             
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-(no matching net)                          |Net: sky130_fd_sc_hd__inv_2_1/VGND         
-                                           |  sky130_fd_sc_hd__inv_2/2 = 1             
-                                           |                                           
-(no matching net)                          |Net: sky130_fd_sc_hd__inv_2_0/VGND         
-                                           |  sky130_fd_sc_hd__inv_2/2 = 1             
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-(no matching net)                          |Net: sky130_fd_sc_hd__dfstp_1_1/VPWR       
-                                           |  sky130_fd_sc_hd__dfstp_1/7 = 1           
-                                           |                                           
-(no matching net)                          |Net: sky130_fd_sc_hd__dfstp_1_0/VPWR       
-                                           |  sky130_fd_sc_hd__dfstp_1/7 = 1           
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-(no matching net)                          |Net: sky130_fd_sc_hd__dfstp_1_1/VGND       
-                                           |  sky130_fd_sc_hd__dfstp_1/4 = 1           
-                                           |                                           
-(no matching net)                          |Net: sky130_fd_sc_hd__dfstp_1_0/VGND       
-                                           |  sky130_fd_sc_hd__dfstp_1/4 = 1           
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: setB                                  |Net: sky130_fd_sc_hd__inv_2_0/A            
-  sky130_fd_sc_hd__inv_2/1 = 1             |  sky130_fd_sc_hd__inv_2/1 = 1             
----------------------------------------------------------------------------------------
-DEVICE mismatches: Class fragments follow (with node fanout counts):
-Circuit 1: count                           |Circuit 2: count                           
-
----------------------------------------------------------------------------------------
-Instance: sky130_fd_sc_hd__dfstp_1:_upFF   |Instance: sky130_fd_sc_hd__dfstp_1_0       
-  1 = 2                                    |  1 = 2                                    
-  2 = 2                                    |  2 = 2                                    
-  3 = 3                                    |  3 = 3                                    
-  4 = 9                                    |  4 = 1                                    
-  5 = 9                                    |  5 = 9                                    
-  6 = 9                                    |  6 = 3                                    
-  7 = 9                                    |  7 = 1                                    
-  8 = 3                                    |  8 = 3                                    
-                                           |                                           
-Instance: sky130_fd_sc_hd__dfstp_1:_dwFF   |Instance: sky130_fd_sc_hd__dfstp_1_1       
-  1 = 2                                    |  1 = 2                                    
-  2 = 2                                    |  2 = 2                                    
-  3 = 3                                    |  3 = 3                                    
-  4 = 9                                    |  4 = 1                                    
-  5 = 9                                    |  5 = 9                                    
-  6 = 9                                    |  6 = 3                                    
-  7 = 9                                    |  7 = 1                                    
-  8 = 3                                    |  8 = 3                                    
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Instance: sky130_fd_sc_hd__inv_2:_inv_0    |Instance: sky130_fd_sc_hd__inv_2_0         
-  1 = 1                                    |  1 = 1                                    
-  2 = 9                                    |  2 = 1                                    
-  3 = 9                                    |  3 = 9                                    
-  4 = 9                                    |  4 = 1                                    
-  5 = 9                                    |  5 = 1                                    
-  6 = 3                                    |  6 = 3                                    
-                                           |                                           
-Instance: sky130_fd_sc_hd__inv_2:_inv_1    |Instance: sky130_fd_sc_hd__inv_2_1         
-  1 = 3                                    |  1 = 3                                    
-  2 = 9                                    |  2 = 1                                    
-  3 = 9                                    |  3 = 9                                    
-  4 = 9                                    |  4 = 3                                    
-  5 = 9                                    |  5 = 1                                    
-  6 = 2                                    |  6 = 2                                    
+(no matching net)                          |Net: sky130_fd_sc_hd__buf_2_1/X            
+                                           |  sky130_fd_sc_hd__buf_2/6 = 1             
 ---------------------------------------------------------------------------------------
 Netlists do not match.
 
 Subcircuit pins:
 Circuit 1: count                           |Circuit 2: count                           
 -------------------------------------------|-------------------------------------------
-VGND                                       |(no matching pin)                          
-VPB                                        |(no matching pin)                          
-VPWR                                       |(no matching pin)                          
-VNB                                        |(no matching pin)                          
-Dout_buf                                   |(no matching pin)                          
+Dout_buf                                   |Dout_buf                                   
+DOWN                                       |DOWN                                       
+UP                                         |UP                                         
+setB                                       |SetB                                       
+---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
 Device classes count and count are equivalent.
 

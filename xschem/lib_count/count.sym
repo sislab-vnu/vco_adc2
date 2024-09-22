@@ -1,10 +1,9 @@
-v {xschem version=2.9.9 file_version=1.2 }
+v {xschem version=3.4.5 file_version=1.2
+}
 G {}
 K {type=subcircuit
-format="@name @@UP @@DOWN @@setB @VGND @VNB @VPB @VPWR @@Dout_buf @symname"
-template="name=X_UDC_1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD"
-extra=" VGND VNB VPB VPWR"
-highlight=true
+format="@name @pinlist @symname"
+template="name=X_UDC_1"
 }
 V {}
 S {}
