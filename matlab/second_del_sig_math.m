@@ -1,4 +1,8 @@
 % matlab mathematic model of second order noise shapping
+addpath ('~/tools/Matlab_toolbox/delsig');
+addpath ('~/tools/Matlab_toolbox/delsig/PosInvSet');
+
+
 OSR = 500;
 OBG = 2.5;
 fs = 24*10^6;

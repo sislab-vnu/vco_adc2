@@ -2,15 +2,21 @@
 %                         'Delimiter',' ','ReadVariableNames',true,...
 %                         'Format', '%f%f%f%f%f', 'HeaderLines', 0);
 % Input signal
-inputFreq = 1*10^3;     % frequency of input signal (Hz)
+inputFreq = 3*10^3;     % frequency of input signal (Hz)
 inputAmp = 0.4;        % amplitude of input signal (V)
 V_bs2=0.4;
 % VCO, DCO parameters
 %K_vco = [6.32 5.819]*10^6;   % [sensitive  central_frequency]V_bs2 = 0.4;
-K_vco = [6.875 5.25]*10^6;   % [sensitive  central_frequency]
-K_dco = [21.5 2]*10^6;  % [sensitive  lowest_frequency]
+vco_range=[2.5 8]*10^6;
+dco_range=[2 11]*10^6;
+
+
+K_vco = [(vco_range(2)-vco_range(1))/0.8 (vco_range(2)+vco_range(1))/2];   % [sensitive  central_frequency]
+K_dco = [(dco_range(2)-dco_range(1))/0.4 dco_range(1)];  % [sensitive  lowest_frequency]
+
 freq_top=K_dco(1)*0.4 + K_dco(2)
 freq_bot=K_dco(2)
+
 % System Parameters
 F_sample = 24*10^6;     % Over sampling frequency of ADC
 nop = 1;                % number of phases (nop)
@@ -21,7 +27,7 @@ time = 1.2;
 transient_time = time*10e-3;  % Transient time of simulation
 div = 40;               % Time division
 %%
-run second_order_noise_shaping_behavioral_model.m;
+run del_sig_behave.m;
 
 %% Plot result 
 count2 = sum (qtz(1:OSR));
