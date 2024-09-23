@@ -7,7 +7,7 @@ run_freq_ext:
 
 run_finesim:
 	mkdir -p simulations
-	finesim -np 12 -o ./simulations/ vco_adc2_65nm_tb.sp
+	finesim -np 12 -o ./simulations/ vco_adc2_65nm_ams_tb.sp
 
 #	finesim -np 12 -o ./simulations/ vco_adc2_130nm_tb.sp 	
 #	cat simulations/vco_tb.mt0
@@ -25,7 +25,7 @@ clean:
 	rm -f *log* *ic* *~ .analysis_cache
 
 clear:
-	rm *tr* *mt* *st* *pt* *fsdb*
+	rm -f *tr* *mt* *st* *pt* *fsdb*
 
 test:
 	echo ${RAW_FILE}

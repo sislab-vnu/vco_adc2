@@ -5,7 +5,7 @@ run_freq_ext:
 	finesim -np 12 -o ./simulations/ freq_ext.sp
 
 run_finesim:
-	finesim -np 12 -o ./simulations/ vco_adc2_130nm_tb.sp
+	finesim -np 6 -o ./simulations/ vco_adc2_130nm_tb.sp
 
 #	finesim -np 12 -o ./simulations/ vco_adc2_130nm_tb.sp 	
 #	cat simulations/vco_tb.mt0

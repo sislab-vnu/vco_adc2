@@ -263,12 +263,18 @@ XM2 Y A VGND GND sky130_fd_pr__nfet_01v8 L="L" W="Wn" nf=1 ad='int((nf+1)/2) * W
 
 ** control simulation lines
 * .temp 0 25 50 75 100
-.probe tran v(p_vco) v(p_dco) v(xdco_1.p_osc) v(xdco_1.pha_ro) v(xdco_1.p_dco)  v(xdco_1.Isup) v(d1)
-+ v(d2) v(dout) v(clk) v(fback) v(anlg_in) i(vcca) i(vccd)
+*.probe tran v(p_vco) v(p_dco) v(xdco_1.p_osc) v(xdco_1.pha_ro) v(xdco_1.p_dco)  v(xdco_1.Isup) v(d1)
+*+ v(d2) v(dout) v(clk) v(fback) v(anlg_in) i(vcca) i(vccd)
 
 .print v(clk) v(dout) v(anlg_in)
 
-.tran 1n 120u start=0 $  sweep vin 0 1.0 0.1
+.tran 1n 120u start=0 sweep data=input
+
+.data input
++ vsin sig_freq
++ 0.1m 1k
++ 1m 10k
+.enddata
 
 .measure tran prd trig v(p_vco) val=0.8 rise=10 targ v(p_vco) val=0.8 rise=20
 .measure tran freq_v param='10/prd'

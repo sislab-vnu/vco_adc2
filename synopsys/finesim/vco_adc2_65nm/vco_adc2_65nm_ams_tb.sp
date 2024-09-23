@@ -6,18 +6,30 @@
 .option finesim_output=wdf
 
 
-.param d_laux=1.8u d_lmain=1.8u d_wn=3u d_wp=3u v_laux=3.65u v_lmain=3.65u
-+ v_wn=4u v_wp=5u vb1=0.7 vb3=0 vd1=1.2 vsup=1.2 w_br1=3u w_br2=4u vin_amp=0.2
-+ vin_freq=1k vin_os=0.5 vin_del=0
+.param d_laux=1.5u d_lmain=1.5u d_wn=1u d_wp=1.5u vb1=0.75 vb3=0 vd1=1.2
++ vin_amp=0.2 vin_del=0 vin_freq=1k vin_os=0.4 vsup=1.2 w_br1=1.8u w_br2=2u
 .temp 25
 .lib 'crn65gplus_2d5_lk_v1d0.l' TT
 .lib 'crn65gplus_2d5_lk_v1d0.l' TT_hvt
 .lib 'crn65gplus_2d5_lk_v1d0.l' TT_lvt
 
 *Custom Compiler Version O-2018.09-SP1-3
-*Wed Feb 21 13:24:41 2024
+*Tue Mar 19 14:24:31 2024
 
 .global gnd! vcca! vccd!
+********************************************************************************
+* Library          : vco_adc2_65nm
+* Cell             : dlib_udc
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+.subckt dlib_udc z dn up
+xi11 br2 up plt2 br1 vccd! gnd! dfd1
+xi10 br1 dn br2 plt1 vccd! gnd! dfd1
+xi12 br1 br2 z vccd! gnd! xor2d1
+.ends dlib_udc
+
 ********************************************************************************
 * Library          : vco_adc2_65nm
 * Cell             : alib_IDAC_nvt
@@ -27,13 +39,13 @@
 ********************************************************************************
 .subckt alib_idac_nvt d_ctrl isup vbs1 vbs3 l_lk=100n w_lk=200n l_br=100n w_br1=200n
 +  w_br2=200n
-r17 net27 gnd! r=50k
 xi21 lock open vccd! gnd! invd1
 xi20 d_ctrl lock vccd! gnd! invd1
+r17 net27 gnd! r=5k
 m14 isup vbs1 vcca! vcca! pch l='l_br' w='(w_br1*1)' m=1 nf=1 sd=0.2u ad=4e-14
 + as=7e-14 pd=8e-07 ps=1.5e-06 nrd=0.25 nrs=0.25 sa=0.175u sb=0.175u sca=0 scb=0
 + scc=0
-m12 add_pwr vbs3 vcca! vcca! pch l='l_br' w='(w_br2*3)' m=1 nf=3 sd=0.2u ad=4e-14
+m12 add_pwr vbs3 vcca! vcca! pch l='l_br' w='(w_br2*2)' m=1 nf=2 sd=0.2u ad=4e-14
 + as=7e-14 pd=8e-07 ps=1.5e-06 nrd=0.25 nrs=0.25 sa=0.175u sb=0.175u sca=0 scb=0
 + scc=0
 m10 isup lock add_pwr vcca! pch l='l_lk' w='(w_lk*10)' m=1 nf=10 sd=0.2u ad=4e-14
@@ -52,45 +64,50 @@ m5 add_pwr lock net27 gnd! nch l='l_lk' w='(w_lk*8)' m=1 nf=8 sd=0.2u ad=3.5e-14
 
 ********************************************************************************
 * Library          : vco_adc2_65nm
-* Cell             : aux_inv
+* Cell             : aux_inv_d_crst
 * View             : schematic
 * View Search List : hspice hspiceD schematic spice veriloga
 * View Stop List   : hspice hspiceD
 ********************************************************************************
-.subckt aux_inv in out vgnd vpwr l_aux=60n wp=200n wn=200n
-m0 out in vgnd gnd! nch l='l_aux' w='(wn*2)' m=1 nf=2 sd=0.2u ad=3.5e-14 as=3.5e-14
-+ pd=7.5e-07 ps=7.5e-07 nrd=0.5 nrs=0.5 sa=0.175u sb=0.175u sca=0 scb=0 scc=0
-m1 out in vpwr vpwr pch l='l_aux' w='(wp*1)' m=1 nf=1 sd=0.2u ad=4e-14 as=7e-14
+.subckt aux_inv_d_crst in out vbot vtop l_aux=60n wp=200n wn=200n
+m1 out in net27 vcca! pch l='l_main' w='(wp*1)' m=1 nf=1 sd=0.2u ad=4e-14 as=7e-14
 + pd=8e-07 ps=1.5e-06 nrd=0.25 nrs=0.25 sa=0.175u sb=0.175u sca=0 scb=0 scc=0
-.ends aux_inv
+m0 net27 in vtop vcca! pch l='l_main' w='(wp*1)' m=1 nf=1 sd=0.2u ad=4e-14 as=7e-14
++ pd=8e-07 ps=1.5e-06 nrd=0.25 nrs=0.25 sa=0.175u sb=0.175u sca=0 scb=0 scc=0
+m5 out in net28 gnd! nch l='l_main' w='(wn*1)' m=1 nf=1 sd=0.2u ad=3.5e-14 as=3.5e-14
++ pd=7.5e-07 ps=7.5e-07 nrd=0.5 nrs=0.5 sa=0.175u sb=0.175u sca=0 scb=0 scc=0
+m4 net28 in vbot gnd! nch l='l_main' w='(wn*1)' m=1 nf=1 sd=0.2u ad=3.5e-14 as=3.5e-14
++ pd=7.5e-07 ps=7.5e-07 nrd=0.5 nrs=0.5 sa=0.175u sb=0.175u sca=0 scb=0 scc=0
+.ends aux_inv_d_crst
 
 ********************************************************************************
 * Library          : vco_adc2_65nm
-* Cell             : main_inv
+* Cell             : main_inv_crst
 * View             : schematic
 * View Search List : hspice hspiceD schematic spice veriloga
 * View Stop List   : hspice hspiceD
 ********************************************************************************
-.subckt main_inv in out vgnd vpwr l_main=60n wp=200n wn=200n
-m0 out in vgnd gnd! nch l='l_main' w='(wn*2)' m=1 nf=2 sd=0.2u ad=3.5e-14 as=3.5e-14
+.subckt main_inv_crst in out vbot vtop l_main=60n wp=200n wn=200n
+m4 out in vbot gnd! nch l='l_main' w='(wn*1)' m=1 nf=1 sd=0.2u ad=3.5e-14 as=3.5e-14
 + pd=7.5e-07 ps=7.5e-07 nrd=0.5 nrs=0.5 sa=0.175u sb=0.175u sca=0 scb=0 scc=0
-m1 out in vpwr vpwr pch l='l_main' w='(wp*2)' m=1 nf=2 sd=0.2u ad=4e-14 as=7e-14
+m0 out in vtop vcca! pch l='l_main' w='(wp*1)' m=1 nf=1 sd=0.2u ad=4e-14 as=7e-14
 + pd=8e-07 ps=1.5e-06 nrd=0.25 nrs=0.25 sa=0.175u sb=0.175u sca=0 scb=0 scc=0
-.ends main_inv
+.ends main_inv_crst
 
 ********************************************************************************
 * Library          : vco_adc2_65nm
-* Cell             : cc_inv
+* Cell             : cc_inv_d_crst
 * View             : schematic
 * View Search List : hspice hspiceD schematic spice veriloga
 * View Stop List   : hspice hspiceD
 ********************************************************************************
-.subckt cc_inv inn inp outn outp vgnd vpwr l_main=60n l_aux=60n wp=200n wn=200n
-xi3 outn outp vgnd vpwr aux_inv l_aux='l_aux' wp='wp' wn='wn'
-xi2 outp outn vgnd vpwr aux_inv l_aux='l_aux' wp='wp' wn='wn'
-xi1 inn outn vgnd vpwr main_inv l_main='l_main' wp='wp' wn='wn'
-xi0 inp outp vgnd vpwr main_inv l_main='l_main' wp='wp' wn='wn'
-.ends cc_inv
+.subckt cc_inv_d_crst inn inp outn outp vgnd vpwr l_main=60n l_aux=60n wp=200n
++ wn=200n
+xi3 outn outp vgnd vpwr aux_inv_d_crst l_aux='l_aux' wp='wp' wn='wn'
+xi2 outp outn vgnd vpwr aux_inv_d_crst l_aux='l_aux' wp='wp' wn='wn'
+xi1 inn outn vgnd vpwr main_inv_crst l_main='l_main' wp='wp' wn='wn'
+xi0 inp outp vgnd vpwr main_inv_crst l_main='l_main' wp='wp' wn='wn'
+.ends cc_inv_d_crst
 
 ********************************************************************************
 * Library          : vco_adc2_65nm
@@ -100,6 +117,15 @@ xi0 inp outp vgnd vpwr main_inv l_main='l_main' wp='wp' wn='wn'
 * View Stop List   : hspice hspiceD
 ********************************************************************************
 .subckt alib_adt_gnd adt_gnd d_ctrl w_high=1u w_low=1u
+m12 net16 vcca! net13 gnd! nch_hvt l=0.5u w='(w_high*1)' m=1 nf=1 sd=0.2u ad=1.75e-13
++ as=1.75e-13 pd=2.35e-06 ps=2.35e-06 nrd=0.1 nrs=0.1 sa=0.175u sb=0.175u sca=0
++ scb=0 scc=0
+m11 net18 vcca! net16 gnd! nch_hvt l=0.5u w='(w_high*1)' m=1 nf=1 sd=0.2u ad=1.75e-13
++ as=1.75e-13 pd=2.35e-06 ps=2.35e-06 nrd=0.1 nrs=0.1 sa=0.175u sb=0.175u sca=0
++ scb=0 scc=0
+m10 adt_gnd vcca! net18 gnd! nch_hvt l=0.5u w='(w_high*1)' m=1 nf=1 sd=0.2u ad=1.75e-13
++ as=1.75e-13 pd=2.35e-06 ps=2.35e-06 nrd=0.1 nrs=0.1 sa=0.175u sb=0.175u sca=0
++ scb=0 scc=0
 m7 net4 vcca! net3 gnd! nch_hvt l=0.5u w='(w_high*1)' m=1 nf=1 sd=0.2u ad=1.75e-13
 + as=1.75e-13 pd=2.35e-06 ps=2.35e-06 nrd=0.1 nrs=0.1 sa=0.175u sb=0.175u sca=0
 + scb=0 scc=0
@@ -109,7 +135,7 @@ m9 net2 vcca! gnd! gnd! nch_hvt l=0.5u w='(w_high*1)' m=1 nf=1 sd=0.2u ad=1.75e-
 m6 net5 vcca! net4 gnd! nch_hvt l=0.5u w='(w_high*1)' m=1 nf=1 sd=0.2u ad=1.75e-13
 + as=1.75e-13 pd=2.35e-06 ps=2.35e-06 nrd=0.1 nrs=0.1 sa=0.175u sb=0.175u sca=0
 + scb=0 scc=0
-m52 adt_gnd vcca! net5 gnd! nch_hvt l=0.5u w='(w_high*1)' m=1 nf=1 sd=0.2u ad=1.75e-13
+m52 net13 vcca! net5 gnd! nch_hvt l=0.5u w='(w_high*1)' m=1 nf=1 sd=0.2u ad=1.75e-13
 + as=1.75e-13 pd=2.35e-06 ps=2.35e-06 nrd=0.1 nrs=0.1 sa=0.175u sb=0.175u sca=0
 + scb=0 scc=0
 m8 net3 vcca! net2 gnd! nch_hvt l=0.5u w='(w_high*1)' m=1 nf=1 sd=0.2u ad=1.75e-13
@@ -140,7 +166,7 @@ xi38 net8 div2 div4 net8 vccd! gnd! dfd1
 * View Stop List   : hspice hspiceD
 ********************************************************************************
 .subckt alib_level_shifter in low_vdd out
-xi30 in net24 low_vdd gnd! invd1
+xi30 in net28 low_vdd gnd! invd1
 m3 out net23 vcca! vcca! pch l=60n w=0.26u m=1 nf=1 sd=0.2u ad=4.55e-14 as=4.55e-14
 + pd=8.7e-07 ps=8.7e-07 nrd=0.384615384615 nrs=0.384615384615 sa=0.175u sb=0.175u
 + sca=0 scb=0 scc=0
@@ -150,46 +176,33 @@ m1 net23 out vcca! vcca! pch l=60n w=0.26u m=1 nf=1 sd=0.2u ad=4.55e-14 as=4.55e
 m4 net23 in gnd! gnd! nch l=60n w=0.195u m=1 nf=1 sd=0.2u ad=3.4125e-14 as=3.4125e-14
 + pd=7.4e-07 ps=7.4e-07 nrd=0.512820512821 nrs=0.512820512821 sa=0.175u sb=0.175u
 + sca=0 scb=0 scc=0
-m2 out net24 gnd! gnd! nch l=60n w=0.195u m=1 nf=1 sd=0.2u ad=3.4125e-14 as=3.4125e-14
+m2 out net28 gnd! gnd! nch l=60n w=0.195u m=1 nf=1 sd=0.2u ad=3.4125e-14 as=3.4125e-14
 + pd=7.4e-07 ps=7.4e-07 nrd=0.512820512821 nrs=0.512820512821 sa=0.175u sb=0.175u
 + sca=0 scb=0 scc=0
 .ends alib_level_shifter
 
 ********************************************************************************
 * Library          : vco_adc2_65nm
-* Cell             : alib_dco
+* Cell             : alib_dco_crst
 * View             : schematic
 * View Search List : hspice hspiceD schematic spice veriloga
 * View Stop List   : hspice hspiceD
 ********************************************************************************
-.subckt alib_dco vb1 vb3 d_ctrl enb out l_main=100n l_aux=100n wp=1u wn=500n
-+ w_br1=2u w_br2=4u
-xi0 d_ctrl d_pwr vb1 vb3 alib_idac_nvt l_lk=0.5u w_lk=4u l_br=0.5u w_br1='w_br1'
+.subckt alib_dco_crst vb1 vb3 d_ctrl enb out l_main=100n l_aux=100n wp=1u wn=500n
++  w_br1=2u w_br2=4u
+xi_dac d_ctrl d_pwr vb1 vb3 alib_idac_nvt l_lk=0.5u w_lk=2u l_br=0.5u w_br1='w_br1'
 +  w_br2='w_br2'
-xi6 pn[1] p[1] pn[2] p[2] v_bot d_pwr cc_inv l_main='l_main' l_aux='l_aux' wp='wp'
-+  wn='wn'
-xi5 pn[0] p[0] pn[1] p[1] v_bot d_pwr cc_inv l_main='l_main' l_aux='l_aux' wp='wp'
-+  wn='wn'
-xi2 pn[2] p[2] pn[0] p[0] v_bot d_pwr cc_inv l_main='l_main' l_aux='l_aux' wp='wp'
-+  wn='wn'
-xi11 vccd! enb pn[0] vccd! gnd! buftd1
-xi75 v_bot d_ctrl alib_adt_gnd w_high=0.8u w_low=4u
-xi46 out p_osc dlib_freq_div4
-xi45 p[0] d_pwr p_osc alib_level_shifter
-.ends alib_dco
-
-********************************************************************************
-* Library          : vco_adc2_65nm
-* Cell             : dlib_udc
-* View             : schematic
-* View Search List : hspice hspiceD schematic spice veriloga
-* View Stop List   : hspice hspiceD
-********************************************************************************
-.subckt dlib_udc z dn up
-xi11 br2 dn plt2 br1 vccd! gnd! dfd1
-xi10 br1 up br2 plt1 vccd! gnd! dfd1
-xi12 br1 br2 z vccd! gnd! xor2d1
-.ends dlib_udc
+xi_cc1 pn[1] p[1] pn[2] p[2] v_bot d_pwr cc_inv_d_crst l_main='l_main' l_aux='l_aux'
++  wp='wp' wn='wn'
+xi_cc0 pn[0] p[0] pn[1] p[1] v_bot d_pwr cc_inv_d_crst l_main='l_main' l_aux='l_aux'
++  wp='wp' wn='wn'
+xi_cc2 pn[2] p[2] pn[0] p[0] v_bot d_pwr cc_inv_d_crst l_main='l_main' l_aux='l_aux'
++  wp='wp' wn='wn'
+xi_enb vccd! enb pn[0] vccd! gnd! buftd1
+xi_vgnd v_bot d_ctrl alib_adt_gnd w_high=0.5u w_low=4u
+xi_fdiv out p_osc dlib_freq_div4
+xi_lvs p[0] d_pwr p_osc alib_level_shifter
+.ends alib_dco_crst
 
 ********************************************************************************
 * Library          : vco_adc2_65nm
@@ -198,22 +211,25 @@ xi12 br1 br2 z vccd! gnd! xor2d1
 * View Search List : hspice hspiceD schematic spice veriloga
 * View Stop List   : hspice hspiceD
 ********************************************************************************
-xi21 net89 p_vco vccd! gnd! buffd1
-xi_dco vb1 vb3 d1 enb p_dco alib_dco l_main='d_lmain' l_aux='d_laux' wp='d_wp'
-+ wn='d_wn' w_br1='w_br1' w_br2='w_br2'
+xi21 net126 net127 vccd! gnd! buffd1
+xi26 net127 net116 p_vco vccd! gnd! buftd1
 vb1 vb1 gnd! dc='vb1'
 vb3 vb3 gnd! dc='vb3'
 vccd vccd! gnd! dc='vsup'
 vcca vcca! gnd! dc='vsup'
 vtest d1_test gnd! dc='vd1'
 vclk clk gnd! pulse ( 0 'vsup' 0 1n 1n 19.835n 41.67n )
-venb enb gnd! pulse ( 0 'vsup' 0 1n 1n 200n 1 )
-xi15 dout fb vccd! gnd! del4
-xi_udc1 d1 p_vco fb dlib_udc
-xi_udc2 d2 p_dco fb dlib_udc
+venb enb gnd! pulse ( 0 'vsup' 0 1n 1n 2u 1 )
+xi15 net133 fb vccd! gnd! del4
+xi_udc1 d1 fb p_vco dlib_udc
+xi_udc2 d2 fb p_dco dlib_udc
 vsin anlg_in gnd! sin ( 'vin_os' 'vin_amp' 'vin_freq' 'vin_del' 0 0 )
 xi_dqtz d2 clk dout plt_net vccd! gnd! dfd1
-xi20 anlg_in net89 vco fc=8.5e6 gain=-6e6
+xi20 anlg_in net126 vco fc=8.5e6 gain=-6e6
+xi_dco vb1 vb3 d1 enb p_dco alib_dco_crst l_main='d_lmain' l_aux='d_laux' wp='d_wp'
++  wn='d_wn' w_br1='w_br1' w_br2='w_br2'
+xi35 enb net116 vccd! gnd! invd1
+xi36 dout clk net133 vccd! gnd! an2d1
 
 
 
@@ -222,13 +238,6 @@ MI1-M_u2 Z net6 VSS VSS nch w=0.39u l=0.06u
 MI2-M_u2 net6 I VSS VSS nch w=0.195u l=0.06u
 MI1-M_u3 Z net6 VDD VDD pch w=0.52u l=0.06u
 MI2-M_u3 net6 I VDD VDD pch w=0.26u l=0.06u
-.ends
-
-* Created: Tue Jan 23 16:17:14 2024
-
-.subckt INVD1 I ZN VDD VSS
-MU1-M_u2 ZN I VSS VSS nch w=0.39u l=0.06u
-MU1-M_u3 ZN I VDD VDD pch w=0.52u l=0.06u
 .ends
 
 
@@ -246,6 +255,23 @@ MU19-M_u2 INEN I XU19-net8 VDD pch w=0.52u l=0.06u
 MU18-M_u2 INEP I VDD VDD pch w=0.23u l=0.06u
 MU18-M_u1 INEP OE VDD VDD pch w=0.23u l=0.06u
 M_u6 Z INEP VDD VDD pch w=0.45u l=0.06u
+.ends
+
+
+
+.subckt DEL4 I Z VDD VSS
+MI3-M_u2 Z net010 VSS VSS nch w=0.39u l=0.06u
+MI7-M_u2 net010 net08 VSS VSS nch w=0.3u l=1u
+MI8-M_u2 net08 net12 VSS VSS nch w=0.3u l=1u
+MI4-M_u2 net12 net10 VSS VSS nch w=0.3u l=1u
+MI5-M_u2 net10 net8 VSS VSS nch w=0.3u l=1u
+MI6-M_u2 net8 I VSS VSS nch w=0.39u l=0.06u
+MI3-M_u3 Z net010 VDD VDD pch w=0.52u l=0.06u
+MI7-M_u3 net010 net08 VDD VDD pch w=0.3u l=1u
+MI8-M_u3 net08 net12 VDD VDD pch w=0.3u l=1u
+MI4-M_u3 net12 net10 VDD VDD pch w=0.3u l=1u
+MI5-M_u3 net10 net8 VDD VDD pch w=0.3u l=1u
+MI6-M_u3 net8 I VDD VDD pch w=0.52u l=0.06u
 .ends
 
 
@@ -281,23 +307,6 @@ MI43 net86 net051 VDD VDD pch w=0.15u l=0.06u
 
 
 
-.subckt DEL4 I Z VDD VSS
-MI3-M_u2 Z net010 VSS VSS nch w=0.39u l=0.06u
-MI7-M_u2 net010 net08 VSS VSS nch w=0.3u l=1u
-MI8-M_u2 net08 net12 VSS VSS nch w=0.3u l=1u
-MI4-M_u2 net12 net10 VSS VSS nch w=0.3u l=1u
-MI5-M_u2 net10 net8 VSS VSS nch w=0.3u l=1u
-MI6-M_u2 net8 I VSS VSS nch w=0.39u l=0.06u
-MI3-M_u3 Z net010 VDD VDD pch w=0.52u l=0.06u
-MI7-M_u3 net010 net08 VDD VDD pch w=0.3u l=1u
-MI8-M_u3 net08 net12 VDD VDD pch w=0.3u l=1u
-MI4-M_u3 net12 net10 VDD VDD pch w=0.3u l=1u
-MI5-M_u3 net10 net8 VDD VDD pch w=0.3u l=1u
-MI6-M_u3 net8 I VDD VDD pch w=0.52u l=0.06u
-.ends
-
-
-
 .subckt XOR2D1 A1 A2 Z VDD VSS
 M_u6-M_u3 net4 net10 net14 VSS nch w=0.32u l=0.06u
 MI1-M_u3 net6 A1 net14 VSS nch w=0.31u l=0.06u
@@ -316,14 +325,29 @@ M_u8-M_u3 net10 A1 VDD VDD pch w=0.26u l=0.06u
 .hdl '/home/userdata/k61D/manhtd_61d/git/vco_adc2/synopsys/custom_compiler/vco_adc2_65nm/vco_ams/veriloga/veriloga.va'
 
 
+.subckt INVD1 I ZN VDD VSS
+MU1-M_u2 ZN I VSS VSS nch w=0.39u l=0.06u
+MU1-M_u3 ZN I VDD VDD pch w=0.52u l=0.06u
+.ends
 
 
-.tran 1n 12m start=0 simStart=0
+.subckt AN2D1 A1 A2 Z VDD VSS
+M_u3-M_u2 Z net6 VSS VSS nch w=0.39u l=0.06u
+M_u2-M_u4 X_u2-net6 A2 VSS VSS nch w=0.195u l=0.06u
+M_u2-M_u3 net6 A1 X_u2-net6 VSS nch w=0.195u l=0.06u
+M_u3-M_u3 Z net6 VDD VDD pch w=0.52u l=0.06u
+M_u2-M_u2 net6 A2 VDD VDD pch w=0.26u l=0.06u
+M_u2-M_u1 net6 A1 VDD VDD pch w=0.26u l=0.06u
+.ends
+
+
+
+.tran 1u 12m start=0 simStart=0
 
 .probe tran v(*) level=1
-
-.probe tran v(xi_dco/D_pwr) v(xi_dco/p[0]) v(xi_dco/p_osc) 
-+ v(anlg_in) v(clk) v(d1) v(d2) v(dout) v(enb) v(fb) v(p_dco) v(p_vco)
+.probe tran v(xi_dco.d_pwr) v(xi_dco.v_bot) v(xi_dco.p[0]) v(xi_dco.p_osc)
++ v(xi_udc1.br1) v(xi_udc1.br2) v(xi_udc1.plt1) v(xi_udc1.plt2) v(anlg_in)
++ v(clk) v(d1) v(d2) v(dout) v(enb) v(fb) v(net89) v(p_dco) v(p_vco)
 
 .option PARHIER = LOCAL
 
@@ -350,6 +374,6 @@ M_u8-M_u3 net10 A1 VDD VDD pch w=0.26u l=0.06u
 .option finesim_mode=prohd
 
 
-
-
 .end
+
+
