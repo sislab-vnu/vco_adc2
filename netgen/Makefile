@@ -18,6 +18,9 @@ SPICE_MAG_COUNT = ../layout/count
 SPICE_XSC_QZ = ../xschem/lib_qz/simulations
 SPICE_MAG_QZ = ../layout/quantizer
 
+SPICE_XSC_SYSTEM = ../xschem/system/simulations
+SPICE_MAG_SYSTEM = ../layout/system
+
 CURRENT_PATH = $(shell pwd)
 
 XSC_VCO_PATH = $(CURRENT_PATH)/xsc_vco/
@@ -31,6 +34,9 @@ MAG_COUNT_PATH = $(CURRENT_PATH)/mag_count/
 
 XSC_QZ_PATH = $(CURRENT_PATH)/xsc_qz/
 MAG_QZ_PATH = $(CURRENT_PATH)/mag_qz/
+
+XSC_SYSTEM_PATH = $(CURRENT_PATH)/xsc_system/
+MAG_SYSTEM_PATH = $(CURRENT_PATH)/mag_system/
 
 file_spice_1 ?= $(word 1, $(ARGS))
 module1 ?= $(word 2, $(ARGS))
@@ -62,6 +68,10 @@ get_file:
 	@mkdir -p $(MAG_QZ_PATH)
 	cp $(SPICE_XSC_QZ)/*.spice $(XSC_QZ_PATH)
 	cp $(SPICE_MAG_QZ)/*.spice $(MAG_QZ_PATH)
+	@mkdir -p $(XSC_SYSTEM_PATH)
+	@mkdir -p $(MAG_SYSTEM_PATH)
+	cp $(SPICE_XSC_SYSTEM)/*.spice $(XSC_SYSTEM_PATH)
+	cp $(SPICE_MAG_SYSTEM)/*.spice $(MAG_SYSTEM_PATH)
 #	echo $(CURRENT_PATH)
 #	mv aux_inv.spice xsc_vco_aux_inv.spice
 #	mv main_inv.spice xsc_vco_main_inv.spice
@@ -80,6 +90,7 @@ check_lvs:
 #	@if [ $$? -eq 0 ]; then\
 		echo "LVS check passed for $@" >> $(LOG_FILE);\
 	else \
+
 		echo "LVS check failed for $@";\
 		exit 1;\
 	fi
@@ -147,7 +158,11 @@ qz: get_file
 	$(NETGEN) $(NETGEN_OPTS) "$(XSC_QZ_PATH)/qz.spice qz" "$(MAG_QZ_PATH)/qz.spice qz" $(SETUP_TCL)
 	make check_lvs
 
-.PHONY: get_file check_lvs vco_main_inv vco_aux_inv vco_cc_inv vco_ring_osc vco dco_main_inv dco_aux_inv dco_cc_inv dco_ring_osc block_dco count qz
+system: get_file
+	$(NETGEN) $(NETGEN_OPTS) "$(XSC_SYSTEM_PATH)/system.spice system" "$(MAG_SYSTEM_PATH)/system.spice system" $(SETUP_TCL)
+	make check_lvs
+
+.PHONY: get_file check_lvs vco_main_inv vco_aux_inv vco_cc_inv vco_ring_osc vco dco_main_inv dco_aux_inv dco_cc_inv dco_ring_osc block_dco count qz system
 
 clean:
 	rm -f $(file_log) *.out

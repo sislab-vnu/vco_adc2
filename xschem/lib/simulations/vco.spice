@@ -1,5 +1,5 @@
 ** sch_path: /home/toind/work/vco_adc2/xschem/lib/vco.sch
-.subckt vco Anlg_in p[4] VCCA VCCD ENB VPWR
+.subckt vco p[4] Anlg_in ENB VCCA VCCD VPWR
 *.PININFO Anlg_in:I p[4]:O VCCA:I VCCD:I ENB:I VPWR:I
 x1 VCCD ENB GND GND VCCD VCCD pn[4] sky130_fd_sc_hd__einvp_1
 Xro_1 VCCA GND Vctrl VPWR p[0] p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4] 5s_cc_osc
