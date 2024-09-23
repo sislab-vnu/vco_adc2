@@ -1,4 +1,4 @@
-timestamp 1726904660
+timestamp 1727082698
 version 8.3
 tech sky130A
 style ngspice()
@@ -10,7 +10,6 @@ use sky130_fd_pr__res_xhigh_po_0p35_RSCMUS sky130_fd_pr__res_xhigh_po_0p35_RSCMU
 parameters sky130_fd_pr__nfet_01v8 l=l w=w a1=as p1=ps a2=ad p2=pd
 parameters sky130_fd_pr__pfet_01v8_hvt l=l w=w a1=as p1=ps a2=ad p2=pd
 port "VCCD" 9 -1270 -1340 -1270 -1340 m1
-port "GND" 8 -150 -3060 -150 -3060 m1
 port "Dctrl" 2 -1580 -1340 -1580 -1340 m1
 port "Isup" 7 2930 90 2930 90 li
 port "Vbs2" 4 2680 530 2680 530 m1
@@ -18,19 +17,20 @@ port "Vbs4" 6 1690 540 1690 540 m1
 port "Vbs3" 5 570 540 570 540 m1
 port "Vbs1" 3 -270 540 -270 540 m1
 port "VCCA" 1 -370 740 -370 740 li
+port "GND" 8 -150 -3060 -150 -3060 m1
 node "VCCD" 0 70.629 -1270 -1340 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 15000 500 0 0 0 0 0 0 0 0 0 0
-node "li_2630_n3120#" 43 110.807 2630 -3120 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12000 520 0 0 0 0 0 0 0 0 0 0 0 0
-node "GND" 17 1138.22 -150 -3060 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6400 320 204800 5280 0 0 0 0 0 0 0 0 0 0
-node "Dctrl" 13 140.832 -1580 -1340 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 19200 640 0 0 0 0 0 0 0 0 0 0
-node "G_M5" 2652 4301.78 710 -1660 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 360000 7600 0 0 566200 12180 168100 4300 0 0 0 0 0 0 0 0 0 0
+node "li_2630_n3120#" 43 112.998 2630 -3120 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12000 520 0 0 0 0 0 0 0 0 0 0 0 0
+node "Dctrl" 13 143.132 -1580 -1340 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 19200 640 0 0 0 0 0 0 0 0 0 0
+node "G_M5" 2677 3948.09 710 -1660 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 360000 7600 0 0 552800 12220 140100 3600 0 0 0 0 0 0 0 0 0 0
+equiv "G_M5" "lock"
 equiv "G_M5" "G_M8"
-node "D_M7" 4033 1391.33 -150 -1850 pdif 0 0 0 0 0 0 0 0 64000 1920 64000 1760 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 277600 7260 152000 3820 0 0 0 0 0 0 0 0 0 0
+node "D_M7" 4033 1550.55 -150 -1850 pdif 0 0 0 0 0 0 0 0 64000 1920 64000 1760 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 277600 7260 152000 3820 0 0 0 0 0 0 0 0 0 0
 equiv "D_M7" "input_R"
 equiv "D_M7" "S2_M8"
 equiv "D_M7" "S_M8"
-node "G_M7" 2278 2830.65 -250 -2030 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 360000 7600 0 0 157800 4780 384000 7880 0 0 0 0 0 0 0 0 0 0
+node "G_M7" 2278 2822.78 -250 -2030 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 360000 7600 0 0 157800 4780 384000 7880 0 0 0 0 0 0 0 0 0 0
 equiv "G_M7" "G_M6"
-node "Isup" 5738 2321.01 2930 90 li 0 0 0 0 0 0 0 0 64000 1920 92800 2640 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 621600 13880 64800 1600 0 0 0 0 0 0 0 0 0 0
+node "Isup" 5738 2213.82 2930 90 li 0 0 0 0 0 0 0 0 64000 1920 92800 2640 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 621600 13880 64800 1600 0 0 0 0 0 0 0 0 0 0
 equiv "Isup" "D_M2"
 equiv "Isup" "S2_M6"
 equiv "Isup" "S1_M6"
@@ -43,7 +43,7 @@ node "Vbs3" 1000 694.052 570 540 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 equiv "Vbs3" "G_M3"
 node "Vbs1" 320 279.075 -270 540 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 62000 1440 0 0 6000 320 10000 400 0 0 0 0 0 0 0 0 0 0
 equiv "Vbs1" "G_M1"
-node "D1_M4" 21605 5998.66 -510 -1930 nw 0 0 0 0 1267200 6480 0 0 80000 2640 313600 8800 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 911000 21860 283200 7120 0 0 0 0 0 0 0 0 0 0
+node "D1_M4" 21605 6003.98 -510 -1930 nw 0 0 0 0 1267200 6480 0 0 80000 2640 313600 8800 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 911000 21860 283200 7120 0 0 0 0 0 0 0 0 0 0
 equiv "D1_M4" "add_pwr"
 equiv "D1_M4" "D_M6"
 equiv "D1_M4" "D_M8"
@@ -54,8 +54,8 @@ equiv "D1_M4" "S2_M7"
 equiv "D1_M4" "S1_M7"
 equiv "D1_M4" "B_M7"
 equiv "D1_M4" "D2_M4"
-node "w_n1560_n2110#" 1530 400.724 -1560 -2110 nw 0 0 0 0 75900 1120 0 0 8000 360 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8000 360 42800 1120 0 0 0 0 0 0 0 0 0 0
-node "B_M2" 3617 2024.98 2370 -90 nw 0 0 0 0 249600 2000 0 0 8000 360 57600 1760 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 65600 2120 379200 9640 0 0 0 0 0 0 0 0 0 0
+node "w_n1560_n2110#" 1530 407.412 -1560 -2110 nw 0 0 0 0 75900 1120 0 0 8000 360 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8000 360 42800 1120 0 0 0 0 0 0 0 0 0 0
+node "B_M2" 3617 2024.71 2370 -90 nw 0 0 0 0 249600 2000 0 0 8000 360 57600 1760 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 65600 2120 379200 9640 0 0 0 0 0 0 0 0 0 0
 equiv "B_M2" "D_M1"
 equiv "B_M2" "S_M2"
 node "D1_M3" 7100 1677.8 1270 -80 nw 0 0 0 0 436800 2720 0 0 8000 360 115200 3520 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 232000 6280 111600 2820 0 0 0 0 0 0 0 0 0 0
@@ -69,84 +69,79 @@ equiv "VCCA" "B_M1"
 equiv "VCCA" "S_M1"
 equiv "VCCA" "S2_M3"
 equiv "VCCA" "S1_M3"
-substrate "B_M6" 0 0 -1760 -2000 ppd 0 0 0 0 0 0 0 0 0 0 24000 1080 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 30400 1400 371600 9500 0 0 0 0 0 0 0 0 0 0
-cap "VCCD" "D_M7" 0.160725
-cap "D1_M3" "VCCA" 497.985
-cap "Vbs2" "Isup" 47.7735
-cap "GND" "G_M5" 75.3822
+substrate "GND" 0 0 -150 -3060 m1 0 0 0 0 0 0 0 0 0 0 24000 1080 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 108000 3500 559600 14360 0 0 0 0 0 0 0 0 0 0
+equiv "GND" "B_M6"
+cap "D1_M3" "Vbs3" 262.277
+cap "B_M2" "Vbs1" 63.8812
+cap "D1_M4" "VCCA" 37.7489
 cap "D1_M3" "Vbs4" 685.623
-cap "G_M5" "Isup" 704.325
-cap "GND" "w_n1560_n2110#" 6.68805
-cap "G_M7" "D1_M4" 1303.04
-cap "D_M7" "B_M2" 0.106571
-cap "GND" "Dctrl" 2.30065
-cap "Vbs1" "B_M2" 63.8812
-cap "Vbs3" "B_M2" 14.0307
-cap "VCCD" "w_n1560_n2110#" 10.7317
-cap "D1_M3" "D1_M4" 584.999
+cap "G_M5" "li_2630_n3120#" 3.26739
+cap "D1_M4" "G_M5" 879.232
 cap "VCCD" "Dctrl" 24.4444
-cap "Vbs4" "Isup" 0.365219
-cap "Vbs3" "D_M7" 0.253034
-cap "D1_M3" "G_M7" 0.9077
-cap "Vbs2" "B_M2" 174.318
-cap "G_M5" "B_M2" 4.10839
-cap "Vbs3" "Vbs1" 12.6857
-cap "li_2630_n3120#" "G_M5" 5.44795
-cap "D_M7" "G_M5" 620.094
-cap "GND" "D1_M4" 5.1624
-cap "VCCA" "B_M2" 204.015
-cap "D_M7" "w_n1560_n2110#" 1.65528
-cap "D1_M4" "Isup" 999.277
-cap "D_M7" "Dctrl" 0.0582183
-cap "GND" "G_M7" 4.25638
-cap "Vbs3" "G_M5" 2.10158
-cap "G_M7" "Isup" 434.447
-cap "Vbs4" "B_M2" 18.6311
-cap "VCCD" "D1_M4" 2.38733
-cap "Vbs3" "VCCA" 906.363
-cap "VCCA" "Vbs1" 271.798
-cap "Vbs2" "G_M5" 0.633326
-cap "VCCD" "G_M7" 5.58626
-cap "D1_M3" "Isup" 0.358627
-cap "w_n1560_n2110#" "G_M5" 19.9778
-cap "Vbs3" "Vbs4" 13.4392
+cap "VCCD" "D_M7" 0.160725
+cap "Isup" "Vbs4" 0.365219
+cap "D1_M3" "VCCA" 497.985
+cap "D1_M4" "Dctrl" 1.58901
 cap "D1_M4" "B_M2" 511.007
-cap "VCCA" "G_M5" 1.36889
-cap "Dctrl" "w_n1560_n2110#" 0.257033
-cap "G_M7" "B_M2" 126.037
-cap "D_M7" "D1_M4" 810.291
-cap "Vbs2" "Vbs4" 15.383
-cap "D_M7" "G_M7" 674.068
-cap "Vbs1" "D1_M4" 7.67978
-cap "Vbs3" "D1_M4" 11.1733
-cap "D1_M3" "B_M2" 145.209
-cap "VCCA" "Vbs4" 4.66664
-cap "Vbs3" "G_M7" 0.485333
-cap "G_M7" "Vbs1" 0.589263
-cap "Vbs2" "D1_M4" 4.87935
-cap "D1_M4" "G_M5" 877.974
-cap "D1_M4" "w_n1560_n2110#" 1.75199
-cap "Dctrl" "D1_M4" 1.58901
-cap "G_M7" "G_M5" 163.521
-cap "D1_M3" "Vbs1" 0.103528
-cap "Vbs3" "D1_M3" 262.277
-cap "VCCA" "D1_M4" 37.7489
-cap "G_M7" "w_n1560_n2110#" 242.284
-cap "B_M2" "Isup" 146.372
-cap "Dctrl" "G_M7" 8.18588
-cap "VCCA" "G_M7" 0.477201
-cap "GND" "D_M7" 81.7533
-cap "D_M7" "Isup" 30.384
-cap "Vbs2" "D1_M3" 1.65014
-cap "D1_M4" "Vbs4" 285.185
+cap "Vbs4" "Vbs3" 13.4392
+cap "D1_M4" "D_M7" 810.291
 cap "D1_M3" "G_M5" 0.398942
-cap "G_M7" "Vbs4" 2.83523
+cap "Isup" "G_M5" 807.301
+cap "D1_M4" "Vbs2" 4.87935
+cap "VCCA" "Vbs3" 906.363
+cap "D1_M3" "B_M2" 145.209
+cap "G_M7" "Vbs1" 0.589263
+cap "w_n1560_n2110#" "G_M5" 19.9778
+cap "G_M5" "Vbs3" 2.10158
+cap "VCCA" "Vbs4" 4.66664
+cap "VCCD" "G_M7" 5.58626
+cap "Isup" "B_M2" 146.372
+cap "Isup" "D_M7" 30.384
+cap "D1_M3" "Vbs2" 1.65014
+cap "w_n1560_n2110#" "Dctrl" 0.257033
+cap "B_M2" "Vbs3" 14.0307
+cap "w_n1560_n2110#" "D_M7" 1.65528
+cap "Vbs3" "D_M7" 0.253034
+cap "Isup" "Vbs2" 47.7735
+cap "D1_M4" "G_M7" 1303.04
+cap "VCCA" "G_M5" 1.36889
+cap "B_M2" "Vbs4" 18.6311
+cap "Vbs2" "Vbs4" 15.383
+cap "B_M2" "VCCA" 204.015
+cap "D1_M3" "G_M7" 0.9077
+cap "D1_M4" "Vbs1" 7.67978
+cap "B_M2" "G_M5" 4.10839
+cap "G_M5" "D_M7" 736.736
+cap "Isup" "G_M7" 434.447
+cap "D1_M4" "VCCD" 2.38733
+cap "w_n1560_n2110#" "G_M7" 242.284
+cap "Vbs2" "G_M5" 0.633326
+cap "G_M7" "Vbs3" 0.485333
+cap "Dctrl" "D_M7" 0.0582183
+cap "D1_M3" "Vbs1" 0.103528
+cap "B_M2" "D_M7" 0.106571
+cap "Vbs4" "G_M7" 2.83523
+cap "B_M2" "Vbs2" 174.318
+cap "Vbs3" "Vbs1" 12.6857
+cap "VCCA" "G_M7" 0.477201
+cap "D1_M4" "D1_M3" 584.999
+cap "G_M5" "G_M7" 200.569
+cap "VCCD" "w_n1560_n2110#" 10.7317
+cap "D1_M4" "Isup" 999.277
+cap "G_M7" "Dctrl" 8.18588
+cap "D1_M4" "w_n1560_n2110#" 1.75199
+cap "D1_M4" "Vbs3" 11.1733
+cap "B_M2" "G_M7" 126.037
+cap "VCCA" "Vbs1" 271.798
+cap "G_M7" "D_M7" 673.528
+cap "D1_M4" "Vbs4" 285.185
+cap "D1_M3" "Isup" 0.358627
 device msubckt sky130_fd_pr__pfet_01v8_hvt 2700 -1860 2701 -1859 l=100 w=800 "D1_M4" "G_M5" 200 0 "Isup" 800 32000,880 "D1_M4" 800 64000,1760
 device msubckt sky130_fd_pr__pfet_01v8_hvt 2520 -1860 2521 -1859 l=100 w=800 "D1_M4" "G_M5" 200 0 "D1_M4" 800 64000,1760 "Isup" 800 32000,880
-device msubckt sky130_fd_pr__nfet_01v8 1660 -1480 1661 -1479 l=100 w=400 "B_M6" "G_M7" 200 0 "D1_M4" 400 16000,480 "Isup" 400 32000,960
-device msubckt sky130_fd_pr__nfet_01v8 1480 -1480 1481 -1479 l=100 w=400 "B_M6" "G_M7" 200 0 "Isup" 400 32000,960 "D1_M4" 400 16000,480
-device msubckt sky130_fd_pr__nfet_01v8 890 -1480 891 -1479 l=100 w=400 "B_M6" "G_M5" 200 0 "D1_M4" 400 16000,480 "D_M7" 400 32000,960
-device msubckt sky130_fd_pr__nfet_01v8 710 -1480 711 -1479 l=100 w=400 "B_M6" "G_M5" 200 0 "D_M7" 400 32000,960 "D1_M4" 400 16000,480
+device msubckt sky130_fd_pr__nfet_01v8 1660 -1480 1661 -1479 l=100 w=400 "GND" "G_M7" 200 0 "D1_M4" 400 16000,480 "Isup" 400 32000,960
+device msubckt sky130_fd_pr__nfet_01v8 1480 -1480 1481 -1479 l=100 w=400 "GND" "G_M7" 200 0 "Isup" 400 32000,960 "D1_M4" 400 16000,480
+device msubckt sky130_fd_pr__nfet_01v8 890 -1480 891 -1479 l=100 w=400 "GND" "G_M5" 200 0 "D1_M4" 400 16000,480 "D_M7" 400 32000,960
+device msubckt sky130_fd_pr__nfet_01v8 710 -1480 711 -1479 l=100 w=400 "GND" "G_M5" 200 0 "D_M7" 400 32000,960 "D1_M4" 400 16000,480
 device msubckt sky130_fd_pr__pfet_01v8_hvt -70 -1850 -69 -1849 l=100 w=800 "D1_M4" "G_M7" 200 0 "D_M7" 800 32000,880 "D1_M4" 800 64000,1760
 device msubckt sky130_fd_pr__pfet_01v8_hvt -250 -1850 -249 -1849 l=100 w=800 "D1_M4" "G_M7" 200 0 "D1_M4" 800 64000,1760 "D_M7" 800 32000,880
 device msubckt sky130_fd_pr__pfet_01v8_hvt 2630 -10 2631 -9 l=100 w=360 "B_M2" "Vbs2" 200 0 "B_M2" 360 28800,880 "Isup" 360 28800,880
@@ -157,86 +152,84 @@ device msubckt sky130_fd_pr__pfet_01v8_hvt 790 0 791 1 l=100 w=360 "VCCA" "Vbs3"
 device msubckt sky130_fd_pr__pfet_01v8_hvt 610 0 611 1 l=100 w=360 "VCCA" "Vbs3" 200 0 "D1_M3" 360 14400,440 "VCCA" 360 14400,440
 device msubckt sky130_fd_pr__pfet_01v8_hvt 430 0 431 1 l=100 w=360 "VCCA" "Vbs3" 200 0 "VCCA" 360 28800,880 "D1_M3" 360 14400,440
 device msubckt sky130_fd_pr__pfet_01v8_hvt -320 0 -319 1 l=100 w=360 "VCCA" "Vbs1" 200 0 "VCCA" 360 28800,880 "B_M2" 360 28800,880
-cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_840#" 0.00777139
-cap "sky130_fd_sc_hd__inv_2_0/Y" "sky130_fd_sc_hd__buf_2_0/A" 0.070278
-cap "sky130_fd_sc_hd__inv_2_0/A" "sky130_fd_sc_hd__inv_2_0/Y" -4.44102
+cap "sky130_fd_sc_hd__inv_2_0/Y" "sky130_fd_sc_hd__buf_2_0/a_27_47#" 0.551598
+cap "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_840#" "sky130_fd_sc_hd__inv_2_0/VPB" 6.75729
+cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "sky130_fd_sc_hd__inv_2_0/A" 18.793
 cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "D1_M4" 0.198247
+cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "sky130_fd_sc_hd__inv_2_0/VNB" 3.43277
+cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "sky130_fd_sc_hd__inv_2_0/VPB" 10.8165
+cap "sky130_fd_sc_hd__inv_2_0/Y" "sky130_fd_sc_hd__buf_2_0/A" 0.070278
+cap "sky130_fd_sc_hd__inv_2_0/Y" "sky130_fd_sc_hd__inv_2_0/A" -3.95292
 cap "sky130_fd_sc_hd__inv_2_0/A" "sky130_fd_sc_hd__buf_2_0/A" -0.0755236
-cap "sky130_fd_sc_hd__inv_2_0/Y" "sky130_fd_sc_hd__inv_2_0/VNB" 27.45
-cap "sky130_fd_sc_hd__inv_2_0/Y" "sky130_fd_sc_hd__inv_2_0/VPB" 161.521
+cap "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_840#" "sky130_fd_sc_hd__buf_2_0/a_27_47#" 0.00777139
+cap "sky130_fd_sc_hd__inv_2_0/Y" "sky130_fd_sc_hd__inv_2_0/VNB" 27.397
+cap "sky130_fd_sc_hd__inv_2_0/Y" "sky130_fd_sc_hd__inv_2_0/VPB" 191.166
 cap "sky130_fd_sc_hd__inv_2_0/VPB" "sky130_fd_sc_hd__buf_2_0/A" 1.02969
 cap "sky130_fd_sc_hd__inv_2_0/VNB" "sky130_fd_sc_hd__buf_2_0/A" 0.52251
-cap "sky130_fd_sc_hd__inv_2_0/A" "sky130_fd_sc_hd__inv_2_0/VPB" 160.929
-cap "sky130_fd_sc_hd__inv_2_0/A" "sky130_fd_sc_hd__inv_2_0/VNB" 35.6954
-cap "sky130_fd_sc_hd__inv_2_0/VPB" "sky130_fd_sc_hd__inv_2_0/VNB" -29.5209
-cap "sky130_fd_sc_hd__inv_2_0/Y" "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_840#" -2.93696
-cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "sky130_fd_sc_hd__inv_2_0/Y" 0.551598
-cap "sky130_fd_sc_hd__inv_2_0/A" "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_840#" -0.167395
-cap "sky130_fd_sc_hd__inv_2_0/VPB" "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_840#" 6.79278
-cap "sky130_fd_sc_hd__inv_2_0/A" "sky130_fd_sc_hd__buf_2_0/a_27_47#" 18.793
 cap "sky130_fd_sc_hd__inv_2_0/A" "D1_M4" -1.3804
-cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "sky130_fd_sc_hd__inv_2_0/VPB" 10.8165
+cap "sky130_fd_sc_hd__inv_2_0/A" "sky130_fd_sc_hd__inv_2_0/VNB" 35.6954
+cap "sky130_fd_sc_hd__inv_2_0/VPB" "sky130_fd_sc_hd__inv_2_0/A" 160.929
 cap "sky130_fd_sc_hd__inv_2_0/VPB" "D1_M4" 4.8835
-cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "sky130_fd_sc_hd__inv_2_0/VNB" 3.43277
-cap "sky130_fd_sc_hd__inv_2_0/VNB" "D1_M4" -2.77556e-16
-cap "sky130_fd_sc_hd__inv_2_0/VNB" "sky130_fd_sc_hd__inv_2_0/Y" 127.332
-cap "sky130_fd_sc_hd__inv_2_0/VPB" "sky130_fd_sc_hd__inv_2_0/A" 0.123741
+cap "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_840#" "sky130_fd_sc_hd__inv_2_0/Y" -2.93696
+cap "sky130_fd_sc_hd__inv_2_0/VPB" "sky130_fd_sc_hd__inv_2_0/VNB" -29.5209
+cap "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_840#" "sky130_fd_sc_hd__inv_2_0/A" -0.175967
 cap "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_840#" "sky130_fd_sc_hd__inv_2_0/A" 8.41672
-cap "sky130_fd_sc_hd__inv_2_0/VPB" "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_840#" 7.47712
-cap "sky130_fd_sc_hd__inv_2_0/VNB" "sky130_fd_sc_hd__inv_2_0/A" 0.500877
 cap "D1_M4" "sky130_fd_sc_hd__inv_2_0/A" -0.958117
-cap "sky130_fd_sc_hd__inv_2_0/VPB" "D1_M4" 3.42155
-cap "sky130_fd_sc_hd__inv_2_0/VNB" "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_840#" 54.812
-cap "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_840#" "sky130_fd_sc_hd__inv_2_0/Y" 0.786433
-cap "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_n1272#" "G_M5" 209.217
-cap "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_n1272#" "Isup" 0.313023
-cap "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_n1272#" "D1_M4" 1.38656
-cap "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n165_n1402#" "Isup" 0.845027
+cap "sky130_fd_sc_hd__inv_2_0/Y" "sky130_fd_sc_hd__inv_2_0/VNB" 24.0689
+cap "sky130_fd_sc_hd__inv_2_0/A" "sky130_fd_sc_hd__inv_2_0/VPB" 0.123741
+cap "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_840#" "sky130_fd_sc_hd__inv_2_0/VPB" 7.47712
+cap "sky130_fd_sc_hd__inv_2_0/A" "sky130_fd_sc_hd__inv_2_0/VNB" 0.500877
+cap "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_840#" "sky130_fd_sc_hd__inv_2_0/Y" -1.07757
+cap "D1_M4" "sky130_fd_sc_hd__inv_2_0/VPB" 3.42155
+cap "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_840#" "sky130_fd_sc_hd__inv_2_0/VNB" 48.6816
+cap "G_M5" "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n165_n1402#" 91.693
+cap "D1_M4" "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n165_n1402#" 1.38656
+cap "Isup" "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n165_n1402#" 0.313023
+cap "D1_M4" "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n165_n1402#" 3.19268
+cap "G_M5" "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n165_n1402#" 33.8522
 cap "D1_M4" "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n165_n1402#" 1.99634
-cap "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n165_n1402#" "G_M5" 70.9778
-cap "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n165_n1402#" "D1_M4" 3.19268
-cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "sky130_fd_sc_hd__inv_2_0/VNB" -1.95415
-cap "sky130_fd_sc_hd__inv_2_0/VPB" "sky130_fd_sc_hd__inv_2_0/A" 6.25928
-cap "sky130_fd_sc_hd__inv_2_0/VPB" "sky130_fd_sc_hd__buf_2_0/A" 22.8549
-cap "sky130_fd_sc_hd__inv_2_0/A" "sky130_fd_sc_hd__inv_2_0/Y" 0.700549
-cap "sky130_fd_sc_hd__inv_2_0/VPB" "sky130_fd_sc_hd__inv_2_0/VNB" -10.4095
-cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_840#" 0.0466044
-cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "D1_M4" 0.993918
-cap "sky130_fd_sc_hd__buf_2_0/A" "sky130_fd_sc_hd__inv_2_0/Y" 0.515139
-cap "sky130_fd_sc_hd__inv_2_0/A" "sky130_fd_sc_hd__buf_2_0/A" -3.41167
-cap "sky130_fd_sc_hd__inv_2_0/VPB" "sky130_fd_sc_hd__buf_2_0/a_27_47#" -0.766162
-cap "sky130_fd_sc_hd__inv_2_0/VPB" "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_840#" 0.214301
-cap "sky130_fd_sc_hd__inv_2_0/VPB" "D1_M4" 10.4792
-cap "sky130_fd_sc_hd__inv_2_0/A" "sky130_fd_sc_hd__inv_2_0/VNB" 1.17985
-cap "sky130_fd_sc_hd__inv_2_0/VNB" "sky130_fd_sc_hd__buf_2_0/A" 18.5864
-cap "sky130_fd_sc_hd__inv_2_0/A" "sky130_fd_sc_hd__buf_2_0/a_27_47#" 2.7086
-cap "sky130_fd_sc_hd__inv_2_0/A" "D1_M4" -0.596488
+cap "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n165_n1402#" "Isup" 0.845027
+cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "sky130_fd_sc_hd__inv_2_0/A" 2.7086
+cap "sky130_fd_sc_hd__inv_2_0/VNB" "sky130_fd_sc_hd__inv_2_0/VPB" -10.4095
+cap "sky130_fd_sc_hd__buf_2_0/A" "sky130_fd_sc_hd__inv_2_0/VNB" 18.5864
+cap "sky130_fd_sc_hd__inv_2_0/A" "sky130_fd_sc_hd__inv_2_0/VPB" 6.25928
+cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "sky130_fd_sc_hd__inv_2_0/VPB" -0.766162
+cap "sky130_fd_sc_hd__buf_2_0/A" "sky130_fd_sc_hd__inv_2_0/A" -3.41167
 cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "sky130_fd_sc_hd__buf_2_0/A" 21.7307
-cap "sky130_fd_sc_hd__buf_2_0/A" "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_840#" -0.0268009
+cap "sky130_fd_sc_hd__buf_2_0/A" "sky130_fd_sc_hd__inv_2_0/VPB" 22.8549
+cap "D1_M4" "sky130_fd_sc_hd__inv_2_0/A" -0.596488
+cap "D1_M4" "sky130_fd_sc_hd__buf_2_0/a_27_47#" 0.993918
+cap "D1_M4" "sky130_fd_sc_hd__inv_2_0/VPB" 10.4792
+cap "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_840#" "sky130_fd_sc_hd__buf_2_0/a_27_47#" 0.0466044
+cap "sky130_fd_sc_hd__inv_2_0/A" "sky130_fd_sc_hd__inv_2_0/Y" 0.700549
 cap "D1_M4" "sky130_fd_sc_hd__buf_2_0/A" -0.446222
-cap "sky130_fd_sc_hd__inv_2_0/Y" "sky130_fd_sc_hd__inv_2_0/VNB" 0.0813252
-cap "sky130_fd_sc_hd__inv_2_0/VPB" "D1_M4" 5.9747
-cap "sky130_fd_sc_hd__inv_2_0/A" "sky130_fd_sc_hd__inv_2_0/VPB" 2.93333
+cap "sky130_fd_sc_hd__buf_2_0/a_27_47#" "sky130_fd_sc_hd__inv_2_0/VNB" -1.95415
+cap "sky130_fd_sc_hd__inv_2_0/A" "sky130_fd_sc_hd__inv_2_0/VNB" 1.17985
+cap "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_840#" "sky130_fd_sc_hd__inv_2_0/VPB" 0.214301
+cap "sky130_fd_sc_hd__buf_2_0/A" "sky130_fd_sc_hd__inv_2_0/Y" 0.515139
+cap "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_840#" "sky130_fd_sc_hd__buf_2_0/A" -0.0268009
+cap "D1_M4" "sky130_fd_sc_hd__inv_2_0/A" -0.42583
 cap "sky130_fd_sc_hd__buf_2_0/A" "D1_M4" -0.436228
+cap "D1_M4" "sky130_fd_sc_hd__inv_2_0/VPB" 5.9747
+cap "sky130_fd_sc_hd__inv_2_0/VPB" "sky130_fd_sc_hd__inv_2_0/A" 2.93333
 cap "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_840#" "sky130_fd_sc_hd__inv_2_0/A" 2.84217e-14
-cap "sky130_fd_sc_hd__inv_2_0/A" "D1_M4" -0.42583
-cap "G_M7" "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_n1272#" 0.0990046
-cap "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_n1272#" "G_M5" 0.0176794
-merge "sky130_fd_sc_hd__buf_2_0/VPWR" "VCCD" -446.719 0 0 0 0 -4494 -1312 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -960 -596 0 0 0 0 0 0 0 0 0 0
+cap "sky130_fd_sc_hd__inv_2_0/VNB" "sky130_fd_sc_hd__inv_2_0/Y" 0.0813252
+cap "G_M7" "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n165_n1402#" 0.0990046
+cap "G_M5" "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n165_n1402#" 0.0176794
+merge "sky130_fd_sc_hd__buf_2_0/VPWR" "VCCD" -472.05 0 0 0 0 -4494 -1312 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -960 -596 0 0 0 0 0 0 0 0 0 0
 merge "VCCD" "sky130_fd_sc_hd__buf_2_0/VPB"
 merge "sky130_fd_sc_hd__buf_2_0/VPB" "sky130_fd_sc_hd__inv_2_0/VPWR"
 merge "sky130_fd_sc_hd__inv_2_0/VPWR" "sky130_fd_sc_hd__inv_2_0/VPB"
 merge "sky130_fd_sc_hd__inv_2_0/VPB" "w_n1560_n2110#"
-merge "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n165_n1402#" "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_n1272#" -905.221 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -9116 -844 -3488 -628 0 0 0 0 0 0 0 0 0 0
+merge "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n165_n1402#" "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_n1272#" -781.618 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6396 -616 -3488 -628 0 0 0 0 0 0 0 0 0 0
 merge "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_n1272#" "li_2630_n3120#"
 merge "li_2630_n3120#" "sky130_fd_sc_hd__buf_2_0/VNB"
 merge "sky130_fd_sc_hd__buf_2_0/VNB" "sky130_fd_sc_hd__buf_2_0/VGND"
 merge "sky130_fd_sc_hd__buf_2_0/VGND" "sky130_fd_sc_hd__inv_2_0/VNB"
 merge "sky130_fd_sc_hd__inv_2_0/VNB" "sky130_fd_sc_hd__inv_2_0/VGND"
-merge "sky130_fd_sc_hd__inv_2_0/VGND" "B_M6"
-merge "B_M6" "GND"
-merge "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_840#" "D_M7" -82.4436 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1400 -156 0 0 0 0 0 0 0 0 0 0
-merge "sky130_fd_sc_hd__buf_2_0/X" "sky130_fd_sc_hd__inv_2_0/A" -1184.8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -140000 -3000 0 0 -18680 -784 -155000 -3200 0 0 0 0 0 0 0 0 0 0
+merge "sky130_fd_sc_hd__inv_2_0/VGND" "GND"
+merge "sky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0/a_n35_840#" "D_M7" -84.5874 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1400 -156 0 0 0 0 0 0 0 0 0 0
+merge "sky130_fd_sc_hd__buf_2_0/X" "sky130_fd_sc_hd__inv_2_0/A" -1139.73 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -140000 -3000 0 0 -18680 -784 -155000 -3200 0 0 0 0 0 0 0 0 0 0
 merge "sky130_fd_sc_hd__inv_2_0/A" "G_M7"
 merge "sky130_fd_sc_hd__buf_2_0/A" "Dctrl" -75.4223 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1600 -160 0 0 0 0 0 0 0 0 0 0 0 0
-merge "sky130_fd_sc_hd__inv_2_0/Y" "G_M5" -1937.92 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -237000 -5040 0 0 -210200 -5060 -89800 -2340 0 0 0 0 0 0 0 0 0 0
+merge "sky130_fd_sc_hd__inv_2_0/Y" "G_M5" -1711.93 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -237000 -5040 0 0 -210200 -5060 -72200 -1900 0 0 0 0 0 0 0 0 0 0

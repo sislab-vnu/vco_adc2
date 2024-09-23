@@ -1,27 +1,10 @@
 * NGSPICE file created from dco_idac.ext - technology: sky130A
 
-
-*.subckt sky130_fd_sc_hd__buf_2 A VGND VNB VPB VPWR X
-*.subckt sky130_fd_sc_hd__buf_2 1   2   3   4   5   6
-.subckt sky130_fd_sc_hd__buf_2 1 2 3 4 5 6
-X0 5 a_27_47# 6 4 sky130_fd_pr__pfet_01v8_hvt ad=0.265 pd=2.53 as=0.135 ps=1.27 w=1 l=0.15 M=2
-X1 VPWR 1 a_27_47# 4 sky130_fd_pr__pfet_01v8_hvt ad=0.149 pd=1.325 as=0.1664 ps=1.8 w=0.64 l=0.15
-X2 6 a_27_47# 2 3 sky130_fd_pr__nfet_01v8 ad=0.08775 pd=0.92 as=0.097 ps=0.975 w=0.65 l=0.15 M=2
-X3 2 1 a_27_47# 3 sky130_fd_pr__nfet_01v8 ad=0.097 pd=0.975 as=0.1092 ps=1.36 w=0.42 l=0.15
-.ends
-
-*.subckt sky130_fd_sc_hd__inv_2 A VGND VNB VPB VPWR Y
-*.subckt sky130_fd_sc_hd__inv_2 1  2    3   4   5   6
-.subckt sky130_fd_sc_hd__inv_2 1 2 3 4 5 6
-X0 6 1 5 4 sky130_fd_pr__pfet_01v8_hvt ad=0.135 pd=1.27 as=0.26 ps=2.52 w=1 l=0.15 M=2
-X1 2 1 6 3 sky130_fd_pr__nfet_01v8 ad=0.169 pd=1.82 as=0.08775 ps=0.92 w=0.65 l=0.15 M=2
-.ends
-
 .subckt sky130_fd_pr__res_xhigh_po_0p35_RSCMUS a_n35_n1272# a_n35_840# a_n165_n1402#
 X0 a_n35_840# a_n35_n1272# a_n165_n1402# sky130_fd_pr__res_xhigh_po_0p35 l=8.56
 .ends
 
-.subckt dco_idac Dctrl Vbs1 Vbs2 Vbs3 Vbs4 Isup GND VCCD VCCA
+.subckt dco_idac Dctrl Vbs1 Vbs2 Vbs3 Vbs4 Isup VCCD VCCA GND
 Xsky130_fd_sc_hd__buf_2_0 Dctrl GND GND VCCD VCCD G_M7 sky130_fd_sc_hd__buf_2
 Xsky130_fd_sc_hd__inv_2_0 G_M7 GND GND VCCD VCCD G_M5 sky130_fd_sc_hd__inv_2
 Xsky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0 GND D_M7 GND sky130_fd_pr__res_xhigh_po_0p35_RSCMUS
