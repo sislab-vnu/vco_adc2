@@ -78,43 +78,20 @@ sky130_fd_sc_hd__dfstp_1 (2)               |sky130_fd_sc_hd__dfstp_1 (2)
 sky130_fd_sc_hd__xor2_1 (1)                |sky130_fd_sc_hd__xor2_1 (1)                
 sky130_fd_sc_hd__buf_2 (4)                 |sky130_fd_sc_hd__buf_2 (4)                 
 Number of devices: 9                       |Number of devices: 9                       
-Number of nets: 14 **Mismatch**            |Number of nets: 16 **Mismatch**            
+Number of nets: 14                         |Number of nets: 14                         
 ---------------------------------------------------------------------------------------
-NET mismatches: Class fragments follow (with fanout counts):
-Circuit 1: count                           |Circuit 2: count                           
-
----------------------------------------------------------------------------------------
-Net: VCCD                                  |Net: VCCD                                  
-  sky130_fd_sc_hd__dfstp_1/6 = 2           |  sky130_fd_sc_hd__dfstp_1/6 = 2           
-  sky130_fd_sc_hd__dfstp_1/7 = 2           |  sky130_fd_sc_hd__dfstp_1/7 = 2           
-  sky130_fd_sc_hd__buf_2/4 = 4             |  sky130_fd_sc_hd__buf_2/4 = 4             
-  sky130_fd_sc_hd__buf_2/5 = 4             |  sky130_fd_sc_hd__buf_2/5 = 4             
-  sky130_fd_sc_hd__inv_2/5 = 2             |  sky130_fd_sc_hd__inv_2/5 = 2             
-  sky130_fd_sc_hd__inv_2/4 = 2             |  sky130_fd_sc_hd__inv_2/4 = 1             
-  sky130_fd_sc_hd__xor2_1/5 = 1            |  sky130_fd_sc_hd__xor2_1/5 = 1            
-  sky130_fd_sc_hd__xor2_1/6 = 1            |  sky130_fd_sc_hd__xor2_1/6 = 1            
-                                           |                                           
-Net: DWN_buf                               |Net: sky130_fd_sc_hd__dfstp_1_1/CLK        
-  sky130_fd_sc_hd__dfstp_1/1 = 1           |  sky130_fd_sc_hd__dfstp_1/1 = 1           
-  sky130_fd_sc_hd__buf_2/6 = 1             |                                           
-                                           |                                           
-(no matching net)                          |Net: sky130_fd_sc_hd__inv_2_0/VPB          
-                                           |  sky130_fd_sc_hd__inv_2/4 = 1             
-                                           |                                           
-(no matching net)                          |Net: sky130_fd_sc_hd__buf_2_1/X            
-                                           |  sky130_fd_sc_hd__buf_2/6 = 1             
----------------------------------------------------------------------------------------
-Netlists do not match.
+Netlists match uniquely.
 
 Subcircuit pins:
 Circuit 1: count                           |Circuit 2: count                           
 -------------------------------------------|-------------------------------------------
+setB                                       |SetB                                       
 Dout_buf                                   |Dout_buf                                   
 DOWN                                       |DOWN                                       
 UP                                         |UP                                         
-setB                                       |SetB                                       
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
 Device classes count and count are equivalent.
 
-Final result: Netlists do not match.
+Final result: Circuits match uniquely.
+.
