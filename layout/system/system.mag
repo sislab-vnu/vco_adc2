@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1727091651
+timestamp 1727164675
 << locali >>
 rect -3015 4470 2150 4580
 rect -3060 4110 3220 4150
@@ -199,24 +199,24 @@ rect 18780 -8440 19700 -8380
 rect 18700 -8460 19700 -8440
 rect 14330 -9340 14972 -9240
 rect 14869 -9341 14972 -9340
-use count  count_0 ../count
-timestamp 1727087206
+use count  count_0 ./../count
+timestamp 1727161985
 transform 1 0 -2340 0 1 -2076
 box -880 -3154 3140 -440
 use count  count_1
-timestamp 1727087206
+timestamp 1727161985
 transform 1 0 16330 0 1 -6486
 box -880 -3154 3140 -440
-use dco  dco_0 ../dco
-timestamp 1727083693
+use dco  dco_0 ./../dco
+timestamp 1727163546
 transform 1 0 2620 0 1 -6850
 box -720 -4280 11940 6160
-use qz  qz_0 ../quantizer
-timestamp 1727065578
+use qz  qz_0 ./../quantizer
+timestamp 1727164310
 transform 1 0 15260 0 1 -2230
 box 190 -710 5890 730
-use vco  vco_0 ../vco_v3
-timestamp 1725958133
+use vco  vco_0 ./../vco
+timestamp 1727146712
 transform 1 0 -2020 0 1 680
 box 0 0 19930 7330
 << labels >>

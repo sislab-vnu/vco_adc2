@@ -48,6 +48,8 @@ N 560 -110 630 -110 {
 lab=pha_ro}
 N 440 -270 480 -270 {
 lab=p[0]}
+N 670 -570 720 -570 {
+lab=GND}
 C {devices/lab_wire.sym} 450 -230 2 0 {name=l5 sig_type=std_logic lab=p[1]}
 C {devices/lab_wire.sym} 450 -190 2 0 {name=l6 sig_type=std_logic lab=p[2]}
 C {devices/lab_wire.sym} 450 -150 2 0 {name=l7 sig_type=std_logic lab=p[3]}
@@ -73,7 +75,9 @@ C {/home/toind/work/vco_adc2/xschem/lib_dco/dco_idac.sym} 420 -440 0 0 {name=x3}
 C {devices/ipin.sym} 540 -460 2 0 {name=p4 lab=VCCA}
 C {devices/ipin.sym} 100 -110 0 0 {name=p6 lab=VCCD}
 C {/home/toind/work/vco_adc2/xschem/lib_dco/dco_ring_osc.sym} 380 -190 0 0 {name=x4}
-C {devices/lab_pin.sym} 460 -370 0 0 {name=l2 sig_type=std_logic lab=GND}
+C {devices/lab_pin.sym} 460 -370 2 1 {name=l2 sig_type=std_logic lab=GND}
 C {devices/lab_pin.sym} 380 -40 0 0 {name=l1 sig_type=std_logic lab=GND}
 C {devices/lab_pin.sym} 540 -420 2 0 {name=l16 sig_type=std_logic lab=VCCD}
 C {devices/lab_wire.sym} 450 -270 2 0 {name=l17 sig_type=std_logic lab=p[0]}
+C {devices/ipin.sym} 670 -570 0 0 {name=p8 lab=GND}
+C {devices/lab_pin.sym} 720 -570 0 1 {name=l8 sig_type=std_logic lab=GND}

@@ -1,6 +1,6 @@
 * NGSPICE file created from count.ext - technology: sky130A
 
-.subckt count UP SetB DOWN Dout_buf
+.subckt count UP SetB DOWN Dout_buf GND VCCD
 Xsky130_fd_sc_hd__dfstp_1_0 UP_buf Q2N SetBi GND GND VCCD VCCD Q1 sky130_fd_sc_hd__dfstp_1
 Xsky130_fd_sc_hd__dfstp_1_1 DWN_buf Q1_buf SetBi GND GND VCCD VCCD Q2 sky130_fd_sc_hd__dfstp_1
 Xsky130_fd_sc_hd__inv_2_0 SetB GND GND VCCD VCCD SetBi sky130_fd_sc_hd__inv_2

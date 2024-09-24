@@ -1,6 +1,6 @@
 ** sch_path: /home/toind/work/vco_adc2/xschem/lib_dco/dco.sch
-.subckt dco VCCD VCCA Dctrl ENB Vbs_12 Vbs_34 pha_DCO
-*.PININFO Dctrl:I Vbs_12:I Vbs_34:I pha_DCO:O ENB:I VCCA:I VCCD:I
+.subckt dco GND VCCD VCCA Dctrl ENB Vbs_12 Vbs_34 pha_DCO
+*.PININFO Dctrl:I Vbs_12:I Vbs_34:I pha_DCO:O ENB:I VCCA:I VCCD:I GND:I
 x1 VCCD ENB GND GND VCCD VCCD pn[4] sky130_fd_sc_hd__einvp_1
 x2 p_osc GND GND VCCD VCCD pha_ro sky130_fd_sc_hd__buf_2
 Xdiv2_1 pha_ro GND GND VCCD VCCD ro_div2 DLib_freqDiv2

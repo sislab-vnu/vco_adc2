@@ -30,6 +30,10 @@ N 430 -60 460 -60 { lab=Dout_buf}
 N 100 -450 120 -450 { lab=UP}
 N 100 -210 120 -210 { lab=DOWN}
 N 100 -310 120 -310 { lab=setB}
+N 240 -560 320 -560 {
+lab=GND}
+N 240 -600 320 -600 {
+lab=VCCD}
 C {sky130_stdcells/inv_2.sym} 160 -310 0 0 {name=X_inv_0 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD prefix=sky130_fd_sc_hd__ }
 C {sky130_stdcells/dfstp_1.sym} 390 -430 0 0 {name=X_upFF VGND=GND VNB=GND VPB=VCCD VPWR=VCCD prefix=sky130_fd_sc_hd__ }
 C {sky130_stdcells/dfstp_1.sym} 390 -190 0 0 {name=X_dwFF VGND=GND VNB=GND VPB=VCCD VPWR=VCCD prefix=sky130_fd_sc_hd__ }
@@ -57,5 +61,9 @@ C {devices/lab_wire.sym} 150 -80 0 0 {name=l13 sig_type=std_logic lab=Q1}
 C {devices/lab_wire.sym} 150 -40 2 1 {name=l18 sig_type=std_logic lab=Q2}
 C {devices/ipin.sym} 100 -210 0 0 {name=p1 lab=DOWN}
 C {devices/opin.sym} 460 -60 0 0 {name=p2 lab=Dout_buf}
-C {devices/ipin.sym} 100 -450 0 0 {name=p3 lab=UP}
+C {devices/ipin.sym} 240 -560 0 0 {name=p3 lab=GND}
 C {devices/ipin.sym} 100 -310 0 0 {name=p4 lab=setB}
+C {devices/ipin.sym} 100 -450 0 0 {name=p6 lab=UP}
+C {devices/ipin.sym} 240 -600 0 0 {name=p5 lab=VCCD}
+C {devices/lab_wire.sym} 300 -600 0 0 {name=X_buf_1 sig_type=std_logic lab=VCCD}
+C {devices/lab_wire.sym} 300 -560 0 0 {name=X_buf_7 sig_type=std_logic lab=GND}

@@ -1,14 +1,12 @@
 * NGSPICE file created from dco.ext - technology: sky130A
 
-.s
-
+.subck
 .subckt dco_freq clk clkDiv2 VNB VGND VPB VPWR
 Xsky130_fd_sc_hd__buf_4_0 Q_N VGND VNB VPB VPWR Q_N_buf sky130_fd_sc_hd__buf_4
 Xsky130_fd_sc_hd__inv_4_0 clk VGND VNB VPB VPWR clkinv sky130_fd_sc_hd__inv_4
 Xsky130_fd_sc_hd__dfxtp_1_0 clkinv Q_N_buf VGND VNB VPB VPWR D sky130_fd_sc_hd__dfxtp_1
 Xsky130_fd_sc_hd__dfxbp_2_0 clk D VGND VNB VPB VPWR clkDiv2 Q_N sky130_fd_sc_hd__dfxbp_2
 .ends
-
 
 .subckt dco_aux_inv VPWR VCCA A Y GND VGND
 X0 Y A VGND GND sky130_fd_pr__nfet_01v8 ad=0.8 pd=4.8 as=0.8 ps=4.8 w=2 l=1
@@ -54,8 +52,7 @@ X6 Isup Vbs2 B_M2 B_M2 sky130_fd_pr__pfet_01v8_hvt ad=0.72 pd=4.4 as=0.72 ps=4.4
 X7 D1_M4 G_M7 D_M7 D1_M4 sky130_fd_pr__pfet_01v8_hvt ad=1.6 pd=8.8 as=0.8 ps=4.4 w=4 l=0.5 M=2
 .ends
 
-
-.subckt dco VCCD VCCA Dctrl ENB Vbs_12 Vbs_34 pha_DCO
+.subckt dco VCCD VCCA Dctrl ENB Vbs_12 Vbs_34 pha_DCO GND
 Xdco_freq_0 pha_ro ro_div2 GND GND VCCD VCCD dco_freq
 Xdco_freq_1 ro_div2 pha_DCO GND GND VCCD VCCD dco_freq
 Xsky130_fd_sc_hd__buf_2_0 p_osc GND GND VCCD VCCD pha_ro sky130_fd_sc_hd__buf_2

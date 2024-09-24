@@ -21,6 +21,10 @@ N 420 80 460 80 { lab=Dout}
 N 0 60 20 60 { lab=D}
 N 300 40 320 40 { lab=Dout}
 N 680 60 700 60 { lab=FBack}
+N 240 -230 320 -230 {
+lab=VCCD}
+N 240 -200 320 -200 {
+lab=GND}
 C {sky130_stdcells/dlygate4sd3_1.sym} 60 -40 0 0 {name=Xdly_1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD prefix=sky130_fd_sc_hd__ }
 C {sky130_stdcells/dfxtp_1.sym} 210 50 0 0 {name=x2 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD prefix=sky130_fd_sc_hd__ }
 C {sky130_stdcells/buf_2.sym} 60 60 0 0 {name=x3 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD prefix=sky130_fd_sc_hd__ }
@@ -45,3 +49,7 @@ C {devices/lab_wire.sym} 610 -40 2 0 {name=l9 sig_type=std_logic lab=CLK_dly}
 C {devices/lab_wire.sym} 450 40 2 1 {name=l10 sig_type=std_logic lab=CLK_dly}
 C {devices/lab_wire.sym} 450 80 2 1 {name=l11 sig_type=std_logic lab=Dout}
 C {devices/opin.sym} 700 60 0 0 {name=p4 lab=FBack}
+C {devices/ipin.sym} 240 -230 0 0 {name=p5 lab=VCCD}
+C {devices/ipin.sym} 240 -200 0 0 {name=p6 lab=GND}
+C {devices/lab_wire.sym} 310 -230 0 0 {name=l7 sig_type=std_logic lab=VCCD}
+C {devices/lab_wire.sym} 310 -200 0 0 {name=l12 sig_type=std_logic lab=GND}

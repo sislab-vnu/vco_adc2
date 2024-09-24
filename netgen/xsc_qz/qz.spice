@@ -1,6 +1,6 @@
 ** sch_path: /home/toind/work/vco_adc2/xschem/lib_qz/qz.sch
-.subckt qz CLK Dout FBack D
-*.PININFO CLK:I D:I Dout:O FBack:O
+.subckt qz VCCD GND CLK Dout FBack D
+*.PININFO CLK:I D:I Dout:O FBack:O VCCD:I GND:I
 Xdly_1 CLK GND GND VCCD VCCD DL1 sky130_fd_sc_hd__dlygate4sd3_1
 x2 CLK net1 GND GND VCCD VCCD Dout sky130_fd_sc_hd__dfxtp_1
 x3 D GND GND VCCD VCCD net1 sky130_fd_sc_hd__buf_2

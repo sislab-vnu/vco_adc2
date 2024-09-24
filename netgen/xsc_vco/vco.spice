@@ -1,6 +1,6 @@
 ** sch_path: /home/toind/work/vco_adc2/xschem/lib/vco.sch
-.subckt vco p[4] Anlg_in ENB VCCA VCCD VPWR
-*.PININFO Anlg_in:I p[4]:O VCCA:I VCCD:I ENB:I VPWR:I
+.subckt vco GND p[4] Anlg_in ENB VCCA VCCD VPWR
+*.PININFO Anlg_in:I p[4]:O VCCA:I VCCD:I ENB:I VPWR:I GND:I
 x1 VCCD ENB GND GND VCCD VCCD pn[4] sky130_fd_sc_hd__einvp_1
 Xro_1 VCCA GND Vctrl VPWR p[0] p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4] 5s_cc_osc
 R3 Vctrl Anlg_in sky130_fd_pr__res_generic_po W=0.482 L=2 m=1
@@ -51,5 +51,4 @@ XM3 Y A VGND GND sky130_fd_pr__nfet_01v8 L=3.65 W=4 nf=1 m=1
 XM4 Y A VPWR VCCA sky130_fd_pr__pfet_01v8 L=3.65 W=5 nf=1 m=1
 .ends
 
-.GLOBAL GND
 .end

@@ -5,9 +5,8 @@ SETUP_TCL=$(PDK_ROOT)/$(PDK)/libs.tech/netgen/setup.tcl
 NETGEN = netgen
 NETGEN_OPTS = -batch lvs
 
-SPICE1_PATH = ../xschem/lib/simulations
-SPICE2_PATH = ../layout/vco_v2
-SPICE3_PATH = ../layout/vco_v3
+SPICE_XSC_VCO = ../xschem/lib/simulations
+SPICE_MAG_VCO = ../layout/vco
 
 SPICE_XSC_DCO = ../xschem/lib_dco/simulations
 SPICE_MAG_DCO = ../layout/dco
@@ -54,8 +53,8 @@ VCO_PASS = 0
 get_file:
 	@mkdir -p $(XSC_VCO_PATH)
 	@mkdir -p $(MAG_VCO_PATH)
-	cp $(SPICE1_PATH)/*.spice $(XSC_VCO_PATH)
-	cp $(SPICE3_PATH)/*.spice $(MAG_VCO_PATH)
+	cp $(SPICE_XSC_VCO)/*.spice $(XSC_VCO_PATH)
+	cp $(SPICE_MAG_VCO)/*.spice $(MAG_VCO_PATH)
 	@mkdir -p $(XSC_DCO_PATH)
 	@mkdir -p $(MAG_DCO_PATH)
 	cp $(SPICE_XSC_DCO)/*.spice $(XSC_DCO_PATH)
@@ -87,10 +86,9 @@ get_file:
 
 check_lvs:
 	grep -n "Circuits match uniquely" comp.out
-#	@if [ $$? -eq 0 ]; then\
+	@if [ $$? -eq 0 ]; then\
 		echo "LVS check passed for $@" >> $(LOG_FILE);\
 	else \
-
 		echo "LVS check failed for $@";\
 		exit 1;\
 	fi

@@ -63,7 +63,6 @@ C {devices/lab_wire.sym} 385 -190 2 0 {name=l10 sig_type=std_logic lab=p[4]}
 C {devices/lab_wire.sym} 285 -120 0 0 {name=l12 sig_type=std_logic lab=Vctrl}
 C {sky130_stdcells/einvp_1.sym} 120 -190 0 0 {name=x1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD prefix=sky130_fd_sc_hd__ }
 C {devices/ipin.sym} 145 -100 3 0 {name=p1 lab=Anlg_in}
-C {devices/gnd.sym} 275 -20 0 0 {name=l11 lab=GND}
 C {devices/opin.sym} 415 -190 0 0 {name=p3 lab=p[4]}
 C {5s_cc_osc.sym} 315 -270 0 0 {name=Xro_1 l_main=l_main l_aux=l_aux wp=wp wn=wn}
 C {devices/ipin.sym} 295 -430 0 0 {name=p2 lab=VCCA}
@@ -80,3 +79,4 @@ W=0.482
 L=2
 model=res_generic_po
 mult=1}
+C {devices/ipin.sym} 295 -20 2 0 {name=p7 lab=GND}

@@ -1,6 +1,0 @@
-* NGSPICE file created from pmos_vco.ext - technology: sky130A
-
-.subckt pmos_vco D G S VPWR
-X0 S G D VPWR sky130_fd_pr__pfet_01v8 ad=2 pd=10.8 as=1 ps=5.4 w=5 l=3.65 M=2
-.ends
-
