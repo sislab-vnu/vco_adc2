@@ -1,0 +1,6 @@
+* NGSPICE file created from p_lk.ext - technology: sky130A
+
+.subckt p_lk G S D B
+X0 D G S B sky130_fd_pr__pfet_01v8_hvt ad=0.8 pd=4.4 as=1.6 ps=8.8 w=4 l=0.5 M=2
+.ends
+

@@ -1,0 +1,42 @@
+** sch_path: /home/toind/work/vco_adc2/xschem/lib/vco_ring_osc.sch
+.subckt vco_ring_osc VPWR VGND pn[0] p[0] pn[1] p[1] p[2] p[3] p[4] pn[2] pn[3] pn[4] VCCA GND
+*.PININFO VPWR:B VGND:B pn[0]:O p[0]:B pn[1]:O p[1]:O p[2]:O p[3]:O p[4]:O pn[2]:O pn[3]:O pn[4]:O VCCA:B GND:B
+Xi_1 VCCA VPWR p[0] p[4] pn[4] pn[0] GND VGND cc_inv
+Xi_2 VCCA VPWR p[1] p[0] pn[0] pn[1] GND VGND cc_inv
+Xi_3 VCCA VPWR p[2] p[1] pn[1] pn[2] GND VGND cc_inv
+Xi_4 VCCA VPWR p[3] p[2] pn[2] pn[3] GND VGND cc_inv
+Xi_5 VCCA VPWR p[4] p[3] pn[3] pn[4] GND VGND cc_inv
+.ends
+
+* expanding   symbol:  cc_inv.sym # of pins=8
+** sym_path: /home/toind/work/vco_adc2/xschem/lib/cc_inv.sym
+** sch_path: /home/toind/work/vco_adc2/xschem/lib/cc_inv.sch
+.subckt cc_inv VCCA VPWR outp inp inn outn GND VGND
+*.PININFO outp:O inn:I VGND:B outn:O inp:I VPWR:B VCCA:B GND:B
+Xi_1 VPWR VCCA outp GND VGND inp main_inv
+Xi_2 VPWR VCCA outn GND VGND inn main_inv
+Xi_3 VPWR VCCA outp outn GND VGND aux_inv
+Xi_4 VPWR VCCA outn outp GND VGND aux_inv
+.ends
+
+
+* expanding   symbol:  main_inv.sym # of pins=6
+** sym_path: /home/toind/work/vco_adc2/xschem/lib/main_inv.sym
+** sch_path: /home/toind/work/vco_adc2/xschem/lib/main_inv.sch
+.subckt main_inv VPWR VCCA Y GND VGND A
+*.PININFO VPWR:B VGND:B A:I Y:O VCCA:B GND:B
+XM3 Y A VGND GND sky130_fd_pr__nfet_01v8 L=3.65 W=8 nf=2 m=1
+XM4 Y A VPWR VCCA sky130_fd_pr__pfet_01v8 L=3.65 W=10 nf=2 m=1
+.ends
+
+
+* expanding   symbol:  aux_inv.sym # of pins=6
+** sym_path: /home/toind/work/vco_adc2/xschem/lib/aux_inv.sym
+** sch_path: /home/toind/work/vco_adc2/xschem/lib/aux_inv.sch
+.subckt aux_inv VPWR VCCA A Y GND VGND
+*.PININFO VPWR:B VGND:B A:I Y:O VCCA:B GND:B
+XM3 Y A VGND GND sky130_fd_pr__nfet_01v8 L=3.65 W=4 nf=1 m=1
+XM4 Y A VPWR VCCA sky130_fd_pr__pfet_01v8 L=3.65 W=5 nf=1 m=1
+.ends
+
+.end

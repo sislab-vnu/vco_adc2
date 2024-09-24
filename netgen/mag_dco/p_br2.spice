@@ -1,0 +1,6 @@
+* NGSPICE file created from p_br2.ext - technology: sky130A
+
+.subckt p_br2 G S D B
+X0 D G S B sky130_fd_pr__pfet_01v8_hvt ad=0.36 pd=2.2 as=0.72 ps=4.4 w=1.8 l=0.5 M=3
+.ends
+

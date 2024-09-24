@@ -1,0 +1,14 @@
+** sch_path: /home/toind/work/vco_adc2/xschem/lib_count/count.sch
+.subckt count VCCD GND UP setB DOWN Dout_buf
+*.PININFO DOWN:I Dout_buf:O GND:I setB:I UP:I VCCD:I
+X_inv_0 setB GND GND VCCD VCCD setBi sky130_fd_sc_hd__inv_2
+X_upFF UP_buf Q2N setBi GND GND VCCD VCCD Q1 sky130_fd_sc_hd__dfstp_1
+X_dwFF DWN_buf Q1_buf setBi GND GND VCCD VCCD Q2 sky130_fd_sc_hd__dfstp_1
+x5 Q1 Q2 GND GND VCCD VCCD Dout sky130_fd_sc_hd__xor2_1
+X_buf_3 UP GND GND VCCD VCCD UP_buf sky130_fd_sc_hd__buf_2
+X_buf_4 Q1 GND GND VCCD VCCD Q1_buf sky130_fd_sc_hd__buf_2
+X_buf_5 Dout GND GND VCCD VCCD Dout_buf sky130_fd_sc_hd__buf_2
+X_buf_6 DOWN GND GND VCCD VCCD DWN_buf sky130_fd_sc_hd__buf_2
+X_inv_1 Q2 GND GND VCCD VCCD Q2N sky130_fd_sc_hd__inv_2
+.ends
+.end

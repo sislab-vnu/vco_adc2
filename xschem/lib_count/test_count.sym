@@ -1,0 +1,28 @@
+v {xschem version=3.4.5 file_version=1.2
+}
+G {}
+K {type=subcircuit
+format="@name @pinlist @symname"
+template="name=X_UDC_1"
+}
+V {}
+S {}
+E {}
+L 4 -80 -20 -60 -20 {}
+L 4 0 -60 0 -40 {}
+L 4 -80 20 -60 20 {}
+L 4 60 0 80 0 {}
+L 4 -60 -40 60 -40 {}
+L 4 -60 40 60 40 {}
+L 4 60 -40 60 40 {}
+L 4 -60 -40 -60 40 {}
+B 5 -82.5 -22.5 -77.5 -17.5 {name=UP dir=in }
+B 5 -2.5 -62.5 2.5 -57.5 {name=setB dir=in }
+B 5 -82.5 17.5 -77.5 22.5 {name=DOWN dir=in }
+B 5 77.5 -2.5 82.5 2.5 {name=Dout_buf dir=out }
+T {@symname} -59 39 0 0 0.25 0.25 {}
+T {@name} 20 -52 0 0 0.2 0.2 {}
+T {UP} -55 -24 0 0 0.2 0.2 {}
+T {setB} 9 -25 2 0 0.2 0.2 {}
+T {DOWN} -55 16 0 0 0.2 0.2 {}
+T {Dout_buf} 55 -4 0 1 0.2 0.2 {}

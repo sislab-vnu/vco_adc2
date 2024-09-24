@@ -1,0 +1,9 @@
+** sch_path: /home/toind/work/vco_adc2/xschem/lib_dco/dco_freq.sch
+.subckt dco_freq clk clkDiv2
+*.PININFO clkDiv2:O clk:I
+x1 clk D VGND VNB VPB VPWR clkDiv2 Q_N sky130_fd_sc_hd__dfxbp_2
+x2 clkinv Q_N_buf VGND VNB VPB VPWR D sky130_fd_sc_hd__dfxtp_1
+x3 clk VGND VNB VPB VPWR clkinv sky130_fd_sc_hd__inv_4
+x4 Q_N VGND VNB VPB VPWR Q_N_buf sky130_fd_sc_hd__buf_4
+.ends
+.end

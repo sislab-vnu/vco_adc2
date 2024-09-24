@@ -1,4 +1,5 @@
-v {xschem version=2.9.9 file_version=1.2 }
+v {xschem version=3.4.5 file_version=1.2
+}
 G {}
 K {}
 V {}
@@ -25,8 +26,8 @@ C {devices/lab_wire.sym} 270 -130 0 0 {name=l3 sig_type=std_logic lab=D}
 C {devices/lab_wire.sym} 200 -180 2 0 {name=l6 sig_type=std_logic lab=clkinv}
 C {devices/lab_wire.sym} 100 -180 0 0 {name=l7 sig_type=std_logic lab=clk}
 C {sky130_stdcells/dfxbp_2.sym} 150 -50 0 0 {name=x1 VGND=VGND VNB=VNB VPB=VPB VPWR=VPWR prefix=sky130_fd_sc_hd__ }
-C {sky130_stdcells/dfxtp_1.sym} 150 -120 0 0 {name=x2 VGND=VGND VNB=VNB VPB=VPB VPWR=VPWR prefix=sky130_fd_sc_hd__ }
-C {sky130_stdcells/inv_4.sym} 150 -180 0 0 {name=x3 VGND=VGND VNB=VNB VPB=VPB VPWR=VPWR prefix=sky130_fd_sc_hd__ }
-C {sky130_stdcells/buf_4.sym} 150 -240 0 0 {name=x4 VGND=VGND VNB=VNB VPB=VPB VPWR=VPWR prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/dfxtp_1.sym} 150 -120 0 0 {name=x2 VGND=VGND VNB=VGND VPB=VPWR VPWR=VPWR prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/inv_4.sym} 150 -180 0 0 {name=x3 VGND=VGND VNB=VGND VPB=VPWR VPWR=VPWR prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/buf_4.sym} 150 -240 0 0 {name=x4 VGND=VGND VNB=VGND VPB=VPWR VPWR=VPWR prefix=sky130_fd_sc_hd__ }
 C {devices/lab_wire.sym} 100 -240 0 0 {name=l8 sig_type=std_logic lab=Q_N}
 C {devices/lab_wire.sym} 200 -240 2 0 {name=l9 sig_type=std_logic lab=Q_N_buf}

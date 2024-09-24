@@ -1,0 +1,54 @@
+* NGSPICE file created from idac.ext - technology: sky130A
+
+.subckt n_lk G D B S
+X0 D G S B sky130_fd_pr__nfet_01v8 ad=0.4 pd=2.4 as=0.8 ps=4.8 w=2 l=0.5 M=2
+.ends
+
+.subckt sky130_fd_pr__res_xhigh_po_0p35_R469US a_n35_n1272# a_n35_840# VSUBS
+X0 a_n35_840# a_n35_n1272# VSUBS sky130_fd_pr__res_xhigh_po_0p35 l=8.56
+.ends
+
+.subckt p_br1 G D B S
+X0 D G S B sky130_fd_pr__pfet_01v8_hvt ad=0.72 pd=4.4 as=0.72 ps=4.4 w=1.8 l=0.5
+.ends
+
+.subckt p_lk G D B S
+X0 D G S B sky130_fd_pr__pfet_01v8_hvt ad=0.8 pd=4.4 as=1.6 ps=8.8 w=4 l=0.5 M=2
+.ends
+
+.subckt p_br2 G D B S
+X0 D G S B sky130_fd_pr__pfet_01v8_hvt ad=0.36 pd=2.2 as=0.72 ps=4.4 w=1.8 l=0.5 M=3
+.ends
+
+*.subckt sky130_fd_sc_hd__buf_2 A VGND VNB VPB VPWR X
+*.subckt sky130_fd_sc_hd__buf_2 1   2   3   4   5   6
+.subckt sky130_fd_sc_hd__buf_2 1 2 3 4 5 6
+X0 5 a_27_47# 6 4 sky130_fd_pr__pfet_01v8_hvt ad=0.265 pd=2.53 as=0.135 ps=1.27 w=1 l=0.15 M=2
+X1 VPWR 1 a_27_47# 4 sky130_fd_pr__pfet_01v8_hvt ad=0.149 pd=1.325 as=0.1664 ps=1.8 w=0.64 l=0.15
+X2 6 a_27_47# 2 3 sky130_fd_pr__nfet_01v8 ad=0.08775 pd=0.92 as=0.097 ps=0.975 w=0.65 l=0.15 M=2
+X3 2 1 a_27_47# 3 sky130_fd_pr__nfet_01v8 ad=0.097 pd=0.975 as=0.1092 ps=1.36 w=0.42 l=0.15
+.ends
+
+*.subckt sky130_fd_sc_hd__inv_2 A VGND VNB VPB VPWR Y
+*.subckt sky130_fd_sc_hd__inv_2 1  2    3   4   5   6
+.subckt sky130_fd_sc_hd__inv_2 1 2 3 4 5 6
+X0 6 1 5 4 sky130_fd_pr__pfet_01v8_hvt ad=0.135 pd=1.27 as=0.26 ps=2.52 w=1 l=0.15 M=2
+X1 2 1 6 3 sky130_fd_pr__nfet_01v8 ad=0.169 pd=1.82 as=0.08775 ps=0.92 w=0.65 l=0.15 M=2
+.ends
+
+.subckt idac VCCA Dctrl Vbs1 Vbs2 Vbs3 Vbs4 Isup
+Xn_lk_0 lock add_pwr input_R input_R n_lk
+Xn_lk_1 Open add_pwr Isup Isup n_lk
+Xsky130_fd_pr__res_xhigh_po_0p35_R469US_0 input_R GND GND sky130_fd_pr__res_xhigh_po_0p35_R469US
+Xp_br1_0 Vbs1 note_12 VCCA VCCA p_br1
+Xsky130_fd_sc_hd__buf_2_0 Dctrl GND GND sky130_fd_sc_hd__inv_2_0/VPB sky130_fd_sc_hd__inv_2_0/VPB
++ Open sky130_fd_sc_hd__buf_2
+Xsky130_fd_sc_hd__inv_2_0 Open GND GND sky130_fd_sc_hd__inv_2_0/VPB sky130_fd_sc_hd__inv_2_0/VPB
++ lock sky130_fd_sc_hd__inv_2
+Xp_br1_1 Vbs2 Isup note_12 note_12 p_br1
+Xp_lk_0 Open input_R add_pwr add_pwr p_lk
+Xp_lk_1 lock Isup add_pwr add_pwr p_lk
+Xp_br2_0 Vbs3 note_34 VCCA VCCA p_br2
+Xp_br2_1 Vbs4 add_pwr note_34 note_34 p_br2
+.ends
+

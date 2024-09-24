@@ -1,0 +1,16 @@
+* NGSPICE file created from qz.ext - technology: sky130A
+
+.subckt qz CLK Dout FBack D GND VCCD
+Xsky130_fd_sc_hd__dlygate4sd3_1_0 CLK GND GND VCCD VCCD DL1 sky130_fd_sc_hd__dlygate4sd3_1
+Xsky130_fd_sc_hd__dlygate4sd3_1_1 DL1 GND GND VCCD VCCD DL2 sky130_fd_sc_hd__dlygate4sd3_1
+Xsky130_fd_sc_hd__inv_2_0 FBack_inv GND GND VCCD VCCD FBack sky130_fd_sc_hd__inv_2
+Xsky130_fd_sc_hd__buf_2_0 D GND GND VCCD VCCD sky130_fd_sc_hd__buf_2_0/X sky130_fd_sc_hd__buf_2
+Xsky130_fd_sc_hd__dlygate4sd3_1_2 DL2 GND GND VCCD VCCD DL3 sky130_fd_sc_hd__dlygate4sd3_1
+Xsky130_fd_sc_hd__dlygate4sd3_1_3 DL3 GND GND VCCD VCCD DL4 sky130_fd_sc_hd__dlygate4sd3_1
+Xsky130_fd_sc_hd__dlygate4sd3_1_4 DL4 GND GND VCCD VCCD DL5 sky130_fd_sc_hd__dlygate4sd3_1
+Xsky130_fd_sc_hd__dlygate4sd3_1_5 DL5 GND GND VCCD VCCD CLK_dly sky130_fd_sc_hd__dlygate4sd3_1
+Xsky130_fd_sc_hd__nand2_1_0 CLK_dly Dout GND GND VCCD VCCD FBack_inv sky130_fd_sc_hd__nand2_1
+Xsky130_fd_sc_hd__dfxtp_1_0 CLK sky130_fd_sc_hd__buf_2_0/X GND GND VCCD VCCD Dout
++ sky130_fd_sc_hd__dfxtp_1
+.ends
+

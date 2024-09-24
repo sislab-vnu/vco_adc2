@@ -1,4 +1,4 @@
-v {xschem version=3.4.4 file_version=1.2
+v {xschem version=3.4.5 file_version=1.2
 }
 G {}
 K {}
@@ -124,11 +124,6 @@ C {devices/code_shown.sym} 840 -230 0 0 {name=VCO_param only_toplevel=false valu
 .param sig_freq=5k"}
 C {devices/lab_wire.sym} 190 -420 1 0 {name=l30 sig_type=std_logic lab=p_vco}
 C {devices/lab_wire.sym} 580 -420 1 0 {name=l31 sig_type=std_logic lab=p_dco}
-C {ALib_DCO.sym} 470 -400 0 0 {name=Xdco_1}
-C {ALib_VCO.sym} 110 -420 0 0 {name=Xvco_1 l_main=l_main l_aux=l_aux wp=wp wn=wn}
-C {DLib_UpDownCounter.sym} 290 -400 0 0 {name=X_UDC_1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
-C {DLib_Quantizer.sym} 870 -400 0 0 {name=X_Qtz_1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
-C {DLib_UpDownCounter.sym} 680 -400 0 0 {name=X_UDC_2 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
 C {devices/code.sym} 30 -130 0 0 {name=lib_def
 only_toplevel=false 
 value=tcleval(".include $::SKYWATER_STDCELLS/sky130_fd_sc_hd.spice
@@ -137,3 +132,8 @@ value=tcleval(".include $::SKYWATER_STDCELLS/sky130_fd_sc_hd.spice
 place=header}
 C {devices/vdd.sym} 290 -280 0 0 {name=l12 lab=VCCD}
 C {devices/vdd.sym} 210 -280 0 0 {name=l13 lab=VCCA}
+C {../lib/ALib_VCO.sym} 110 -420 0 0 {name=Xvco_1 l_main=l_main l_aux=l_aux wp=wp wn=wn}
+C {../lib/DLib_UpDownCounter.sym} 290 -400 0 0 {name=X_UDC_1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
+C {../lib/ALib_DCO.sym} 470 -400 0 0 {name=Xdco_2}
+C {../lib/DLib_UpDownCounter.sym} 680 -400 0 0 {name=X_UDC_3 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
+C {../lib/DLib_Quantizer.sym} 870 -400 0 0 {name=X_Qtz_2 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}

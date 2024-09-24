@@ -1,0 +1,95 @@
+magic
+tech sky130A
+timestamp 1726107115
+<< locali >>
+rect 1360 920 1545 960
+rect 2805 920 3095 960
+rect 4210 920 4480 960
+rect 1320 90 1585 130
+rect 2810 90 3005 130
+rect 1465 -330 1505 90
+rect 2750 -310 2965 -270
+rect 4195 -315 4235 115
+rect 4440 -1100 4480 920
+rect 2735 -1140 2965 -1100
+rect 4175 -1140 4480 -1100
+<< metal1 >>
+rect 915 1040 1480 1080
+rect 2345 1040 2935 1080
+rect 3850 1040 4720 1080
+rect -250 670 0 710
+rect 1420 670 1530 710
+rect 2860 670 2970 710
+rect 4320 670 4570 710
+rect -250 -850 -200 670
+rect -100 300 0 340
+rect 1420 300 1530 340
+rect 2860 300 2970 340
+rect 4315 300 4420 340
+rect -100 -480 -50 300
+rect 1025 0 1505 40
+rect 1815 -235 1855 30
+rect 2470 0 3005 40
+rect 2815 -220 3390 -180
+rect 3910 -220 3950 40
+rect 4370 -480 4420 300
+rect -100 -520 1445 -480
+rect 2795 -520 2905 -480
+rect 4320 -520 4420 -480
+rect 4520 -850 4570 670
+rect -250 -890 1445 -850
+rect 2795 -890 2905 -850
+rect 4315 -890 4570 -850
+rect 4670 -1220 4720 1040
+rect 2815 -1260 3310 -1220
+rect 4250 -1260 4720 -1220
+use dco_cc_inv  dco_cc_inv_0
+timestamp 1726056110
+transform 1 0 0 0 1 90
+box 0 -90 1440 990
+use dco_cc_inv  dco_cc_inv_1
+timestamp 1726056110
+transform 1 0 1440 0 1 90
+box 0 -90 1440 990
+use dco_cc_inv  dco_cc_inv_2
+timestamp 1726056110
+transform 1 0 2880 0 1 90
+box 0 -90 1440 990
+use dco_cc_inv  dco_cc_inv_3
+timestamp 1726056110
+transform -1 0 2885 0 -1 -270
+box 0 -90 1440 990
+use dco_cc_inv  dco_cc_inv_4
+timestamp 1726056110
+transform -1 0 4325 0 -1 -270
+box 0 -90 1440 990
+<< labels >>
+rlabel metal1 970 1080 970 1080 1 VCCA
+port 1 n
+rlabel metal1 1815 -100 1815 -100 7 GND
+port 2 w
+rlabel locali 1465 -110 1465 -110 7 VGND
+port 3 w
+rlabel locali 4430 960 4430 960 1 VPWR
+port 4 n
+rlabel metal1 1465 710 1465 710 1 p[0]
+port 5 n
+rlabel metal1 2910 710 2910 710 1 p[1]
+port 6 n
+rlabel metal1 4380 710 4380 710 1 p[2]
+port 7 n
+rlabel metal1 2850 -850 2850 -850 1 p[3]
+port 8 n
+rlabel metal1 1400 -850 1400 -850 1 p[4]
+port 9 n
+rlabel metal1 1475 340 1475 340 1 pn[0]
+port 10 n
+rlabel metal1 2910 340 2910 340 1 pn[1]
+port 11 n
+rlabel metal1 4355 340 4355 340 1 pn[2]
+port 12 n
+rlabel metal1 2855 -480 2855 -480 1 pn[3]
+port 13 n
+rlabel metal1 1400 -480 1400 -480 1 pn[4]
+port 14 n
+<< end >>

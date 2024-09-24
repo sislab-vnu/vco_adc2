@@ -1,0 +1,170 @@
+** sch_path: /home/userdata/k63D/toind_63d/git/vco_adc2/xschem/lib/ALib_DCO.sch
+**.subckt ALib_DCO Dctrl Vbs_12 Vbs_34 pha_DCO ENB
+*.ipin Dctrl
+*.ipin Vbs_12
+*.ipin Vbs_34
+*.opin pha_DCO
+*.ipin ENB
+x1 VCCD ENB GND GND VCCD VCCD pn[0] sky130_fd_sc_hd__einvp_1
+X_idac_1 Dctrl Vbs_12 Vbs_12 Vbs_34 Vbs_34 Isup ALib_IDAC W_br1="W_br1" L_br1="L_br1" W_br2="W_br2"
++ L_br2="L_br2" Wp_lk="Wp_lk" Lp_lk="Lp_lk" Wn_lk="Wn_lk" Ln_lk="Wn_lk"
+x2 p_osc GND GND VCCD VCCD pha_ro sky130_fd_sc_hd__buf_2
+Xdiv2_1 pha_ro GND GND VCCD VCCD ro_div2 DLib_freqDiv2
+Xro_1 GND Isup p_osc p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4] 5s_cc_osc l_main=l_main
++ l_aux=l_aux wp=wp wn=wn
+Xdiv1 ro_div2 GND GND VCCD VCCD pha_DCO DLib_freqDiv2
+**** begin user architecture code
+
+
+.param W_br1=1.8
+.param L_br1=0.5
+.param W_br2=1.8
+.param L_br2=0.5
+.param Wp_lk=4
+.param Lp_lk=0.5
+.param Wn_lk=2
+.param Ln_lk=0.5
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  ALib_IDAC.sym # of pins=6
+** sym_path: /home/userdata/k63D/toind_63d/git/vco_adc2/xschem/lib/ALib_IDAC.sym
+** sch_path: /home/userdata/k63D/toind_63d/git/vco_adc2/xschem/lib/ALib_IDAC.sch
+.subckt ALib_IDAC Dctrl Vbs1 Vbs2 Vbs3 Vbs4 Isup  W_br1=4 L_br1=1 W_br2=4 L_br2=1 Wp_lk=4 Lp_lk=1
++ Wn_lk=2 Ln_lk=1
+*.ipin Vbs3
+*.ipin Vbs4
+*.ipin Vbs1
+*.ipin Vbs2
+*.opin Isup
+*.ipin Dctrl
+R1 GND net3 50k m=1
+x1 open GND GND VCCD VCCD lock sky130_fd_sc_hd__inv_2
+XM1 net1 Vbs1 VCCA VCCA sky130_fd_pr__pfet_01v8_hvt L="L_br1" W="W_br1" nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM2 Isup Vbs2 net1 net1 sky130_fd_pr__pfet_01v8_hvt L="L_br1" W="W_br1" nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+x2 Dctrl GND GND VCCD VCCD open sky130_fd_sc_hd__buf_2
+XM3 net2 Vbs3 VCCA VCCA sky130_fd_pr__pfet_01v8_hvt L=L_br2 W="3*W_br2" nf=3 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM4 add_pwr Vbs4 net2 net2 sky130_fd_pr__pfet_01v8_hvt L=L_br2 W="3*W_br2" nf=3 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM5 Isup lock add_pwr add_pwr sky130_fd_pr__pfet_01v8_hvt L=Lp_lk W="2*Wp_lk" nf=2 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM6 add_pwr open Isup Isup sky130_fd_pr__nfet_01v8 L=Ln_lk W="2*Wn_lk" nf=2 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM7 net3 open add_pwr add_pwr sky130_fd_pr__pfet_01v8_hvt L=Lp_lk W="2*Wp_lk" nf=2 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM8 add_pwr lock net3 net3 sky130_fd_pr__nfet_01v8 L=Ln_lk W="2*Wn_lk" nf=2 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  DLib_freqDiv2.sym # of pins=2
+** sym_path: /home/userdata/k63D/toind_63d/git/vco_adc2/xschem/lib/DLib_freqDiv2.sym
+** sch_path: /home/userdata/k63D/toind_63d/git/vco_adc2/xschem/lib/DLib_freqDiv2.sch
+.subckt DLib_freqDiv2 clk VGND VNB VPB VPWR clkDiv2
+*.opin clkDiv2
+*.ipin clk
+x1 clk D VGND VNB VPB VPWR clkDiv2 Q_N sky130_fd_sc_hd__dfxbp_2
+x2 clkinv Q_N_buf VGND VNB VPB VPWR D sky130_fd_sc_hd__dfxtp_1
+x3 clk VGND VNB VPB VPWR clkinv sky130_fd_sc_hd__inv_4
+x4 Q_N VGND VNB VPB VPWR Q_N_buf sky130_fd_sc_hd__buf_4
+.ends
+
+
+* expanding   symbol:  5s_cc_osc.sym # of pins=12
+** sym_path: /home/userdata/k63D/toind_63d/git/vco_adc2/xschem/lib/5s_cc_osc.sym
+** sch_path: /home/userdata/k63D/toind_63d/git/vco_adc2/xschem/lib/5s_cc_osc.sch
+.subckt 5s_cc_osc VGND VPWR p[0] p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4]  l_main=0.15
++ l_aux=0.15 wp=1 wn=0.6
+*.iopin VPWR
+*.iopin VGND
+*.opin pn[0]
+*.iopin p[0]
+*.opin pn[1]
+*.opin p[1]
+*.opin p[2]
+*.opin p[3]
+*.opin p[4]
+*.opin pn[2]
+*.opin pn[3]
+*.opin pn[4]
+Xi_1 p[4] pn[4] VPWR VGND p[0] pn[0] cc_inv l_main=l_main l_aux=l_aux wp=wp wn=wn
+Xi_2 p[0] pn[0] VPWR VGND p[1] pn[1] cc_inv l_main=l_main l_aux=l_aux wp=wp wn=wn
+Xi_3 p[1] pn[1] VPWR VGND p[2] pn[2] cc_inv l_main=l_main l_aux=l_aux wp=wp wn=wn
+Xi_4 p[2] pn[2] VPWR VGND p[3] pn[3] cc_inv l_main=l_main l_aux=l_aux wp=wp wn=wn
+Xi_5 p[3] pn[3] VPWR VGND p[4] pn[4] cc_inv l_main=l_main l_aux=l_aux wp=wp wn=wn
+.ends
+
+
+* expanding   symbol:  cc_inv.sym # of pins=6
+** sym_path: /home/userdata/k63D/toind_63d/git/vco_adc2/xschem/lib/cc_inv.sym
+** sch_path: /home/userdata/k63D/toind_63d/git/vco_adc2/xschem/lib/cc_inv.sch
+.subckt cc_inv inp inn VPWR VGND outp outn  l_main=0.15 l_aux=0.15 wp=1.2 wn=0.6
+*.opin outp
+*.ipin inn
+*.iopin VGND
+*.opin outn
+*.ipin inp
+*.iopin VPWR
+Xi_1 inp VPWR VGND outp main_inv l=l_main wp=wp wn=wn
+Xi_2 inn VPWR VGND outn main_inv l=l_main wp=wp wn=wn
+Xi_3 outp VPWR VGND outn aux_inv l=l_aux Wp=wp wn=wn
+Xi_4 outn VPWR VGND outp aux_inv l=l_aux Wp=wp wn=wn
+.ends
+
+
+* expanding   symbol:  main_inv.sym # of pins=4
+** sym_path: /home/userdata/k63D/toind_63d/git/vco_adc2/xschem/lib/main_inv.sym
+** sch_path: /home/userdata/k63D/toind_63d/git/vco_adc2/xschem/lib/main_inv.sch
+.subckt main_inv A VPWR VGND Y  l=0.15 wp=1.2 wn=0.6
+*.iopin VPWR
+*.iopin VGND
+*.ipin A
+*.opin Y
+XM1 Y A VPWR VCCA sky130_fd_pr__pfet_01v8 L="l" W="2*wp" nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 Y A VGND GND sky130_fd_pr__nfet_01v8 L="l" W="2*wn" nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  aux_inv.sym # of pins=4
+** sym_path: /home/userdata/k63D/toind_63d/git/vco_adc2/xschem/lib/aux_inv.sym
+** sch_path: /home/userdata/k63D/toind_63d/git/vco_adc2/xschem/lib/aux_inv.sch
+.subckt aux_inv A VPWR VGND Y  l=0.15 wp=1.2 wn=0.6
+*.iopin VPWR
+*.iopin VGND
+*.ipin A
+*.opin Y
+XM1 Y A VPWR VCCA sky130_fd_pr__pfet_01v8 L="l" W="wp" nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 Y A VGND GND sky130_fd_pr__nfet_01v8 L="L" W="Wn" nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.GLOBAL GND
+**** begin user architecture code
+
+
+.param l_main=1.2
+.param l_aux=1.2
+.param wp=3
+.param wn=2
+
+**** end user architecture code
+.end

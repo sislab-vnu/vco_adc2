@@ -1,0 +1,220 @@
+timestamp 1725793258
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 4400000 2200000 950000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12800 125 125 47 47 29 5
+use mag_vco_main_inv mag_vco_main_inv_1 1 0 4080 0 1 1270
+use mag_vco_main_inv mag_vco_main_inv_0 1 0 0 0 1 1270
+use mag_vco_aux_inv mag_vco_aux_inv_1 1 0 2990 0 1 1280
+use mag_vco_aux_inv mag_vco_aux_inv_0 1 0 1900 0 1 1280
+port "GND" 8 -190 -300 -190 -300 m1
+port "inn" 2 -260 620 -260 620 m1
+port "inp" 1 -260 1900 -260 1900 m1
+port "VCCA" 7 -180 2830 -180 2830 m1
+port "VGND" 4 2830 0 2830 0 li
+port "outn" 6 5740 620 5740 620 m1
+port "VPWR" 3 2830 2530 2830 2530 li
+port "outp" 5 5740 1900 5740 1900 m1
+node "GND" 8 2349.27 -190 -300 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 560000 12120 0 0 0 0 0 0 0 0 0 0
+node "inn" 6 1829.97 -260 620 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 503000 10260 0 0 0 0 0 0 0 0 0 0
+node "inp" 2 573.35 -260 1900 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 142000 3040 0 0 0 0 0 0 0 0 0 0
+node "VCCA" 8 2351.48 -180 2830 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 560000 12120 0 0 0 0 0 0 0 0 0 0
+node "VGND" 438 1290.28 2830 0 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 219200 5640 0 0 0 0 0 0 0 0 0 0 0 0
+node "outn" 128 556.658 5740 620 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4800 480 104200 2340 0 0 0 0 0 0 0 0 0 0
+node "VPWR" 470 1378.93 2830 2530 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 235200 6040 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_3120_1140#" 701 1490.36 3120 1140 pc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4800 480 0 0 79800 2480 310600 6440 0 0 0 0 0 0 0 0 0 0
+node "outp" 834 3216.87 5740 1900 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4800 480 0 0 194800 4780 623000 12720 0 0 0 0 0 0 0 0 0 0
+node "w_4830_1570#" 950 4.8 4830 1570 nw 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "w_4830_1650#" 950 4.8 4830 1650 nw 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "w_3800_1850#" 9500 3 3800 1850 nw 0 0 0 0 1000 220 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "w_3290_1810#" 1742 316.8 3290 1810 nw 0 0 0 0 105600 1360 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "w_n90_1850#" 3325 105 -90 1850 nw 0 0 0 0 35000 900 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "w_750_1970#" 950 4.8 750 1970 nw 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+substrate "VSUBS" 0 0 -1073741817 -1073741817 space 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+cap "inn" "GND" 240.619
+cap "GND" "a_3120_1140#" 0.144139
+cap "outp" "inp" 33
+cap "w_3800_1850#" "outp" 0.6445
+cap "w_4830_1650#" "a_3120_1140#" 1.4796
+cap "inn" "outn" 10.2029
+cap "a_3120_1140#" "outn" 5.79102
+cap "outp" "VCCA" 186.594
+cap "outp" "w_3290_1810#" 64.6565
+cap "outp" "a_3120_1140#" 457.656
+cap "inn" "outp" 114.997
+cap "outp" "VPWR" 40.9711
+cap "w_4830_1570#" "a_3120_1140#" 1.4796
+cap "GND" "VGND" 345.104
+cap "VCCA" "inp" 45.3114
+cap "inn" "inp" 32.5792
+cap "outp" "w_750_1970#" 1.4796
+cap "w_3800_1850#" "VPWR" 0.0937087
+cap "outp" "VGND" 18.5271
+cap "VCCA" "w_3290_1810#" 3.16007
+cap "VCCA" "a_3120_1140#" 0.100291
+cap "inn" "a_3120_1140#" 112.164
+cap "a_3120_1140#" "w_3290_1810#" 5.37971
+cap "VPWR" "VCCA" 356.163
+cap "inn" "VPWR" 0.186391
+cap "VPWR" "w_3290_1810#" 11.096
+cap "VPWR" "a_3120_1140#" 16.7143
+cap "w_n90_1850#" "inp" 22.5575
+cap "outp" "GND" 0.699255
+cap "a_3120_1140#" "VGND" 16.5677
+cap "inn" "VGND" 20.4412
+cap "outp" "outn" 30.6557
+cap "inn" "mag_vco_main_inv_0/Y" 87.8445
+cap "mag_vco_main_inv_0/Y" "mag_vco_main_inv_0/A" 209.712
+cap "mag_vco_main_inv_0/Y" "mag_vco_main_inv_0/VPWR" 0.771169
+cap "inn" "mag_vco_main_inv_0/GND" 4.23078
+cap "mag_vco_main_inv_0/GND" "mag_vco_main_inv_0/A" 54.9321
+cap "mag_vco_main_inv_0/VGND" "mag_vco_main_inv_0/Y" 7.18227
+cap "inn" "mag_vco_main_inv_0/A" 491.635
+cap "mag_vco_main_inv_0/GND" "mag_vco_main_inv_0/VCCA" -2.01204
+cap "inn" "mag_vco_main_inv_0/VPWR" 1.10054
+cap "mag_vco_main_inv_0/VGND" "mag_vco_main_inv_0/GND" 84.0187
+cap "mag_vco_main_inv_0/GND" "mag_vco_main_inv_0/Y" 0.911629
+cap "inn" "mag_vco_main_inv_0/VCCA" 8.38222
+cap "mag_vco_main_inv_0/VGND" "inn" 101.528
+cap "mag_vco_main_inv_0/VGND" "mag_vco_main_inv_0/A" -4.78671
+cap "mag_vco_main_inv_0/A" "inn" 177.763
+cap "inn" "mag_vco_main_inv_1/GND" 4.23078
+cap "inn" "mag_vco_main_inv_0/VGND" 187.586
+cap "mag_vco_main_inv_0/A" "mag_vco_main_inv_1/GND" 39.5446
+cap "mag_vco_main_inv_0/A" "mag_vco_main_inv_0/VGND" -17.2631
+cap "inn" "mag_vco_main_inv_0/VPWR" 2.20108
+cap "mag_vco_main_inv_1/VCCA" "inn" 9.08687
+cap "mag_vco_main_inv_1/GND" "mag_vco_main_inv_0/VGND" 106.551
+cap "mag_vco_main_inv_0/VPWR" "mag_vco_main_inv_0/VGND" -8.57143
+cap "mag_vco_main_inv_1/VCCA" "mag_vco_main_inv_1/GND" -3.50428
+cap "mag_vco_main_inv_1/VCCA" "mag_vco_main_inv_0/VGND" -4.39843
+cap "mag_vco_main_inv_0/Y" "mag_vco_aux_inv_1/A" 0.405405
+cap "inn" "mag_vco_main_inv_0/Y" 290.875
+cap "mag_vco_main_inv_0/A" "mag_vco_main_inv_0/Y" 249.474
+cap "mag_vco_main_inv_0/Y" "mag_vco_main_inv_1/GND" 36.3646
+cap "mag_vco_main_inv_0/Y" "mag_vco_main_inv_0/VGND" 170.748
+cap "mag_vco_main_inv_0/VPWR" "mag_vco_main_inv_0/Y" 1.37097
+cap "mag_vco_main_inv_1/VGND" "mag_vco_main_inv_1/Y" 226.32
+cap "mag_vco_main_inv_1/A" "mag_vco_aux_inv_1/Y" 138.532
+cap "mag_vco_main_inv_1/A" "mag_vco_main_inv_1/VCCA" 9.66681
+cap "mag_vco_main_inv_1/A" "mag_vco_main_inv_1/VPWR" 0.69498
+cap "mag_vco_main_inv_1/A" "mag_vco_main_inv_1/GND" 8.46155
+cap "mag_vco_main_inv_1/GND" "mag_vco_aux_inv_1/Y" 59.1504
+cap "mag_vco_main_inv_1/GND" "mag_vco_main_inv_1/VCCA" -5.51632
+cap "mag_vco_main_inv_1/A" "mag_vco_main_inv_1/Y" 426.614
+cap "mag_vco_main_inv_0/A" "mag_vco_main_inv_1/Y" 0.0725971
+cap "mag_vco_main_inv_1/A" "mag_vco_main_inv_1/VGND" 90.2328
+cap "mag_vco_aux_inv_1/Y" "mag_vco_main_inv_1/Y" 7.21273
+cap "mag_vco_main_inv_1/VGND" "mag_vco_aux_inv_1/Y" 66.1359
+cap "mag_vco_main_inv_1/VGND" "mag_vco_main_inv_1/VCCA" -1.64332
+cap "mag_vco_main_inv_1/VPWR" "mag_vco_main_inv_1/VGND" -4.28571
+cap "mag_vco_main_inv_1/GND" "mag_vco_main_inv_1/Y" 95.5664
+cap "mag_vco_main_inv_1/VGND" "mag_vco_main_inv_1/GND" 26.1827
+cap "mag_vco_main_inv_1/VCCA" "mag_vco_main_inv_1/A" 2.37557
+cap "mag_vco_main_inv_1/A" "mag_vco_main_inv_1/Y" 317.729
+cap "mag_vco_main_inv_1/VGND" "mag_vco_main_inv_1/A" 179.885
+cap "mag_vco_main_inv_1/A" "mag_vco_aux_inv_1/Y" 5.68763
+cap "mag_vco_main_inv_1/VPWR" "mag_vco_main_inv_1/A" 0.608107
+cap "mag_vco_main_inv_1/VGND" "mag_vco_main_inv_1/GND" 7.7197
+cap "mag_vco_main_inv_1/VGND" "mag_vco_main_inv_1/VCCA" 0.555899
+cap "mag_vco_main_inv_1/VGND" "mag_vco_main_inv_1/Y" 7.57947
+cap "mag_vco_main_inv_1/Y" "mag_vco_aux_inv_1/Y" -5.36375
+cap "mag_vco_aux_inv_0/A" "mag_vco_main_inv_1/A" 0.947394
+cap "mag_vco_main_inv_1/VGND" "mag_vco_aux_inv_1/Y" 39.7039
+cap "mag_vco_main_inv_1/A" "mag_vco_main_inv_1/GND" 0.810592
+cap "mag_vco_main_inv_1/VPWR" "mag_vco_main_inv_1/Y" 1.10054
+cap "mag_vco_main_inv_1/Y" "mag_vco_main_inv_1/A" 133.141
+cap "mag_vco_main_inv_1/Y" "mag_vco_main_inv_1/VCCA" 2.41426
+cap "mag_vco_main_inv_1/Y" "mag_vco_main_inv_1/VGND" 87.6281
+cap "mag_vco_main_inv_0/A" "mag_vco_main_inv_0/VPWR" 104.51
+cap "mag_vco_main_inv_0/VPWR" "mag_vco_main_inv_0/VCCA" 31.8954
+cap "mag_vco_main_inv_0/A" "mag_vco_main_inv_0/VGND" 0.540724
+cap "mag_vco_main_inv_0/A" "mag_vco_main_inv_0/Y" 275.096
+cap "mag_vco_main_inv_0/VCCA" "mag_vco_main_inv_0/Y" 3.13013
+cap "mag_vco_main_inv_0/A" "mag_vco_main_inv_0/VCCA" 66.4313
+cap "inn" "mag_vco_main_inv_0/Y" -7.49468
+cap "mag_vco_main_inv_0/A" "inn" -8.71585
+cap "inn" "mag_vco_main_inv_0/VCCA" 0.032136
+cap "mag_vco_main_inv_0/VPWR" "mag_vco_main_inv_0/Y" 4.64575
+cap "mag_vco_main_inv_0/A" "mag_vco_main_inv_0/VPWR" -0.441794
+cap "mag_vco_main_inv_0/VPWR" "mag_vco_main_inv_0/Y" 367.94
+cap "mag_vco_main_inv_1/GND" "mag_vco_main_inv_0/Y" 1.03249
+cap "mag_vco_main_inv_0/VGND" "mag_vco_main_inv_0/Y" 26.7966
+cap "mag_vco_main_inv_0/Y" "inn" -0.656605
+cap "mag_vco_main_inv_0/A" "mag_vco_main_inv_1/VCCA" 36.0652
+cap "mag_vco_main_inv_1/VCCA" "mag_vco_main_inv_0/Y" 152.925
+cap "mag_vco_main_inv_0/VPWR" "mag_vco_main_inv_0/VGND" -8.57143
+cap "mag_vco_main_inv_0/A" "mag_vco_main_inv_0/Y" 407.245
+cap "mag_vco_main_inv_0/VPWR" "mag_vco_main_inv_1/VCCA" 174.985
+cap "mag_vco_aux_inv_1/A" "mag_vco_main_inv_0/Y" 12.3734
+cap "mag_vco_main_inv_1/VGND" "mag_vco_main_inv_1/Y" 10.3291
+cap "mag_vco_aux_inv_1/Y" "mag_vco_main_inv_1/VPWR" 166.735
+cap "mag_vco_main_inv_1/VCCA" "mag_vco_main_inv_1/VPWR" 62.4885
+cap "mag_vco_main_inv_1/A" "mag_vco_main_inv_1/Y" 11.6604
+cap "mag_vco_main_inv_1/VGND" "mag_vco_main_inv_1/VPWR" -4.28571
+cap "mag_vco_main_inv_1/A" "mag_vco_aux_inv_1/Y" 23.2115
+cap "mag_vco_main_inv_1/GND" "mag_vco_main_inv_1/Y" 1.13406
+cap "mag_vco_main_inv_1/A" "mag_vco_main_inv_1/VCCA" 0.032136
+cap "mag_vco_aux_inv_1/Y" "mag_vco_main_inv_1/Y" 558.676
+cap "mag_vco_main_inv_1/Y" "mag_vco_main_inv_0/A" 0.203641
+cap "mag_vco_main_inv_1/VCCA" "mag_vco_main_inv_1/Y" 287.803
+cap "mag_vco_main_inv_1/VPWR" "mag_vco_main_inv_1/Y" 364.481
+cap "mag_vco_aux_inv_1/Y" "mag_vco_main_inv_1/VCCA" 163.712
+cap "mag_vco_main_inv_1/VGND" "mag_vco_main_inv_1/Y" 1.04697
+cap "mag_vco_main_inv_1/VPWR" "mag_vco_main_inv_1/Y" 93.0443
+cap "mag_vco_main_inv_1/VCCA" "mag_vco_main_inv_1/Y" 13.7484
+cap "mag_vco_main_inv_1/A" "mag_vco_aux_inv_1/Y" 514.093
+cap "mag_vco_main_inv_1/A" "mag_vco_main_inv_1/VGND" 0.0806876
+cap "mag_vco_main_inv_1/A" "mag_vco_main_inv_1/VPWR" 1.17674
+cap "mag_vco_main_inv_1/VPWR" "mag_vco_aux_inv_1/Y" 149.772
+cap "mag_vco_main_inv_1/A" "mag_vco_main_inv_1/VCCA" 4.09303
+cap "mag_vco_main_inv_1/VCCA" "mag_vco_aux_inv_1/Y" 15.0624
+cap "mag_vco_main_inv_1/VPWR" "mag_vco_main_inv_1/VCCA" 23.3255
+cap "mag_vco_main_inv_1/A" "mag_vco_main_inv_1/Y" 429.657
+cap "mag_vco_aux_inv_1/Y" "mag_vco_main_inv_1/Y" 84.6929
+cap "mag_vco_main_inv_1/VCCA" "mag_vco_aux_inv_1/Y" 12.6839
+cap "mag_vco_aux_inv_1/Y" "mag_vco_main_inv_1/VGND" 0.540724
+cap "mag_vco_aux_inv_1/Y" "mag_vco_main_inv_1/VPWR" 88.7892
+cap "mag_vco_aux_inv_1/Y" "mag_vco_main_inv_1/A" 133.141
+cap "mag_vco_main_inv_0/VCCA" "mag_vco_main_inv_0/Y" 0.90969
+cap "mag_vco_main_inv_0/VCCA" "mag_vco_main_inv_0/VPWR" 52.1232
+cap "mag_vco_main_inv_0/VCCA" "mag_vco_main_inv_0/A" 46.1753
+cap "mag_vco_main_inv_0/Y" "mag_vco_main_inv_1/VCCA" 24.0169
+cap "mag_vco_main_inv_0/VPWR" "mag_vco_main_inv_1/VCCA" 25.2724
+cap "mag_vco_main_inv_0/A" "mag_vco_main_inv_1/VCCA" 15.0105
+cap "mag_vco_main_inv_1/VCCA" "mag_vco_main_inv_1/VPWR" 1.15624
+cap "mag_vco_main_inv_1/Y" "mag_vco_main_inv_1/VCCA" 28.5505
+cap "mag_vco_aux_inv_1/Y" "mag_vco_main_inv_1/VCCA" 4.28706
+merge "mag_vco_aux_inv_1/Y" "mag_vco_aux_inv_0/A" -3188.11 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -4800 -480 0 0 -9600 -1160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "mag_vco_aux_inv_0/A" "mag_vco_main_inv_0/Y"
+merge "mag_vco_main_inv_0/Y" "outp"
+merge "mag_vco_main_inv_1/GND" "mag_vco_aux_inv_0/GND" -538.629 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -640 0 0 0 0 0 0 0 0 0 0
+merge "mag_vco_aux_inv_0/GND" "mag_vco_aux_inv_1/GND"
+merge "mag_vco_aux_inv_1/GND" "mag_vco_main_inv_0/GND"
+merge "mag_vco_main_inv_0/GND" "VSUBS"
+merge "VSUBS" "GND"
+merge "mag_vco_aux_inv_1/VPWR" "mag_vco_main_inv_1/VPWR" -1178.35 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16000 -1040 0 0 0 0 0 0 0 0 0 0 0 0
+merge "mag_vco_main_inv_1/VPWR" "mag_vco_aux_inv_0/VPWR"
+merge "mag_vco_aux_inv_0/VPWR" "mag_vco_main_inv_0/VPWR"
+merge "mag_vco_main_inv_0/VPWR" "VPWR"
+merge "mag_vco_main_inv_1/VCCA" "w_4830_1570#" -1467.79 0 0 0 0 -216000 -10040 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -640 0 0 0 0 0 0 0 0 0 0
+merge "w_4830_1570#" "w_4830_1650#"
+merge "w_4830_1650#" "w_3800_1850#"
+merge "w_3800_1850#" "w_3290_1810#"
+merge "w_3290_1810#" "mag_vco_aux_inv_0/VCCA"
+merge "mag_vco_aux_inv_0/VCCA" "mag_vco_aux_inv_1/VCCA"
+merge "mag_vco_aux_inv_1/VCCA" "mag_vco_main_inv_0/VCCA"
+merge "mag_vco_main_inv_0/VCCA" "VCCA"
+merge "VCCA" "w_n90_1850#"
+merge "w_n90_1850#" "w_750_1970#"
+merge "mag_vco_main_inv_1/Y" "outn" -2183.6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -4800 -480 0 0 -14400 -1640 0 0 0 0 0 0 0 0 0 0 0 0
+merge "outn" "mag_vco_aux_inv_1/A"
+merge "mag_vco_aux_inv_1/A" "mag_vco_aux_inv_0/Y"
+merge "mag_vco_aux_inv_0/Y" "a_3120_1140#"
+merge "mag_vco_aux_inv_1/VGND" "mag_vco_main_inv_1/VGND" -829.608 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -640 0 0 0 0 0 0 0 0 0 0 0 0
+merge "mag_vco_main_inv_1/VGND" "mag_vco_aux_inv_0/VGND"
+merge "mag_vco_aux_inv_0/VGND" "mag_vco_main_inv_0/VGND"
+merge "mag_vco_main_inv_0/VGND" "VGND"
+merge "mag_vco_main_inv_0/A" "inp" -532.773 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -200 0 0 0 0 0 0 0 0 0 0
+merge "mag_vco_main_inv_1/A" "inn" -683.074 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -200 0 0 0 0 0 0 0 0 0 0

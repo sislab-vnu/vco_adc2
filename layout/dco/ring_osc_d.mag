@@ -1,0 +1,54 @@
+magic
+tech sky130A
+timestamp 1723780164
+<< locali >>
+rect 470 -50 520 10
+rect 1100 -50 1150 10
+rect 2080 -50 2130 10
+rect 2710 -50 2760 10
+rect 3690 -50 3740 10
+rect 4320 -50 4370 10
+rect 460 -100 4370 -50
+rect 460 -220 510 -100
+rect 1090 -220 1140 -100
+rect 2070 -220 2120 -100
+rect 2700 -220 2750 -100
+<< metal1 >>
+rect -280 700 4470 750
+rect -280 -850 -230 700
+rect -180 470 0 510
+rect 4830 470 5060 510
+rect -180 -620 -140 470
+rect -90 110 0 150
+rect 4830 110 4920 150
+rect -90 -260 -50 110
+rect 4880 -260 4920 110
+rect -90 -300 0 -260
+rect 3220 -300 4920 -260
+rect 5020 -400 5060 470
+rect 3230 -440 5060 -400
+rect 3230 -620 3270 -440
+rect -180 -660 0 -620
+rect 3220 -660 3270 -620
+rect -280 -900 3200 -850
+use cc_inv_d  cc_inv_d_0
+timestamp 1723779942
+transform 1 0 180 0 1 0
+box -180 0 1430 700
+use cc_inv_d  cc_inv_d_1
+timestamp 1723779942
+transform 1 0 1790 0 1 0
+box -180 0 1430 700
+use cc_inv_d  cc_inv_d_2
+timestamp 1723779942
+transform 1 0 3400 0 1 0
+box -180 0 1430 700
+use cc_inv_d  cc_inv_d_3
+timestamp 1723779942
+transform -1 0 1430 0 -1 -150
+box -180 0 1430 700
+use cc_inv_d  cc_inv_d_4
+timestamp 1723779942
+transform -1 0 3040 0 -1 -150
+box -180 0 1430 700
+<< end >>

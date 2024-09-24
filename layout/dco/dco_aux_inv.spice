@@ -1,0 +1,7 @@
+* NGSPICE file created from dco_aux_inv.ext - technology: sky130A
+
+.subckt dco_aux_inv VPWR VCCA A Y GND VGND
+X0 Y A VGND GND sky130_fd_pr__nfet_01v8 ad=0.8 pd=4.8 as=0.8 ps=4.8 w=2 l=1
+X1 Y A VPWR VCCA sky130_fd_pr__pfet_01v8 ad=1.2 pd=6.8 as=1.2 ps=6.8 w=3 l=1
+.ends
+

@@ -1,0 +1,24 @@
+magic
+tech sky130A
+timestamp 1723892884
+use count  count_0 ./../count
+timestamp 1723880701
+transform 1 0 7349 0 1 -2057
+box -434 -1577 1467 -219
+use count  count_1
+timestamp 1723880701
+transform 1 0 7349 0 1 -177
+box -434 -1577 1467 -219
+use dco  dco_0 ../dco
+timestamp 1723792769
+transform 1 0 222 0 1 -1873
+box -222 -1773 5240 1560
+use quantizer  quantizer_0 ../quantizer
+timestamp 1723886438
+transform 1 0 2908 0 1 -4526
+box 222 -358 2974 366
+use vco  vco_0 ../vco
+timestamp 1723567583
+transform 1 0 70 0 1 0
+box -70 0 8775 2655
+<< end >>

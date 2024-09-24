@@ -1,0 +1,17 @@
+** sch_path: /home/userdata/k63D/toind_63d/git/vco_adc2/xschem/lib/DLib_UpDownCounter.sch
+**.subckt DLib_UpDownCounter DOWN Dout_buf UP setB
+*.ipin DOWN
+*.opin Dout_buf
+*.ipin UP
+*.ipin setB
+X_inv_0 setB VGND VNB VPB VPWR setBi sky130_fd_sc_hd__inv_2
+X_upFF UP_buf Q2N setBi VGND VNB VPB VPWR Q1 sky130_fd_sc_hd__dfstp_1
+X_dwFF DWN_buf Q1_buf setBi VGND VNB VPB VPWR Q2 sky130_fd_sc_hd__dfstp_1
+x5 Q1 Q2 VGND VNB VPB VPWR Dout sky130_fd_sc_hd__xor2_1
+X_buf_3 UP VGND VNB VPB VPWR UP_buf sky130_fd_sc_hd__buf_2
+X_buf_4 Q1 VGND VNB VPB VPWR Q1_buf sky130_fd_sc_hd__buf_2
+X_buf_5 Dout VGND VNB VPB VPWR Dout_buf sky130_fd_sc_hd__buf_2
+X_buf_6 DOWN VGND VNB VPB VPWR DWN_buf sky130_fd_sc_hd__buf_2
+X_inv_1 Q2 VGND VNB VPB VPWR Q2N sky130_fd_sc_hd__inv_2
+**.ends
+.end

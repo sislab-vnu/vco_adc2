@@ -1,0 +1,20 @@
+* NGSPICE file created from dco_idac.ext - technology: sky130A
+
+.subckt sky130_fd_pr__res_xhigh_po_0p35_RSCMUS a_n35_n1272# a_n35_840# a_n165_n1402#
+X0 a_n35_840# a_n35_n1272# a_n165_n1402# sky130_fd_pr__res_xhigh_po_0p35 l=8.56
+.ends
+
+.subckt dco_idac Dctrl Vbs1 Vbs2 Vbs3 Vbs4 Isup VCCD VCCA GND
+Xsky130_fd_sc_hd__buf_2_0 Dctrl GND GND VCCD VCCD G_M7 sky130_fd_sc_hd__buf_2
+Xsky130_fd_sc_hd__inv_2_0 G_M7 GND GND VCCD VCCD G_M5 sky130_fd_sc_hd__inv_2
+Xsky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0 GND D_M7 GND sky130_fd_pr__res_xhigh_po_0p35_RSCMUS
+X0 Isup G_M7 D1_M4 GND sky130_fd_pr__nfet_01v8 ad=0.8 pd=4.8 as=0.4 ps=2.4 w=2 l=0.5 M=2
+X1 B_M2 Vbs1 VCCA VCCA sky130_fd_pr__pfet_01v8_hvt ad=0.72 pd=4.4 as=0.72 ps=4.4 w=1.8 l=0.5
+X2 D1_M4 Vbs4 D1_M3 D1_M3 sky130_fd_pr__pfet_01v8_hvt ad=0.36 pd=2.2 as=0.72 ps=4.4 w=1.8 l=0.5 M=3
+X3 D_M7 G_M5 D1_M4 GND sky130_fd_pr__nfet_01v8 ad=0.8 pd=4.8 as=0.4 ps=2.4 w=2 l=0.5 M=2
+X4 Isup G_M5 D1_M4 D1_M4 sky130_fd_pr__pfet_01v8_hvt ad=0.8 pd=4.4 as=1.6 ps=8.8 w=4 l=0.5 M=2
+X5 D1_M3 Vbs3 VCCA VCCA sky130_fd_pr__pfet_01v8_hvt ad=0.36 pd=2.2 as=0.72 ps=4.4 w=1.8 l=0.5 M=3
+X6 Isup Vbs2 B_M2 B_M2 sky130_fd_pr__pfet_01v8_hvt ad=0.72 pd=4.4 as=0.72 ps=4.4 w=1.8 l=0.5
+X7 D1_M4 G_M7 D_M7 D1_M4 sky130_fd_pr__pfet_01v8_hvt ad=1.6 pd=8.8 as=0.8 ps=4.4 w=4 l=0.5 M=2
+.ends
+

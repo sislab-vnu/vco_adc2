@@ -1,0 +1,15 @@
+** sch_path: /home/toind/work/vco_adc2/xschem/lib_qz/qz.sch
+.subckt qz VCCD GND CLK Dout FBack D
+*.PININFO CLK:I D:I Dout:O FBack:O VCCD:I GND:I
+Xdly_1 CLK GND GND VCCD VCCD DL1 sky130_fd_sc_hd__dlygate4sd3_1
+x2 CLK net1 GND GND VCCD VCCD Dout sky130_fd_sc_hd__dfxtp_1
+x3 D GND GND VCCD VCCD net1 sky130_fd_sc_hd__buf_2
+x4 CLK_dly Dout GND GND VCCD VCCD FBack_inv sky130_fd_sc_hd__nand2_1
+x5 FBack_inv GND GND VCCD VCCD FBack sky130_fd_sc_hd__inv_2
+Xdly_2 DL1 GND GND VCCD VCCD DL2 sky130_fd_sc_hd__dlygate4sd3_1
+Xdly_3 DL2 GND GND VCCD VCCD DL3 sky130_fd_sc_hd__dlygate4sd3_1
+Xdly_4 DL3 GND GND VCCD VCCD DL4 sky130_fd_sc_hd__dlygate4sd3_1
+Xdly_5 DL4 GND GND VCCD VCCD DL5 sky130_fd_sc_hd__dlygate4sd3_1
+Xdly_6 DL5 GND GND VCCD VCCD CLK_dly sky130_fd_sc_hd__dlygate4sd3_1
+.ends
+.end

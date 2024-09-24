@@ -1,0 +1,7 @@
+** sch_path: /home/toind/work/vco_adc2/xschem/lib/main_inv.sch
+.subckt main_inv VPWR VCCA Y GND VGND A
+*.PININFO VPWR:B VGND:B A:I Y:O VCCA:B GND:B
+XM3 Y A VGND GND sky130_fd_pr__nfet_01v8 L=3.65 W=8 nf=2 m=1
+XM4 Y A VPWR VCCA sky130_fd_pr__pfet_01v8 L=3.65 W=10 nf=2 m=1
+.ends
+.end

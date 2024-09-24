@@ -1,0 +1,167 @@
+timestamp 1726056110
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 4400000 2200000 950000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12800 125 125 47 47 29 5
+use dco_main_inv dco_main_inv_1 1 0 2280 0 1 880
+use dco_main_inv dco_main_inv_0 1 0 260 0 1 880
+use dco_aux_inv dco_aux_inv_1 1 0 1700 0 1 880
+use dco_aux_inv dco_aux_inv_0 1 0 1120 0 1 880
+port "GND" 7 130 -180 130 -180 m1
+port "inn" 5 0 460 0 460 m1
+port "inp" 4 0 1200 0 1200 m1
+port "VCCA" 1 60 1980 60 1980 m1
+port "VGND" 8 1310 0 1310 0 li
+port "VPWR" 2 1290 1740 1290 1740 li
+port "outn" 6 2880 460 2880 460 m1
+port "outp" 3 2880 1200 2880 1200 m1
+node "GND" 5 1165.58 130 -180 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 280000 7160 0 0 0 0 0 0 0 0 0 0
+node "inn" 4 776.83 0 460 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 213400 5440 0 0 0 0 0 0 0 0 0 0
+node "inp" 1 276.208 0 1200 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 59200 1640 0 0 0 0 0 0 0 0 0 0
+node "VCCA" 6 1293.57 60 1980 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 302400 7720 0 0 0 0 0 0 0 0 0 0
+node "VGND" 317 909.906 1310 0 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 158400 4120 0 0 0 0 0 0 0 0 0 0 0 0
+node "VPWR" 320 923.385 1290 1740 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 160000 4160 0 0 0 0 0 0 0 0 0 0 0 0
+node "outn" 827 290.107 2880 460 m1 0 0 0 0 0 0 0 0 3200 320 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4800 480 44800 1280 0 0 0 0 0 0 0 0 0 0
+node "a_1770_750#" 176 615.007 1770 750 pc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 37600 1340 114400 3020 0 0 0 0 0 0 0 0 0 0
+node "outp" 1454 1135.85 2880 1200 m1 0 0 0 0 0 0 0 0 0 0 3200 320 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 14400 1120 250400 6420 0 0 0 0 0 0 0 0 0 0
+node "w_1920_1180#" 950 4.8 1920 1180 nw 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "w_1920_1260#" 950 4.8 1920 1260 nw 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+substrate "VSUBS" 0 0 -1073741817 -1073741817 space 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+cap "inn" "outn" 64
+cap "VGND" "GND" 386.844
+cap "inn" "a_1770_750#" 125.542
+cap "a_1770_750#" "VPWR" 16.1974
+cap "a_1770_750#" "outn" 11.5256
+cap "VCCA" "inp" 28.4657
+cap "outp" "inp" 47.8876
+cap "inn" "VCCA" 2.12414
+cap "VCCA" "VPWR" 346.401
+cap "inn" "VGND" 29.8639
+cap "VGND" "VPWR" 15.5898
+cap "inn" "outp" 59.3776
+cap "outp" "VPWR" 29.5093
+cap "outp" "outn" 19.831
+cap "a_1770_750#" "VCCA" 0.258441
+cap "inn" "GND" 201.404
+cap "a_1770_750#" "VGND" 18.8456
+cap "GND" "VPWR" 0.117678
+cap "outp" "a_1770_750#" 314.98
+cap "inn" "inp" 28.989
+cap "VGND" "VCCA" 0.125543
+cap "a_1770_750#" "GND" 0.411175
+cap "outp" "VCCA" 136.005
+cap "outp" "VGND" 4.65896
+cap "inn" "VPWR" 0.578152
+cap "dco_main_inv_1/VCCA" "dco_main_inv_1/A" 22.965
+cap "dco_main_inv_1/GND" "dco_main_inv_1/VGND" 144.21
+cap "dco_main_inv_0/Y" "dco_main_inv_1/Y" 98.3999
+cap "dco_main_inv_0/A" "dco_main_inv_1/VPWR" 87.9723
+cap "dco_main_inv_1/Y" "dco_main_inv_1/A" 65.4024
+cap "dco_main_inv_1/GND" "dco_main_inv_0/A" 39.5886
+cap "dco_main_inv_1/VCCA" "dco_main_inv_1/Y" 0.341472
+cap "dco_main_inv_0/Y" "dco_main_inv_1/VGND" 48.0784
+cap "dco_main_inv_1/A" "dco_main_inv_1/VGND" 223.738
+cap "dco_main_inv_0/A" "dco_main_inv_0/Y" 140.559
+cap "dco_main_inv_1/VCCA" "dco_main_inv_1/VGND" 3.171
+cap "dco_main_inv_0/Y" "dco_main_inv_1/VPWR" 108.753
+cap "dco_main_inv_0/A" "dco_main_inv_1/A" 191.211
+cap "dco_main_inv_1/VPWR" "dco_main_inv_1/A" 4.52483
+cap "dco_main_inv_1/Y" "dco_main_inv_1/VGND" 8.60879
+cap "dco_main_inv_1/GND" "dco_main_inv_0/Y" 16.6843
+cap "dco_main_inv_1/VCCA" "dco_main_inv_0/A" 61.4331
+cap "dco_main_inv_0/A" "dco_main_inv_1/Y" 1.47095
+cap "dco_main_inv_1/GND" "dco_main_inv_1/A" 33.1703
+cap "dco_main_inv_1/VCCA" "dco_main_inv_1/VPWR" 27.8313
+cap "dco_main_inv_1/Y" "dco_main_inv_1/VPWR" -0.720339
+cap "dco_main_inv_1/GND" "dco_main_inv_1/VCCA" -10.5162
+cap "dco_main_inv_1/GND" "dco_main_inv_1/Y" 1.08745
+cap "dco_main_inv_0/Y" "dco_main_inv_1/A" 134.915
+cap "dco_main_inv_0/A" "dco_main_inv_1/VGND" 0.044691
+cap "dco_main_inv_1/VPWR" "dco_main_inv_1/VGND" -2.95817
+cap "dco_main_inv_1/VCCA" "dco_main_inv_0/Y" 82.2059
+cap "dco_main_inv_1/VGND" "dco_main_inv_1/GND" 60.0875
+cap "dco_main_inv_1/Y" "dco_main_inv_0/Y" 196.924
+cap "dco_main_inv_1/A" "dco_main_inv_1/VCCA" 12.41
+cap "dco_main_inv_1/Y" "dco_main_inv_1/A" 367.91
+cap "dco_main_inv_1/Y" "dco_main_inv_1/VCCA" 132.385
+cap "dco_main_inv_1/VGND" "dco_main_inv_0/Y" 42.5281
+cap "dco_main_inv_1/A" "dco_main_inv_1/VGND" 169.048
+cap "dco_main_inv_1/A" "dco_main_inv_0/A" 0.0294276
+cap "dco_main_inv_1/VGND" "dco_main_inv_1/VCCA" 1.05164
+cap "dco_main_inv_1/VPWR" "dco_main_inv_0/Y" 135.97
+cap "dco_main_inv_1/GND" "dco_main_inv_0/Y" 38.4937
+cap "dco_main_inv_1/Y" "dco_main_inv_1/VGND" 127.578
+cap "dco_main_inv_1/VPWR" "dco_main_inv_1/A" 0.0194436
+cap "dco_main_inv_1/VPWR" "dco_main_inv_1/VCCA" 8.07197
+cap "dco_main_inv_1/A" "dco_main_inv_1/GND" 39.7288
+cap "dco_main_inv_1/GND" "dco_main_inv_1/VCCA" -14.411
+cap "dco_main_inv_1/Y" "dco_main_inv_1/VPWR" 168.736
+cap "dco_main_inv_1/Y" "dco_main_inv_1/GND" 47.2896
+cap "dco_main_inv_1/A" "dco_main_inv_0/Y" 188.134
+cap "dco_main_inv_1/VPWR" "dco_main_inv_1/VGND" -9.33588
+cap "dco_main_inv_1/VCCA" "dco_main_inv_0/Y" 77.123
+cap "dco_aux_inv_1/Y" "dco_main_inv_1/VGND" 0.314144
+cap "dco_main_inv_1/VCCA" "dco_aux_inv_1/Y" 6.04581
+cap "dco_main_inv_1/VPWR" "dco_aux_inv_1/Y" 19.2951
+cap "dco_main_inv_1/Y" "dco_main_inv_1/VGND" 31.3708
+cap "dco_main_inv_1/Y" "dco_main_inv_1/VPWR" 0.716476
+cap "dco_main_inv_1/Y" "dco_main_inv_1/VCCA" 2.57208
+cap "dco_main_inv_1/VPWR" "dco_main_inv_1/GND" -0.0588388
+cap "dco_main_inv_1/Y" "dco_main_inv_1/VCCA" 1.07654
+cap "dco_main_inv_0/Y" "dco_main_inv_0/A" 58.5283
+cap "dco_main_inv_1/VGND" "dco_main_inv_1/VPWR" -2.95817
+cap "dco_main_inv_0/Y" "dco_main_inv_1/VPWR" 147.068
+cap "dco_main_inv_1/VCCA" "dco_main_inv_0/A" 70.0228
+cap "dco_main_inv_1/VPWR" "dco_main_inv_1/A" -0.0859018
+cap "dco_main_inv_1/VPWR" "dco_main_inv_1/VCCA" 187.127
+cap "dco_main_inv_1/GND" "dco_main_inv_1/VCCA" -3.25954
+cap "dco_main_inv_1/Y" "dco_main_inv_1/VPWR" 9.00802
+cap "dco_main_inv_0/Y" "dco_main_inv_1/VCCA" 67.5458
+cap "dco_main_inv_0/Y" "dco_main_inv_1/Y" 40.8509
+cap "dco_main_inv_1/A" "dco_main_inv_1/VCCA" -0.9168
+cap "dco_main_inv_1/VPWR" "dco_main_inv_0/A" 32.683
+cap "dco_main_inv_1/Y" "dco_main_inv_1/VCCA" 54.5252
+cap "dco_main_inv_0/A" "dco_main_inv_0/Y" 0.163099
+cap "dco_main_inv_1/VPWR" "dco_main_inv_0/Y" 123.298
+cap "dco_main_inv_1/VPWR" "dco_main_inv_1/A" -0.0963098
+cap "dco_main_inv_1/VPWR" "dco_main_inv_1/GND" -0.0588388
+cap "dco_main_inv_1/VPWR" "dco_main_inv_1/VCCA" 113.655
+cap "dco_main_inv_1/Y" "dco_main_inv_1/VPWR" 53.5819
+cap "dco_main_inv_1/VPWR" "dco_main_inv_1/VGND" -1.11007
+cap "dco_main_inv_1/A" "dco_main_inv_0/Y" 69.8443
+cap "dco_main_inv_1/VCCA" "dco_main_inv_0/Y" 124.55
+cap "dco_main_inv_1/Y" "dco_main_inv_0/Y" 74.8964
+cap "dco_main_inv_1/A" "dco_main_inv_1/VCCA" 8.60682
+cap "dco_main_inv_1/GND" "dco_main_inv_1/VCCA" -4.23282
+cap "dco_main_inv_1/Y" "dco_main_inv_1/A" 3.36842
+cap "dco_main_inv_1/VCCA" "dco_aux_inv_1/Y" 4.07855
+cap "dco_main_inv_1/VPWR" "dco_aux_inv_1/Y" 13.8168
+merge "dco_aux_inv_0/GND" "dco_aux_inv_1/GND" -394.43 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -640 0 0 0 0 0 0 0 0 0 0
+merge "dco_aux_inv_1/GND" "dco_main_inv_0/GND"
+merge "dco_main_inv_0/GND" "dco_main_inv_1/GND"
+merge "dco_main_inv_1/GND" "VSUBS"
+merge "VSUBS" "GND"
+merge "dco_aux_inv_0/VPWR" "dco_aux_inv_1/VPWR" -821.772 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -20800 -1160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dco_aux_inv_1/VPWR" "dco_main_inv_0/VPWR"
+merge "dco_main_inv_0/VPWR" "dco_main_inv_1/VPWR"
+merge "dco_main_inv_1/VPWR" "VPWR"
+merge "dco_aux_inv_0/Y" "dco_aux_inv_1/A" -874.54 0 0 0 0 0 0 0 0 -3200 -320 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1600 -160 0 0 -8000 -1120 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dco_aux_inv_1/A" "dco_main_inv_1/Y"
+merge "dco_main_inv_1/Y" "outn"
+merge "outn" "a_1770_750#"
+merge "dco_aux_inv_0/VGND" "dco_aux_inv_1/VGND" -572.008 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -19200 -1120 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dco_aux_inv_1/VGND" "dco_main_inv_0/VGND"
+merge "dco_main_inv_0/VGND" "dco_main_inv_1/VGND"
+merge "dco_main_inv_1/VGND" "VGND"
+merge "dco_aux_inv_0/VCCA" "dco_aux_inv_1/VCCA" -588.69 0 0 0 0 -3200 -4920 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -640 0 0 0 0 0 0 0 0 0 0
+merge "dco_aux_inv_1/VCCA" "w_1920_1180#"
+merge "w_1920_1180#" "w_1920_1260#"
+merge "w_1920_1260#" "dco_main_inv_0/VCCA"
+merge "dco_main_inv_0/VCCA" "dco_main_inv_1/VCCA"
+merge "dco_main_inv_1/VCCA" "VCCA"
+merge "dco_main_inv_1/A" "inn" -536.685 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -180 0 0 0 0 0 0 0 0 0 0
+merge "dco_aux_inv_0/A" "dco_aux_inv_1/Y" -1285.11 0 0 0 0 0 0 0 0 0 0 -3200 -360 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1600 -160 0 0 -8000 -880 0 0 0 0 0 0 0 0 0 0 0 0
+merge "dco_aux_inv_1/Y" "dco_main_inv_0/Y"
+merge "dco_main_inv_0/Y" "outp"
+merge "dco_main_inv_0/A" "inp" -289.957 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -160 0 0 0 0 0 0 0 0 0 0
