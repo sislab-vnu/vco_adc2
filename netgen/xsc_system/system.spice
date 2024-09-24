@@ -3,7 +3,7 @@
 *.PININFO Anlg_in:I ENB:I Vbs_12:I Vbs_34:I CLK:I VCCD:I GND:I VCCA:I Dout:O
 x1 GND p_vco Anlg_in ENB VCCA VCCD VCCA vco
 X_UDC_2 VCCD GND p_vco ENB FBack D1 count
-x2 GND GND VCCA D1 ENB Vbs_12 Vbs_34 p_dco dco
+x2 GND VCCD VCCA D1 ENB Vbs_12 Vbs_34 p_dco dco
 X_UDC_1 VCCD GND p_dco ENB FBack D2 count
 X_Qtz_1 VCCD GND CLK Dout FBack D2 qz
 .ends

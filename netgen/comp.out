@@ -464,7 +464,7 @@ dco_ring_osc (1)                           |dco_ring_osc (1)
 Number of devices: 12                      |Number of devices: 12                      
 Number of nets: 29                         |Number of nets: 29                         
 ---------------------------------------------------------------------------------------
-Netlists match uniquely.
+Netlists match uniquely with port errors.
 
 Subcircuit pins:
 Circuit 1: dco                             |Circuit 2: dco                             
@@ -477,9 +477,11 @@ Dctrl                                      |Dctrl
 VCCA                                       |VCCA                                       
 ENB                                        |ENB                                        
 VCCD                                       |VCCD                                       
+(no matching pin)                          |Isup                                       
 ---------------------------------------------------------------------------------------
-Cell pin lists are equivalent.
+Cell pin lists for dco and dco altered to match.
 Device classes dco and dco are equivalent.
+  Flattening non-matched subcircuits dco dco
 
 Subcircuit summary:
 Circuit 1: qz                              |Circuit 2: qz                              
@@ -512,119 +514,35 @@ Circuit 1: system                          |Circuit 2: system
 -------------------------------------------|-------------------------------------------
 vco (1)                                    |vco (1)                                    
 count (2)                                  |count (2)                                  
-dco (1)                                    |dco (1)                                    
+sky130_fd_sc_hd__einvp_1 (1)               |sky130_fd_sc_hd__einvp_1 (1)               
+sky130_fd_sc_hd__buf_2 (1)                 |sky130_fd_sc_hd__buf_2 (1)                 
+sky130_fd_sc_hd__dfxbp_2 (2)               |sky130_fd_sc_hd__dfxbp_2 (2)               
+sky130_fd_sc_hd__dfxtp_1 (2)               |sky130_fd_sc_hd__dfxtp_1 (2)               
+sky130_fd_sc_hd__inv_4 (2)                 |sky130_fd_sc_hd__inv_4 (2)                 
+sky130_fd_sc_hd__buf_4 (2)                 |sky130_fd_sc_hd__buf_4 (2)                 
+dco_idac (1)                               |dco_idac (1)                               
+dco_ring_osc (1)                           |dco_ring_osc (1)                           
 qz (1)                                     |qz (1)                                     
-Number of devices: 5                       |Number of devices: 5                       
-Number of nets: 14 **Mismatch**            |Number of nets: 16 **Mismatch**            
+Number of devices: 16                      |Number of devices: 16                      
+Number of nets: 35                         |Number of nets: 35                         
 ---------------------------------------------------------------------------------------
-NET mismatches: Class fragments follow (with fanout counts):
-Circuit 1: system                          |Circuit 2: system                          
-
----------------------------------------------------------------------------------------
-Net: GND                                   |Net: vco_0/p[4]                            
-  vco/GND = 1                              |  count/UP = 1                             
-  count/GND = 2                            |  vco/p[4] = 1                             
-  dco/GND = 1                              |                                           
-  dco/VCCD = 1                             |                                           
-  qz/GND = 1                               |                                           
-                                           |                                           
-Net: p_vco                                 |Net: dco_0/Dctrl                           
-  vco/p[4] = 1                             |  count/Dout_buf = 1                       
-  count/UP = 1                             |  dco/Dctrl = 1                            
-                                           |                                           
-Net: D1                                    |Net: count_1/UP                            
-  count/Dout_buf = 1                       |  dco/pha_DCO = 1                          
-  dco/Dctrl = 1                            |  count/UP = 1                             
-                                           |                                           
-Net: p_dco                                 |Net: (no pins)                             
-  dco/pha_DCO = 1                          |  vco/VCCA = 1                             
-  count/UP = 1                             |  vco/VPWR = 1                             
-                                           |                                           
-Net: Anlg_in                               |Net: dco_0/VCCA                            
-  vco/Anlg_in = 1                          |  dco/VCCA = 1                             
-                                           |                                           
-Net: Vbs_12                                |Net: dco_0/Vbs_12                          
-  dco/Vbs_12 = 1                           |  dco/Vbs_12 = 1                           
-                                           |                                           
-Net: Vbs_34                                |Net: dco_0/Vbs_34                          
-  dco/Vbs_34 = 1                           |  dco/Vbs_34 = 1                           
-                                           |                                           
-Net: VCCA                                  |Net: vco_0/VCCD                            
-  vco/VCCA = 1                             |  vco/VCCD = 1                             
-  vco/VPWR = 1                             |                                           
-  dco/VCCA = 1                             |                                           
-                                           |                                           
-(no matching net)                          |Net: vco_0/Anlg_in                         
-                                           |  vco/Anlg_in = 1                          
-                                           |                                           
-(no matching net)                          |Net: VSUBS                                 
-                                           |  count/GND = 2                            
-                                           |  dco/GND = 1                              
-                                           |  qz/GND = 1                               
-                                           |  vco/GND = 1                              
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: VCCD                                  |Net: qz_0/VCCD                             
-  vco/VCCD = 1                             |  count/VCCD = 2                           
-  count/VCCD = 2                           |  dco/VCCD = 1                             
-  qz/VCCD = 1                              |  qz/VCCD = 1                              
-                                           |                                           
-Net: ENB                                   |Net: vco_0/ENB                             
-  vco/ENB = 1                              |  count/SetB = 2                           
-  count/setB = 2                           |  dco/ENB = 1                              
-  dco/ENB = 1                              |  vco/ENB = 1                              
----------------------------------------------------------------------------------------
-DEVICE mismatches: Class fragments follow (with node fanout counts):
-Circuit 1: system                          |Circuit 2: system                          
-
----------------------------------------------------------------------------------------
-Instance: dco:2                            |Instance: dco_0                            
-  GND = 6                                  |  GND = 5                                  
-  VCCD = 6                                 |  VCCD = 4                                 
-  VCCA = 3                                 |  VCCA = 1                                 
-  Dctrl = 2                                |  Dctrl = 2                                
-  ENB = 4                                  |  ENB = 4                                  
-  Vbs_12 = 1                               |  Vbs_12 = 1                               
-  Vbs_34 = 1                               |  Vbs_34 = 1                               
-  pha_DCO = 2                              |  pha_DCO = 2                              
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Instance: vco:1                            |Instance: vco_0                            
-  GND = 6                                  |  GND = 5                                  
-  p[4] = 2                                 |  p[4] = 2                                 
-  Anlg_in = 1                              |  Anlg_in = 1                              
-  ENB = 4                                  |  ENB = 4                                  
-  VCCA = 3                                 |  VCCA = 2                                 
-  VCCD = 4                                 |  VCCD = 1                                 
-  VPWR = 3                                 |  VPWR = 2                                 
----------------------------------------------------------------------------------------
-Netlists do not match.
+Netlists match uniquely.
 
 Subcircuit pins:
 Circuit 1: system                          |Circuit 2: system                          
 -------------------------------------------|-------------------------------------------
-GND                                        |(no matching pin)                          
-Anlg_in                                    |(no matching pin)                          
-Vbs_12                                     |(no matching pin)                          
-Vbs_34                                     |(no matching pin)                          
-VCCA                                       |(no matching pin)                          
-Dout                                       |(no matching pin)                          
-CLK                                        |(no matching pin)                          
-VCCD                                       |(no matching pin)                          
-ENB                                        |(no matching pin)                          
-Dout                                       |(no matching pin)                          
-CLK                                        |(no matching pin)                          
-Anlg_in                                    |(no matching pin)                          
-VCCD                                       |(no matching pin)                          
-ENB                                        |(no matching pin)                          
-GND                                        |(no matching pin)                          
-Vbs_12                                     |(no matching pin)                          
-VCCA                                       |(no matching pin)                          
-Vbs_34                                     |(no matching pin)                          
+VCCD                                       |VCCD                                       
+VCCA                                       |VCCA                                       
+ENB                                        |ENB                                        
+CLK                                        |CLK                                        
+Dout                                       |Dout                                       
+Anlg_in                                    |Anlg_in                                    
+Vbs_12                                     |Vbs_12                                     
+Vbs_34                                     |Vbs_34                                     
+GND                                        |GND                                        
 ---------------------------------------------------------------------------------------
-Cell pin lists for system and system altered to match.
+Cell pin lists are equivalent.
 Device classes system and system are equivalent.
 
-Final result: Top level cell failed pin matching.
+Final result: Circuits match uniquely.
+.

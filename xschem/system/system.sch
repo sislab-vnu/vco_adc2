@@ -115,8 +115,6 @@ N 400 -340 450 -340 {
 lab=VCCA}
 N 330 -300 330 -260 {
 lab=GND}
-N 490 -340 490 -260 {
-lab=GND}
 N 250 -275 640 -275 {
 lab=VCCD}
 N 565 -535 565 -505 {
@@ -147,6 +145,8 @@ N 590 -620 680 -620 {
 lab=VCCA}
 N 785 -710 865 -710 {
 lab=Dout}
+N 490 -340 490 -275 {
+lab=VCCD}
 C {devices/lab_pin.sym} 780 -350 2 0 {name=l2 sig_type=std_logic lab=CLK}
 C {devices/lab_wire.sym} 450 -470 3 1 {name=l10 sig_type=std_logic lab=Vbs_12}
 C {devices/lab_wire.sym} 490 -470 3 1 {name=l11 sig_type=std_logic lab=Vbs_34}

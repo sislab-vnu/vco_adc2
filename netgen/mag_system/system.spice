@@ -1,6 +1,5 @@
 * NGSPICE file created from system.ext - technology: sky130A
 
-
 .subckt count UP SetB DOWN Dout_buf GND VCCD
 Xsky130_fd_sc_hd__dfstp_1_0 UP_buf Q2N SetBi GND GND VCCD VCCD Q1 sky130_fd_sc_hd__dfstp_1
 Xsky130_fd_sc_hd__dfstp_1_1 DWN_buf Q1_buf SetBi GND GND VCCD VCCD Q2 sky130_fd_sc_hd__dfstp_1
@@ -64,8 +63,7 @@ X6 Isup Vbs2 B_M2 B_M2 sky130_fd_pr__pfet_01v8_hvt ad=0.72 pd=4.4 as=0.72 ps=4.4
 X7 D1_M4 G_M7 D_M7 D1_M4 sky130_fd_pr__pfet_01v8_hvt ad=1.6 pd=8.8 as=0.8 ps=4.4 w=4 l=0.5 M=2
 .ends
 
-
-.subckt dco VCCA Dctrl ENB Vbs_12 Vbs_34 pha_DCO GND VCCD
+.subckt dco VCCA Dctrl ENB Vbs_12 Vbs_34 pha_DCO GND Isup VCCD
 Xdco_freq_0 pha_ro ro_div2 GND GND VCCD VCCD dco_freq
 Xdco_freq_1 ro_div2 pha_DCO GND GND VCCD VCCD dco_freq
 Xsky130_fd_sc_hd__buf_2_0 p_osc GND GND VCCD VCCD pha_ro sky130_fd_sc_hd__buf_2
@@ -130,12 +128,11 @@ Xmag_vco_ring_vco_0 mag_vco_ring_vco_0/VGND mag_vco_ring_vco_0/p[0] mag_vco_ring
 Xsky130_fd_sc_hd__einvp_1_0 VCCD ENB GND GND VCCD VCCD mag_vco_ring_vco_0/pn[4] sky130_fd_sc_hd__einvp_1
 .ends
 
-.subckt system
-Xcount_0 vco_0/p[4] vco_0/ENB qz_0/FBack dco_0/Dctrl VSUBS qz_0/VCCD count
-Xdco_0 dco_0/VCCA dco_0/Dctrl vco_0/ENB dco_0/Vbs_12 dco_0/Vbs_34 count_1/UP VSUBS
-+ qz_0/VCCD dco
-Xcount_1 count_1/UP vco_0/ENB qz_0/FBack qz_0/D VSUBS qz_0/VCCD count
-Xqz_0 qz_0/CLK qz_0/Dout qz_0/FBack qz_0/D VSUBS qz_0/VCCD qz
-Xvco_0 vco_0/VCCD vco_0/ENB vco_0/p[4] vco_0/Anlg_in VSUBS vco_0/VPWR vco_0/VPWR vco
+.subckt system Dout CLK Anlg_in VCCD ENB GND Vbs_12 VCCA Vbs_34
+Xcount_0 vco_0/p[4] ENB qz_0/FBack D1 GND VCCD count
+Xdco_0 VCCA D1 ENB Vbs_12 Vbs_34 p_dco GND dco_0/Isup VCCD dco
+Xcount_1 p_dco ENB qz_0/FBack qz_0/D GND VCCD count
+Xqz_0 CLK Dout qz_0/FBack qz_0/D GND VCCD qz
+Xvco_0 VCCD ENB vco_0/p[4] Anlg_in GND VCCA VCCA vco
 .ends
 
