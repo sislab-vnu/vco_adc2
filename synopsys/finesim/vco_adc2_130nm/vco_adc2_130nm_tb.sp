@@ -268,13 +268,13 @@ XM2 Y A VGND GND sky130_fd_pr__nfet_01v8 L="L" W="Wn" nf=1 ad='int((nf+1)/2) * W
 
 .print v(clk) v(dout) v(anlg_in)
 
-.tran 1n 12m start=0 sweep data=input
+.tran 1n 12m start=0 $ sweep data=input
 
-.data input
-+ vsin sig_freq
-+ 0.1m 1k
-+ 1m 10k
-.enddata
+*.data input
+*+ vsin sig_freq
+*+ 0.1m 1k
+*+ 1m 10k
+*.enddata
 
 .measure tran prd trig v(p_vco) val=0.8 rise=10 targ v(p_vco) val=0.8 rise=20
 .measure tran freq_v param='10/prd'
