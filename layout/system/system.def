@@ -1,0 +1,321 @@
+VERSION 5.7 ;
+   NAMESCASESENSITIVE ON ;
+   DIVIDERCHAR "/" ;
+   BUSBITCHARS "()" ;
+   DESIGN system ;
+   TECHNOLOGY sky130A ;
+   UNITS DISTANCE MICRONS 1000 ;
+   DIEAREA ( -26425 -62950 ) ( 108550 40050 ) ;
+
+VIAS 9 ;
+   - mcon_350_350
+      + RECT li1 ( -175 -175 ) ( 175 175 )
+      + RECT met1 ( -205 -205 ) ( 205 205 )
+      + RECT mcon ( -85 -85 ) ( 85 85 ) ;
+   - via_450_450_hh
+      + RECT met1 ( -255 -225 ) ( 255 225 )
+      + RECT met2 ( -255 -225 ) ( 255 225 )
+      + RECT via ( -75 -75 ) ( 75 75 ) ;
+   - via_300_300_vh
+      + RECT met1 ( -150 -180 ) ( 150 180 )
+      + RECT met2 ( -180 -150 ) ( 180 150 )
+      + RECT via ( -75 -75 ) ( 75 75 ) ;
+   - mcon_200_200
+      + RECT li1 ( -100 -100 ) ( 100 100 )
+      + RECT met1 ( -130 -130 ) ( 130 130 )
+      + RECT mcon ( -85 -85 ) ( 85 85 ) ;
+   - via_300_300_hh
+      + RECT met1 ( -180 -150 ) ( 180 150 )
+      + RECT met2 ( -180 -150 ) ( 180 150 )
+      + RECT via ( -75 -75 ) ( 75 75 ) ;
+   - mcon_250_250
+      + RECT li1 ( -125 -125 ) ( 125 125 )
+      + RECT met1 ( -155 -155 ) ( 155 155 )
+      + RECT mcon ( -85 -85 ) ( 85 85 ) ;
+   - via_350_350_hh
+      + RECT met1 ( -205 -175 ) ( 205 175 )
+      + RECT met2 ( -205 -175 ) ( 205 175 )
+      + RECT via ( -75 -75 ) ( 75 75 ) ;
+   - mcon_300_300
+      + RECT li1 ( -150 -150 ) ( 150 150 )
+      + RECT met1 ( -180 -180 ) ( 180 180 )
+      + RECT mcon ( -85 -85 ) ( 85 85 ) ;
+   - via_650_650_hh
+      + RECT met1 ( -355 -325 ) ( 355 325 )
+      + RECT met2 ( -355 -325 ) ( 355 325 )
+      + RECT via ( -235 -235 ) ( -85 -85 )
+      + RECT via ( 85 -235 ) ( 235 -85 )
+      + RECT via ( -235 85 ) ( -85 235 )
+      + RECT via ( 85 85 ) ( 235 235 ) ;
+END VIAS
+
+COMPONENTS 5 ;
+   - vco_0 vco
+      + PLACED ( -10100 3400 ) N ;
+   - qz_0 qz
+      + PLACED ( 76300 -11150 ) N ;
+   - dco_0 dco
+      + PLACED ( 13100 -34250 ) N ;
+   - count_1 count
+      + PLACED ( 81650 -32430 ) N ;
+   - count_0 count
+      + PLACED ( -11700 -10380 ) N ;
+END COMPONENTS
+
+PINS 9 ;
+   - VCCA + NET VCCA
+     + PORT
+        + LAYER met1 ( 0 0 ) ( 0 0 )        + PLACED ( 31900 800 ) N ;
+   - Anlg_in + NET Anlg_in
+     + PORT
+        + LAYER li1 ( 0 0 ) ( 0 0 )        + PLACED ( -13150 22900 ) N ;
+   - VCCD + NET VCCD
+     + PORT
+        + LAYER met2 ( 0 0 ) ( 0 0 )        + PLACED ( -13100 21350 ) N ;
+   - ENB + NET ENB
+     + PORT
+        + LAYER li1 ( 0 0 ) ( 0 0 )        + PLACED ( -15800 18250 ) N ;
+   - CLK + NET CLK
+     + PORT
+        + LAYER li1 ( 0 0 ) ( 0 0 )        + PLACED ( 78700 -5350 ) N ;
+   - Dout + NET Dout
+     + PORT
+        + LAYER li1 ( 0 0 ) ( 0 0 )        + PLACED ( 92000 -15800 ) N ;
+   - Vbs_12 + NET Vbs_12
+     + PORT
+        + LAYER met1 ( 0 0 ) ( 0 0 )        + PLACED ( 16500 -29000 ) N ;
+   - Vbs_34 + NET Vbs_34
+     + PORT
+        + LAYER met1 ( 0 0 ) ( 0 0 )        + PLACED ( 33150 -30950 ) N ;
+   - GND + NET GND
+     + PORT
+        + LAYER met2 ( 0 0 ) ( 0 0 )        + PLACED ( -25900 -15250 ) N ;
+END PINS
+
+NONDEFAULTRULES 27 ;
+  - met1_width_400
+     + LAYER met1 WIDTH 400 ;
+  - li1_width_350
+     + LAYER li1 WIDTH 350 ;
+  - met1_width_200
+     + LAYER met1 WIDTH 200 ;
+  - li1_width_500
+     + LAYER li1 WIDTH 500 ;
+  - met2_width_350
+     + LAYER met2 WIDTH 350 ;
+  - met2_width_500
+     + LAYER met2 WIDTH 500 ;
+  - li1_width_300
+     + LAYER li1 WIDTH 300 ;
+  - met2_width_150
+     + LAYER met2 WIDTH 150 ;
+  - met2_width_515
+     + LAYER met2 WIDTH 515 ;
+  - met2_width_300
+     + LAYER met2 WIDTH 300 ;
+  - met1_width_550
+     + LAYER met1 WIDTH 550 ;
+  - met1_width_350
+     + LAYER met1 WIDTH 350 ;
+  - met1_width_500
+     + LAYER met1 WIDTH 500 ;
+  - met1_width_150
+     + LAYER met1 WIDTH 150 ;
+  - li1_width_450
+     + LAYER li1 WIDTH 450 ;
+  - met1_width_300
+     + LAYER met1 WIDTH 300 ;
+  - met2_width_650
+     + LAYER met2 WIDTH 650 ;
+  - li1_width_250
+     + LAYER li1 WIDTH 250 ;
+  - met2_width_450
+     + LAYER met2 WIDTH 450 ;
+  - li1_width_400
+     + LAYER li1 WIDTH 400 ;
+  - met2_width_250
+     + LAYER met2 WIDTH 250 ;
+  - met2_width_400
+     + LAYER met2 WIDTH 400 ;
+  - li1_width_200
+     + LAYER li1 WIDTH 200 ;
+  - met1_width_650
+     + LAYER met1 WIDTH 650 ;
+  - met2_width_200
+     + LAYER met2 WIDTH 200 ;
+  - met1_width_450
+     + LAYER met1 WIDTH 450 ;
+  - met1_width_250
+     + LAYER met1 WIDTH 250 ;
+END NONDEFAULTRULES
+
+NETS 22 ;
+   - GND ( PIN GND ) ;
+   - VCCD ( PIN VCCD ) ( vco_0 VCCD ) ( qz_0 VCCD ) ( count_0 VCCD ) ;
+   - VSUBS ( dco_0 GND )
+      + ROUTED li1 TAPERRULE li1_width_350  ( 48725 -55475 ) ( 50025 * )
+      NEW li1 TAPERRULE li1_width_350  ( 48725 -54825 ) ( 50025 * )
+      NEW li1 TAPERRULE li1_width_300  ( 50050 -55150 ) ( 50050 * )
+      NEW li1 TAPERRULE li1_width_300  ( 49750 -55150 ) mcon_300_300 
+      NEW met1 TAPERRULE met1_width_650  ( 49875 -55325 ) ( * -54975 )
+      NEW met1 TAPERRULE met1_width_250  ( 48675 -54775 ) ( 50075 * )
+      NEW met1 TAPERRULE met1_width_250  ( 49325 -55125 ) via_450_450_hh 
+      NEW met2 TAPERRULE met2_width_250  ( 48675 -54775 ) ( 50075 * )
+      NEW met2 TAPERRULE met2_width_650  ( 49875 -55325 ) ( * -54975 )
+      NEW met2 TAPERRULE met2_width_350  ( 49725 -55175 ) ( 99975 * )
+      NEW met2 TAPERRULE met2_width_500  ( 75850 -54750 ) ( * -44750 )
+      NEW met2 TAPERRULE met2_width_500  ( 75850 -44250 ) ( 79400 * )
+      NEW met2 TAPERRULE met2_width_500  ( 79400 -44750 ) ( * -44250 )
+      NEW met1 TAPERRULE met1_width_500  ( 79400 -44750 ) ( 79400 * )
+      NEW met1 TAPERRULE met1_width_500  ( 79400 -44750 ) via_300_300_hh 
+      NEW met2 TAPERRULE met2_width_500  ( 99900 -54750 ) ( * -15050 )
+      NEW met2 TAPERRULE met2_width_200  ( 99750 -14700 ) ( 100250 * )
+      NEW met2 TAPERRULE met2_width_200  ( 99750 -14500 ) ( * -14400 )
+      NEW met2 TAPERRULE met2_width_200  ( 99750 -14200 ) ( 100250 * )
+      NEW met2 TAPERRULE met2_width_200  ( 100250 -14500 ) ( * -14400 )
+      NEW met1 TAPERRULE met1_width_200  ( 99750 -14200 ) ( 100250 * )
+      NEW met1 TAPERRULE met1_width_200  ( 100250 -14500 ) ( * -14400 )
+      NEW met1 TAPERRULE met1_width_200  ( 99750 -14700 ) ( 100250 * )
+      NEW met1 TAPERRULE met1_width_200  ( 99750 -14500 ) ( * -14400 )
+      NEW met1 TAPERRULE met1_width_200  ( 100000 -14450 ) via_300_300_hh 
+      NEW met2 TAPERRULE met2_width_150  ( 48625 -55425 ) ( 100075 * )
+      NEW met2 TAPERRULE met2_width_450  ( 48775 -55125 ) ( 48875 * )
+      NEW met2 TAPERRULE met2_width_150  ( 48625 -55575 ) ( 50125 * )
+      NEW met1 TAPERRULE met1_width_300  ( 48700 -55500 ) ( 50050 * )
+      NEW met1 TAPERRULE met1_width_550  ( 48825 -55375 ) ( * -54925 )
+      NEW li1 TAPERRULE li1_width_300  ( 49150 -55150 ) ( 49450 * )
+      NEW li1 TAPERRULE li1_width_300  ( 48850 -55150 ) mcon_300_300  ;
+   - vco_0/p[4] ( vco_0 p[4] ) ;
+   - Anlg_in ( PIN Anlg_in ) ( vco_0 Anlg_in ) ;
+   - vco_0/VPWR ( vco_0 VPWR ) ( vco_0 VCCA )
+      + ROUTED li1 TAPERRULE li1_width_300  ( 87200 38350 ) mcon_200_200  ;
+   - qz_0/GND ( qz_0 GND ) ( vco_0 GND ) ;
+   - Dout ( PIN Dout ) ( qz_0 Dout )
+      + ROUTED li1 TAPERRULE li1_width_350  ( 92175 -15825 ) ( * -13475 ) ;
+   - CLK ( PIN CLK ) ( qz_0 CLK ) ;
+   - qz_0/FBack ( qz_0 FBack ) ( count_1 DOWN ) ( count_0 DOWN )
+      + ROUTED li1 TAPERRULE li1_width_500  ( 2200 -24350 ) ( 2600 * )
+      NEW li1 TAPERRULE li1_width_500  ( 2600 -24350 ) mcon_200_200 
+      NEW met1 TAPERRULE met1_width_150  ( 2425 -24175 ) ( 2775 * )
+      NEW met1 TAPERRULE met1_width_150  ( 2775 -24375 ) ( * -24325 )
+      NEW met1 TAPERRULE met1_width_500  ( 2600 -62200 ) ( * -24700 )
+      NEW met1 TAPERRULE met1_width_150  ( 2425 -24375 ) ( * -24325 )
+      NEW met1 TAPERRULE met1_width_500  ( 2600 -62700 ) ( 108300 * )
+      NEW met1 TAPERRULE met1_width_500  ( 108300 -62200 ) ( * -46900 )
+      NEW met1 TAPERRULE met1_width_150  ( 95475 -46575 ) ( 108475 * )
+      NEW met1 TAPERRULE met1_width_150  ( 95475 -46425 ) ( * -46375 )
+      NEW met1 TAPERRULE met1_width_150  ( 95475 -46225 ) ( 108475 * )
+      NEW met1 TAPERRULE met1_width_500  ( 108300 -45900 ) ( * -12900 )
+      NEW met1 TAPERRULE met1_width_200  ( 108150 -12550 ) ( 108150 * )
+      NEW met1 TAPERRULE met1_width_500  ( 108300 -62700 ) ( * -12650 )
+      NEW li1 TAPERRULE li1_width_350  ( 97975 -12575 ) ( 108375 * )
+      NEW li1 TAPERRULE li1_width_350  ( 98000 -12550 ) mcon_200_200 
+      NEW met1 TAPERRULE met1_width_400  ( 98000 -12550 ) ( 98000 * )
+      NEW met1 TAPERRULE met1_width_400  ( 108350 -12550 ) mcon_200_200 
+      NEW met1 TAPERRULE met1_width_200  ( 95850 -46400 ) ( 108450 * )
+      NEW li1 TAPERRULE li1_width_500  ( 95650 -46400 ) ( 95650 * )
+      NEW li1 TAPERRULE li1_width_500  ( 95650 -46400 ) mcon_200_200  ;
+   - count_1/GND ( count_1 GND ) ;
+   - qz_0/D ( qz_0 D ) ( count_1 Dout_buf )
+      + ROUTED met1 TAPERRULE met1_width_500  ( 77650 -13350 ) ( 77650 * )
+      NEW met1 TAPERRULE met1_width_350  ( 77575 -13275 ) ( 78825 * )
+      NEW met1 TAPERRULE met1_width_350  ( 77650 -13350 ) via_300_300_hh 
+      NEW met2 TAPERRULE met2_width_500  ( 77650 -31750 ) ( * -13350 )
+      NEW met2 TAPERRULE met2_width_500  ( 77650 -31750 ) ( 98250 * )
+      NEW met2 TAPERRULE met2_width_500  ( 98250 -41550 ) ( * -32250 )
+      NEW met2 TAPERRULE met2_width_500  ( 93750 -42050 ) ( 98250 * )
+      NEW met1 TAPERRULE met1_width_350  ( 92875 -42055 ) ( 93825 * )
+      NEW met1 TAPERRULE met1_width_500  ( 93750 -42050 ) ( 93750 * )
+      NEW met1 TAPERRULE met1_width_500  ( 93750 -42050 ) via_300_300_hh  ;
+   - ENB ( PIN ENB ) ( vco_0 ENB ) ( dco_0 ENB ) ( count_0 SetB ) ( count_1 SetB ) ;
+   - count_1/VCCD ( count_1 VCCD ) ;
+   - p_dco ( count_1 UP ) ( dco_0 pha_DCO )
+      + ROUTED li1 TAPERRULE li1_width_300  ( 74350 -36750 ) ( 75000 * )
+      NEW li1 TAPERRULE li1_width_250  ( 74325 -36475 ) ( 74425 * )
+      NEW li1 TAPERRULE li1_width_400  ( 74400 -36400 ) ( 77250 * )
+      NEW li1 TAPERRULE li1_width_200  ( 74300 -36100 ) ( 75050 * )
+      NEW li1 TAPERRULE li1_width_200  ( 74675 -36475 ) mcon_250_250 
+      NEW met2 TAPERRULE met2_width_300  ( 74350 -36150 ) ( 75000 * )
+      NEW met2 TAPERRULE met2_width_300  ( 75000 -36500 ) ( * -36450 )
+      NEW met2 TAPERRULE met2_width_250  ( 74325 -36775 ) ( 75025 * )
+      NEW met2 TAPERRULE met2_width_300  ( 74350 -36500 ) ( * -36450 )
+      NEW met1 TAPERRULE met1_width_300  ( 74350 -36150 ) ( 75000 * )
+      NEW met1 TAPERRULE met1_width_300  ( 75000 -36500 ) ( * -36450 )
+      NEW met1 TAPERRULE met1_width_250  ( 74325 -36775 ) ( 75025 * )
+      NEW met1 TAPERRULE met1_width_300  ( 74350 -36500 ) ( * -36450 )
+      NEW met1 TAPERRULE met1_width_300  ( 74675 -36475 ) via_350_350_hh 
+      NEW met2 TAPERRULE met2_width_515  ( 74602.5 -45945 ) ( * -37155 )
+      NEW met2 TAPERRULE met2_width_500  ( 71900 -46450 ) ( 74610 * )
+      NEW met2 TAPERRULE met2_width_515  ( 74602.5 -46450 ) ( * -36255 ) ;
+   - D1 ( count_0 Dout_buf ) ( dco_0 Dctrl )
+      + ROUTED met1 TAPERRULE met1_width_400  ( -150 -20000 ) ( 100 * )
+      NEW met1 TAPERRULE met1_width_400  ( 100 -20000 ) via_300_300_hh 
+      NEW met2 TAPERRULE met2_width_400  ( 100 -20000 ) ( 4800 * )
+      NEW met2 TAPERRULE met2_width_400  ( 4800 -38150 ) ( * -20400 )
+      NEW met2 TAPERRULE met2_width_400  ( 4800 -38550 ) ( 19500 * )
+      NEW met2 TAPERRULE met2_width_400  ( 19500 -40700 ) ( * -38950 )
+      NEW met2 TAPERRULE met2_width_450  ( 19475 -41125 ) ( 19525 * )
+      NEW met2 TAPERRULE met2_width_450  ( 19500 -41150 ) via_300_300_vh  ;
+   - Vbs_34 ( PIN Vbs_34 ) ( dco_0 Vbs_34 ) ;
+   - Vbs_12 ( PIN Vbs_12 ) ( dco_0 Vbs_12 ) ;
+   - VCCA ( PIN VCCA ) ( dco_0 VCCA )
+      + ROUTED met1 TAPERRULE met1_width_400  ( 32100 -100 ) ( * 4250 )
+      NEW met1 TAPERRULE met1_width_400  ( 13700 -500 ) ( 32100 * )
+      NEW met1 TAPERRULE met1_width_400  ( 13700 -30750 ) ( * -900 )
+      NEW met1 TAPERRULE met1_width_400  ( 13700 -31050 ) ( * -500 )
+      NEW li1 TAPERRULE li1_width_400  ( 13700 -31050 ) ( 24400 * )
+      NEW li1 TAPERRULE li1_width_400  ( 13700 -31050 ) mcon_200_200 
+      NEW met1 TAPERRULE li1_width_400  ( 43000 5100 ) mcon_200_200  ;
+   - dco_0/VCCD ( dco_0 VCCD )
+      + ROUTED li1 TAPERRULE li1_width_400  ( 3800 -12950 ) mcon_200_200 
+      NEW met1 TAPERRULE met1_width_250  ( 3775 -13025 ) ( * -12875 )
+      NEW met1 TAPERRULE met1_width_400  ( 3850 -12950 ) ( 6000 * )
+      NEW met1 TAPERRULE met1_width_400  ( 4050 -12950 ) via_300_300_hh 
+      NEW met2 TAPERRULE met2_width_400  ( 3850 -12950 ) ( 9800 * ) ;
+   - count_0/GND ( count_0 GND ) ;
+   - count_0/UP ( count_0 UP )
+      + ROUTED li1 TAPERRULE li1_width_450  ( -16275 -14375 ) ( -16225 * )
+      NEW li1 TAPERRULE li1_width_450  ( -16250 -14400 ) mcon_200_200 
+      NEW met1 TAPERRULE met1_width_150  ( -16875 -14225 ) ( -16075 * )
+      NEW met1 TAPERRULE met1_width_450  ( -16725 -13925 ) ( * 7575 )
+      NEW met1 TAPERRULE met1_width_500  ( -16700 8050 ) ( -9050 * )
+      NEW met1 TAPERRULE met1_width_150  ( -16075 -14425 ) ( * -14375 )
+      NEW met1 TAPERRULE met1_width_450  ( -16725 -14375 ) ( -16225 * ) ;
+END NETS
+
+BLOCKAGES 2 ;
+   - LAYER mcon
+      RECT ( 2700 38250 ) ( 2900 38450 )
+      RECT ( 2700 38250 ) ( 2900 38450 )
+      RECT ( 13600 38250 ) ( 13800 38450 )
+      RECT ( 13600 38250 ) ( 13800 38450 )
+      RECT ( 23200 38250 ) ( 23400 38450 )
+      RECT ( 23200 38250 ) ( 23400 38450 )
+      RECT ( 43600 38250 ) ( 43800 38450 )
+      RECT ( 43600 38250 ) ( 43800 38450 )
+      RECT ( 53200 38250 ) ( 53400 38450 )
+      RECT ( 53200 38250 ) ( 53400 38450 )
+      RECT ( 62700 38250 ) ( 62900 38450 )
+      RECT ( 62700 38250 ) ( 62900 38450 )
+      RECT ( 73600 38250 ) ( 73800 38450 )
+      RECT ( 73600 38250 ) ( 73800 38450 )
+      RECT ( 37450 5000 ) ( 37650 5200 )
+      RECT ( 37450 5000 ) ( 37650 5200 )
+      RECT ( 52400 5000 ) ( 52600 5200 )
+      RECT ( 52400 5000 ) ( 52600 5200 )
+      RECT ( 62000 5000 ) ( 62200 5200 )
+      RECT ( 62000 5000 ) ( 62200 5200 )
+      RECT ( 87100 5000 ) ( 87300 5200 )
+      RECT ( 87100 5000 ) ( 87300 5200 ) ;
+   - LAYER met1
+      RECT ( 68200 3400 ) ( 68700 3550 )
+      RECT ( 31900 -3600 ) ( 32300 -3450 )
+      RECT ( 68200 -5350 ) ( 68700 -3450 )
+      RECT ( 78150 -34700 ) ( 78600 -27825 )
+      RECT ( 74650 -8000 ) ( 78200 -7500 )
+      RECT ( 74650 -27375 ) ( 75150 -8000 )
+      RECT ( 54975 -27825 ) ( 78600 -27375 ) ;
+END BLOCKAGES
+
+END DESIGN
+

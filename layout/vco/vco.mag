@@ -1,6 +1,6 @@
 magic
 tech sky130A
-timestamp 1727146712
+timestamp 1729846977
 << nwell >>
 rect 2765 1450 2885 1610
 << pwell >>
@@ -80,10 +80,6 @@ rect 2785 1295 3165 1325
 rect 3155 1075 3300 1100
 rect 2970 440 3320 490
 rect 4200 0 4350 50
-use mag_vco_ring_vco  mag_vco_ring_vco_0
-timestamp 1725806115
-transform 1 0 300 0 1 2100
-box -300 -2100 9605 1565
 use sky130_fd_pr__res_generic_po_DKCPUZ  sky130_fd_pr__res_generic_po_DKCPUZ_0
 timestamp 1725958087
 transform 0 -1 2390 1 0 1924
@@ -96,6 +92,10 @@ use sky130_fd_sc_hd__einvp_1  sky130_fd_sc_hd__einvp_1_0 $PDKPATH/libs.ref/sky13
 timestamp 1709947739
 transform 1 0 2564 0 1 1319
 box -19 -24 249 296
+use vco_ring_osc  vco_ring_osc_0
+timestamp 1729507033
+transform 1 0 300 0 1 2100
+box -300 -2100 10020 1565
 << labels >>
 rlabel metal1 2580 1735 2580 1735 1 VCCD
 port 1 n

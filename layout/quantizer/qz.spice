@@ -1,5 +1,10 @@
 * NGSPICE file created from qz.ext - technology: sky130A
 
+
+
+
+
+
 .subckt qz CLK Dout FBack D GND VCCD
 Xsky130_fd_sc_hd__dlygate4sd3_1_0 CLK GND GND VCCD VCCD DL1 sky130_fd_sc_hd__dlygate4sd3_1
 Xsky130_fd_sc_hd__dlygate4sd3_1_1 DL1 GND GND VCCD VCCD DL2 sky130_fd_sc_hd__dlygate4sd3_1
@@ -13,4 +18,5 @@ Xsky130_fd_sc_hd__nand2_1_0 CLK_dly Dout GND GND VCCD VCCD FBack_inv sky130_fd_s
 Xsky130_fd_sc_hd__dfxtp_1_0 CLK sky130_fd_sc_hd__buf_2_0/X GND GND VCCD VCCD Dout
 + sky130_fd_sc_hd__dfxtp_1
 .ends
+
 

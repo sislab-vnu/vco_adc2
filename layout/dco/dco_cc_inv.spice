@@ -17,3 +17,4 @@ Xdco_main_inv_0 VPWR VCCA outp GND VGND inp dco_main_inv
 Xdco_main_inv_1 VPWR VCCA outn GND VGND inn dco_main_inv
 .ends
 
+

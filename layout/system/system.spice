@@ -1,6 +1,10 @@
 * NGSPICE file created from system.ext - technology: sky130A
 
-.subckt count UP SetB DOWN Dout_buf GND VCCD
+
+
+
+
+.subckt count UP SetB Dout_buf VCCD DOWN GND
 Xsky130_fd_sc_hd__dfstp_1_0 UP_buf Q2N SetBi GND GND VCCD VCCD Q1 sky130_fd_sc_hd__dfstp_1
 Xsky130_fd_sc_hd__dfstp_1_1 DWN_buf Q1_buf SetBi GND GND VCCD VCCD Q2 sky130_fd_sc_hd__dfstp_1
 Xsky130_fd_sc_hd__inv_2_0 SetB GND GND VCCD VCCD SetBi sky130_fd_sc_hd__inv_2
@@ -12,7 +16,11 @@ Xsky130_fd_sc_hd__buf_2_4 UP GND GND VCCD VCCD UP_buf sky130_fd_sc_hd__buf_2
 Xsky130_fd_sc_hd__xor2_1_1 Q1 Q2 GND GND VCCD VCCD Dout sky130_fd_sc_hd__xor2_1
 .ends
 
-.subckt dco_freq clk clkDiv2 VNB VGND VPB VPWR
+
+
+
+
+.subckt dco_freq clk clkDiv2 VGND VNB VPB VPWR
 Xsky130_fd_sc_hd__buf_4_0 Q_N VGND VNB VPB VPWR Q_N_buf sky130_fd_sc_hd__buf_4
 Xsky130_fd_sc_hd__inv_4_0 clk VGND VNB VPB VPWR clkinv sky130_fd_sc_hd__inv_4
 Xsky130_fd_sc_hd__dfxtp_1_0 clkinv Q_N_buf VGND VNB VPB VPWR D sky130_fd_sc_hd__dfxtp_1
@@ -36,7 +44,7 @@ Xdco_main_inv_0 VPWR VCCA outp GND VGND inp dco_main_inv
 Xdco_main_inv_1 VPWR VCCA outn GND VGND inn dco_main_inv
 .ends
 
-.subckt dco_ring_osc p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4] VGND p[0] VPWR
+.subckt dco_ring_osc p[0] p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4] VGND VPWR
 + GND VCCA
 Xdco_cc_inv_0 p[0] p[4] pn[4] pn[0] VCCA VGND VPWR GND dco_cc_inv
 Xdco_cc_inv_1 p[1] p[0] pn[0] pn[1] VCCA VGND VPWR GND dco_cc_inv
@@ -63,16 +71,19 @@ X6 Isup Vbs2 B_M2 B_M2 sky130_fd_pr__pfet_01v8_hvt ad=0.72 pd=4.4 as=0.72 ps=4.4
 X7 D1_M4 G_M7 D_M7 D1_M4 sky130_fd_pr__pfet_01v8_hvt ad=1.6 pd=8.8 as=0.8 ps=4.4 w=4 l=0.5 M=2
 .ends
 
+
 .subckt dco VCCA Dctrl ENB Vbs_12 Vbs_34 pha_DCO GND Isup VCCD
 Xdco_freq_0 pha_ro ro_div2 GND GND VCCD VCCD dco_freq
 Xdco_freq_1 ro_div2 pha_DCO GND GND VCCD VCCD dco_freq
 Xsky130_fd_sc_hd__buf_2_0 p_osc GND GND VCCD VCCD pha_ro sky130_fd_sc_hd__buf_2
-Xdco_ring_osc_0 dco_ring_osc_0/p[1] dco_ring_osc_0/p[2] dco_ring_osc_0/p[3] p_osc
-+ dco_ring_osc_0/pn[0] dco_ring_osc_0/pn[1] dco_ring_osc_0/pn[2] dco_ring_osc_0/pn[3]
-+ dco_ring_osc_0/pn[4] GND dco_ring_osc_0/p[0] Isup GND Isup dco_ring_osc
+Xdco_ring_osc_0 dco_ring_osc_0/p[0] dco_ring_osc_0/p[1] dco_ring_osc_0/p[2] dco_ring_osc_0/p[3]
++ p_osc dco_ring_osc_0/pn[0] dco_ring_osc_0/pn[1] dco_ring_osc_0/pn[2] dco_ring_osc_0/pn[3]
++ dco_ring_osc_0/pn[4] GND Isup GND Isup dco_ring_osc
 Xdco_idac_0 Dctrl Vbs_12 Vbs_12 Vbs_34 Vbs_34 Isup VCCD VCCA GND dco_idac
 Xsky130_fd_sc_hd__einvp_1_0 VCCD ENB GND GND VCCD VCCD dco_ring_osc_0/pn[4] sky130_fd_sc_hd__einvp_1
 .ends
+
+
 
 .subckt qz CLK Dout FBack D GND VCCD
 Xsky130_fd_sc_hd__dlygate4sd3_1_0 CLK GND GND VCCD VCCD DL1 sky130_fd_sc_hd__dlygate4sd3_1
@@ -88,51 +99,51 @@ Xsky130_fd_sc_hd__dfxtp_1_0 CLK sky130_fd_sc_hd__buf_2_0/X GND GND VCCD VCCD Dou
 + sky130_fd_sc_hd__dfxtp_1
 .ends
 
-.subckt sky130_fd_pr__res_generic_po_DKCPUZ a_n48_200# a_n48_n630#
-R0 a_n48_200# a_n48_n630# sky130_fd_pr__res_generic_po w=0.48 l=2
-.ends
-
-.subckt mag_vco_main_inv A VPWR VGND Y VCCA GND
-X0 VPWR A Y VCCA sky130_fd_pr__pfet_01v8 ad=2 pd=10.8 as=1 ps=5.4 w=5 l=3.65 M=2
-X1 Y A VGND GND sky130_fd_pr__nfet_01v8 ad=0.8 pd=4.4 as=1.6 ps=8.8 w=4 l=3.65 M=2
-.ends
-
-.subckt mag_vco_aux_inv A VPWR VGND Y VCCA GND
+.subckt vco_aux_inv A VPWR VGND Y VCCA GND
 X0 Y A VPWR VCCA sky130_fd_pr__pfet_01v8 ad=2 pd=10.8 as=2 ps=10.8 w=5 l=3.65
 X1 Y A VGND GND sky130_fd_pr__nfet_01v8 ad=1.6 pd=8.8 as=1.6 ps=8.8 w=4 l=3.65
 .ends
 
-.subckt mag_vco_cc_inv inp inn VPWR VGND outp outn VCCA GND
-Xmag_vco_main_inv_0 inp VPWR VGND outp VCCA GND mag_vco_main_inv
-Xmag_vco_main_inv_1 inn VPWR VGND outn VCCA GND mag_vco_main_inv
-Xmag_vco_aux_inv_0 outp VPWR VGND outn VCCA GND mag_vco_aux_inv
-Xmag_vco_aux_inv_1 outn VPWR VGND outp VCCA GND mag_vco_aux_inv
+.subckt vco_main_inv A VPWR VGND Y VCCA GND
+X0 VPWR A Y VCCA sky130_fd_pr__pfet_01v8 ad=2 pd=10.8 as=1 ps=5.4 w=5 l=3.65 M=2
+X1 Y A VGND GND sky130_fd_pr__nfet_01v8 ad=0.8 pd=4.4 as=1.6 ps=8.8 w=4 l=3.65 M=2
 .ends
 
-.subckt mag_vco_ring_vco VGND p[0] p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4]
-+ mag_vco_cc_inv_4/VCCA VSUBS VPWR
-Xmag_vco_cc_inv_0 p[4] pn[4] VPWR VGND p[0] pn[0] mag_vco_cc_inv_4/VCCA VSUBS mag_vco_cc_inv
-Xmag_vco_cc_inv_1 p[0] pn[0] VPWR VGND p[1] pn[1] mag_vco_cc_inv_4/VCCA VSUBS mag_vco_cc_inv
-Xmag_vco_cc_inv_2 p[1] pn[1] VPWR VGND p[2] pn[2] mag_vco_cc_inv_4/VCCA VSUBS mag_vco_cc_inv
-Xmag_vco_cc_inv_3 p[3] pn[3] VPWR VGND p[4] pn[4] mag_vco_cc_inv_4/VCCA VSUBS mag_vco_cc_inv
-Xmag_vco_cc_inv_4 p[2] pn[2] VPWR VGND p[3] pn[3] mag_vco_cc_inv_4/VCCA VSUBS mag_vco_cc_inv
+.subckt vco_cc_inv inp inn outp outn VCCA GND VGND VPWR
+Xvco_aux_inv_0 outp VPWR VGND outn VCCA GND vco_aux_inv
+Xvco_aux_inv_1 outn VPWR VGND outp VCCA GND vco_aux_inv
+Xvco_main_inv_0 inp VPWR VGND outp VCCA GND vco_main_inv
+Xvco_main_inv_1 inn VPWR VGND outn VCCA GND vco_main_inv
 .ends
 
-.subckt vco VCCD ENB p[4] Anlg_in GND VCCA VPWR
-Xsky130_fd_pr__res_generic_po_DKCPUZ_0 Anlg_in mag_vco_ring_vco_0/VGND sky130_fd_pr__res_generic_po_DKCPUZ
-Xsky130_fd_pr__res_generic_po_DKCPUZ_1 mag_vco_ring_vco_0/VGND GND sky130_fd_pr__res_generic_po_DKCPUZ
-Xmag_vco_ring_vco_0 mag_vco_ring_vco_0/VGND mag_vco_ring_vco_0/p[0] mag_vco_ring_vco_0/p[1]
-+ mag_vco_ring_vco_0/p[2] mag_vco_ring_vco_0/p[3] p[4] mag_vco_ring_vco_0/pn[0] mag_vco_ring_vco_0/pn[1]
-+ mag_vco_ring_vco_0/pn[2] mag_vco_ring_vco_0/pn[3] mag_vco_ring_vco_0/pn[4] VCCA
-+ GND VPWR mag_vco_ring_vco
-Xsky130_fd_sc_hd__einvp_1_0 VCCD ENB GND GND VCCD VCCD mag_vco_ring_vco_0/pn[4] sky130_fd_sc_hd__einvp_1
+.subckt vco_ring_osc VGND p[0] p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4] VCCA
++ VPWR GND
+Xvco_cc_inv_0 p[4] pn[4] p[0] pn[0] VCCA GND VGND VPWR vco_cc_inv
+Xvco_cc_inv_1 p[0] pn[0] p[1] pn[1] VCCA GND VGND VPWR vco_cc_inv
+Xvco_cc_inv_2 p[1] pn[1] p[2] pn[2] VCCA GND VGND VPWR vco_cc_inv
+Xvco_cc_inv_3 p[3] pn[3] p[4] pn[4] VCCA GND VGND VPWR vco_cc_inv
+Xvco_cc_inv_4 p[2] pn[2] p[3] pn[3] VCCA GND VGND VPWR vco_cc_inv
+.ends
+
+.subckt sky130_fd_pr__res_generic_po_DKCPUZ a_n48_200# a_n48_n630#
+R0 a_n48_200# a_n48_n630# sky130_fd_pr__res_generic_po w=0.48 l=2
+.ends
+
+.subckt vco VCCD ENB Anlg_in GND p[4] VPWR VCCA
+Xvco_ring_osc_0 vco_ring_osc_0/VGND vco_ring_osc_0/p[0] vco_ring_osc_0/p[1] vco_ring_osc_0/p[2]
++ vco_ring_osc_0/p[3] p[4] vco_ring_osc_0/pn[0] vco_ring_osc_0/pn[1] vco_ring_osc_0/pn[2]
++ vco_ring_osc_0/pn[3] vco_ring_osc_0/pn[4] VCCA VPWR GND vco_ring_osc
+Xsky130_fd_pr__res_generic_po_DKCPUZ_0 Anlg_in vco_ring_osc_0/VGND sky130_fd_pr__res_generic_po_DKCPUZ
+Xsky130_fd_pr__res_generic_po_DKCPUZ_1 vco_ring_osc_0/VGND GND sky130_fd_pr__res_generic_po_DKCPUZ
+Xsky130_fd_sc_hd__einvp_1_0 VCCD ENB GND GND VCCD VCCD vco_ring_osc_0/pn[4] sky130_fd_sc_hd__einvp_1
 .ends
 
 .subckt system Dout CLK Anlg_in VCCD ENB GND Vbs_12 VCCA Vbs_34
-Xcount_0 vco_0/p[4] ENB qz_0/FBack D1 GND VCCD count
+Xcount_0 vco_0/p[4] ENB D1 VCCD qz_0/FBack GND count
 Xdco_0 VCCA D1 ENB Vbs_12 Vbs_34 p_dco GND dco_0/Isup VCCD dco
-Xcount_1 p_dco ENB qz_0/FBack qz_0/D GND VCCD count
+Xcount_1 p_dco ENB qz_0/D VCCD qz_0/FBack GND count
 Xqz_0 CLK Dout qz_0/FBack qz_0/D GND VCCD qz
-Xvco_0 VCCD ENB vco_0/p[4] Anlg_in GND VCCA VCCA vco
+Xvco_0 VCCD ENB Anlg_in GND vco_0/p[4] VCCA VCCA vco
 .ends
+
 

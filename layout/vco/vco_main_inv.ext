@@ -21,8 +21,8 @@ substrate "GND" 0 0 -180 -1020 m1 0 0 0 0 0 0 0 0 0 0 8000 360 0 0 0 0 0 0 0 0 0
 cap "VPWR" "VGND" 17.1429
 cap "A" "VGND" 648.068
 cap "VCCA" "VGND" 4.39843
-cap "A" "VPWR" 741.218
 cap "VCCA" "VPWR" 155.613
+cap "A" "VPWR" 741.218
 cap "VCCA" "A" 757.456
 cap "Y" "VGND" 63.6335
 cap "VPWR" "Y" 77.09

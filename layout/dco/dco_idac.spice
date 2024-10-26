@@ -1,5 +1,7 @@
 * NGSPICE file created from dco_idac.ext - technology: sky130A
 
+
+
 .subckt sky130_fd_pr__res_xhigh_po_0p35_RSCMUS a_n35_n1272# a_n35_840# a_n165_n1402#
 X0 a_n35_840# a_n35_n1272# a_n165_n1402# sky130_fd_pr__res_xhigh_po_0p35 l=8.56
 .ends
@@ -17,4 +19,5 @@ X5 D1_M3 Vbs3 VCCA VCCA sky130_fd_pr__pfet_01v8_hvt ad=0.36 pd=2.2 as=0.72 ps=4.
 X6 Isup Vbs2 B_M2 B_M2 sky130_fd_pr__pfet_01v8_hvt ad=0.72 pd=4.4 as=0.72 ps=4.4 w=1.8 l=0.5
 X7 D1_M4 G_M7 D_M7 D1_M4 sky130_fd_pr__pfet_01v8_hvt ad=1.6 pd=8.8 as=0.8 ps=4.4 w=4 l=0.5 M=2
 .ends
+
 
