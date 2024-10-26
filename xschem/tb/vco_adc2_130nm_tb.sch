@@ -7,8 +7,8 @@ S {}
 E {}
 N 130 -300 130 -260 { lab=Vbs_34}
 N 380 -300 380 -260 { lab=Anlg_in}
-N 460 -220 460 -180 { lab=ENB}
-N 540 -140 540 -100 { lab=CLK}
+N 380 -140 380 -100 { lab=ENB}
+N 620 -220 620 -180 { lab=CLK}
 N 50 -300 50 -260 { lab=Vbs_12}
 N 290 -280 290 -260 {
 lab=VCCD}
@@ -21,7 +21,7 @@ lab=VCCA}
 N 180 -640 220 -640 {
 lab=Vbs_12}
 N 280 -640 280 -590 {
-lab=#net1}
+lab=VCCD}
 N 300 -640 300 -590 {
 lab=Vbs_34}
 N 300 -640 340 -640 {
@@ -81,10 +81,10 @@ C {devices/vsource.sym} 290 -230 0 0 {name=VCCD value="DC=1.8"}
 C {devices/gnd.sym} 290 -200 0 0 {name=l5 lab=GND}
 C {devices/vsource.sym} 380 -230 0 0 {name=Vin value="DC=0 SIN(0.5 vsin sig_freq 20u 0 0)"}
 C {devices/gnd.sym} 380 -200 0 0 {name=l6 lab=GND}
-C {devices/vsource.sym} 460 -150 0 0 {name=Venb value="DC=0 PULSE( 0 1.8 0 20n 20n 200n 1 )"}
-C {devices/gnd.sym} 460 -120 0 0 {name=l7 lab=GND}
-C {devices/vsource.sym} 540 -70 0 0 {name=Vclk value="DC=0 PULSE( 0 1.8 0 1n 1n 19.835n 41.67n )"}
-C {devices/gnd.sym} 540 -40 0 0 {name=l8 lab=GND}
+C {devices/vsource.sym} 380 -70 0 0 {name=Venb value="DC=0 PULSE( 0 1.8 0 20n 20n 200n 1 )"}
+C {devices/gnd.sym} 380 -40 0 0 {name=l7 lab=GND}
+C {devices/vsource.sym} 620 -150 0 0 {name=Vclk value="DC=0 PULSE( 0 1.8 0 1n 1n 19.835n 41.67n )"}
+C {devices/gnd.sym} 620 -120 0 0 {name=l8 lab=GND}
 C {devices/vsource.sym} 50 -230 0 0 {name=Vbs_12 value="DC=0.4"}
 C {devices/gnd.sym} 50 -200 0 0 {name=l9 lab=GND}
 C {devices/lab_wire.sym} 200 -640 2 1 {name=l10 sig_type=std_logic lab=Vbs_12}
@@ -92,12 +92,12 @@ C {devices/lab_wire.sym} 320 -640 0 1 {name=l11 sig_type=std_logic lab=Vbs_34}
 C {devices/lab_wire.sym} 160 -490 0 0 {name=l17 sig_type=std_logic lab=Anlg_in}
 C {devices/lab_wire.sym} 160 -430 0 0 {name=l18 sig_type=std_logic lab=ENB}
 C {devices/lab_wire.sym} 370 -530 0 1 {name=l19 sig_type=std_logic lab=Dout}
-C {devices/lab_wire.sym} 460 -190 0 1 {name=l23 sig_type=std_logic lab=ENB}
+C {devices/lab_wire.sym} 380 -110 0 1 {name=l23 sig_type=std_logic lab=ENB}
 C {devices/lab_wire.sym} 50 -270 0 1 {name=l24 sig_type=std_logic lab=Vbs_12}
 C {devices/lab_wire.sym} 130 -270 0 1 {name=l25 sig_type=std_logic lab=Vbs_34}
 C {devices/lab_wire.sym} 380 -270 0 1 {name=l28 sig_type=std_logic lab=Anlg_in}
-C {devices/lab_pin.sym} 540 -120 2 0 {name=l29 sig_type=std_logic lab=CLK}
-C {devices/code_shown.sym} 840 -230 0 0 {name=VCO_param only_toplevel=false value="
+C {devices/lab_pin.sym} 620 -200 2 0 {name=l29 sig_type=std_logic lab=CLK}
+C {devices/code_shown.sym} 430 -430 0 0 {name=VCO_param only_toplevel=false value="
 .param l_main=3.65
 .param l_aux=3.65
 .param wp=5

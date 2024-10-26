@@ -291,7 +291,7 @@ XM2 Y A VGND GND sky130_fd_pr__nfet_01v8 L="L" W="Wn" nf=1 ad='int((nf+1)/2) * W
 .option finesim_output=fsdb
 .option finesim_mode="ALib*:spicead":subckt
 .option finesim_mode="DLib*:promd":subckt
-.option finesim_print_period=4n
+*.option finesim_print_period=4n
 *.option runlvl=7
 *.option accurate=1
 *.option finesim_mode=alib_vco:spicehd:subckt
