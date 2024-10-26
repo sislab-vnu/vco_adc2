@@ -1,10 +1,10 @@
-v {xschem version=2.9.9 file_version=1.2 }
+v {xschem version=3.4.5 file_version=1.2
+}
 G {}
 K {type=subcircuit
-format="@name @@clk @VGND @VNB @VPB @VPWR @@clkDiv2 @symname"
-template="name=Xdiv2_1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD"
-extra=" VGND VNB VPB VPWR"
-highlight=true}
+format="@name @pinlist @symname"
+template="name=x1"
+}
 V {}
 S {}
 E {}

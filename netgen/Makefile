@@ -5,7 +5,7 @@ SETUP_TCL=$(PDK_ROOT)/$(PDK)/libs.tech/netgen/setup.tcl
 NETGEN = netgen
 NETGEN_OPTS = -batch lvs
 
-SPICE_XSC_VCO = ../xschem/lib/simulations
+SPICE_XSC_VCO = ../xschem/lib_vco/simulations
 SPICE_MAG_VCO = ../layout/vco
 
 SPICE_XSC_DCO = ../xschem/lib_dco/simulations
@@ -20,7 +20,7 @@ SPICE_MAG_QZ = ../layout/quantizer
 SPICE_XSC_SYSTEM = ../xschem/system/simulations
 SPICE_MAG_SYSTEM = ../layout/system
 
-CURRENT_PATH = $(shell pwd)
+CURRENT_PATH = $(shell pwd)/module
 
 XSC_VCO_PATH = $(CURRENT_PATH)/xsc_vco/
 MAG_VCO_PATH = $(CURRENT_PATH)/mag_vco/
@@ -71,18 +71,6 @@ get_file:
 	@mkdir -p $(MAG_SYSTEM_PATH)
 	cp $(SPICE_XSC_SYSTEM)/*.spice $(XSC_SYSTEM_PATH)
 	cp $(SPICE_MAG_SYSTEM)/*.spice $(MAG_SYSTEM_PATH)
-#	echo $(CURRENT_PATH)
-#	mv aux_inv.spice xsc_vco_aux_inv.spice
-#	mv main_inv.spice xsc_vco_main_inv.spice
-#	mv cc_inv.spice xsc_vco_cc_inv.spice
-#	mv 5s_cc_osc.spice xsc_vco_ring_osc.spice
-#	mv ALib_VCO.spice xsc_vco.spice
-
-#compare:
-#	@if [ -z "$(file_spice_1)" ] || [ -z "$(file_spice_2)" ] || [ -z "$(module1)" ] || [ -z "$(module2)" ] || [ -z "$(file_log)" ]; then
-#	echo "Vui lòng cung cấp tất cả các tham số: tên file SPICE 1, tên file SPICE 2, tên module 1, tên module 2, và tên file log.";
-#	exit 1;
-#	fi
 
 check_lvs:
 	grep -n "Circuits match uniquely" comp.out
@@ -105,7 +93,7 @@ vco_cc_inv: get_file
 	$(NETGEN) $(NETGEN_OPTS) "$(XSC_VCO_PATH)/vco_cc_inv.spice vco_cc_inv" "$(MAG_VCO_PATH)/vco_cc_inv.spice vco_cc_inv" $(SETUP_TCL)
 	make check_lvs
 
-vco_ring_ocs: get_file
+vco_ring_osc: get_file
 	$(NETGEN) $(NETGEN_OPTS) "$(XSC_VCO_PATH)/vco_ring_osc.spice vco_ring_osc" "$(MAG_VCO_PATH)/vco_ring_osc.spice vco_ring_osc" $(SETUP_TCL)
 	make check_lvs
 
@@ -145,7 +133,6 @@ dco: get_file
 	make check_lvs
 
 block_dco: dco_main_inv dco_aux_inv dco_cc_inv dco_ring_osc dco_idac dco_freq dco 
-	clear
 	@echo "All module dco check completed successfully"
 
 count: get_file
@@ -160,11 +147,15 @@ system: get_file
 	$(NETGEN) $(NETGEN_OPTS) "$(XSC_SYSTEM_PATH)/system.spice system" "$(MAG_SYSTEM_PATH)/system.spice system" $(SETUP_TCL)
 	make check_lvs
 
-.PHONY: get_file check_lvs vco_main_inv vco_aux_inv vco_cc_inv vco_ring_osc vco dco_main_inv dco_aux_inv dco_cc_inv dco_ring_osc block_dco count qz system
+all: block_vco block_dco count qz system
+	@echo "ALL module check completed successfully"
+
+.PHONY: get_file check_lvs vco_main_inv vco_aux_inv vco_cc_inv vco_ring_osc vco dco_main_inv dco_aux_inv dco_cc_inv dco_ring_osc block_dco count qz system all
 
 clean:
-	rm -f $(file_log) *.out
-
-help:
-	@echo "C1: Sử dụng: make ARGS='<tên_file_spice_1> <tên_file_spice_2> <tên_module_1> <tên_module_2> <tên_file_kết_quả>'"
-	@echo "C2: make + target"
+	rm -f $(file_log) *.out *.log *.txt
+	rm -rf $(MAG_VCO_PATH) $(XSC_VCO_PATH)
+	rm -rf $(MAG_DCO_PATH) $(XSC_DCO_PATH)
+	rm -rf $(MAG_COUNT_PATH) $(XSC_COUNT_PATH)
+	rm -rf $(MAG_QZ_PATH) $(XSC_QZ_PATH)
+	rm -rf $(MAG_SYSTEM_PATH) $(XSC_SYSTEM_PATH)

@@ -61,7 +61,6 @@ C {devices/lab_wire.sym} 310 -150 0 0 {name=l12 sig_type=std_logic lab=pn[3]}
 C {devices/lab_pin.sym} 380 -340 2 1 {name=l21 sig_type=std_logic lab=Isup}
 C {sky130_stdcells/einvp_1.sym} 190 -110 0 0 {name=x1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD prefix=sky130_fd_sc_hd__ }
 C {sky130_stdcells/buf_2.sym} 520 -110 0 0 {name=x2 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD prefix=sky130_fd_sc_hd__ }
-C {DLib_freqDiv2.sym} 690 -100 0 0 {name=Xdiv2_1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
 C {devices/ipin.sym} 310 -440 0 0 {name=p1 lab=Dctrl}
 C {devices/ipin.sym} 370 -520 0 0 {name=p2 lab=Vbs_12}
 C {devices/ipin.sym} 440 -540 0 0 {name=p3 lab=Vbs_34}
@@ -69,7 +68,6 @@ C {devices/opin.sym} 970 -110 0 0 {name=p5 lab=pha_DCO}
 C {devices/ipin.sym} 140 -70 0 0 {name=p7 lab=ENB}
 C {devices/lab_pin.sym} 600 -110 1 0 {name=l3 sig_type=std_logic lab=pha_ro}
 C {devices/lab_wire.sym} 450 -110 0 1 {name=l4 sig_type=std_logic lab=p_osc}
-C {DLib_freqDiv2.sym} 890 -100 0 0 {name=Xdiv1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
 C {devices/lab_wire.sym} 770 -110 2 0 {name=l14 sig_type=std_logic lab=ro_div2}
 C {/home/toind/work/vco_adc2/xschem/lib_dco/dco_idac.sym} 420 -440 0 0 {name=x3}
 C {devices/ipin.sym} 540 -460 2 0 {name=p4 lab=VCCA}
@@ -81,3 +79,5 @@ C {devices/lab_pin.sym} 540 -420 2 0 {name=l16 sig_type=std_logic lab=VCCD}
 C {devices/lab_wire.sym} 450 -270 2 0 {name=l17 sig_type=std_logic lab=p[0]}
 C {devices/ipin.sym} 670 -570 0 0 {name=p8 lab=GND}
 C {devices/lab_pin.sym} 720 -570 0 1 {name=l8 sig_type=std_logic lab=GND}
+C {/home/toind/work/vco_adc2/xschem/lib_dco/dco_freq.sym} 690 -100 0 0 {name=Xdiv2 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
+C {/home/toind/work/vco_adc2/xschem/lib_dco/dco_freq.sym} 890 -100 0 0 {name=Xdiv2_1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}

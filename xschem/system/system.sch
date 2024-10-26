@@ -159,7 +159,6 @@ C {devices/lab_wire.sym} 780 -410 2 0 {name=l21 sig_type=std_logic lab=D2}
 C {devices/lab_wire.sym} 580 -320 2 0 {name=l22 sig_type=std_logic lab=FBack}
 C {devices/lab_wire.sym} 190 -420 1 0 {name=l30 sig_type=std_logic lab=p_vco}
 C {devices/lab_wire.sym} 580 -420 1 0 {name=l31 sig_type=std_logic lab=p_dco}
-C {vco.sym} 110 -420 0 0 {name=x1}
 C {devices/lab_wire.sym} 110 -525 0 0 {name=l3 sig_type=std_logic lab=VCCA}
 C {devices/lab_wire.sym} 95 -325 0 0 {name=l5 sig_type=std_logic lab=VCCD}
 C {/home/toind/work/vco_adc2/xschem/lib_count/count.sym} 290 -400 0 0 {name=X_UDC_2}
@@ -185,3 +184,4 @@ C {devices/lab_wire.sym} 650 -680 2 0 {name=l12 sig_type=std_logic lab=VCCD}
 C {devices/lab_wire.sym} 650 -650 2 0 {name=l13 sig_type=std_logic lab=GND}
 C {devices/lab_wire.sym} 650 -620 2 0 {name=l16 sig_type=std_logic lab=VCCA}
 C {devices/lab_wire.sym} 805 -710 0 0 {name=l18 sig_type=std_logic lab=Dout}
+C {/home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco.sym} 110 -420 0 0 {name=x1}
