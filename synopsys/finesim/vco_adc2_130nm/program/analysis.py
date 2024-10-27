@@ -28,12 +28,13 @@ def signal_cprs(raw_sig = [4.5* 10 **7, 10 ** 7]):
 		cprs_sig.append (data_dec_cprs)					# write to compressed signal array
 	return cprs_sig
 
-def main():
+def main(fname):
 	volt = 0.36	# V_amp
 	freq = 1	# kHz
-	file_name = str(volt) + 'V@' + str(freq) + 'kHz.txt'
-	data_out, anlg_in = filt_data (file_name)
-	data_out = [int(ix) for ix in data_out]
+	# file_name = str(volt) + 'V@' + str(freq) + 'kHz.txt'
+	# data_out, anlg_in = filt_data (file_name)
+	# data_out = [int(ix) for ix in data_out]
+	data_out = np.loadtxt(fname, skiprows=2583)
 #	plt.figure(0)
 #	plt.plot(data_out)
 	cic_filr_sig =	decimation_filr (data_out, 500)	
@@ -49,7 +50,8 @@ def main():
 	fft_cal(data_out, 24e6, 2**18)
 
 	plt.show()
-		
-main()
+if __name__ == "__main__":
+	import sys
+	main(sys.argv[1])
 # dec2bin_32b(dec= 10 ** 7)
 # signal_cprs()

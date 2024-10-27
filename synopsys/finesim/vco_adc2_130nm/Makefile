@@ -1,29 +1,19 @@
+all: help
 
-all: run_finesim run_analysis process_data
-
-freq_ext:
-	finesim -np 12 -o ./simulations/ freq_ext.sp
-
-finesim:
-	finesim -np 6 -o ./simulations/ vco_adc2_130nm_tb.sp
+#finesim:
+#	finesim -np 8 -o ./simulations/ vco_adc2_130nm_tb.sp
+simv:
+	vcs -R +vpi -load finesim.so:finesim_startup +cli+3 verilog/dff.v
 
 #	finesim -np 12 -o ./simulations/ vco_adc2_130nm_tb.sp 	
 #	cat simulations/vco_tb.mt0
 analysis:
-	mkdir -p results/raw
-	mkdir -p results/filtered
-	python3 ./program/analysis.py
-	rm .analysis_cache
+	python3 ./program/analysis.py out.txt
 
 clean:
-	rm -f *log* *ic* *~ .analysis_cache
+	-rm -rf simv* csrc
 
-clear:
-	rm *tr* *mt* *st* *pt* *fsdb*
 
-test:
-	echo ${RAW_FILE}
-	echo ${PROCESSED_FILE}
 
 
 .PHONY: run_finesim process_data clean clear test

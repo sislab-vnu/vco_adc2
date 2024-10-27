@@ -16,6 +16,7 @@ Xvco_1 p_vco Anlg_in ENB ALib_VCO l_main=l_main_v l_aux=l_aux_v wp=wp_v wn=wn_v
 X_UDC_1 p_vco FBack ENB GND GND VCCD VCCD D1 DLib_UpDownCounter
 X_Qtz_1 CLK D2 GND GND VCCD VCCD Dout FBack DLib_Quantizer
 X_UDC_2 p_dco FBack ENB GND GND VCCD VCCD D2 DLib_UpDownCounter
+X_DFF CLK Dout Q dff
 **** begin user architecture code
 
 .param l_main_v=3.65
@@ -27,6 +28,9 @@ X_UDC_2 p_dco FBack ENB GND GND VCCD VCCD D2 DLib_UpDownCounter
 
 **** end user architecture code
 **.ends
+
+.subckt dff clk d q
+.ends
 
 * expanding   symbol:  ALib_DCO.sym # of pins=5
 ** sym_path: /home/userdata/k61D/manhtd_61d/git/mpw-three/xschem/lib/ALib_DCO.sym
@@ -266,7 +270,7 @@ XM2 Y A VGND GND sky130_fd_pr__nfet_01v8 L="L" W="Wn" nf=1 ad='int((nf+1)/2) * W
 *.probe tran v(p_vco) v(p_dco) v(xdco_1.p_osc) v(xdco_1.pha_ro) v(xdco_1.p_dco)  v(xdco_1.Isup) v(d1)
 *+ v(d2) v(dout) v(clk) v(fback) v(anlg_in) i(vcca) i(vccd)
 
-.print v(clk) v(dout) v(anlg_in)
+*.print v(clk) v(dout) v(anlg_in)
 
 .tran 1n 12m start=0 $ sweep data=input
 
@@ -276,22 +280,23 @@ XM2 Y A VGND GND sky130_fd_pr__nfet_01v8 L="L" W="Wn" nf=1 ad='int((nf+1)/2) * W
 *+ 1m 10k
 *.enddata
 
-.measure tran prd trig v(p_vco) val=0.8 rise=10 targ v(p_vco) val=0.8 rise=20
-.measure tran freq_v param='10/prd'
-.measure tran prd1 trig v(p_dco) val=0.8 rise=10 targ v(p_dco) val=0.8 rise=30
-.measure tran freq_d param='20/prd1'
-.measure tran I_analog avg i(vcca) from=0 to=120u
+*.measure tran prd trig v(p_vco) val=0.8 rise=10 targ v(p_vco) val=0.8 rise=20
+*.measure tran freq_v param='10/prd'
+*.measure tran prd1 trig v(p_dco) val=0.8 rise=10 targ v(p_dco) val=0.8 rise=30
+*.measure tran freq_d param='20/prd1'
+*.measure tran I_analog avg i(vcca) from=0 to=120u
 *.measure tran I_analog1 avg i(vcca1) from=0.1m to=1.1m
-.measure tran I_digital avg i(vccd) from=0 to=120u
-.measure tran A_power param='I_analog*1.8'
+*.measure tran I_digital avg i(vccd) from=0 to=120u
+*.measure tran A_power param='I_analog*1.8'
 *.measure tran A_power1 param='I_analog1*1.8'
-.measure tran D_power param='I_digital*1.8'
+*.measure tran D_power param='I_digital*1.8'
 ** options for finesim simulator
-.option finesim_fsdb_version=5.6
+*.option finesim_fsdb_version=5.6
 .option finesim_output=fsdb
 .option finesim_mode="ALib*:spicead":subckt
 .option finesim_mode="DLib*:promd":subckt
-.option finesim_print_period=4n
+*.option finesim_print_period=4n
+.option post=1
 *.option runlvl=7
 *.option accurate=1
 *.option finesim_mode=alib_vco:spicehd:subckt
