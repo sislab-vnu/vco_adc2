@@ -23,8 +23,8 @@ X_UDC_2 p_dco FBack ENB GND GND VCCD VCCD D2 DLib_UpDownCounter
 .param l_aux=3.65
 .param wp=5
 .param wn=4
-.param vsin=0.4
-.param sig_freq=5k
+.param vsin=0.36
+.param sig_freq=1k
 
 **** end user architecture code
 **.ends
@@ -268,7 +268,7 @@ XM2 Y A VGND GND sky130_fd_pr__nfet_01v8 L="L" W="Wn" nf=1 ad='int((nf+1)/2) * W
 
 .print v(clk) v(dout) v(anlg_in)
 
-.tran 1n 0.5m start=0 $  sweep vin 0 1.0 0.1
+.tran 1n 1.2m start=0 $ sweep vin 0 1.0 0.1
 
 .measure tran prd trig v(p_vco) val=0.8 rise=10 targ v(p_vco) val=0.8 rise=20
 .measure tran freq_v param='10/prd'
@@ -288,7 +288,7 @@ XM2 Y A VGND GND sky130_fd_pr__nfet_01v8 L="L" W="Wn" nf=1 ad='int((nf+1)/2) * W
 .option runlvl=7
 *.option accurate=1
 *.option finesim_mode=alib_vco:spicehd:subckt
-*.option finesim_mode=prohd
+.option finesim_mode=prohd
 
 ** options for hspice simulator
 *.option fsdb=1

@@ -1,0 +1,50 @@
+** sch_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/system/vco_cc_inv.sch
+**.subckt vco_cc_inv outp inn VGND outn inp VPWR VCCA GND
+*.opin outp
+*.ipin inn
+*.iopin VGND
+*.opin outn
+*.ipin inp
+*.iopin VPWR
+*.iopin VCCA
+*.iopin GND
+x1 VPWR VCCA outp GND VGND inp dco_main_inv
+x2 VPWR VCCA outn GND VGND inn dco_main_inv
+x3 VPWR VCCA outp outn GND VGND dco_aux_inv
+x4 VPWR VCCA outn outp GND VGND dco_aux_inv
+**.ends
+
+* expanding   symbol:  /home/toind/work/vco_adc2/xschem/lib_dco/dco_main_inv.sym # of pins=6
+** sym_path: /home/toind/work/vco_adc2/xschem/lib_dco/dco_main_inv.sym
+** sch_path: /home/toind/work/vco_adc2/xschem/lib_dco/dco_main_inv.sch
+.subckt dco_main_inv VPWR VCCA Y GND VGND A
+*.iopin VPWR
+*.iopin VGND
+*.ipin A
+*.opin Y
+*.iopin VCCA
+*.iopin GND
+XM3 Y A VGND GND sky130_fd_pr__nfet_01v8 L=1 W=4 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM4 Y A VPWR VCCA sky130_fd_pr__pfet_01v8 L=1 W=6 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  /home/toind/work/vco_adc2/xschem/lib_dco/dco_aux_inv.sym # of pins=6
+** sym_path: /home/toind/work/vco_adc2/xschem/lib_dco/dco_aux_inv.sym
+** sch_path: /home/toind/work/vco_adc2/xschem/lib_dco/dco_aux_inv.sch
+.subckt dco_aux_inv VPWR VCCA A Y GND VGND
+*.iopin VPWR
+*.iopin VGND
+*.ipin A
+*.opin Y
+*.iopin VCCA
+*.iopin GND
+XM3 Y A VGND GND sky130_fd_pr__nfet_01v8 L=1 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM4 Y A VPWR VCCA sky130_fd_pr__pfet_01v8 L=1 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.end

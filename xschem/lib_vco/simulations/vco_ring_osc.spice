@@ -1,0 +1,42 @@
+** sch_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco_ring_osc.sch
+.subckt vco_ring_osc VCCA GND VGND VPWR p[0] p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4]
+*.PININFO VPWR:B VGND:B pn[0]:O p[0]:B pn[1]:O p[1]:O p[2]:O p[3]:O p[4]:O pn[2]:O pn[3]:O pn[4]:O VCCA:B GND:B
+x6 VCCA VPWR p[0] p[4] pn[4] pn[0] GND VGND vco_cc_inv
+x1 VCCA VPWR p[1] p[0] pn[0] pn[1] GND VGND vco_cc_inv
+x2 VCCA VPWR p[2] p[1] pn[1] pn[2] GND VGND vco_cc_inv
+x3 VCCA VPWR p[3] p[2] pn[2] pn[3] GND VGND vco_cc_inv
+x4 VCCA VPWR p[4] p[3] pn[3] pn[4] GND VGND vco_cc_inv
+.ends
+
+* expanding   symbol:  /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco_cc_inv.sym # of pins=8
+** sym_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco_cc_inv.sym
+** sch_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco_cc_inv.sch
+.subckt vco_cc_inv VCCA VPWR outp inp inn outn GND VGND
+*.PININFO outp:O inn:I VGND:B outn:O inp:I VPWR:B VCCA:B GND:B
+x1 VPWR VCCA inp outp GND VGND vco_main_inv
+x2 VPWR VCCA inn outn GND VGND vco_main_inv
+x3 VPWR VCCA outp outn GND VGND vco_aux_inv
+x4 VPWR VCCA outn outp GND VGND vco_aux_inv
+.ends
+
+
+* expanding   symbol:  /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco_main_inv.sym # of pins=6
+** sym_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco_main_inv.sym
+** sch_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco_main_inv.sch
+.subckt vco_main_inv VPWR VCCA A Y GND VGND
+*.PININFO VPWR:B VGND:B A:I Y:O VCCA:B GND:B
+XM3 Y A VGND GND sky130_fd_pr__nfet_01v8 L=3.65 W=8 nf=2 m=1
+XM4 Y A VPWR VCCA sky130_fd_pr__pfet_01v8 L=3.65 W=10 nf=2 m=1
+.ends
+
+
+* expanding   symbol:  /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco_aux_inv.sym # of pins=6
+** sym_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco_aux_inv.sym
+** sch_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco_aux_inv.sch
+.subckt vco_aux_inv VPWR VCCA A Y GND VGND
+*.PININFO VPWR:B VGND:B A:I Y:O VCCA:B GND:B
+XM3 Y A VGND GND sky130_fd_pr__nfet_01v8 L=3.65 W=4 nf=1 m=1
+XM4 Y A VPWR VCCA sky130_fd_pr__pfet_01v8 L=3.65 W=5 nf=1 m=1
+.ends
+
+.end

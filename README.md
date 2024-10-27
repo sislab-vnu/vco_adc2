@@ -1,4 +1,4 @@
-# VCO based ADC 2nd 
+#VCO based ADC 2nd 
 
 # How to Run LVS?
 In the `netgen` folder, you can run LVS in the terminal using the following command:
@@ -30,3 +30,5 @@ source ext.sh
 ```
 
 After that, return to the netgen folder. When you run LVS again, you will see the error appear.
+
+# RUN system
