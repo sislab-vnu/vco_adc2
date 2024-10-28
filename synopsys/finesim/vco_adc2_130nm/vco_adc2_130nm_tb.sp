@@ -1,5 +1,36 @@
+** sch_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/tb/vco_adc2_130nm_tb.sch
+
+*.include /home/toind/eda/unic-cass/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
+.include /home/dkits/openpdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
+*.lib /home/toind/eda/unic-cass/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.lib /home/dkits/openpdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+**.subckt vco_adc2_130nm_tb
+Vbs_34 Vbs_34 GND DC=0
+VCCA VCCA GND DC=1.8
+VCCD VCCD GND DC=1.8
+Vin Anlg_in GND DC=0 SIN(0.4 vsin sig_freq 20u 0 0)
+Venb ENB GND DC=0 PULSE( 0 1.8 0 20n 20n 200n 1 )
+Vclk CLK GND DC=0 PULSE( 0 1.8 0 1n 1n 19.835n 41.67n )
+Vbs_12 Vbs_12 GND DC=0.3
+x1 Dout CLK Anlg_in VCCD ENB GND Vbs_12 VCCA Vbs_34 system
+**** begin user architecture code
+
+
+.param l_main=3.65
+.param l_aux=3.65
+.param wp=5
+.param wn=4
+.param vsin=0.36
+.param sig_freq=1k
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  /home/toind/work/sislab_vnu/vco_adc2/xschem/system/system.sym # of pins=9
+** sym_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/system/system.sym
 ** sch_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/system/system.sch
-**.subckt system Dout CLK Anlg_in VCCD ENB GND Vbs_12 VCCA Vbs_34
+.subckt system Dout CLK Anlg_in VCCD ENB GND Vbs_12 VCCA Vbs_34
 *.ipin Anlg_in
 *.ipin ENB
 *.ipin Vbs_12
@@ -13,8 +44,9 @@ X_UDC_2 VCCD GND p_vco ENB FBack D1 count
 x2 GND VCCD VCCA D1 ENB Vbs_12 Vbs_34 p_dco dco
 X_UDC_1 VCCD GND p_dco ENB FBack D2 count
 X_Qtz_1 VCCD GND CLK Dout FBack D2 qz
-x1 GND p_vco Anlg_in ENB VCCA VCCD VCCA vco
-**.ends
+x1 GND p_vco Anlg_in ENB VCCA VCCD VCCA vco l_main=l_main_v l_aux=l_aux_v wp=wp_v wn=wn_v
+.ends
+
 
 * expanding   symbol:  /home/toind/work/vco_adc2/xschem/lib_count/count.sym # of pins=6
 ** sym_path: /home/toind/work/vco_adc2/xschem/lib_count/count.sym
@@ -52,9 +84,26 @@ X_inv_1 Q2 GND GND VCCD VCCD Q2N sky130_fd_sc_hd__inv_2
 *.ipin GND
 x1 VCCD ENB GND GND VCCD VCCD pn[4] sky130_fd_sc_hd__einvp_1
 x2 p_osc GND GND VCCD VCCD pha_ro sky130_fd_sc_hd__buf_2
-x3 VCCD GND VCCA Dctrl Vbs_12 Vbs_12 Vbs_34 Vbs_34 Isup dco_idac
-x4 Isup GND GND Isup p[0] p[1] p[2] p[3] p_osc pn[0] pn[1] pn[2] pn[3] pn[4] dco_ring_osc
+x3 VCCD GND VCCA Dctrl Vbs_12 Vbs_12 Vbs_34 Vbs_34 Isup dco_idac W_br1="W_br1" L_br1="L_br1" W_br2="W_br2"
++ L_br2="L_br2" Wp_lk="Wp_lk" Lp_lk="Lp_lk" Wn_lk="Wn_lk" Ln_lk="Wn_lk"
+x4 Isup GND GND Isup p[0] p[1] p[2] p[3] p_osc pn[0] pn[1] pn[2] pn[3] pn[4] dco_ring_osc l_main=l_main
++ l_aux=l_aux wp=wp wn=wn
 Xdiv2 pha_ro GND GND VCCD VCCD ro_div2 dco_freq
+
+.param W_br1=1.8
+.param L_br1=0.5
+.param W_br2=1.8
+.param L_br2=0.5
+.param Wp_lk=4
+.param Lp_lk=0.5
+.param Wn_lk=2
+.param Ln_lk=0.5
+
+.param l_main=1
+.param l_aux=1
+.param wp=3
+.param wn=2
+
 Xdiv2_1 ro_div2 GND GND VCCD VCCD pha_DCO dco_freq
 .ends
 
@@ -85,7 +134,7 @@ Xdly_6 DL5 GND GND VCCD VCCD CLK_dly sky130_fd_sc_hd__dlygate4sd3_1
 * expanding   symbol:  /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco.sym # of pins=7
 ** sym_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco.sym
 ** sch_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco.sch
-.subckt vco GND p[4] Anlg_in ENB VCCA VCCD VPWR
+.subckt vco GND p[4] Anlg_in ENB VCCA VCCD VPWR l_main=0.15 l_aux=0.15 wp=1 wn=0.6
 *.ipin Anlg_in
 *.opin p[4]
 *.ipin VCCA
@@ -96,14 +145,19 @@ Xdly_6 DL5 GND GND VCCD VCCD CLK_dly sky130_fd_sc_hd__dlygate4sd3_1
 x1 VCCD ENB GND GND VCCD VCCD pn[4] sky130_fd_sc_hd__einvp_1
 R3 Vctrl Anlg_in sky130_fd_pr__res_generic_po W=0.482 L=2 m=1
 R1 GND Vctrl sky130_fd_pr__res_generic_po W=0.482 L=2 m=1
-x3 VCCA GND Vctrl VPWR p[0] p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4] vco_ring_osc
+
+* R1 Vctrl Anlg_in R=200 m=1
+* R3 GND Vctrl R=200 m=1
+
+x3 VCCA GND Vctrl VPWR p[0] p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4] vco_ring_osc l_main=l_main
++ l_aux=l_aux wp=wp wn=wn
 .ends
 
 
 * expanding   symbol:  /home/toind/work/vco_adc2/xschem/lib_dco/dco_idac.sym # of pins=9
 ** sym_path: /home/toind/work/vco_adc2/xschem/lib_dco/dco_idac.sym
 ** sch_path: /home/toind/work/vco_adc2/xschem/lib_dco/dco_idac.sch
-.subckt dco_idac VCCD GND VCCA Dctrl Vbs1 Vbs2 Vbs3 Vbs4 Isup
+.subckt dco_idac VCCD GND VCCA Dctrl Vbs1 Vbs2 Vbs3 Vbs4 Isup W_br1=4 L_br1=1 W_br2=4 L_br2=1 Wp_lk=4 Lp_lk=1 Wn_lk=2 Ln_lk=1
 *.ipin Vbs3
 *.ipin Vbs4
 *.ipin Vbs1
@@ -131,14 +185,15 @@ XM7 input_R open add_pwr add_pwr sky130_fd_pr__pfet_01v8_hvt L=0.5 W=8 nf=2 ad='
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
 XM8 add_pwr lock input_R GND sky130_fd_pr__nfet_01v8 L=0.5 W=4 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
-XR2 GND input_R GND sky130_fd_pr__res_xhigh_po_0p35 L=8.562 mult=1 m=1
+R1 GND input_R 50k m=1
+* XR2 GND input_R GND sky130_fd_pr__res_xhigh_po_0p35 L=8.562 mult=1 m=1
 .ends
 
 
 * expanding   symbol:  /home/toind/work/vco_adc2/xschem/lib_dco/dco_ring_osc.sym # of pins=14
 ** sym_path: /home/toind/work/vco_adc2/xschem/lib_dco/dco_ring_osc.sym
 ** sch_path: /home/toind/work/vco_adc2/xschem/lib_dco/dco_ring_osc.sch
-.subckt dco_ring_osc VCCA GND VGND VPWR p[0] p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4]
+.subckt dco_ring_osc VCCA GND VGND VPWR p[0] p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4] l_main=0.15 l_aux=0.15 wp=1 wn=0.6
 *.iopin VPWR
 *.iopin VGND
 *.opin pn[0]
@@ -177,7 +232,7 @@ x4 Q_N VGND VNB VPB VPWR Q_N_buf sky130_fd_sc_hd__buf_4
 * expanding   symbol:  /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco_ring_osc.sym # of pins=14
 ** sym_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco_ring_osc.sym
 ** sch_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco_ring_osc.sch
-.subckt vco_ring_osc VCCA GND VGND VPWR p[0] p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4]
+.subckt vco_ring_osc VCCA GND VGND VPWR p[0] p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4] l_main=0.15 l_aux=0.15 wp=1 wn=0.6
 *.iopin VPWR
 *.iopin VGND
 *.opin pn[0]
@@ -203,7 +258,7 @@ x4 VCCA VPWR p[4] p[3] pn[3] pn[4] GND VGND vco_cc_inv
 * expanding   symbol:  /home/toind/work/vco_adc2/xschem/lib_dco/dco_cc_inv.sym # of pins=8
 ** sym_path: /home/toind/work/vco_adc2/xschem/lib_dco/dco_cc_inv.sym
 ** sch_path: /home/toind/work/vco_adc2/xschem/lib_dco/dco_cc_inv.sch
-.subckt dco_cc_inv VCCA VPWR outp inp inn outn GND VGND
+.subckt dco_cc_inv VCCA VPWR outp inp inn outn GND VGND l_main=0.15 l_aux=0.15 wp=1.2 wn=0.6
 *.opin outp
 *.ipin inn
 *.iopin VGND
@@ -222,7 +277,7 @@ x4 VPWR VCCA outn outp GND VGND dco_aux_inv
 * expanding   symbol:  /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco_cc_inv.sym # of pins=8
 ** sym_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco_cc_inv.sym
 ** sch_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco_cc_inv.sch
-.subckt vco_cc_inv VCCA VPWR outp inp inn outn GND VGND
+.subckt vco_cc_inv VCCA VPWR outp inp inn outn GND VGND l_main=0.15 l_aux=0.15 wp=1.2 wn=0.6
 *.opin outp
 *.ipin inn
 *.iopin VGND
@@ -241,7 +296,7 @@ x4 VPWR VCCA outn outp GND VGND vco_aux_inv
 * expanding   symbol:  /home/toind/work/vco_adc2/xschem/lib_dco/dco_main_inv.sym # of pins=6
 ** sym_path: /home/toind/work/vco_adc2/xschem/lib_dco/dco_main_inv.sym
 ** sch_path: /home/toind/work/vco_adc2/xschem/lib_dco/dco_main_inv.sch
-.subckt dco_main_inv VPWR VCCA Y GND VGND A
+.subckt dco_main_inv VPWR VCCA Y GND VGND A l=0.15 wp=1.2 wn=0.6
 *.iopin VPWR
 *.iopin VGND
 *.ipin A
@@ -258,7 +313,7 @@ XM4 Y A VPWR VCCA sky130_fd_pr__pfet_01v8 L=1 W=6 nf=2 ad='int((nf+1)/2) * W/nf 
 * expanding   symbol:  /home/toind/work/vco_adc2/xschem/lib_dco/dco_aux_inv.sym # of pins=6
 ** sym_path: /home/toind/work/vco_adc2/xschem/lib_dco/dco_aux_inv.sym
 ** sch_path: /home/toind/work/vco_adc2/xschem/lib_dco/dco_aux_inv.sch
-.subckt dco_aux_inv VPWR VCCA A Y GND VGND
+.subckt dco_aux_inv VPWR VCCA A Y GND VGND l=0.15 wp=1.2 wn=0.6
 *.iopin VPWR
 *.iopin VGND
 *.ipin A
@@ -275,7 +330,7 @@ XM4 Y A VPWR VCCA sky130_fd_pr__pfet_01v8 L=1 W=3 nf=1 ad='int((nf+1)/2) * W/nf 
 * expanding   symbol:  /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco_main_inv.sym # of pins=6
 ** sym_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco_main_inv.sym
 ** sch_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco_main_inv.sch
-.subckt vco_main_inv VPWR VCCA A Y GND VGND
+.subckt vco_main_inv VPWR VCCA A Y GND VGND l=0.15 wp=1.2 wn=0.6
 *.iopin VPWR
 *.iopin VGND
 *.ipin A
@@ -292,7 +347,7 @@ XM4 Y A VPWR VCCA sky130_fd_pr__pfet_01v8 L=3.65 W=10 nf=2 ad='int((nf+1)/2) * W
 * expanding   symbol:  /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco_aux_inv.sym # of pins=6
 ** sym_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco_aux_inv.sym
 ** sch_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib_vco/vco_aux_inv.sch
-.subckt vco_aux_inv VPWR VCCA A Y GND VGND
+.subckt vco_aux_inv VPWR VCCA A Y GND VGND l=0.15 wp=1.2 wn=0.6
 *.iopin VPWR
 *.iopin VGND
 *.ipin A
@@ -305,4 +360,53 @@ XM4 Y A VPWR VCCA sky130_fd_pr__pfet_01v8 L=3.65 W=5 nf=1 ad='int((nf+1)/2) * W/
 + ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
 .ends
 
+.GLOBAL GND
+.GLOBAL VCCD
+.GLOBAL VCCA
+**** begin user architecture code
+
+
+** control simulation lines
+.probe tran v(p_vco) v(p_dco) v(xdco_1.p_osc) v(xdco_1.pha_ro) v(xdco_1.p_dco)
++ v(xdco_1.Isup) v(d1) v(d2) v(dout) v(clk) v(fback) v(anlg_in) i(vcca) i(vccd)
+
+.print v(clk) v(dout) v(anlg_in)
+
+.tran 10n 1.2m start=0 $  sweep vin 0 1.0 0.1
+
+.measure tran prd trig v(p_vco) val=0.8 rise=10 targ v(p_vco) val=0.8 rise=20
+.measure tran freq_v param='10/prd'
+.measure tran prd1 trig v(p_dco) val=0.8 rise=10 targ v(p_dco) val=0.8 rise=30
+.measure tran freq_d param='20/prd1'
+.measure tran I_analog avg i(vcca) from=0.1m to=1.1m
+*.measure tran I_analog1 avg i(vcca1) from=0.1m to=1.1m
+.measure tran I_digital avg i(vccd) from=0.1m to=1.1m
+.measure tran A_power param='I_analog*1.8'
+*.measure tran A_power1 param='I_analog1*1.8'
+.measure tran D_power param='I_digital*1.8'
+** options for finesim simulator
+.option finesim_fsdb_version=5.6
+.option finesim_output=fsdb
+.option finesim_mode="dco_idac:spicead":subckt
+.option finesim_mode="vco:spicead":subckt
+.option finesim_mode="dco:spicead":subckt
+.option finesim_mode="count:promd":subckt
+.option finesim_mode="qz:promd":subckt
+.option finesim_mode="dco_freq:promd":subckt
+
+* .option finesim_mode=spicead:p
+* .option finesim_mode=dlib*:promd:subckt
+*.option runlvl=7
+*.option accurate=1
+*.option finesim_mode=alib_vco:spicehd:subckt
+.option finesim_mode=prohd
+
+** options for hspice simulator
+*.option fsdb=1
+*.option opfile=1 split_dp=1
+
+**** end user architecture code
+
+
+**** end user architecture code
 .end

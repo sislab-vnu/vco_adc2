@@ -1,0 +1,4 @@
+$DATA1 SOURCE='FineSimPro' VERSION='O-2018.09-SP2-1'
+.TITLE '** sch_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/tb/vco_adc2_130nm_tb.sch'
+            prd         freq_v           prd1         freq_d       i_analog      i_digital        a_power        d_power         temper         alter#
+          error          error          error          error          error          error          error          error     2.5000e+01     1.0000e+00
