@@ -1,0 +1,112 @@
+** sch_path: /home/userdata/k63D/toind_63d/work/sislab_vnu/vco_adc2/xschem/lib/tb_ring_dco.sch
+**.subckt tb_ring_dco
+VDD VDDA GND DC=1.8
+Venb1 ENB GND DC=0 PULSE( 0 1.8 0 0.1n 0.1n 20n 1)
+V_input Anlg_in GND DC=0 sin(0.8 0.4 0.5Meg 0 0 0)
+x1 VDDA ENB GND GND VDD VDD einvp sky130_fd_sc_hd__einvp_1
+R3 V_ctrl Anlg_in sky130_fd_pr__res_generic_po W=0.482 L=2 m=1
+R1 GND V_ctrl sky130_fd_pr__res_generic_po W=0.482 L=2 m=1
+x2 V_ctrl VDDA pha_0 pha_1 pha_2 pha_3 pha_4 net1 net2 net3 net4 einvp 5s_cc_osc_dco
+**** begin user architecture code
+
+
+**LIB with Local Computer
+*.lib /home/toind/eda/uniccass/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+*.inc /home/toind/eda/uniccass/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
+
+.lib /home/dkits/openpdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.inc /home/dkits/openpdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
+
+
+
+
+.control
+*save all
+set nobreak
+set num_threads=10
+save all
+TRAN 1n 100u
+
+.endc
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  5s_cc_osc_dco.sym # of pins=12
+** sym_path: /home/userdata/k63D/toind_63d/work/sislab_vnu/vco_adc2/xschem/lib/5s_cc_osc_dco.sym
+** sch_path: /home/userdata/k63D/toind_63d/work/sislab_vnu/vco_adc2/xschem/lib/5s_cc_osc_dco.sch
+.subckt 5s_cc_osc_dco VGND VDDA p[0] p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4]
+*.iopin VDDA
+*.iopin VGND
+*.opin pn[0]
+*.iopin p[0]
+*.opin pn[1]
+*.opin p[1]
+*.opin p[2]
+*.opin p[3]
+*.opin p[4]
+*.opin pn[2]
+*.opin pn[3]
+*.opin pn[4]
+x1 VDDA p[0] p[4] pn[4] pn[0] VGND cc_inv_dco
+x2 VDDA p[1] p[0] pn[0] pn[1] VGND cc_inv_dco
+x3 VDDA p[2] p[1] pn[1] pn[2] VGND cc_inv_dco
+x4 VDDA p[3] p[2] pn[2] pn[3] VGND cc_inv_dco
+x5 VDDA p[4] p[3] pn[3] pn[4] VGND cc_inv_dco
+.ends
+
+
+* expanding   symbol:  ../lib/cc_inv_dco.sym # of pins=6
+** sym_path: /home/userdata/k63D/toind_63d/work/sislab_vnu/vco_adc2/xschem/lib/cc_inv_dco.sym
+** sch_path: /home/userdata/k63D/toind_63d/work/sislab_vnu/vco_adc2/xschem/lib/cc_inv_dco.sch
+.subckt cc_inv_dco VDDA outp inp inn outn VGND
+*.opin outp
+*.ipin inn
+*.iopin VGND
+*.opin outn
+*.ipin inp
+*.iopin VDDA
+x1 VDDA VGND outp inp main_inv_dco
+x2 VPWR VGND outn inn main_inv_dco
+x3 VDDA VGND outn outp aux_inv_dco
+x4 VDDA VGND outp outn aux_inv_dco
+.ends
+
+
+* expanding   symbol:  ../lib/main_inv_dco.sym # of pins=4
+** sym_path: /home/userdata/k63D/toind_63d/work/sislab_vnu/vco_adc2/xschem/lib/main_inv_dco.sym
+** sch_path: /home/userdata/k63D/toind_63d/work/sislab_vnu/vco_adc2/xschem/lib/main_inv_dco.sch
+.subckt main_inv_dco VDDA VGND Y A
+*.iopin VDDA
+*.iopin VGND
+*.ipin A
+*.opin Y
+XM3 Y A VGND VGND sky130_fd_pr__nfet_01v8 L=1.2 W=4 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 Y A VDDA VDDA sky130_fd_pr__pfet_01v8 L=1.2 W=6 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  ../lib/aux_inv_dco.sym # of pins=4
+** sym_path: /home/userdata/k63D/toind_63d/work/sislab_vnu/vco_adc2/xschem/lib/aux_inv_dco.sym
+** sch_path: /home/userdata/k63D/toind_63d/work/sislab_vnu/vco_adc2/xschem/lib/aux_inv_dco.sch
+.subckt aux_inv_dco VDDA VGND Y A
+*.iopin VDDA
+*.iopin VGND
+*.ipin A
+*.opin Y
+XM3 Y A VGND VGND sky130_fd_pr__nfet_01v8 L=1.2 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 Y A VDDA VDDA sky130_fd_pr__pfet_01v8 L=1.2 W=3 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.GLOBAL GND
+.GLOBAL VDDA
+.end
