@@ -9,7 +9,7 @@ VDDA VDDA GND DC=1.8
 Vin Anlg_in GND DC=0 SIN(0.5 vsin sig_freq 20u 0 0)
 Venb ENB GND DC=0 PULSE( 0 1.8 0 20n 20n 200n 1 )
 Vclk CLK GND DC=0 PULSE( 0 1.8 0 1n 1n 19.835n 41.67n )
-Vbs_12 Vbs_12 GND DC=0.4
+Vbs_12 Vbs_12 GND DC=0.3
 Xvco_1 p_vco Anlg_in ENB VDDA GND ALib_VCO
 X_UDC_1 VDDA GND p_vco ENB FBack D1 DLib_UpDownCounter
 Xdco_2 GND VDDA D1 ENB Vbs_12 Vbs_34 p_dco ALib_DCO
@@ -38,9 +38,9 @@ X_Qtz_2 VDDA GND CLK Dout FBack D2 DLib_Quantizer
 *.opin p[4]
 *.ipin GND
 Xro_1 net1 VDDA p[0] p[1] p[2] p[3] p[4] pn[0] pn[1] pn[2] pn[3] pn[4] GND 5s_cc_osc
-x1 VDDA ENB VGND VNB VPB VPWR pn[4] sky130_fd_sc_hd__einvp_1
+x1 VDDA ENB GND GND VDDA VDDA pn[4] sky130_fd_sc_hd__einvp_1
 R1 net1 Anlg_in sky130_fd_pr__res_generic_po W=1 L=1 m=1
-R2 net2 net1 sky130_fd_pr__res_generic_po W=1 L=1 m=1
+R2 GND net1 sky130_fd_pr__res_generic_po W=1 L=1 m=1
 .ends
 
 
@@ -242,7 +242,7 @@ Xi_4 VDDA VGND outp GND outn aux_inv
 *.ipin inp
 *.iopin VDDA
 x1 VDDA VGND outp inp main_inv_dco
-x2 VPWR VGND outn inn main_inv_dco
+x2 VDDA VGND outn inn main_inv_dco
 x3 VDDA VGND outn outp aux_inv_dco
 x4 VDDA VGND outp outn aux_inv_dco
 .ends
