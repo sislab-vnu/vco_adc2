@@ -6,7 +6,7 @@
 #-----------------------------------------------------
 
 if {[catch {set TECHPATH $env(PDK_ROOT)}]} {
-    set TECHPATH /home/donn/.volare/volare/sky130/build/cd1748bb197f9b7af62a54507de6624e30363943
+    set TECHPATH /home/toind/eda/unic-cass/share/pdk
 }
 if [catch {set PDKPATH}] {set PDKPATH ${TECHPATH}/sky130A}
 set PDKNAME sky130A

@@ -5,19 +5,19 @@ SETUP_TCL=$(PDK_ROOT)/$(PDK)/libs.tech/netgen/setup.tcl
 NETGEN = netgen
 NETGEN_OPTS = -batch lvs
 
-SPICE_XSC_VCO = ../xschem/lib_vco/simulations
+SPICE_XSC_VCO = ../xschem/lib/simulations
 SPICE_MAG_VCO = ../layout/vco
 
-SPICE_XSC_DCO = ../xschem/lib_dco/simulations
+SPICE_XSC_DCO = ../xschem/lib/simulations
 SPICE_MAG_DCO = ../layout/dco
 
-SPICE_XSC_COUNT = ../xschem/lib_count/simulations
+SPICE_XSC_COUNT = ../xschem/lib/simulations
 SPICE_MAG_COUNT = ../layout/count
 
-SPICE_XSC_QZ = ../xschem/lib_qz/simulations
+SPICE_XSC_QZ = ../xschem/lib/simulations
 SPICE_MAG_QZ = ../layout/quantizer
 
-SPICE_XSC_SYSTEM = ../xschem/system/simulations
+SPICE_XSC_SYSTEM = ../xschem/lib/simulations
 SPICE_MAG_SYSTEM = ../layout/system
 
 CURRENT_PATH = $(shell pwd)/module
@@ -81,76 +81,76 @@ check_lvs:
 		exit 1;\
 	fi
 
-vco_main_inv: get_file
-	$(NETGEN) $(NETGEN_OPTS) "$(XSC_VCO_PATH)/vco_main_inv.spice vco_main_inv" "$(MAG_VCO_PATH)vco_main_inv.spice vco_main_inv" $(SETUP_TCL)
+main_inv: get_file
+	$(NETGEN) $(NETGEN_OPTS) "$(XSC_VCO_PATH)/main_inv.spice main_inv" "$(MAG_VCO_PATH)/main_inv.spice main_inv" $(SETUP_TCL)
 	make check_lvs
 
-vco_aux_inv: get_file
-	$(NETGEN) $(NETGEN_OPTS) "$(XSC_VCO_PATH)/vco_aux_inv.spice vco_aux_inv" "$(MAG_VCO_PATH)/vco_aux_inv.spice vco_aux_inv" $(SETUP_TCL)
+aux_inv: get_file
+	$(NETGEN) $(NETGEN_OPTS) "$(XSC_VCO_PATH)/aux_inv.spice aux_inv" "$(MAG_VCO_PATH)/aux_inv.spice aux_inv" $(SETUP_TCL)
 	make check_lvs
 
-vco_cc_inv: get_file
-	$(NETGEN) $(NETGEN_OPTS) "$(XSC_VCO_PATH)/vco_cc_inv.spice vco_cc_inv" "$(MAG_VCO_PATH)/vco_cc_inv.spice vco_cc_inv" $(SETUP_TCL)
+cc_inv: get_file
+	$(NETGEN) $(NETGEN_OPTS) "$(XSC_VCO_PATH)/cc_inv.spice cc_inv" "$(MAG_VCO_PATH)/cc_inv.spice cc_inv" $(SETUP_TCL)
 	make check_lvs
 
-vco_ring_osc: get_file
-	$(NETGEN) $(NETGEN_OPTS) "$(XSC_VCO_PATH)/vco_ring_osc.spice vco_ring_osc" "$(MAG_VCO_PATH)/vco_ring_osc.spice vco_ring_osc" $(SETUP_TCL)
+x5s_cc_osc: get_file
+	$(NETGEN) $(NETGEN_OPTS) "$(XSC_VCO_PATH)/x5s_cc_osc.spice x5s_cc_osc" "$(MAG_VCO_PATH)/x5s_cc_osc.spice x5s_cc_osc" $(SETUP_TCL)
 	make check_lvs
 
-vco: get_file
-	$(NETGEN) $(NETGEN_OPTS) "$(XSC_VCO_PATH)/vco.spice vco" "$(MAG_VCO_PATH)/vco.spice vco" $(SETUP_TCL)
+ALib_VCO: get_file
+	$(NETGEN) $(NETGEN_OPTS) "$(XSC_VCO_PATH)/ALib_VCO.spice ALib_VCO" "$(MAG_VCO_PATH)/ALib_VCO.spice ALib_VCO" $(SETUP_TCL)
 	make check_lvs
 
-block_vco: vco_main_inv vco_aux_inv vco_cc_inv vco_ring_osc vco
+block_vco: main_inv aux_inv cc_inv vco_ring_osc vco
 	@echo "All module check completed successfully"
 
-dco_main_inv: get_file
-	$(NETGEN) $(NETGEN_OPTS) "$(XSC_DCO_PATH)/dco_main_inv.spice dco_main_inv" "$(MAG_DCO_PATH)/dco_main_inv.spice dco_main_inv" $(SETUP_TCL)
+main_inv_dco: get_file
+	$(NETGEN) $(NETGEN_OPTS) "$(XSC_DCO_PATH)/main_inv_dco.spice main_inv_dco" "$(MAG_DCO_PATH)/main_inv_dco.spice main_inv_dco" $(SETUP_TCL)
 	make check_lvs
 
-dco_aux_inv: get_file
-	$(NETGEN) $(NETGEN_OPTS) "$(XSC_DCO_PATH)/dco_aux_inv.spice dco_aux_inv" "$(MAG_DCO_PATH)/dco_aux_inv.spice dco_aux_inv" $(SETUP_TCL)
+aux_inv_dco: get_file
+	$(NETGEN) $(NETGEN_OPTS) "$(XSC_DCO_PATH)/aux_inv_dco.spice aux_inv_dco" "$(MAG_DCO_PATH)/aux_inv_dco.spice aux_inv_dco" $(SETUP_TCL)
 	make check_lvs
 
-dco_cc_inv: get_file
-	$(NETGEN) $(NETGEN_OPTS) "$(XSC_DCO_PATH)/dco_cc_inv.spice dco_cc_inv" "$(MAG_DCO_PATH)/dco_cc_inv.spice dco_cc_inv" $(SETUP_TCL)
+cc_inv_dco: get_file
+	$(NETGEN) $(NETGEN_OPTS) "$(XSC_DCO_PATH)/cc_inv_dco.spice cc_inv_dco" "$(MAG_DCO_PATH)/cc_inv_dco.spice cc_inv_dco" $(SETUP_TCL)
 	make check_lvs
 
-dco_ring_osc: get_file
-	$(NETGEN) $(NETGEN_OPTS) "$(XSC_DCO_PATH)/dco_ring_osc.spice dco_ring_osc" "$(MAG_DCO_PATH)/dco_ring_osc.spice dco_ring_osc" $(SETUP_TCL)
+x5s_cc_osc_dco: get_file
+	$(NETGEN) $(NETGEN_OPTS) "$(XSC_DCO_PATH)/x5s_cc_osc_dco.spice x5s_cc_osc_dco" "$(MAG_DCO_PATH)/x5s_cc_osc_dco.spice x5s_cc_osc_dco" $(SETUP_TCL)
 	make check_lvs
 
-dco_idac: get_file
-	$(NETGEN) $(NETGEN_OPTS) "$(XSC_DCO_PATH)/dco_idac.spice dco_idac" "$(MAG_DCO_PATH)/dco_idac.spice dco_idac" $(SETUP_TCL)
+ALib_IDAC: get_file
+	$(NETGEN) $(NETGEN_OPTS) "$(XSC_DCO_PATH)/ALib_IDAC.spice ALib_IDAC" "$(MAG_DCO_PATH)/ALib_IDAC.spice ALib_IDAC" $(SETUP_TCL)
 	make check_lvs
 
-dco_freq: get_file
-	$(NETGEN) $(NETGEN_OPTS) "$(XSC_DCO_PATH)/dco_freq.spice dco_freq" "$(MAG_DCO_PATH)/dco_freq.spice dco_freq" $(SETUP_TCL)
+DLib_freqDiv2: get_file
+	$(NETGEN) $(NETGEN_OPTS) "$(XSC_DCO_PATH)/DLib_freqDiv2.spice DLib_freqDiv2" "$(MAG_DCO_PATH)/DLib_freqDiv2.spice DLib_freqDiv2" $(SETUP_TCL)
 	make check_lvs
 
-dco: get_file
-	$(NETGEN) $(NETGEN_OPTS) "$(XSC_DCO_PATH)/dco.spice dco" "$(MAG_DCO_PATH)/dco.spice dco" $(SETUP_TCL)
+ALib_DCO: get_file
+	$(NETGEN) $(NETGEN_OPTS) "$(XSC_DCO_PATH)/ALib_DCO.spice ALib_DCO" "$(MAG_DCO_PATH)/ALib_DCO.spice ALib_DCO" $(SETUP_TCL)
 	make check_lvs
 
-block_dco: dco_main_inv dco_aux_inv dco_cc_inv dco_ring_osc dco_idac dco_freq dco 
+block_dco: main_inv_dco aux_inv_dco cc_inv_dco x5s_cc_osc_dco ALib_IDAC DLib_freqDiv2 ALib_DCO 
 	@echo "All module dco check completed successfully"
 
-count: get_file
-	$(NETGEN) $(NETGEN_OPTS) "$(XSC_COUNT_PATH)/count.spice count" "$(MAG_COUNT_PATH)/count.spice count" $(SETUP_TCL)
+DLib_UpDownCounter: get_file
+	$(NETGEN) $(NETGEN_OPTS) "$(XSC_COUNT_PATH)/DLib_UpDownCounter.spice DLib_UpDownCounter" "$(MAG_COUNT_PATH)/DLib_UpDownCounter.spice DLib_UpDownCounter" $(SETUP_TCL)
 	make check_lvs
 
-qz: get_file
-	$(NETGEN) $(NETGEN_OPTS) "$(XSC_QZ_PATH)/qz.spice qz" "$(MAG_QZ_PATH)/qz.spice qz" $(SETUP_TCL)
+DLib_Quantizer: get_file
+	$(NETGEN) $(NETGEN_OPTS) "$(XSC_QZ_PATH)/DLib_Quantizer.spice DLib_Quantizer" "$(MAG_QZ_PATH)/DLib_Quantizer.spice DLib_Quantizer" $(SETUP_TCL)
 	make check_lvs
 
-system: get_file
+ALib_VCO_ADC2: get_file
 	$(NETGEN) $(NETGEN_OPTS) "$(XSC_SYSTEM_PATH)/system.spice system" "$(MAG_SYSTEM_PATH)/system.spice system" $(SETUP_TCL)
 	make check_lvs
 
 all: block_vco block_dco count qz system
 	@echo "ALL module check completed successfully"
 
-.PHONY: get_file check_lvs vco_main_inv vco_aux_inv vco_cc_inv vco_ring_osc vco dco_main_inv dco_aux_inv dco_cc_inv dco_ring_osc block_dco count qz system all
+.PHONY: get_file check_lvs main_inv aux_inv cc_inv x5s_cc_osc ALib_VCO main_inv_dco aux_inv_dco cc_inv_dco x5s_cc_osc_dco ALib_IDAC DLib_freqDiv2 DLib_UpDownCounter DLib_Quantizer ALib_VCO_ADC2 all
 
 clean:
 	rm -f $(file_log) *.out *.log *.txt

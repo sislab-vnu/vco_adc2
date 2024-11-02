@@ -1,4 +1,4 @@
-v {xschem version=3.4.4 file_version=1.2
+v {xschem version=3.4.5 file_version=1.2
 }
 G {}
 K {}
@@ -6,15 +6,13 @@ V {}
 S {}
 E {}
 N 720 -480 780 -480 {
-lab=#net1}
+lab=Vctrl}
 N 780 -525 780 -480 {
-lab=#net1}
+lab=Vctrl}
 N 780 -480 780 -440 {
-lab=#net1}
+lab=Vctrl}
 N 600 -480 660 -480 {
 lab=Anlg_in}
-N 780 -375 780 -345 {
-lab=GND}
 N 640 -580 700 -580 {
 lab=pn[4]}
 N 640 -620 700 -620 {
@@ -45,16 +43,17 @@ N 440 -300 515 -300 {
 lab=ENB}
 N 620 -520 740 -520 {
 lab=GND}
-C {5s_cc_osc.sym} 760 -660 0 0 {name=Xro_1}
-C {sky130_stdcells/einvp_1.sym} 555 -340 0 0 {name=x1 VGND=VGND VNB=VNB VPB=VPB VPWR=VPWR prefix=sky130_fd_sc_hd__ }
+N 780 -380 780 -350 {
+lab=GND}
+C {sky130_stdcells/einvp_1.sym} 555 -340 0 0 {name=x1 VGND=GND VNB=GND VPB=VDDA VPWR=VDDA prefix=sky130_fd_sc_hd__ }
 C {sky130_fd_pr/res_generic_po.sym} 690 -480 3 0 {name=R1
-W=1
-L=1
+W=0.482
+L=2
 model=res_generic_po
 mult=1}
 C {sky130_fd_pr/res_generic_po.sym} 780 -410 0 0 {name=R2
-W=1
-L=1
+W=0.482
+L=2
 model=res_generic_po
 mult=1}
 C {devices/ipin.sym} 600 -480 0 0 {name=p1 lab=Anlg_in}
@@ -74,3 +73,5 @@ C {devices/ipin.sym} 440 -300 0 0 {name=p15 lab=ENB}
 C {devices/opin.sym} 880 -580 0 0 {name=p16 lab=p[4]}
 C {devices/lab_wire.sym} 780 -350 2 0 {name=p9 sig_type=std_logic lab=GND}
 C {devices/ipin.sym} 620 -520 0 0 {name=p17 lab=GND}
+C {devices/lab_wire.sym} 780 -480 2 0 {name=p18 sig_type=std_logic lab=Vctrl}
+C {x5s_cc_osc.sym} 760 -660 0 0 {name=Xro_1}

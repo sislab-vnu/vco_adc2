@@ -1,0 +1,15 @@
+** sch_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib/DLib_Quantizer.sch
+.subckt DLib_Quantizer D CLK Dout FBack VDDA GND
+*.PININFO CLK:I D:I Dout:O FBack:O VDDA:I GND:I
+Xdly_1 CLK GND GND VDDA VDDA DL1 sky130_fd_sc_hd__dlygate4sd3_1
+x2 CLK net1 GND GND VDDA VDDA Dout sky130_fd_sc_hd__dfxtp_1
+x3 D GND GND VDDA VDDA net1 sky130_fd_sc_hd__buf_2
+x4 CLK_dly Dout GND GND VDDA VDDA FBack_inv sky130_fd_sc_hd__nand2_1
+x5 FBack_inv GND GND VDDA VDDA FBack sky130_fd_sc_hd__inv_2
+Xdly_2 DL1 GND GND VDDA VDDA DL2 sky130_fd_sc_hd__dlygate4sd3_1
+Xdly_3 DL2 GND GND VDDA VDDA DL3 sky130_fd_sc_hd__dlygate4sd3_1
+Xdly_4 DL3 GND GND VDDA VDDA DL4 sky130_fd_sc_hd__dlygate4sd3_1
+Xdly_5 DL4 GND GND VDDA VDDA DL5 sky130_fd_sc_hd__dlygate4sd3_1
+Xdly_6 DL5 GND GND VDDA VDDA CLK_dly sky130_fd_sc_hd__dlygate4sd3_1
+.ends
+.end

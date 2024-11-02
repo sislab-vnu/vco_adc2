@@ -1,4 +1,4 @@
-v {xschem version=3.4.4 file_version=1.2
+v {xschem version=3.4.5 file_version=1.2
 }
 G {}
 K {}
@@ -21,6 +21,9 @@ N 180 50 180 100 {
 lab=VGND}
 N 110 100 180 100 {
 lab=VGND}
+N 110 -50 180 -50 {}
+N 180 -100 180 -50 {}
+N 110 -100 180 -100 {}
 C {devices/iopin.sym} 110 -110 0 0 {name=p1 lab=VDDA}
 C {devices/iopin.sym} 110 120 0 0 {name=p2 lab=VGND}
 C {devices/ipin.sym} 50 0 0 0 {name=p3 lab=A
@@ -40,10 +43,9 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {sky130_fd_pr/pfet3_01v8.sym} 90 -50 0 0 {name=M2
+C {sky130_fd_pr/pfet_01v8.sym} 90 -50 0 0 {name=M1
 L=1.2
 W=3
-body=VDDA
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 

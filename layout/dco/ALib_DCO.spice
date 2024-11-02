@@ -1,0 +1,75 @@
+* NGSPICE file created from ALib_DCO.ext - technology: sky130A
+
+
+
+.subckt sky130_fd_pr__res_xhigh_po_0p35_RSCMUS a_n35_n1272# a_n35_840# a_n165_n1402#
+X0 a_n35_840# a_n35_n1272# a_n165_n1402# sky130_fd_pr__res_xhigh_po_0p35 l=8.56
+.ends
+
+.subckt ALib_IDAC Vbs1 Vbs2 Vbs3 Vbs4 Dctrl Isup VDDA GND
+Xsky130_fd_sc_hd__buf_2_0 Dctrl GND GND VDDA VDDA sky130_fd_sc_hd__inv_2_0/A sky130_fd_sc_hd__buf_2
+Xsky130_fd_sc_hd__inv_2_0 sky130_fd_sc_hd__inv_2_0/A GND GND VDDA VDDA sky130_fd_sc_hd__inv_2_0/Y
++ sky130_fd_sc_hd__inv_2
+Xsky130_fd_pr__res_xhigh_po_0p35_RSCMUS_0 GND a_n150_n1850# GND sky130_fd_pr__res_xhigh_po_0p35_RSCMUS
+X0 Isup sky130_fd_sc_hd__inv_2_0/A w_n510_n1930# GND sky130_fd_pr__nfet_01v8 ad=0.8 pd=4.8 as=0.4 ps=2.4 w=2 l=0.5 M=2
+X1 w_2370_n90# Vbs1 VDDA VDDA sky130_fd_pr__pfet_01v8_hvt ad=0.72 pd=4.4 as=0.72 ps=4.4 w=1.8 l=0.5
+X2 w_n510_n1930# Vbs4 w_1270_n80# w_1270_n80# sky130_fd_pr__pfet_01v8_hvt ad=0.36 pd=2.2 as=0.72 ps=4.4 w=1.8 l=0.5 M=3
+X3 a_n150_n1850# sky130_fd_sc_hd__inv_2_0/Y w_n510_n1930# GND sky130_fd_pr__nfet_01v8 ad=0.8 pd=4.8 as=0.4 ps=2.4 w=2 l=0.5 M=2
+X4 Isup sky130_fd_sc_hd__inv_2_0/Y w_n510_n1930# w_n510_n1930# sky130_fd_pr__pfet_01v8_hvt ad=0.8 pd=4.4 as=1.6 ps=8.8 w=4 l=0.5 M=2
+X5 w_1270_n80# Vbs3 VDDA VDDA sky130_fd_pr__pfet_01v8_hvt ad=0.36 pd=2.2 as=0.72 ps=4.4 w=1.8 l=0.5 M=3
+X6 Isup Vbs2 w_2370_n90# w_2370_n90# sky130_fd_pr__pfet_01v8_hvt ad=0.72 pd=4.4 as=0.72 ps=4.4 w=1.8 l=0.5
+X7 w_n510_n1930# sky130_fd_sc_hd__inv_2_0/A a_n150_n1850# w_n510_n1930# sky130_fd_pr__pfet_01v8_hvt ad=1.6 pd=8.8 as=0.8 ps=4.4 w=4 l=0.5 M=2
+.ends
+
+
+
+
+
+.subckt DLib_freqDiv2 clk clkDiv2 VDDA GND
+Xsky130_fd_sc_hd__buf_4_0 Q_N GND GND VDDA VDDA Q_N_buf sky130_fd_sc_hd__buf_4
+Xsky130_fd_sc_hd__inv_4_0 clk GND GND VDDA VDDA clkinv sky130_fd_sc_hd__inv_4
+Xsky130_fd_sc_hd__dfxtp_1_0 clkinv Q_N_buf GND GND VDDA VDDA D sky130_fd_sc_hd__dfxtp_1
+Xsky130_fd_sc_hd__dfxbp_2_0 clk D GND GND VDDA VDDA clkDiv2 Q_N sky130_fd_sc_hd__dfxbp_2
+.ends
+
+.subckt aux_inv_dco A Y VDDA VGND
+X0 Y A VGND VGND sky130_fd_pr__nfet_01v8 ad=0.8 pd=4.8 as=0.8 ps=4.8 w=2 l=1.2
+X1 Y A VDDA VDDA sky130_fd_pr__pfet_01v8 ad=1.2 pd=6.8 as=1.2 ps=6.8 w=3 l=1.2
+.ends
+
+.subckt main_inv_dco A Y VDDA VGND
+X0 VDDA A Y VDDA sky130_fd_pr__pfet_01v8 ad=1.2 pd=6.8 as=0.6 ps=3.4 w=3 l=1.2 M=2
+X1 VGND A Y VGND sky130_fd_pr__nfet_01v8 ad=0.8 pd=4.8 as=0.4 ps=2.4 w=2 l=1.2 M=2
+.ends
+
+.subckt cc_inv_dco outp outn VDDA inn inp VGND
+Xaux_inv_dco_0 outp outn VDDA VGND aux_inv_dco
+Xaux_inv_dco_1 outn outp VDDA VGND aux_inv_dco
+Xmain_inv_dco_0 inp outp VDDA VGND main_inv_dco
+Xmain_inv_dco_1 inn outn VDDA VGND main_inv_dco
+.ends
+
+.subckt x5s_cc_osc_dco pn[0] pn[1] pn[2] pn[3] pn[4] p[0] p[1] p[2] p[3] p[4] VDDA
++ VGND
+Xcc_inv_dco_1 p[1] pn[1] VDDA pn[0] p[0] VGND cc_inv_dco
+Xcc_inv_dco_2 p[2] pn[2] VDDA pn[1] p[1] VGND cc_inv_dco
+Xcc_inv_dco_3 p[4] pn[4] VDDA pn[3] p[3] VGND cc_inv_dco
+Xcc_inv_dco_4 p[3] pn[3] VDDA pn[2] p[2] VGND cc_inv_dco
+Xcc_inv_dco_0 p[0] pn[0] VDDA pn[4] p[4] VGND cc_inv_dco
+.ends
+
+
+.subckt ALib_DCO Vbs_12 Vbs_34 pha_DCO Dctrl ENB VDDA GND
+Xsky130_fd_sc_hd__buf_2_0 x5s_cc_osc_dco_0/p[4] GND GND VDDA VDDA DLib_freqDiv2_1/clk
++ sky130_fd_sc_hd__buf_2
+XALib_IDAC_0 Vbs_12 Vbs_12 Vbs_34 Vbs_34 Dctrl ALib_IDAC_0/Isup VDDA GND ALib_IDAC
+XDLib_freqDiv2_0 DLib_freqDiv2_0/clk pha_DCO VDDA GND DLib_freqDiv2
+XDLib_freqDiv2_1 DLib_freqDiv2_1/clk DLib_freqDiv2_0/clk VDDA GND DLib_freqDiv2
+Xx5s_cc_osc_dco_0 x5s_cc_osc_dco_0/pn[0] x5s_cc_osc_dco_0/pn[1] x5s_cc_osc_dco_0/pn[2]
++ x5s_cc_osc_dco_0/pn[3] x5s_cc_osc_dco_0/pn[4] x5s_cc_osc_dco_0/p[0] x5s_cc_osc_dco_0/p[1]
++ x5s_cc_osc_dco_0/p[2] x5s_cc_osc_dco_0/p[3] x5s_cc_osc_dco_0/p[4] ALib_IDAC_0/Isup
++ GND x5s_cc_osc_dco
+Xsky130_fd_sc_hd__einvp_1_0 VDDA ENB GND GND VDDA VDDA x5s_cc_osc_dco_0/pn[4] sky130_fd_sc_hd__einvp_1
+.ends
+
+

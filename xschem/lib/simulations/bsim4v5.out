@@ -1,4 +1,0 @@
-
-Checking parameters for BSIM 4.5 model x2.x5.x2.xm2:sky130_fd_pr__pfet_01v8__model.13
-Fatal: Vsat at current temperature = -32049.4 is not positive.
-Warning: Vsat at current temperature = -32049.4 may be too small.

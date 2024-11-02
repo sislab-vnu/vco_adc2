@@ -1,4 +1,4 @@
-v {xschem version=3.4.4 file_version=1.2
+v {xschem version=3.4.5 file_version=1.2
 }
 G {}
 K {}
@@ -16,6 +16,10 @@ N 190 -180 230 -180 { lab=clkinv}
 N 70 -180 110 -180 { lab=clk}
 N 70 -240 110 -240 { lab=Q_N}
 N 190 -240 230 -240 { lab=Q_N_buf}
+N 360 -240 440 -240 {
+lab=VDDA}
+N 360 -180 440 -180 {
+lab=GND}
 C {devices/lab_wire.sym} 250 -40 2 0 {name=l1 sig_type=std_logic lab=Q_N}
 C {devices/lab_wire.sym} 40 -40 2 0 {name=l2 sig_type=std_logic lab=D}
 C {devices/opin.sym} 250 -60 0 0 {name=p1 lab=clkDiv2}
@@ -31,3 +35,7 @@ C {sky130_stdcells/inv_4.sym} 150 -180 0 0 {name=x3 VGND=GND VNB=GND VPB=VDDA VP
 C {sky130_stdcells/buf_4.sym} 150 -240 0 0 {name=x4 VGND=GND VNB=GND VPB=VDDA VPWR=VDDA prefix=sky130_fd_sc_hd__ }
 C {devices/lab_wire.sym} 100 -240 0 0 {name=l8 sig_type=std_logic lab=Q_N}
 C {devices/lab_wire.sym} 200 -240 2 0 {name=l9 sig_type=std_logic lab=Q_N_buf}
+C {devices/ipin.sym} 360 -240 0 0 {name=p3 lab=VDDA}
+C {devices/ipin.sym} 360 -180 0 0 {name=p4 lab=GND}
+C {devices/lab_wire.sym} 430 -240 2 0 {name=l10 sig_type=std_logic lab=VDDA}
+C {devices/lab_wire.sym} 430 -180 2 0 {name=l11 sig_type=std_logic lab=GND}

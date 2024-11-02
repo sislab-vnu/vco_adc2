@@ -1,6 +1,6 @@
 magic
 tech sky130A
-timestamp 1729846977
+timestamp 1730535504
 << nwell >>
 rect 2765 1450 2885 1610
 << pwell >>
@@ -93,9 +93,9 @@ timestamp 1709947739
 transform 1 0 2564 0 1 1319
 box -19 -24 249 296
 use vco_ring_osc  vco_ring_osc_0
-timestamp 1729507033
+timestamp 1730535504
 transform 1 0 300 0 1 2100
-box -300 -2100 10020 1565
+box -300 -1950 10020 1415
 << labels >>
 rlabel metal1 2580 1735 2580 1735 1 VCCD
 port 1 n

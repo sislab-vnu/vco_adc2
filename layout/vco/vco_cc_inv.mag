@@ -1,6 +1,6 @@
 magic
 tech sky130A
-timestamp 1727248762
+timestamp 1730442989
 << nwell >>
 rect 375 985 395 1005
 rect -45 925 130 975
@@ -147,19 +147,19 @@ rect 1385 -100 1425 125
 rect 1930 -100 1970 125
 rect -110 -150 1970 -100
 use vco_aux_inv  vco_aux_inv_0
-timestamp 1725509688
+timestamp 1729846784
 transform 1 0 950 0 1 640
 box -130 -550 425 535
 use vco_aux_inv  vco_aux_inv_1
-timestamp 1725509688
+timestamp 1729846784
 transform 1 0 1495 0 1 640
 box -130 -550 425 535
 use vco_main_inv  vco_main_inv_0
-timestamp 1726019674
+timestamp 1730431575
 transform 1 0 0 0 1 635
 box -130 -635 830 630
 use vco_main_inv  vco_main_inv_1
-timestamp 1726019674
+timestamp 1730431575
 transform 1 0 2040 0 1 635
 box -130 -635 830 630
 << labels >>

@@ -1,5 +1,5 @@
-#export PROJECT_DIR=/home/toind/work/vco_adc2
-export PROJECT_DIR=$(pwd)
+export PROJECT_DIR=/home/toind/work/sislab_vnu/vco_adc2
+#export PROJECT_DIR=$(pwd)
 export VCO_ADC2_130=$PROJECT_DIR/synopsys/finesim/vco_adc2_130nm
 export HOME_TOOLS=$PATH:/home/tools/
 export MATLAB=$HOME_TOOLS/matlab/R2019b/bin/

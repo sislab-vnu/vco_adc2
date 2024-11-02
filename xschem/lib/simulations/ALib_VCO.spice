@@ -1,0 +1,54 @@
+** sch_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib/ALib_VCO.sch
+.subckt ALib_VCO Anlg_in ENB p[4] VDDA GND
+*.PININFO Anlg_in:I VDDA:I ENB:I p[4]:O GND:I
+x1 VDDA ENB GND GND VDDA VDDA pn[4] sky130_fd_sc_hd__einvp_1
+R1 Vctrl Anlg_in sky130_fd_pr__res_generic_po W=0.482 L=2 m=1
+R2 GND Vctrl sky130_fd_pr__res_generic_po W=0.482 L=2 m=1
+Xro_1 pn[0] pn[1] pn[2] pn[3] pn[4] p[0] p[1] p[2] p[3] p[4] Vctrl VDDA GND x5s_cc_osc
+.ends
+
+* expanding   symbol:  x5s_cc_osc.sym # of pins=13
+** sym_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib/x5s_cc_osc.sym
+** sch_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib/x5s_cc_osc.sch
+.subckt x5s_cc_osc pn[0] pn[1] pn[2] pn[3] pn[4] p[0] p[1] p[2] p[3] p[4] VGND VDDA GND
+*.PININFO VDDA:B VGND:B pn[0]:O p[0]:B pn[1]:O p[1]:O p[2]:O p[3]:O p[4]:O pn[2]:O pn[3]:O pn[4]:O GND:B
+Xi_1 p[4] pn[4] p[0] pn[0] VGND VDDA GND cc_inv
+Xi_2 p[0] pn[0] p[1] pn[1] VGND VDDA GND cc_inv
+Xi_3 p[1] pn[1] p[2] pn[2] VGND VDDA GND cc_inv
+Xi_4 p[2] pn[2] p[3] pn[3] VGND VDDA GND cc_inv
+Xi_6 p[3] pn[3] p[4] pn[4] VGND VDDA GND cc_inv
+.ends
+
+
+* expanding   symbol:  cc_inv.sym # of pins=7
+** sym_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib/cc_inv.sym
+** sch_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib/cc_inv.sch
+.subckt cc_inv inp inn outp outn VGND VDDA GND
+*.PININFO outp:O inn:I VGND:B outn:O inp:I VDDA:B GND:B
+Xi_1 inp outp VGND VDDA GND main_inv
+Xi_2 inn outn VGND VDDA GND main_inv
+Xi_3 outp outn VGND VDDA GND aux_inv
+Xi_4 outn outp VGND VDDA GND aux_inv
+.ends
+
+
+* expanding   symbol:  main_inv.sym # of pins=5
+** sym_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib/main_inv.sym
+** sch_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib/main_inv.sch
+.subckt main_inv A Y VGND VDDA GND
+*.PININFO VDDA:B VGND:B A:I Y:O GND:B
+XM2 Y A VGND GND sky130_fd_pr__nfet_01v8 L=3.65 W=8 nf=2 m=1
+XM1 Y A VDDA VDDA sky130_fd_pr__pfet_01v8 L=3.65 W=10 nf=2 m=1
+.ends
+
+
+* expanding   symbol:  aux_inv.sym # of pins=5
+** sym_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib/aux_inv.sym
+** sch_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib/aux_inv.sch
+.subckt aux_inv A Y VGND VDDA GND
+*.PININFO VDDA:B VGND:B A:I Y:O GND:B
+XM3 Y A VGND GND sky130_fd_pr__nfet_01v8 L=3.65 W=4 nf=1 m=1
+XM2 Y A VDDA VDDA sky130_fd_pr__pfet_01v8 L=3.65 W=5 nf=1 m=1
+.ends
+
+.end

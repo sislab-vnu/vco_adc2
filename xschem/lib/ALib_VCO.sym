@@ -1,4 +1,4 @@
-v {xschem version=3.4.4 file_version=1.2
+v {xschem version=3.4.5 file_version=1.2
 }
 G {}
 K {type=subcircuit
@@ -13,9 +13,9 @@ L 4 -60 30 -30 30 {}
 L 4 -60 -30 -30 -30 {}
 L 4 0 -60 0 -40 {}
 L 4 0 40 0 60 {}
-B 5 57.5 -2.5 62.5 2.5 {name=p[4] dir=out }
 B 5 -62.5 -32.5 -57.5 -27.5 {name=Anlg_in dir=in }
 B 5 -62.5 27.5 -57.5 32.5 {name=ENB dir=in }
+B 5 57.5 -2.5 62.5 2.5 {name=p[4] dir=out }
 B 5 -2.5 -62.5 2.5 -57.5 {name=VDDA dir=in}
 B 5 -2.5 57.5 2.5 62.5 {name=GND dir=in}
 A 4 0 0 42.42640687119285 315 360 {}

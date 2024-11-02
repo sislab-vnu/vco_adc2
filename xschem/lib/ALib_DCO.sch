@@ -1,4 +1,4 @@
-v {xschem version=3.4.4 file_version=1.2
+v {xschem version=3.4.5 file_version=1.2
 }
 G {}
 K {}
@@ -44,6 +44,14 @@ N 440 -270 480 -270 {
 lab=p[0]}
 N 670 -570 720 -570 {
 lab=GND}
+N 690 -200 690 -160 {
+lab=VDDA}
+N 890 -200 890 -160 {
+lab=VDDA}
+N 690 -60 690 -20 {
+lab=GND}
+N 890 -60 890 -20 {
+lab=GND}
 C {devices/lab_wire.sym} 450 -230 2 0 {name=l5 sig_type=std_logic lab=p[1]}
 C {devices/lab_wire.sym} 450 -190 2 0 {name=l6 sig_type=std_logic lab=p[2]}
 C {devices/lab_wire.sym} 450 -150 2 0 {name=l7 sig_type=std_logic lab=p[3]}
@@ -65,7 +73,6 @@ C {devices/lab_wire.sym} 450 -110 0 1 {name=l4 sig_type=std_logic lab=p_osc}
 C {devices/lab_wire.sym} 770 -110 2 0 {name=l14 sig_type=std_logic lab=ro_div2}
 C {../lib/ALib_IDAC.sym} 420 -440 0 0 {name=x3}
 C {devices/ipin.sym} 100 -110 0 0 {name=p6 lab=VDDA}
-C {../lib/5s_cc_osc_dco.sym} 380 -190 0 0 {name=x4}
 C {devices/lab_pin.sym} 460 -370 2 1 {name=l2 sig_type=std_logic lab=GND}
 C {devices/lab_pin.sym} 380 -40 0 0 {name=l1 sig_type=std_logic lab=GND}
 C {devices/lab_wire.sym} 450 -270 2 0 {name=l17 sig_type=std_logic lab=p[0]}
@@ -74,3 +81,8 @@ C {devices/lab_pin.sym} 720 -570 0 1 {name=l8 sig_type=std_logic lab=GND}
 C {../lib/DLib_freqDiv2.sym} 690 -100 0 0 {name=Xdiv2 VGND=GND VNB=GND VPB=VDDA VPWR=VDDA}
 C {../lib/DLib_freqDiv2.sym} 890 -100 0 0 {name=Xdiv2_1 VGND=GND VNB=GND VPB=VCCD VPWR=VCCD}
 C {devices/lab_pin.sym} 540 -440 0 1 {name=l15 sig_type=std_logic lab=VDDA}
+C {devices/lab_pin.sym} 690 -20 2 1 {name=l16 sig_type=std_logic lab=GND}
+C {devices/lab_pin.sym} 890 -20 2 1 {name=l18 sig_type=std_logic lab=GND}
+C {devices/lab_pin.sym} 690 -200 0 1 {name=l19 sig_type=std_logic lab=VDDA}
+C {devices/lab_pin.sym} 890 -200 0 1 {name=l20 sig_type=std_logic lab=VDDA}
+C {x5s_cc_osc_dco.sym} 380 -190 0 0 {name=x5}

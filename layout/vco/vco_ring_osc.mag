@@ -1,6 +1,6 @@
 magic
 tech sky130A
-timestamp 1729507033
+timestamp 1730535504
 << locali >>
 rect 2980 1375 3090 1415
 rect 5980 1375 6090 1415
@@ -14,10 +14,6 @@ rect 9920 -1910 10020 1375
 rect 5910 -1950 6020 -1910
 rect 8825 -1950 10020 -1910
 << metal1 >>
-rect 20 1515 120 1565
-rect 1955 1515 3055 1565
-rect 4935 1515 6110 1565
-rect 8005 1515 9765 1565
 rect -300 1075 0 1125
 rect 2980 1075 3090 1125
 rect 5980 1075 6090 1125
@@ -41,56 +37,51 @@ rect 9390 -1610 9490 1075
 rect -300 -1660 3000 -1610
 rect 5910 -1660 6020 -1610
 rect 9000 -1660 9490 -1610
-rect 9665 -2050 9765 1515
-rect 5875 -2100 6925 -2050
-rect 8875 -2100 9765 -2050
-use vco_cc_inv  vco_cc_inv_0
-timestamp 1727248762
+use cc_inv  cc_inv_0
+timestamp 1730447143
 transform 1 0 130 0 1 150
-box -130 -150 2870 1415
-use vco_cc_inv  vco_cc_inv_1
-timestamp 1727248762
+box -130 -150 2870 1265
+use cc_inv  cc_inv_1
+timestamp 1730447143
 transform 1 0 3130 0 1 150
-box -130 -150 2870 1415
-use vco_cc_inv  vco_cc_inv_2
-timestamp 1727248762
+box -130 -150 2870 1265
+use cc_inv  cc_inv_2
+timestamp 1730447143
 transform 1 0 6130 0 1 150
-box -130 -150 2870 1415
-use vco_cc_inv  vco_cc_inv_3
-timestamp 1727248762
+box -130 -150 2870 1265
+use cc_inv  cc_inv_3
+timestamp 1730447143
 transform -1 0 5870 0 -1 -685
-box -130 -150 2870 1415
-use vco_cc_inv  vco_cc_inv_4
-timestamp 1727248762
+box -130 -150 2870 1265
+use cc_inv  cc_inv_4
+timestamp 1730447143
 transform -1 0 8870 0 -1 -685
-box -130 -150 2870 1415
+box -130 -150 2870 1265
 << labels >>
-rlabel locali 2990 1415 2990 1415 1 VPWR
+rlabel metal1 3030 490 3030 490 1 pn[0]
+port 1 n
+rlabel metal1 6030 490 6030 490 1 pn[1]
 port 2 n
-rlabel locali 3095 -255 3095 -255 7 VGND
-port 1 w
-rlabel metal1 2940 -975 2940 -975 1 pn[4]
-port 12 n
-rlabel metal1 2945 -1610 2945 -1610 1 p[4]
-port 7 n
-rlabel metal1 5960 -975 5960 -975 1 pn[3]
-port 11 n
-rlabel metal1 9125 1125 9125 1125 1 p[2]
-port 5 n
-rlabel metal1 6035 1125 6035 1125 1 p[1]
-port 4 n
-rlabel metal1 6035 490 6035 490 1 pn[1]
-port 9 n
-rlabel metal1 3040 1125 3040 1125 1 p[0]
+rlabel metal1 9045 490 9045 490 1 pn[2]
 port 3 n
-rlabel metal1 3035 490 3035 490 1 pn[0]
-port 8 n
-rlabel metal1 5965 -1610 5965 -1610 1 p[3]
+rlabel metal1 5960 -975 5960 -975 1 pn[3]
+port 4 n
+rlabel metal1 2955 -975 2955 -975 1 pn[4]
+port 5 n
+rlabel metal1 3015 1125 3015 1125 1 p[0]
 port 6 n
-rlabel metal1 30 1565 30 1565 1 VCCA
-port 13 n
-rlabel metal1 3950 -500 3950 -500 3 GND
-port 14 e
-rlabel metal1 9095 490 9095 490 1 pn[2]
+rlabel metal1 6030 1125 6030 1125 1 p[1]
+port 7 n
+rlabel metal1 9040 1125 9040 1125 1 p[2]
+port 8 n
+rlabel metal1 5955 -1610 5955 -1610 1 p[3]
+port 9 n
+rlabel metal1 2920 -1610 2920 -1610 1 p[4]
 port 10 n
+rlabel locali 3145 -185 3145 -185 3 VGND
+port 11 e
+rlabel locali 9985 1415 9985 1415 1 VDDA
+port 12 n
+rlabel metal1 3950 -330 3950 -330 3 GND
+port 13 e
 << end >>
