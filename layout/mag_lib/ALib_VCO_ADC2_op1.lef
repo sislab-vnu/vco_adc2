@@ -2,12 +2,12 @@ VERSION 5.7 ;
   NOWIREEXTENSIONATPIN ON ;
   DIVIDERCHAR "/" ;
   BUSBITCHARS "[]" ;
-MACRO vco_adc2
+MACRO ALib_VCO_ADC2_op1
   CLASS BLOCK ;
-  FOREIGN vco_adc2 ;
+  FOREIGN ALib_VCO_ADC2_op1 ;
   ORIGIN 37.950 320.620 ;
   SIZE 171.570 BY 505.310 ;
-  PIN vbias_12
+  PIN Vbs_12
     DIRECTION INPUT ;
     USE SIGNAL ;
     ANTENNAGATEAREA 1.800000 ;
@@ -29,8 +29,8 @@ MACRO vco_adc2
       LAYER met3 ;
         RECT 125.460 -320.620 133.620 -317.900 ;
     END
-  END vbias_12
-  PIN vbias_34
+  END Vbs_12
+  PIN Vbs_34
     DIRECTION INPUT ;
     USE SIGNAL ;
     ANTENNAGATEAREA 5.400000 ;
@@ -49,8 +49,8 @@ MACRO vco_adc2
       LAYER met3 ;
         RECT 124.440 -55.420 132.600 -52.020 ;
     END
-  END vbias_34
-  PIN analog_in
+  END Vbs_34
+  PIN Anlg_in
     DIRECTION INPUT ;
     USE SIGNAL ;
     PORT
@@ -69,8 +69,8 @@ MACRO vco_adc2
         RECT 122.950 25.000 124.950 174.600 ;
         RECT 34.500 24.000 124.950 25.000 ;
     END
-  END analog_in
-  PIN enable_in
+  END Anlg_in
+  PIN ENB
     DIRECTION INPUT ;
     USE SIGNAL ;
     ANTENNAGATEAREA 1.437000 ;
@@ -112,8 +112,8 @@ MACRO vco_adc2
         RECT -14.150 16.250 -13.150 17.250 ;
         RECT -37.950 -94.830 -35.190 -88.850 ;
     END
-  END enable_in
-  PIN clk
+  END ENB
+  PIN CLK
     DIRECTION INPUT ;
     USE SIGNAL ;
     ANTENNAGATEAREA 0.285000 ;
@@ -139,9 +139,9 @@ MACRO vco_adc2
         RECT -25.850 -88.500 -16.930 -87.300 ;
         RECT -19.690 -94.830 -16.930 -88.500 ;
     END
-  END clk
-  PIN quantizer_out
-    DIRECTION OUTPUT ;
+  END CLK
+  PIN Dout
+    DIRECTION INPUT ;
     USE SIGNAL ;
     ANTENNAGATEAREA 0.247500 ;
     ANTENNADIFFAREA 0.429000 ;
@@ -166,7 +166,7 @@ MACRO vco_adc2
         RECT 14.150 -88.850 16.150 -29.350 ;
         RECT 14.030 -94.830 16.790 -88.850 ;
     END
-  END quantizer_out
+  END Dout
   PIN VDDA
     DIRECTION INPUT ;
     USE POWER ;
@@ -3424,6 +3424,6 @@ MACRO vco_adc2
         RECT -0.150 -43.180 0.200 -41.580 ;
         RECT -0.150 -43.680 0.350 -43.180 ;
   END
-END vco_adc2
+END ALib_VCO_ADC2_op1
 END LIBRARY
 
