@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1730763670
+timestamp 1730764200
 << locali >>
 rect -2830 4030 3060 4050
 rect -2830 3970 -2810 4030
@@ -1854,31 +1854,27 @@ rect 22376 -14030 22440 -13930
 rect 22540 -14030 22640 -13930
 rect 22740 -14030 22920 -13930
 rect 22376 -14076 22920 -14030
-use ALib_DCO_a  ALib_DCO_a_0 ../../mag_lib
+use ALib_DCO  ALib_DCO_0
 timestamp 1730531556
 transform 1 0 5200 0 1 -5190
 box 1000 -4470 13410 5980
-use ALib_VCO_a  ALib_VCO_a_0 ../../mag_lib
+use ALib_VCO  ALib_VCO_0
 timestamp 1730639796
 transform 1 0 -2020 0 1 1040
 box 0 280 20640 7030
-use DLib_Quantizer_a  DLib_Quantizer_a_0 ../../mag_lib
+use DLib_Quantizer  DLib_Quantizer_0
 timestamp 1730532965
 transform 1 0 -2210 0 1 -4630
 box 190 -710 5890 730
-use DLib_UpDownCounter_a  DLib_UpDownCounter_a_0 ../../mag_lib
+use DLib_UpDownCounter  DLib_UpDownCounter_0
 timestamp 1730536752
 transform 1 0 -1140 0 1 -5986
 box -880 -3154 3140 -440
-use DLib_UpDownCounter_b  DLib_UpDownCounter_b_0 ../../mag_lib
+use DLib_UpDownCounter  DLib_UpDownCounter_1
 timestamp 1730536752
 transform 1 0 -1140 0 1 344
 box -880 -3154 3140 -440
 << labels >>
-flabel metal3 -5940 11356 -1070 11900 1 FreeSans 2176 0 0 0 VDDA
-port 7 nsew power input
-flabel metal3 16388 9876 19516 10420 1 FreeSans 2176 0 0 0 GND
-port 8 nsew ground input
 flabel metal2 17342 34914 17710 36938 1 FreeSans 736 0 0 0 analog_in
 port 3 nsew signal input
 flabel metal3 24956 -11084 26452 -10404 1 FreeSans 1088 0 0 0 vbias_34
@@ -1891,4 +1887,8 @@ flabel metal2 -3910 -18906 -3450 -17710 1 FreeSans 736 0 0 0 clk
 port 5 nsew signal input
 flabel metal2 -7590 -18906 -7038 -17802 1 FreeSans 736 0 0 0 enable_in
 port 4 nsew signal input
+flabel metal3 -5780 11356 -476 11900 1 FreeSans 1088 0 0 0 vdda
+port 7 nsew power input
+flabel space 16388 9860 20468 10404 1 FreeSans 1088 0 0 0 gnd
+port 8 nsew ground input
 << end >>
