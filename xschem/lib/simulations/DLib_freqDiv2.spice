@@ -1,0 +1,9 @@
+** sch_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib/DLib_freqDiv2.sch
+.subckt DLib_freqDiv2 clk clkDiv2 VDDA GND
+*.PININFO clkDiv2:O clk:I VDDA:I GND:I
+x1 clk D GND GND VDDA VDDA clkDiv2 Q_N sky130_fd_sc_hd__dfxbp_2
+x2 clkinv Q_N_buf GND GND VDDA VDDA D sky130_fd_sc_hd__dfxtp_1
+x3 clk GND GND VDDA VDDA clkinv sky130_fd_sc_hd__inv_4
+x4 Q_N GND GND VDDA VDDA Q_N_buf sky130_fd_sc_hd__buf_4
+.ends
+.end

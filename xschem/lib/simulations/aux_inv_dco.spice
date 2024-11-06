@@ -1,0 +1,7 @@
+** sch_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib/aux_inv_dco.sch
+.subckt aux_inv_dco A Y VDDA VGND
+*.PININFO VDDA:B VGND:B A:I Y:O
+XM3 Y A VGND VGND sky130_fd_pr__nfet_01v8 L=1.2 W=2 nf=1 m=1
+XM1 Y A VDDA VDDA sky130_fd_pr__pfet_01v8 L=1.2 W=3 nf=1 m=1
+.ends
+.end
