@@ -90,3 +90,5 @@ if {[file isdir ${PDK_ROOT}/sky130A/libs.ref/${MAGTYPE}]} {
 catch {magic::query_mylib_ip}
 # add path to local IP from user design space.  Defined in the PDK script.
 catch {magic::query_my_projects}
+
+path add ../../mag_lib/
