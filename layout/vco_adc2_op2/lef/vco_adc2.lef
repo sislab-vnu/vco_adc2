@@ -2,9 +2,9 @@ VERSION 5.7 ;
   NOWIREEXTENSIONATPIN ON ;
   DIVIDERCHAR "/" ;
   BUSBITCHARS "[]" ;
-MACRO vco_adc2_op2
+MACRO vco_adc2
   CLASS BLOCK ;
-  FOREIGN vco_adc2_op2 ;
+  FOREIGN vco_adc2 ;
   ORIGIN 77.180 133.620 ;
   SIZE 291.310 BY 301.750 ;
   PIN vbias_12
@@ -3434,6 +3434,6 @@ MACRO vco_adc2_op2
         RECT -0.150 -43.180 0.200 -41.580 ;
         RECT -0.150 -43.680 0.350 -43.180 ;
   END
-END vco_adc2_op2
+END vco_adc2
 END LIBRARY
 
