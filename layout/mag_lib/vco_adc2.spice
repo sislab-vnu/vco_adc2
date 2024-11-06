@@ -129,7 +129,7 @@ Xsky130_fd_sc_hd__einvp_1_0 VDDA ENB GND GND VDDA VDDA x5s_cc_osc_dco_0/pn[4] sk
 
 
 
-.subckt DLib_UpDownCounter UP DOWN setB VDDA GND Dout_buf
+.subckt DLib_UpDownCounter UP DOWN setB Dout_buf VDDA GND
 Xsky130_fd_sc_hd__dfstp_1_0 UP_buf Q2N SetBi GND GND VDDA VDDA Q1 sky130_fd_sc_hd__dfstp_1
 Xsky130_fd_sc_hd__dfstp_1_1 DWN_buf Q1_buf SetBi GND GND VDDA VDDA Q2 sky130_fd_sc_hd__dfstp_1
 Xsky130_fd_sc_hd__inv_2_0 setB GND GND VDDA VDDA SetBi sky130_fd_sc_hd__inv_2
@@ -141,16 +141,16 @@ Xsky130_fd_sc_hd__buf_2_4 UP GND GND VDDA VDDA UP_buf sky130_fd_sc_hd__buf_2
 Xsky130_fd_sc_hd__xor2_1_1 Q1 Q2 GND GND VDDA VDDA Dout sky130_fd_sc_hd__xor2_1
 .ends
 
-.subckt vco_adc2 vbias_12 vbias_34 analog_in enable_in clk quantizer_out VDDA GND
-XALib_VCO_0 analog_in enable_in GND ALib_VCO_0/p[4] VDDA ALib_VCO
-XDLib_Quantizer_0 DLib_Quantizer_0/D clk quantizer_out DLib_Quantizer_0/FBack VDDA
-+ GND DLib_Quantizer
-XALib_DCO_0 vbias_12 vbias_34 ALib_DCO_0/pha_DCO ALib_DCO_0/Dctrl enable_in VDDA GND
+.subckt vco_adc2 vbias_12 vbias_34 analog_in enable_in clk quantizer_out vdda gnd
+XALib_VCO_0 analog_in enable_in gnd ALib_VCO_0/p[4] vdda ALib_VCO
+XDLib_Quantizer_0 DLib_Quantizer_0/D clk quantizer_out DLib_Quantizer_0/FBack vdda
++ gnd DLib_Quantizer
+XALib_DCO_0 vbias_12 vbias_34 ALib_DCO_0/pha_DCO ALib_DCO_0/Dctrl enable_in vdda gnd
 + ALib_DCO
-XDLib_UpDownCounter_0 ALib_DCO_0/pha_DCO DLib_Quantizer_0/FBack enable_in VDDA GND
-+ DLib_Quantizer_0/D DLib_UpDownCounter
-XDLib_UpDownCounter_1 ALib_VCO_0/p[4] DLib_Quantizer_0/FBack enable_in VDDA GND ALib_DCO_0/Dctrl
-+ DLib_UpDownCounter
+XDLib_UpDownCounter_0 ALib_DCO_0/pha_DCO DLib_Quantizer_0/FBack enable_in DLib_Quantizer_0/D
++ vdda gnd DLib_UpDownCounter
+XDLib_UpDownCounter_1 ALib_VCO_0/p[4] DLib_Quantizer_0/FBack enable_in ALib_DCO_0/Dctrl
++ vdda gnd DLib_UpDownCounter
 .ends
 
 
