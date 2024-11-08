@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1730531556
+timestamp 1731037740
 << nwell >>
 rect 3080 3700 3260 3820
 rect 3080 3500 3256 3700
@@ -279,23 +279,23 @@ rect 8150 -1500 8170 -1440
 rect 8230 -1500 12010 -1440
 rect 8150 -1520 12010 -1500
 use ALib_IDAC  ALib_IDAC_0
-timestamp 1730517086
+timestamp 1731037740
 transform 1 0 2860 0 1 -380
 box -1860 -3160 3220 740
 use DLib_freqDiv2  DLib_freqDiv2_0
-timestamp 1730530608
+timestamp 1731037740
 transform 1 0 8320 0 1 -2610
 box -1590 -1450 3980 640
 use DLib_freqDiv2  DLib_freqDiv2_1
-timestamp 1730530608
+timestamp 1731037740
 transform 1 0 8320 0 1 -270
 box -1590 -1450 3980 640
 use sky130_fd_sc_hd__buf_2  sky130_fd_sc_hd__buf_2_0 $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1709947739
+timestamp 1688980957
 transform 1 0 6808 0 1 558
 box -38 -48 406 592
 use sky130_fd_sc_hd__einvp_1  sky130_fd_sc_hd__einvp_1_0 $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1709947739
+timestamp 1688980957
 transform 1 0 3288 0 1 3238
 box -38 -48 498 592
 use x5s_cc_osc_dco  x5s_cc_osc_dco_0

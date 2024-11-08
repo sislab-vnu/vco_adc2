@@ -181,7 +181,7 @@ MACRO vco_adc2
     END
   END quantizer_out
   PIN vdda
-    DIRECTION INPUT ;
+    DIRECTION INOUT ;
     USE POWER ;
     PORT
       LAYER nwell ;
@@ -763,7 +763,7 @@ MACRO vco_adc2
     END
   END vdda
   PIN gnd
-    DIRECTION INPUT ;
+    DIRECTION INOUT ;
     USE GROUND ;
     PORT
       LAYER pwell ;

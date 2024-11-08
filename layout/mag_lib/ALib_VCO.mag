@@ -1,6 +1,6 @@
 magic
 tech sky130A
-timestamp 1730639796
+timestamp 1731037740
 << nwell >>
 rect 2765 1450 2885 1610
 << pwell >>
@@ -104,7 +104,7 @@ timestamp 1725958087
 transform 0 -1 3820 1 0 1769
 box -24 -315 24 315
 use sky130_fd_sc_hd__einvp_1  sky130_fd_sc_hd__einvp_1_0 $PDKPATH/libs.ref/sky130_fd_sc_hd/mag
-timestamp 1709947739
+timestamp 1688980957
 transform 1 0 2564 0 1 1319
 box -19 -24 249 296
 use x5s_cc_osc  x5s_cc_osc_0
