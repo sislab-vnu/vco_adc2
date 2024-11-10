@@ -1,7 +1,9 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1731039057
+timestamp 1731204629
+<< isosubstrate >>
+rect -10200 -24000 26000 12800
 << locali >>
 rect -710 8050 -310 8070
 rect -710 8010 -690 8050
@@ -2026,26 +2028,22 @@ flabel metal3 -15436 -26724 -13804 -25772 1 FreeSans 1088 0 0 0 vbias_34
 port 2 nsew signal input
 flabel metal2 -7406 -26634 -6946 -25254 1 FreeSans 736 0 0 0 clk
 port 5 nsew signal input
-flabel metal3 -4148 9316 20060 9860 1 FreeSans 4352 0 0 0 gnd
-port 8 nsew ground bidirectional abutment
 flabel metal2 2800 -26630 3352 -25158 1 FreeSans 736 0 0 0 quantizer_out
 port 6 nsew signal output
 flabel metal2 -1248 -26634 -696 -25254 1 FreeSans 736 0 0 0 enable_in
 port 4 nsew signal input
 flabel metal2 39514 32062 41630 32430 1 FreeSans 1472 0 0 0 analog_in
 port 3 nsew signal input
-flabel metal3 -8908 11356 24956 11900 1 FreeSans 4352 0 0 0 vdda
-port 7 nsew power bidirectional abutment
-rlabel metal4 -4150 -19110 -3580 9850 1 gnd
-port 8 nsew ground bidirectional
-rlabel metal3 -4150 -19110 20080 -18540 1 gnd
-port 8 nsew ground bidirectional
-rlabel metal4 19560 -19050 20150 9900 1 gnd
-port 8 nsew ground bidirectional
-rlabel metal4 -8930 -23480 -8310 11960 1 vdda
+flabel metal4 -8908 -23460 -8364 11900 1 FreeSans 4352 0 0 0 vdda1
 port 7 nsew power bidirectional
-rlabel metal4 24360 -23480 24960 11960 1 vdda
+flabel metal4 -4148 -19108 -3604 9860 1 FreeSans 4352 0 0 0 vssa1
+port 8 nsew ground bidirectional
+flabel metal3 -4148 -19108 20060 -18564 1 FreeSans 4352 0 0 0 vssa1
+port 8 nsew ground bidirectional
+flabel metal3 -8908 -23460 24956 -22916 1 FreeSans 4352 0 0 0 vdda1
 port 7 nsew power bidirectional
-rlabel metal3 -8930 -23480 24960 -22880 1 vdda
+flabel metal3 -8908 11356 24956 11900 1 FreeSans 4352 0 0 0 vdda1
 port 7 nsew power bidirectional
+flabel metal3 -4148 9316 20060 9860 1 FreeSans 4352 0 0 0 vssa1
+port 8 nsew ground bidirectional
 << end >>
