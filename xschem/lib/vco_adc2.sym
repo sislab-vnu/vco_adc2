@@ -26,15 +26,15 @@ B 5 -102.5 17.5 -97.5 22.5 {name=analog_in dir=in}
 B 5 -102.5 57.5 -97.5 62.5 {name=enable_in dir=in}
 B 5 -32.5 -122.5 -27.5 -117.5 {name=clk dir=in}
 B 5 97.5 -42.5 102.5 -37.5 {name=quantizer_out dir=out}
-B 5 27.5 -122.5 32.5 -117.5 {name=vdda dir=in}
-B 5 -2.5 117.5 2.5 122.5 {name=gnd dir=in}
+B 5 27.5 -122.5 32.5 -117.5 {name=vdda1 dir=in}
+B 5 -2.5 117.5 2.5 122.5 {name=vssa1 dir=in}
 T {@symname} 65 64 0 0 0.3 0.3 {}
 T {@name} 25 38 0 0 0.2 0.2 {}
 T {quantizer_out} 135 -54 0 1 0.2 0.2 {}
 T {clk} -25 -94 0 0 0.2 0.2 {}
 T {analog_in} -55 16 0 0 0.2 0.2 {}
 T {enable_in} -55 56 0 0 0.2 0.2 {}
-T {gnd} -5 66 0 0 0.2 0.2 {}
+T {vssa1} -5 66 0 0 0.2 0.2 {}
 T {vbias_12} -55 -64 0 0 0.2 0.2 {}
 T {vbias_34} -55 -24 0 0 0.2 0.2 {}
-T {vdda} 35 -94 0 0 0.2 0.2 {}
+T {vdda1} 35 -94 0 0 0.2 0.2 {}

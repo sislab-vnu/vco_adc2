@@ -14,13 +14,13 @@ lab=vbias_12}
 N 780 -480 780 -420 {
 lab=vbias_34}
 N 490 -480 490 -440 {
-lab=vdda}
+lab=vdda1}
 N 550 -480 550 -440 {
 lab=enable_in}
 N 280 -500 280 -460 {
-lab=vdda}
+lab=vdda1}
 N 490 -500 490 -480 {
-lab=vdda}
+lab=vdda1}
 N 550 -500 550 -480 {
 lab=enable_in}
 N 740 -500 740 -480 {
@@ -34,29 +34,29 @@ lab=enable_in}
 N 820 -360 920 -360 {
 lab=#net1}
 N 970 -500 970 -400 {
-lab=vdda}
+lab=vdda1}
 N 1030 -500 1030 -400 {
 lab=enable_in}
 N 1080 -340 1180 -340 {
 lab=D2}
 N 1250 -500 1250 -380 {
-lab=vdda}
+lab=vdda1}
 N 1320 -340 1400 -340 {
 lab=quantizer_out}
 N 1320 -300 1400 -300 {
 lab=FeedBack}
 N 280 -340 280 -300 {
-lab=gnd}
+lab=vssa1}
 N 520 -320 520 -280 {
-lab=gnd}
+lab=vssa1}
 N 740 -300 740 -260 {
-lab=gnd}
+lab=vssa1}
 N 780 -300 780 -260 {
-lab=vdda}
+lab=vdda1}
 N 1000 -280 1000 -240 {
-lab=gnd}
+lab=vssa1}
 N 1250 -260 1250 -220 {
-lab=gnd}
+lab=vssa1}
 N 1120 -300 1180 -300 {
 lab=clk}
 N 1120 -300 1120 -260 {
@@ -78,9 +78,9 @@ lab=FeedBack}
 N 860 -320 860 -180 {
 lab=FeedBack}
 N 1180 -780 1270 -780 {
-lab=vdda}
+lab=vdda1}
 N 1180 -720 1270 -720 {
-lab=gnd}
+lab=vssa1}
 N 940 -720 1030 -720 {
 lab=enable_in}
 N 940 -780 1030 -780 {
@@ -98,11 +98,11 @@ C {ALib_DCO.sym} 760 -360 0 0 {name=x2}
 C {DLib_Quantizer.sym} 1240 -310 0 0 {name=x3}
 C {DLib_UpDownCounter.sym} 520 -380 0 0 {name=x4}
 C {DLib_UpDownCounter.sym} 1000 -340 0 0 {name=x6}
-C {devices/lab_wire.sym} 1250 -780 0 0 {name=p1 sig_type=std_logic lab=vdda}
-C {devices/ipin.sym} 1180 -780 0 0 {name=p2 lab=vdda}
+C {devices/lab_wire.sym} 1250 -780 0 0 {name=p1 sig_type=std_logic lab=vdda1}
+C {devices/ipin.sym} 1180 -780 0 0 {name=p2 lab=vdda1}
 C {devices/opin.sym} 710 -780 0 0 {name=p3 lab=quantizer_out}
-C {devices/ipin.sym} 1180 -720 0 0 {name=p5 lab=gnd}
-C {devices/lab_wire.sym} 1250 -720 0 0 {name=p6 sig_type=std_logic lab=gnd}
+C {devices/ipin.sym} 1180 -720 0 0 {name=p5 lab=vssa1}
+C {devices/lab_wire.sym} 1250 -720 0 0 {name=p6 sig_type=std_logic lab=vssa1}
 C {devices/ipin.sym} 940 -720 0 0 {name=p19 lab=enable_in}
 C {devices/lab_wire.sym} 1010 -720 0 0 {name=p20 sig_type=std_logic lab=enable_in}
 C {devices/ipin.sym} 940 -780 0 0 {name=p22 lab=clk}
@@ -127,13 +127,13 @@ C {devices/lab_wire.sym} 200 -370 0 0 {name=p24 sig_type=std_logic lab=enable_in
 C {devices/lab_wire.sym} 550 -500 2 0 {name=p25 sig_type=std_logic lab=enable_in}
 C {devices/lab_wire.sym} 670 -340 0 0 {name=p26 sig_type=std_logic lab=enable_in}
 C {devices/lab_wire.sym} 1030 -500 2 0 {name=p27 sig_type=std_logic lab=enable_in}
-C {devices/lab_wire.sym} 280 -500 0 0 {name=p40 sig_type=std_logic lab=vdda}
-C {devices/lab_wire.sym} 490 -500 0 0 {name=p12 sig_type=std_logic lab=vdda}
-C {devices/lab_wire.sym} 970 -500 0 0 {name=p13 sig_type=std_logic lab=vdda}
-C {devices/lab_wire.sym} 1250 -500 0 0 {name=p15 sig_type=std_logic lab=vdda}
-C {devices/lab_wire.sym} 780 -260 2 0 {name=p14 sig_type=std_logic lab=vdda}
-C {devices/lab_wire.sym} 280 -300 0 0 {name=p16 sig_type=std_logic lab=gnd}
-C {devices/lab_wire.sym} 520 -280 0 0 {name=p7 sig_type=std_logic lab=gnd}
-C {devices/lab_wire.sym} 740 -260 0 0 {name=p8 sig_type=std_logic lab=gnd}
-C {devices/lab_wire.sym} 1000 -240 0 0 {name=p9 sig_type=std_logic lab=gnd}
-C {devices/lab_wire.sym} 1250 -220 0 0 {name=p10 sig_type=std_logic lab=gnd}
+C {devices/lab_wire.sym} 280 -490 0 0 {name=p11 sig_type=std_logic lab=vdda1}
+C {devices/lab_wire.sym} 490 -490 0 0 {name=p12 sig_type=std_logic lab=vdda1}
+C {devices/lab_wire.sym} 780 -260 2 0 {name=p13 sig_type=std_logic lab=vdda1}
+C {devices/lab_wire.sym} 970 -500 0 0 {name=p14 sig_type=std_logic lab=vdda1}
+C {devices/lab_wire.sym} 280 -300 0 0 {name=p16 sig_type=std_logic lab=vssa1}
+C {devices/lab_wire.sym} 520 -280 0 0 {name=p7 sig_type=std_logic lab=vssa1}
+C {devices/lab_wire.sym} 740 -260 0 0 {name=p8 sig_type=std_logic lab=vssa1}
+C {devices/lab_wire.sym} 1000 -240 0 0 {name=p9 sig_type=std_logic lab=vssa1}
+C {devices/lab_wire.sym} 1250 -220 0 0 {name=p10 sig_type=std_logic lab=vssa1}
+C {devices/lab_wire.sym} 1250 -500 0 0 {name=p15 sig_type=std_logic lab=vdda1}
