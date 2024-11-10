@@ -173,7 +173,7 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/res_xhigh_po_0p35.sym} 200 -50 3 0 {name=R2
-L=8.4
+L=8.52
 model=res_xhigh_po_0p35
 spiceprefix=X
 mult=1}
