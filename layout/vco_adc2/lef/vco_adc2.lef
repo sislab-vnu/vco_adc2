@@ -28,6 +28,7 @@ MACRO vco_adc2
   PIN analog_in
     DIRECTION INPUT ;
     USE SIGNAL ;
+    ANTENNADIFFAREA 48.000000 ;
     PORT
       LAYER met2 ;
         RECT 197.570 160.310 208.150 162.150 ;
