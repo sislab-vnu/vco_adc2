@@ -1,6 +1,6 @@
 magic
 tech sky130A
-timestamp 1731463286
+timestamp 1731473600
 << nwell >>
 rect 2765 1450 2885 1610
 << pwell >>
@@ -95,7 +95,7 @@ timestamp 1707688321
 transform 1 0 2564 0 1 1319
 box -19 -24 249 296
 use x5s_cc_osc  x5s_cc_osc_0
-timestamp 1731274244
+timestamp 1731473449
 transform 1 0 300 0 1 2100
 box -300 -1950 10020 1415
 << labels >>
