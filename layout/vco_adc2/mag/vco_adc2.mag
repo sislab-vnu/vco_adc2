@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1731577177
+timestamp 1731729545
 << isosubstrate >>
 rect -10400 -5020 27000 13800
 rect -10400 -5090 -1740 -5020
@@ -2112,23 +2112,23 @@ rect 24720 -23430 24960 -23330
 rect 24356 -23476 24960 -23430
 rect 24360 -23480 24960 -23476
 use ALib_DCO  ALib_DCO_0
-timestamp 1731575977
+timestamp 1731729508
 transform 1 0 5200 0 1 -5190
 box 1000 -4470 13410 5980
 use ALib_VCO  ALib_VCO_0
-timestamp 1731575977
+timestamp 1731569169
 transform 1 0 -2020 0 1 1040
 box 0 280 20640 7030
 use DLib_Quantizer  DLib_Quantizer_0
-timestamp 1731575977
+timestamp 1731569169
 transform 1 0 -2210 0 1 -4630
 box 190 -710 5890 730
 use DLib_UpDownCounter  DLib_UpDownCounter_0
-timestamp 1731575977
+timestamp 1731569169
 transform 1 0 -1140 0 1 -5986
 box -880 -3154 3140 -440
 use DLib_UpDownCounter  DLib_UpDownCounter_1
-timestamp 1731575977
+timestamp 1731569169
 transform 1 0 -1140 0 1 344
 box -880 -3154 3140 -440
 << labels >>

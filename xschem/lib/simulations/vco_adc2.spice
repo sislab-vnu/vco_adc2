@@ -1,5 +1,4 @@
 ** sch_path: /home/toind/work/sislab_vnu/vco_adc2/xschem/lib/vco_adc2.sch
-
 .subckt vco_adc2 vbias_12 vbias_34 analog_in enable_in clk quantizer_out vdda1 vssa1
 *.PININFO vdda1:I quantizer_out:O vssa1:I enable_in:I clk:I vbias_34:I analog_in:I vbias_12:I
 x1 analog_in enable_in p_vco vdda1 vssa1 ALib_VCO
@@ -96,7 +95,7 @@ XM5 Isup lock add_pwr add_pwr sky130_fd_pr__pfet_01v8_hvt L=0.5 W=8 nf=2 m=1
 XM6 add_pwr open Isup GND sky130_fd_pr__nfet_01v8 L=0.5 W=4 nf=2 m=1
 XM7 input_R open add_pwr add_pwr sky130_fd_pr__pfet_01v8_hvt L=0.5 W=8 nf=2 m=1
 XM8 add_pwr lock input_R GND sky130_fd_pr__nfet_01v8 L=0.5 W=4 nf=2 m=1
-XR2 GND input_R GND sky130_fd_pr__res_xhigh_po_0p35 L=8.52 mult=1 m=1
+XR2 GND input_R GND sky130_fd_pr__res_xhigh_po_0p35 L=8.56 mult=1 m=1
 .ends
 
 
